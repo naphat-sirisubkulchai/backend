@@ -2,16 +2,17 @@
   "name": "prisma29_3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "/api/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node index.ts",
-    "build": "tsc"
+    "dev": "ts-node /api/index.ts",
+    "build": "prisma generate && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@prisma/client": "^5.11.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
     "express": "^4.19.2",
@@ -20,7 +21,6 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "@prisma/client": "^5.11.0",
     "@types/cors": "^2.8.17",
     "cors": "^2.8.5"
   }

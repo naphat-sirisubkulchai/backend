@@ -1,0 +1,108 @@
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Fund {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  regis_id  String
+  regis_date  String
+  cancel_date String
+  proj_name_th  String
+  proj_name_en  String
+  proj_abbr_name  String
+  fund_status String
+  unique_id String
+  permit_us_investment  String?
+  invest_country_flag String
+  last_upd_date String
+}
+model Product {
+   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+   proj_id String    @unique
+   proj_abbr_name  String
+   proj_name_en  String
+   proj_name_th  String
+   unique_id String
+   risk_spectrum String
+}
+model User {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
+  username String
+  favorites Favorite[]
+}
+model Favorite{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  fav User @relation(fields: [favID],references: [id])
+  proj_id String @unique
+  favID String @db.ObjectId
+}
+
+model Compareinfomation{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  fundType String
+  risk_spectrum String
+  Feeder_Fund String
+  Currency_policy String
+  Dividend_payment_policy String
+  Sales_fees String
+  Buyback_fee String
+  Mutual_fund_expenses String
+  Minimum_initial_investment String
+  Minimum_next_investment String
+  Investment_registration_date String
+  Net_asset_value String
+}
+model Type_assets_invested{// สัดส่วนประเภททรัพย์สินที่ลงทุน
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+}
+
+model Top_five_investment_assets{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+}
+
+model Fees_charged_by_mutual_funds{//(% ต่อปีของ NAV)
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+}
+model Fees_charged_to_unitholders{//(% ของมูลค่าซื้อขาย)
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+}
+
+model Investment_allocation_in_the_top_five_issuers{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+}
+model Investment_allocation_according_to_credit_rating{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  data Json
+} 
+model Investment_In_Country{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  Countrydata Json
+}
+
+model AllProductInfo{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  proj_abbr_name String @unique
+  Allinfo Json
+}

@@ -7,6 +7,7 @@ const prisma = new PrismaClient()
 const app = express()
 app.use(cors());
 app.use(express.json())
+app.get("/", (req, res) => res.send("Express on Vercel"));
 //เอาทุกอัน
 app.get('/fund', async (req, res) => {
   const funds = await prisma.fund.findMany()
@@ -247,10 +248,11 @@ app.get('/allpro', async (req, res) => {
   const all = await prisma.allProductInfo.findMany()
   res.json(all)
 })
-const server = app.listen(3000)
+app.listen(5050, () => console.log("Server ready on port 5050."));
+module.exports = app;
 async function main() {
     // ... you will write your Prisma Client queries here
-    console.log("Server ready at: http://localhost:3000")
+    console.log("Server ready at: http://localhost:5050")
 }
 
 main()
