@@ -43,6 +43,8 @@ app.get('/filter', async (req, res) => {
       OR: [
         { proj_name_th: { contains: searchString as string } },
         { proj_name_en: { contains: searchString as string } },
+        { proj_abbr_name: { contains: searchString as string } },
+        { unique_id: { contains: searchString as string }}
       ],
       }
     : {}
@@ -77,6 +79,7 @@ app.get('/filter/product', async (req, res) => {
         { proj_name_th: { contains: searchString as string } },
         { proj_name_en: { contains: searchString as string } },
         { proj_abbr_name: { contains: searchString as string }},
+        { unique_id: { contains: searchString as string }}
       ],
       }
     : {}

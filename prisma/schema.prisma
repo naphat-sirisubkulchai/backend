@@ -100,6 +100,7 @@ model Investment_In_Country{
   Countrydata Json
 }
 
+
 model AllProductInfo{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   proj_id String    @unique
