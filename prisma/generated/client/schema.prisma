@@ -25,51 +25,51 @@ model Fund {
   last_upd_date String
 }
 model Product {
-   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-   proj_id String    @unique
-   proj_abbr_name  String @unique
-   proj_name_en  String
-   proj_name_th  String
-   unique_id String
-   risk_spectrum String
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id         String    @unique
+  proj_abbr_name  String    @unique
+  proj_name_en    String
+  proj_name_th    String
+  unique_id       String
+  data            Json
 }
-// model User {
-//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-//   email String @unique
-//   username String
-//   favorites Favorite[]
-// }
-// model Favorite{
-//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-//   fav User @relation(fields: [favID],references: [id])
-//   proj_id String @unique
-//   favID String @db.ObjectId
-// }
-model Favorite{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  username String @unique
+
+model Favorite {
+  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
+  user                 String    @unique
   proj_abbr_name_list  String[]
+  product_json_list Json[]
 }
+
+// model Page1compareinfomation{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_abbr_name  String @unique
+//   fundType String
+//   risk_spectrum String
+//   Feeder_Fund String
+//   Currency_policy String
+//   Dividend_payment_policy String
+//   Sales_fees String
+//   Buyback_fee String
+//   Mutual_fund_expenses String
+//   Minimum_initial_investment String
+//   Minimum_next_investment String
+//   Investment_registration_date String
+//   Net_asset_value String
+// }
+
 model Page1compareinfomation{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_abbr_name  String @unique
-  fundType String
-  risk_spectrum String
-  Feeder_Fund String
-  Currency_policy String
-  Dividend_payment_policy String
-  Sales_fees String
-  Buyback_fee String
-  Mutual_fund_expenses String
-  Minimum_initial_investment String
-  Minimum_next_investment String
-  Investment_registration_date String
-  Net_asset_value String
+  proj_id String    @unique
+  proj_abbr_name  String@unique
+  compareinfomation Json
 }
+
 model Page2Operating_results_and_dividends{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   proj_id String    @unique
   proj_abbr_name  String@unique
+  operating_results Json
 }
 model Page3topfiveCompareport{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId

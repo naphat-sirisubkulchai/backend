@@ -2670,7 +2670,6 @@ export namespace Prisma {
     proj_name_en: string | null
     proj_name_th: string | null
     unique_id: string | null
-    risk_spectrum: string | null
   }
 
   export type ProductMaxAggregateOutputType = {
@@ -2680,7 +2679,6 @@ export namespace Prisma {
     proj_name_en: string | null
     proj_name_th: string | null
     unique_id: string | null
-    risk_spectrum: string | null
   }
 
   export type ProductCountAggregateOutputType = {
@@ -2690,7 +2688,7 @@ export namespace Prisma {
     proj_name_en: number
     proj_name_th: number
     unique_id: number
-    risk_spectrum: number
+    data: number
     _all: number
   }
 
@@ -2702,7 +2700,6 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
-    risk_spectrum?: true
   }
 
   export type ProductMaxAggregateInputType = {
@@ -2712,7 +2709,6 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
-    risk_spectrum?: true
   }
 
   export type ProductCountAggregateInputType = {
@@ -2722,7 +2718,7 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
-    risk_spectrum?: true
+    data?: true
     _all?: true
   }
 
@@ -2805,7 +2801,7 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    risk_spectrum: string
+    data: JsonValue
     _count: ProductCountAggregateOutputType | null
     _min: ProductMinAggregateOutputType | null
     _max: ProductMaxAggregateOutputType | null
@@ -2832,7 +2828,7 @@ export namespace Prisma {
     proj_name_en?: boolean
     proj_name_th?: boolean
     unique_id?: boolean
-    risk_spectrum?: boolean
+    data?: boolean
   }, ExtArgs["result"]["product"]>
 
   export type ProductSelectScalar = {
@@ -2842,7 +2838,7 @@ export namespace Prisma {
     proj_name_en?: boolean
     proj_name_th?: boolean
     unique_id?: boolean
-    risk_spectrum?: boolean
+    data?: boolean
   }
 
 
@@ -2856,7 +2852,7 @@ export namespace Prisma {
       proj_name_en: string
       proj_name_th: string
       unique_id: string
-      risk_spectrum: string
+      data: Prisma.JsonValue
     }, ExtArgs["result"]["product"]>
     composites: {}
   }
@@ -3284,7 +3280,7 @@ export namespace Prisma {
     readonly proj_name_en: FieldRef<"Product", 'String'>
     readonly proj_name_th: FieldRef<"Product", 'String'>
     readonly unique_id: FieldRef<"Product", 'String'>
-    readonly risk_spectrum: FieldRef<"Product", 'String'>
+    readonly data: FieldRef<"Product", 'Json'>
   }
     
 
@@ -3613,36 +3609,38 @@ export namespace Prisma {
 
   export type FavoriteMinAggregateOutputType = {
     id: string | null
-    username: string | null
+    user: string | null
   }
 
   export type FavoriteMaxAggregateOutputType = {
     id: string | null
-    username: string | null
+    user: string | null
   }
 
   export type FavoriteCountAggregateOutputType = {
     id: number
-    username: number
+    user: number
     proj_abbr_name_list: number
+    product_json_list: number
     _all: number
   }
 
 
   export type FavoriteMinAggregateInputType = {
     id?: true
-    username?: true
+    user?: true
   }
 
   export type FavoriteMaxAggregateInputType = {
     id?: true
-    username?: true
+    user?: true
   }
 
   export type FavoriteCountAggregateInputType = {
     id?: true
-    username?: true
+    user?: true
     proj_abbr_name_list?: true
+    product_json_list?: true
     _all?: true
   }
 
@@ -3720,8 +3718,9 @@ export namespace Prisma {
 
   export type FavoriteGroupByOutputType = {
     id: string
-    username: string
+    user: string
     proj_abbr_name_list: string[]
+    product_json_list: JsonValue[]
     _count: FavoriteCountAggregateOutputType | null
     _min: FavoriteMinAggregateOutputType | null
     _max: FavoriteMaxAggregateOutputType | null
@@ -3743,14 +3742,16 @@ export namespace Prisma {
 
   export type FavoriteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    username?: boolean
+    user?: boolean
     proj_abbr_name_list?: boolean
+    product_json_list?: boolean
   }, ExtArgs["result"]["favorite"]>
 
   export type FavoriteSelectScalar = {
     id?: boolean
-    username?: boolean
+    user?: boolean
     proj_abbr_name_list?: boolean
+    product_json_list?: boolean
   }
 
 
@@ -3759,8 +3760,9 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      username: string
+      user: string
       proj_abbr_name_list: string[]
+      product_json_list: Prisma.JsonValue[]
     }, ExtArgs["result"]["favorite"]>
     composites: {}
   }
@@ -4183,8 +4185,9 @@ export namespace Prisma {
    */ 
   interface FavoriteFieldRefs {
     readonly id: FieldRef<"Favorite", 'String'>
-    readonly username: FieldRef<"Favorite", 'String'>
+    readonly user: FieldRef<"Favorite", 'String'>
     readonly proj_abbr_name_list: FieldRef<"Favorite", 'String[]'>
+    readonly product_json_list: FieldRef<"Favorite", 'Json[]'>
   }
     
 
@@ -4513,106 +4516,42 @@ export namespace Prisma {
 
   export type Page1compareinfomationMinAggregateOutputType = {
     id: string | null
+    proj_id: string | null
     proj_abbr_name: string | null
-    fundType: string | null
-    risk_spectrum: string | null
-    Feeder_Fund: string | null
-    Currency_policy: string | null
-    Dividend_payment_policy: string | null
-    Sales_fees: string | null
-    Buyback_fee: string | null
-    Mutual_fund_expenses: string | null
-    Minimum_initial_investment: string | null
-    Minimum_next_investment: string | null
-    Investment_registration_date: string | null
-    Net_asset_value: string | null
   }
 
   export type Page1compareinfomationMaxAggregateOutputType = {
     id: string | null
+    proj_id: string | null
     proj_abbr_name: string | null
-    fundType: string | null
-    risk_spectrum: string | null
-    Feeder_Fund: string | null
-    Currency_policy: string | null
-    Dividend_payment_policy: string | null
-    Sales_fees: string | null
-    Buyback_fee: string | null
-    Mutual_fund_expenses: string | null
-    Minimum_initial_investment: string | null
-    Minimum_next_investment: string | null
-    Investment_registration_date: string | null
-    Net_asset_value: string | null
   }
 
   export type Page1compareinfomationCountAggregateOutputType = {
     id: number
+    proj_id: number
     proj_abbr_name: number
-    fundType: number
-    risk_spectrum: number
-    Feeder_Fund: number
-    Currency_policy: number
-    Dividend_payment_policy: number
-    Sales_fees: number
-    Buyback_fee: number
-    Mutual_fund_expenses: number
-    Minimum_initial_investment: number
-    Minimum_next_investment: number
-    Investment_registration_date: number
-    Net_asset_value: number
+    compareinfomation: number
     _all: number
   }
 
 
   export type Page1compareinfomationMinAggregateInputType = {
     id?: true
+    proj_id?: true
     proj_abbr_name?: true
-    fundType?: true
-    risk_spectrum?: true
-    Feeder_Fund?: true
-    Currency_policy?: true
-    Dividend_payment_policy?: true
-    Sales_fees?: true
-    Buyback_fee?: true
-    Mutual_fund_expenses?: true
-    Minimum_initial_investment?: true
-    Minimum_next_investment?: true
-    Investment_registration_date?: true
-    Net_asset_value?: true
   }
 
   export type Page1compareinfomationMaxAggregateInputType = {
     id?: true
+    proj_id?: true
     proj_abbr_name?: true
-    fundType?: true
-    risk_spectrum?: true
-    Feeder_Fund?: true
-    Currency_policy?: true
-    Dividend_payment_policy?: true
-    Sales_fees?: true
-    Buyback_fee?: true
-    Mutual_fund_expenses?: true
-    Minimum_initial_investment?: true
-    Minimum_next_investment?: true
-    Investment_registration_date?: true
-    Net_asset_value?: true
   }
 
   export type Page1compareinfomationCountAggregateInputType = {
     id?: true
+    proj_id?: true
     proj_abbr_name?: true
-    fundType?: true
-    risk_spectrum?: true
-    Feeder_Fund?: true
-    Currency_policy?: true
-    Dividend_payment_policy?: true
-    Sales_fees?: true
-    Buyback_fee?: true
-    Mutual_fund_expenses?: true
-    Minimum_initial_investment?: true
-    Minimum_next_investment?: true
-    Investment_registration_date?: true
-    Net_asset_value?: true
+    compareinfomation?: true
     _all?: true
   }
 
@@ -4690,19 +4629,9 @@ export namespace Prisma {
 
   export type Page1compareinfomationGroupByOutputType = {
     id: string
+    proj_id: string
     proj_abbr_name: string
-    fundType: string
-    risk_spectrum: string
-    Feeder_Fund: string
-    Currency_policy: string
-    Dividend_payment_policy: string
-    Sales_fees: string
-    Buyback_fee: string
-    Mutual_fund_expenses: string
-    Minimum_initial_investment: string
-    Minimum_next_investment: string
-    Investment_registration_date: string
-    Net_asset_value: string
+    compareinfomation: JsonValue
     _count: Page1compareinfomationCountAggregateOutputType | null
     _min: Page1compareinfomationMinAggregateOutputType | null
     _max: Page1compareinfomationMaxAggregateOutputType | null
@@ -4724,36 +4653,16 @@ export namespace Prisma {
 
   export type Page1compareinfomationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    proj_id?: boolean
     proj_abbr_name?: boolean
-    fundType?: boolean
-    risk_spectrum?: boolean
-    Feeder_Fund?: boolean
-    Currency_policy?: boolean
-    Dividend_payment_policy?: boolean
-    Sales_fees?: boolean
-    Buyback_fee?: boolean
-    Mutual_fund_expenses?: boolean
-    Minimum_initial_investment?: boolean
-    Minimum_next_investment?: boolean
-    Investment_registration_date?: boolean
-    Net_asset_value?: boolean
+    compareinfomation?: boolean
   }, ExtArgs["result"]["page1compareinfomation"]>
 
   export type Page1compareinfomationSelectScalar = {
     id?: boolean
+    proj_id?: boolean
     proj_abbr_name?: boolean
-    fundType?: boolean
-    risk_spectrum?: boolean
-    Feeder_Fund?: boolean
-    Currency_policy?: boolean
-    Dividend_payment_policy?: boolean
-    Sales_fees?: boolean
-    Buyback_fee?: boolean
-    Mutual_fund_expenses?: boolean
-    Minimum_initial_investment?: boolean
-    Minimum_next_investment?: boolean
-    Investment_registration_date?: boolean
-    Net_asset_value?: boolean
+    compareinfomation?: boolean
   }
 
 
@@ -4762,19 +4671,9 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      proj_id: string
       proj_abbr_name: string
-      fundType: string
-      risk_spectrum: string
-      Feeder_Fund: string
-      Currency_policy: string
-      Dividend_payment_policy: string
-      Sales_fees: string
-      Buyback_fee: string
-      Mutual_fund_expenses: string
-      Minimum_initial_investment: string
-      Minimum_next_investment: string
-      Investment_registration_date: string
-      Net_asset_value: string
+      compareinfomation: Prisma.JsonValue
     }, ExtArgs["result"]["page1compareinfomation"]>
     composites: {}
   }
@@ -5197,19 +5096,9 @@ export namespace Prisma {
    */ 
   interface Page1compareinfomationFieldRefs {
     readonly id: FieldRef<"Page1compareinfomation", 'String'>
+    readonly proj_id: FieldRef<"Page1compareinfomation", 'String'>
     readonly proj_abbr_name: FieldRef<"Page1compareinfomation", 'String'>
-    readonly fundType: FieldRef<"Page1compareinfomation", 'String'>
-    readonly risk_spectrum: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Feeder_Fund: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Currency_policy: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Dividend_payment_policy: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Sales_fees: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Buyback_fee: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Mutual_fund_expenses: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Minimum_initial_investment: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Minimum_next_investment: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Investment_registration_date: FieldRef<"Page1compareinfomation", 'String'>
-    readonly Net_asset_value: FieldRef<"Page1compareinfomation", 'String'>
+    readonly compareinfomation: FieldRef<"Page1compareinfomation", 'Json'>
   }
     
 
@@ -5552,6 +5441,7 @@ export namespace Prisma {
     id: number
     proj_id: number
     proj_abbr_name: number
+    operating_results: number
     _all: number
   }
 
@@ -5572,6 +5462,7 @@ export namespace Prisma {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
+    operating_results?: true
     _all?: true
   }
 
@@ -5651,6 +5542,7 @@ export namespace Prisma {
     id: string
     proj_id: string
     proj_abbr_name: string
+    operating_results: JsonValue
     _count: Page2Operating_results_and_dividendsCountAggregateOutputType | null
     _min: Page2Operating_results_and_dividendsMinAggregateOutputType | null
     _max: Page2Operating_results_and_dividendsMaxAggregateOutputType | null
@@ -5674,12 +5566,14 @@ export namespace Prisma {
     id?: boolean
     proj_id?: boolean
     proj_abbr_name?: boolean
+    operating_results?: boolean
   }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
 
   export type Page2Operating_results_and_dividendsSelectScalar = {
     id?: boolean
     proj_id?: boolean
     proj_abbr_name?: boolean
+    operating_results?: boolean
   }
 
 
@@ -5690,6 +5584,7 @@ export namespace Prisma {
       id: string
       proj_id: string
       proj_abbr_name: string
+      operating_results: Prisma.JsonValue
     }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
     composites: {}
   }
@@ -6114,6 +6009,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Page2Operating_results_and_dividends", 'String'>
     readonly proj_id: FieldRef<"Page2Operating_results_and_dividends", 'String'>
     readonly proj_abbr_name: FieldRef<"Page2Operating_results_and_dividends", 'String'>
+    readonly operating_results: FieldRef<"Page2Operating_results_and_dividends", 'Json'>
   }
     
 
@@ -11022,7 +10918,7 @@ export namespace Prisma {
     proj_name_en: 'proj_name_en',
     proj_name_th: 'proj_name_th',
     unique_id: 'unique_id',
-    risk_spectrum: 'risk_spectrum'
+    data: 'data'
   };
 
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -11030,8 +10926,9 @@ export namespace Prisma {
 
   export const FavoriteScalarFieldEnum: {
     id: 'id',
-    username: 'username',
-    proj_abbr_name_list: 'proj_abbr_name_list'
+    user: 'user',
+    proj_abbr_name_list: 'proj_abbr_name_list',
+    product_json_list: 'product_json_list'
   };
 
   export type FavoriteScalarFieldEnum = (typeof FavoriteScalarFieldEnum)[keyof typeof FavoriteScalarFieldEnum]
@@ -11039,19 +10936,9 @@ export namespace Prisma {
 
   export const Page1compareinfomationScalarFieldEnum: {
     id: 'id',
+    proj_id: 'proj_id',
     proj_abbr_name: 'proj_abbr_name',
-    fundType: 'fundType',
-    risk_spectrum: 'risk_spectrum',
-    Feeder_Fund: 'Feeder_Fund',
-    Currency_policy: 'Currency_policy',
-    Dividend_payment_policy: 'Dividend_payment_policy',
-    Sales_fees: 'Sales_fees',
-    Buyback_fee: 'Buyback_fee',
-    Mutual_fund_expenses: 'Mutual_fund_expenses',
-    Minimum_initial_investment: 'Minimum_initial_investment',
-    Minimum_next_investment: 'Minimum_next_investment',
-    Investment_registration_date: 'Investment_registration_date',
-    Net_asset_value: 'Net_asset_value'
+    compareinfomation: 'compareinfomation'
   };
 
   export type Page1compareinfomationScalarFieldEnum = (typeof Page1compareinfomationScalarFieldEnum)[keyof typeof Page1compareinfomationScalarFieldEnum]
@@ -11060,7 +10947,8 @@ export namespace Prisma {
   export const Page2Operating_results_and_dividendsScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    proj_abbr_name: 'proj_abbr_name'
+    proj_abbr_name: 'proj_abbr_name',
+    operating_results: 'operating_results'
   };
 
   export type Page2Operating_results_and_dividendsScalarFieldEnum = (typeof Page2Operating_results_and_dividendsScalarFieldEnum)[keyof typeof Page2Operating_results_and_dividendsScalarFieldEnum]
@@ -11156,6 +11044,13 @@ export namespace Prisma {
    * Reference to a field of type 'Json'
    */
   export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'Json[]'
+   */
+  export type ListJsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json[]'>
     
 
 
@@ -11278,7 +11173,7 @@ export namespace Prisma {
     proj_name_en?: StringFilter<"Product"> | string
     proj_name_th?: StringFilter<"Product"> | string
     unique_id?: StringFilter<"Product"> | string
-    risk_spectrum?: StringFilter<"Product"> | string
+    data?: JsonFilter<"Product">
   }
 
   export type ProductOrderByWithRelationInput = {
@@ -11288,7 +11183,7 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    risk_spectrum?: SortOrder
+    data?: SortOrder
   }
 
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
@@ -11301,7 +11196,7 @@ export namespace Prisma {
     proj_name_en?: StringFilter<"Product"> | string
     proj_name_th?: StringFilter<"Product"> | string
     unique_id?: StringFilter<"Product"> | string
-    risk_spectrum?: StringFilter<"Product"> | string
+    data?: JsonFilter<"Product">
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type ProductOrderByWithAggregationInput = {
@@ -11311,7 +11206,7 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    risk_spectrum?: SortOrder
+    data?: SortOrder
     _count?: ProductCountOrderByAggregateInput
     _max?: ProductMaxOrderByAggregateInput
     _min?: ProductMinOrderByAggregateInput
@@ -11327,7 +11222,7 @@ export namespace Prisma {
     proj_name_en?: StringWithAggregatesFilter<"Product"> | string
     proj_name_th?: StringWithAggregatesFilter<"Product"> | string
     unique_id?: StringWithAggregatesFilter<"Product"> | string
-    risk_spectrum?: StringWithAggregatesFilter<"Product"> | string
+    data?: JsonWithAggregatesFilter<"Product">
   }
 
   export type FavoriteWhereInput = {
@@ -11335,29 +11230,33 @@ export namespace Prisma {
     OR?: FavoriteWhereInput[]
     NOT?: FavoriteWhereInput | FavoriteWhereInput[]
     id?: StringFilter<"Favorite"> | string
-    username?: StringFilter<"Favorite"> | string
+    user?: StringFilter<"Favorite"> | string
     proj_abbr_name_list?: StringNullableListFilter<"Favorite">
+    product_json_list?: JsonNullableListFilter<"Favorite">
   }
 
   export type FavoriteOrderByWithRelationInput = {
     id?: SortOrder
-    username?: SortOrder
+    user?: SortOrder
     proj_abbr_name_list?: SortOrder
+    product_json_list?: SortOrder
   }
 
   export type FavoriteWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    username?: string
+    user?: string
     AND?: FavoriteWhereInput | FavoriteWhereInput[]
     OR?: FavoriteWhereInput[]
     NOT?: FavoriteWhereInput | FavoriteWhereInput[]
     proj_abbr_name_list?: StringNullableListFilter<"Favorite">
-  }, "id" | "username">
+    product_json_list?: JsonNullableListFilter<"Favorite">
+  }, "id" | "user">
 
   export type FavoriteOrderByWithAggregationInput = {
     id?: SortOrder
-    username?: SortOrder
+    user?: SortOrder
     proj_abbr_name_list?: SortOrder
+    product_json_list?: SortOrder
     _count?: FavoriteCountOrderByAggregateInput
     _max?: FavoriteMaxOrderByAggregateInput
     _min?: FavoriteMinOrderByAggregateInput
@@ -11368,8 +11267,9 @@ export namespace Prisma {
     OR?: FavoriteScalarWhereWithAggregatesInput[]
     NOT?: FavoriteScalarWhereWithAggregatesInput | FavoriteScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Favorite"> | string
-    username?: StringWithAggregatesFilter<"Favorite"> | string
+    user?: StringWithAggregatesFilter<"Favorite"> | string
     proj_abbr_name_list?: StringNullableListFilter<"Favorite">
+    product_json_list?: JsonNullableListFilter<"Favorite">
   }
 
   export type Page1compareinfomationWhereInput = {
@@ -11377,73 +11277,33 @@ export namespace Prisma {
     OR?: Page1compareinfomationWhereInput[]
     NOT?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
     id?: StringFilter<"Page1compareinfomation"> | string
+    proj_id?: StringFilter<"Page1compareinfomation"> | string
     proj_abbr_name?: StringFilter<"Page1compareinfomation"> | string
-    fundType?: StringFilter<"Page1compareinfomation"> | string
-    risk_spectrum?: StringFilter<"Page1compareinfomation"> | string
-    Feeder_Fund?: StringFilter<"Page1compareinfomation"> | string
-    Currency_policy?: StringFilter<"Page1compareinfomation"> | string
-    Dividend_payment_policy?: StringFilter<"Page1compareinfomation"> | string
-    Sales_fees?: StringFilter<"Page1compareinfomation"> | string
-    Buyback_fee?: StringFilter<"Page1compareinfomation"> | string
-    Mutual_fund_expenses?: StringFilter<"Page1compareinfomation"> | string
-    Minimum_initial_investment?: StringFilter<"Page1compareinfomation"> | string
-    Minimum_next_investment?: StringFilter<"Page1compareinfomation"> | string
-    Investment_registration_date?: StringFilter<"Page1compareinfomation"> | string
-    Net_asset_value?: StringFilter<"Page1compareinfomation"> | string
+    compareinfomation?: JsonFilter<"Page1compareinfomation">
   }
 
   export type Page1compareinfomationOrderByWithRelationInput = {
     id?: SortOrder
+    proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
+    compareinfomation?: SortOrder
   }
 
   export type Page1compareinfomationWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    proj_id?: string
     proj_abbr_name?: string
     AND?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
     OR?: Page1compareinfomationWhereInput[]
     NOT?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
-    fundType?: StringFilter<"Page1compareinfomation"> | string
-    risk_spectrum?: StringFilter<"Page1compareinfomation"> | string
-    Feeder_Fund?: StringFilter<"Page1compareinfomation"> | string
-    Currency_policy?: StringFilter<"Page1compareinfomation"> | string
-    Dividend_payment_policy?: StringFilter<"Page1compareinfomation"> | string
-    Sales_fees?: StringFilter<"Page1compareinfomation"> | string
-    Buyback_fee?: StringFilter<"Page1compareinfomation"> | string
-    Mutual_fund_expenses?: StringFilter<"Page1compareinfomation"> | string
-    Minimum_initial_investment?: StringFilter<"Page1compareinfomation"> | string
-    Minimum_next_investment?: StringFilter<"Page1compareinfomation"> | string
-    Investment_registration_date?: StringFilter<"Page1compareinfomation"> | string
-    Net_asset_value?: StringFilter<"Page1compareinfomation"> | string
-  }, "id" | "proj_abbr_name">
+    compareinfomation?: JsonFilter<"Page1compareinfomation">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
   export type Page1compareinfomationOrderByWithAggregationInput = {
     id?: SortOrder
+    proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
+    compareinfomation?: SortOrder
     _count?: Page1compareinfomationCountOrderByAggregateInput
     _max?: Page1compareinfomationMaxOrderByAggregateInput
     _min?: Page1compareinfomationMinOrderByAggregateInput
@@ -11454,19 +11314,9 @@ export namespace Prisma {
     OR?: Page1compareinfomationScalarWhereWithAggregatesInput[]
     NOT?: Page1compareinfomationScalarWhereWithAggregatesInput | Page1compareinfomationScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    proj_id?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
     proj_abbr_name?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    fundType?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    risk_spectrum?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Feeder_Fund?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Currency_policy?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Dividend_payment_policy?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Sales_fees?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Buyback_fee?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Mutual_fund_expenses?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Minimum_initial_investment?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Minimum_next_investment?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Investment_registration_date?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
-    Net_asset_value?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    compareinfomation?: JsonWithAggregatesFilter<"Page1compareinfomation">
   }
 
   export type Page2Operating_results_and_dividendsWhereInput = {
@@ -11476,12 +11326,14 @@ export namespace Prisma {
     id?: StringFilter<"Page2Operating_results_and_dividends"> | string
     proj_id?: StringFilter<"Page2Operating_results_and_dividends"> | string
     proj_abbr_name?: StringFilter<"Page2Operating_results_and_dividends"> | string
+    operating_results?: JsonFilter<"Page2Operating_results_and_dividends">
   }
 
   export type Page2Operating_results_and_dividendsOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    operating_results?: SortOrder
   }
 
   export type Page2Operating_results_and_dividendsWhereUniqueInput = Prisma.AtLeast<{
@@ -11491,12 +11343,14 @@ export namespace Prisma {
     AND?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
     OR?: Page2Operating_results_and_dividendsWhereInput[]
     NOT?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
+    operating_results?: JsonFilter<"Page2Operating_results_and_dividends">
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type Page2Operating_results_and_dividendsOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    operating_results?: SortOrder
     _count?: Page2Operating_results_and_dividendsCountOrderByAggregateInput
     _max?: Page2Operating_results_and_dividendsMaxOrderByAggregateInput
     _min?: Page2Operating_results_and_dividendsMinOrderByAggregateInput
@@ -11509,6 +11363,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
     proj_id?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
     proj_abbr_name?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
+    operating_results?: JsonWithAggregatesFilter<"Page2Operating_results_and_dividends">
   }
 
   export type Page3topfiveCompareportWhereInput = {
@@ -11866,7 +11721,7 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    risk_spectrum: string
+    data: InputJsonValue
   }
 
   export type ProductUncheckedCreateInput = {
@@ -11876,7 +11731,7 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    risk_spectrum: string
+    data: InputJsonValue
   }
 
   export type ProductUpdateInput = {
@@ -11885,7 +11740,7 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    data?: InputJsonValue | InputJsonValue
   }
 
   export type ProductUncheckedUpdateInput = {
@@ -11894,7 +11749,7 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    data?: InputJsonValue | InputJsonValue
   }
 
   export type ProductCreateManyInput = {
@@ -11904,7 +11759,7 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    risk_spectrum: string
+    data: InputJsonValue
   }
 
   export type ProductUpdateManyMutationInput = {
@@ -11913,7 +11768,7 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    data?: InputJsonValue | InputJsonValue
   }
 
   export type ProductUncheckedUpdateManyInput = {
@@ -11922,198 +11777,142 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    data?: InputJsonValue | InputJsonValue
   }
 
   export type FavoriteCreateInput = {
     id?: string
-    username: string
+    user: string
     proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteCreateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteUncheckedCreateInput = {
     id?: string
-    username: string
+    user: string
     proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteCreateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteUpdateInput = {
-    username?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
     proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteUpdateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteUncheckedUpdateInput = {
-    username?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
     proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteUpdateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteCreateManyInput = {
     id?: string
-    username: string
+    user: string
     proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteCreateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteUpdateManyMutationInput = {
-    username?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
     proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteUpdateproduct_json_listInput | InputJsonValue[]
   }
 
   export type FavoriteUncheckedUpdateManyInput = {
-    username?: StringFieldUpdateOperationsInput | string
+    user?: StringFieldUpdateOperationsInput | string
     proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
+    product_json_list?: FavoriteUpdateproduct_json_listInput | InputJsonValue[]
   }
 
   export type Page1compareinfomationCreateInput = {
     id?: string
+    proj_id: string
     proj_abbr_name: string
-    fundType: string
-    risk_spectrum: string
-    Feeder_Fund: string
-    Currency_policy: string
-    Dividend_payment_policy: string
-    Sales_fees: string
-    Buyback_fee: string
-    Mutual_fund_expenses: string
-    Minimum_initial_investment: string
-    Minimum_next_investment: string
-    Investment_registration_date: string
-    Net_asset_value: string
+    compareinfomation: InputJsonValue
   }
 
   export type Page1compareinfomationUncheckedCreateInput = {
     id?: string
+    proj_id: string
     proj_abbr_name: string
-    fundType: string
-    risk_spectrum: string
-    Feeder_Fund: string
-    Currency_policy: string
-    Dividend_payment_policy: string
-    Sales_fees: string
-    Buyback_fee: string
-    Mutual_fund_expenses: string
-    Minimum_initial_investment: string
-    Minimum_next_investment: string
-    Investment_registration_date: string
-    Net_asset_value: string
+    compareinfomation: InputJsonValue
   }
 
   export type Page1compareinfomationUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fundType?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
-    Feeder_Fund?: StringFieldUpdateOperationsInput | string
-    Currency_policy?: StringFieldUpdateOperationsInput | string
-    Dividend_payment_policy?: StringFieldUpdateOperationsInput | string
-    Sales_fees?: StringFieldUpdateOperationsInput | string
-    Buyback_fee?: StringFieldUpdateOperationsInput | string
-    Mutual_fund_expenses?: StringFieldUpdateOperationsInput | string
-    Minimum_initial_investment?: StringFieldUpdateOperationsInput | string
-    Minimum_next_investment?: StringFieldUpdateOperationsInput | string
-    Investment_registration_date?: StringFieldUpdateOperationsInput | string
-    Net_asset_value?: StringFieldUpdateOperationsInput | string
+    compareinfomation?: InputJsonValue | InputJsonValue
   }
 
   export type Page1compareinfomationUncheckedUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fundType?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
-    Feeder_Fund?: StringFieldUpdateOperationsInput | string
-    Currency_policy?: StringFieldUpdateOperationsInput | string
-    Dividend_payment_policy?: StringFieldUpdateOperationsInput | string
-    Sales_fees?: StringFieldUpdateOperationsInput | string
-    Buyback_fee?: StringFieldUpdateOperationsInput | string
-    Mutual_fund_expenses?: StringFieldUpdateOperationsInput | string
-    Minimum_initial_investment?: StringFieldUpdateOperationsInput | string
-    Minimum_next_investment?: StringFieldUpdateOperationsInput | string
-    Investment_registration_date?: StringFieldUpdateOperationsInput | string
-    Net_asset_value?: StringFieldUpdateOperationsInput | string
+    compareinfomation?: InputJsonValue | InputJsonValue
   }
 
   export type Page1compareinfomationCreateManyInput = {
     id?: string
+    proj_id: string
     proj_abbr_name: string
-    fundType: string
-    risk_spectrum: string
-    Feeder_Fund: string
-    Currency_policy: string
-    Dividend_payment_policy: string
-    Sales_fees: string
-    Buyback_fee: string
-    Mutual_fund_expenses: string
-    Minimum_initial_investment: string
-    Minimum_next_investment: string
-    Investment_registration_date: string
-    Net_asset_value: string
+    compareinfomation: InputJsonValue
   }
 
   export type Page1compareinfomationUpdateManyMutationInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fundType?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
-    Feeder_Fund?: StringFieldUpdateOperationsInput | string
-    Currency_policy?: StringFieldUpdateOperationsInput | string
-    Dividend_payment_policy?: StringFieldUpdateOperationsInput | string
-    Sales_fees?: StringFieldUpdateOperationsInput | string
-    Buyback_fee?: StringFieldUpdateOperationsInput | string
-    Mutual_fund_expenses?: StringFieldUpdateOperationsInput | string
-    Minimum_initial_investment?: StringFieldUpdateOperationsInput | string
-    Minimum_next_investment?: StringFieldUpdateOperationsInput | string
-    Investment_registration_date?: StringFieldUpdateOperationsInput | string
-    Net_asset_value?: StringFieldUpdateOperationsInput | string
+    compareinfomation?: InputJsonValue | InputJsonValue
   }
 
   export type Page1compareinfomationUncheckedUpdateManyInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fundType?: StringFieldUpdateOperationsInput | string
-    risk_spectrum?: StringFieldUpdateOperationsInput | string
-    Feeder_Fund?: StringFieldUpdateOperationsInput | string
-    Currency_policy?: StringFieldUpdateOperationsInput | string
-    Dividend_payment_policy?: StringFieldUpdateOperationsInput | string
-    Sales_fees?: StringFieldUpdateOperationsInput | string
-    Buyback_fee?: StringFieldUpdateOperationsInput | string
-    Mutual_fund_expenses?: StringFieldUpdateOperationsInput | string
-    Minimum_initial_investment?: StringFieldUpdateOperationsInput | string
-    Minimum_next_investment?: StringFieldUpdateOperationsInput | string
-    Investment_registration_date?: StringFieldUpdateOperationsInput | string
-    Net_asset_value?: StringFieldUpdateOperationsInput | string
+    compareinfomation?: InputJsonValue | InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsCreateInput = {
     id?: string
     proj_id: string
     proj_abbr_name: string
+    operating_results: InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsUncheckedCreateInput = {
     id?: string
     proj_id: string
     proj_abbr_name: string
+    operating_results: InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    operating_results?: InputJsonValue | InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    operating_results?: InputJsonValue | InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsCreateManyInput = {
     id?: string
     proj_id: string
     proj_abbr_name: string
+    operating_results: InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    operating_results?: InputJsonValue | InputJsonValue
   }
 
   export type Page2Operating_results_and_dividendsUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    operating_results?: InputJsonValue | InputJsonValue
   }
 
   export type Page3topfiveCompareportCreateInput = {
@@ -12463,6 +12262,17 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
     isSet?: boolean
   }
+  export type JsonFilter<$PrismaModel = never> = 
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+  }
 
   export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
@@ -12471,7 +12281,7 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    risk_spectrum?: SortOrder
+    data?: SortOrder
   }
 
   export type ProductMaxOrderByAggregateInput = {
@@ -12481,7 +12291,6 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    risk_spectrum?: SortOrder
   }
 
   export type ProductMinOrderByAggregateInput = {
@@ -12491,7 +12300,20 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    risk_spectrum?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> = 
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
   }
 
   export type StringNullableListFilter<$PrismaModel = never> = {
@@ -12501,78 +12323,62 @@ export namespace Prisma {
     hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
     isEmpty?: boolean
   }
+  export type JsonNullableListFilter<$PrismaModel = never> = 
+    | PatchUndefined<
+        Either<Required<JsonNullableListFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableListFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableListFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue[] | ListJsonFieldRefInput<$PrismaModel> | null
+    has?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    hasEvery?: InputJsonValue[] | ListJsonFieldRefInput<$PrismaModel>
+    hasSome?: InputJsonValue[] | ListJsonFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
 
   export type FavoriteCountOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
+    user?: SortOrder
     proj_abbr_name_list?: SortOrder
+    product_json_list?: SortOrder
   }
 
   export type FavoriteMaxOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
+    user?: SortOrder
   }
 
   export type FavoriteMinOrderByAggregateInput = {
     id?: SortOrder
-    username?: SortOrder
+    user?: SortOrder
   }
 
   export type Page1compareinfomationCountOrderByAggregateInput = {
     id?: SortOrder
+    proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
+    compareinfomation?: SortOrder
   }
 
   export type Page1compareinfomationMaxOrderByAggregateInput = {
     id?: SortOrder
+    proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
   }
 
   export type Page1compareinfomationMinOrderByAggregateInput = {
     id?: SortOrder
+    proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
   }
 
   export type Page2Operating_results_and_dividendsCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    operating_results?: SortOrder
   }
 
   export type Page2Operating_results_and_dividendsMaxOrderByAggregateInput = {
@@ -12585,17 +12391,6 @@ export namespace Prisma {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-  }
-  export type JsonFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
   }
 
   export type Page3topfiveCompareportCountOrderByAggregateInput = {
@@ -12615,20 +12410,6 @@ export namespace Prisma {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-  }
-  export type JsonWithAggregatesFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedJsonFilter<$PrismaModel>
-    _max?: NestedJsonFilter<$PrismaModel>
   }
 
   export type Page3typeCompareportCountOrderByAggregateInput = {
@@ -12721,9 +12502,18 @@ export namespace Prisma {
     set: string[]
   }
 
+  export type FavoriteCreateproduct_json_listInput = {
+    set: InputJsonValue[]
+  }
+
   export type FavoriteUpdateproj_abbr_name_listInput = {
     set?: string[]
     push?: string | string[]
+  }
+
+  export type FavoriteUpdateproduct_json_listInput = {
+    set?: InputJsonValue[]
+    push?: InputJsonValue | InputJsonValue[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {

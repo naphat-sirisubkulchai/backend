@@ -135,36 +135,28 @@ exports.Prisma.ProductScalarFieldEnum = {
   proj_name_en: 'proj_name_en',
   proj_name_th: 'proj_name_th',
   unique_id: 'unique_id',
-  risk_spectrum: 'risk_spectrum'
+  data: 'data'
 };
 
 exports.Prisma.FavoriteScalarFieldEnum = {
   id: 'id',
-  username: 'username',
-  proj_abbr_name_list: 'proj_abbr_name_list'
+  user: 'user',
+  proj_abbr_name_list: 'proj_abbr_name_list',
+  product_json_list: 'product_json_list'
 };
 
 exports.Prisma.Page1compareinfomationScalarFieldEnum = {
   id: 'id',
+  proj_id: 'proj_id',
   proj_abbr_name: 'proj_abbr_name',
-  fundType: 'fundType',
-  risk_spectrum: 'risk_spectrum',
-  Feeder_Fund: 'Feeder_Fund',
-  Currency_policy: 'Currency_policy',
-  Dividend_payment_policy: 'Dividend_payment_policy',
-  Sales_fees: 'Sales_fees',
-  Buyback_fee: 'Buyback_fee',
-  Mutual_fund_expenses: 'Mutual_fund_expenses',
-  Minimum_initial_investment: 'Minimum_initial_investment',
-  Minimum_next_investment: 'Minimum_next_investment',
-  Investment_registration_date: 'Investment_registration_date',
-  Net_asset_value: 'Net_asset_value'
+  compareinfomation: 'compareinfomation'
 };
 
 exports.Prisma.Page2Operating_results_and_dividendsScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  proj_abbr_name: 'proj_abbr_name'
+  proj_abbr_name: 'proj_abbr_name',
+  operating_results: 'operating_results'
 };
 
 exports.Prisma.Page3topfiveCompareportScalarFieldEnum = {

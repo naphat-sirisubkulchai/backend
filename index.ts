@@ -1,6 +1,7 @@
 import { Prisma, PrismaClient } from '@prisma/client'
 import express from 'express'
 import cors from 'cors';
+import { json } from 'stream/consumers';
 
 const prisma = new PrismaClient()
 
@@ -9,58 +10,58 @@ app.use(cors());
 app.use(express.json())
 app.get("/", (req, res) => res.send("Express on Vercel"));
 //เอาทุกอัน
-app.get('/fund', async (req, res) => {
-  const funds = await prisma.fund.findMany()
-  res.json(funds)
-})
+// app.get('/fund', async (req, res) => {
+//   const funds = await prisma.fund.findMany()
+//   res.json(funds)
+// })
 
-//เอาอันที่ไอดีตรง
-app.get('/fund/:unique_id', async (req, res) => {
-  try {
-    const { unique_id } = req.params;
+// //เอาอันที่ไอดีตรง
+// app.get('/fund/:unique_id', async (req, res) => {
+//   try {
+//     const { unique_id } = req.params;
 
-    // Use Prisma to query the database
-    const fund = await prisma.fund.findMany({
-      where: { unique_id},
-    }); 
+//     // Use Prisma to query the database
+//     const fund = await prisma.fund.findMany({
+//       where: { unique_id},
+//     }); 
 
-    if (!fund) {
-      return res.status(404).json({ error: 'Fund not found' });
-    }
+//     if (!fund) {
+//       return res.status(404).json({ error: 'Fund not found' });
+//     }
 
-    res.json(fund);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-// /filter?searchString={searchString}&take={take}&skip={skip}&orderBy={orderBy}
-app.get('/filter', async (req, res) => {
-  const { searchString, skip, take, orderBy } = req.query
+//     res.json(fund);
+//   } catch (error) {
+//     console.error('Error:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+// // /filter?searchString={searchString}&take={take}&skip={skip}&orderBy={orderBy}
+// app.get('/filter', async (req, res) => {
+//   const { searchString, skip, take, orderBy } = req.query
 
-  const or: Prisma.FundWhereInput = searchString
-    ? {
-      OR: [
-        { proj_name_th: { contains: searchString as string } },
-        { proj_name_en: { contains: searchString as string } },
-        { proj_abbr_name: { contains: searchString as string } },
-        { unique_id: { contains: searchString as string }}
-      ],
-      }
-    : {}
-  const funds = await prisma.fund.findMany({
-    where: {
-      ...or,
-    },
-    take: Number(take) || undefined,
-    skip: Number(skip) || undefined,
-    orderBy: {
-      proj_name_en: orderBy as Prisma.SortOrder,
-    },
-  })
+//   const or: Prisma.FundWhereInput = searchString
+//     ? {
+//       OR: [
+//         { proj_name_th: { contains: searchString as string } },
+//         { proj_name_en: { contains: searchString as string } },
+//         { proj_abbr_name: { contains: searchString as string } },
+//         { unique_id: { contains: searchString as string }}
+//       ],
+//       }
+//     : {}
+//   const funds = await prisma.fund.findMany({
+//     where: {
+//       ...or,
+//     },
+//     take: Number(take) || undefined,
+//     skip: Number(skip) || undefined,
+//     orderBy: {
+//       proj_name_en: orderBy as Prisma.SortOrder,
+//     },
+//   })
 
-  res.json(funds)
-})
+//   res.json(funds)
+// })
 
 ///////////////////////////////// product /////////////////////////////////////////
 //เอาทุกอัน
@@ -105,13 +106,13 @@ app.get('/fav', async (req, res) => {
 })
 
 
-app.get('/fav/:username', async (req, res) => {
+app.get('/fav/:user', async (req, res) => {
   try {
-    const { username } = req.params;
+    const { user } = req.params;
 
     // Use Prisma to query the database
     const fav = await prisma.favorite.findMany({
-      where: { username},
+      where: { user},
     }); 
 
     if (!fav) {
@@ -125,101 +126,104 @@ app.get('/fav/:username', async (req, res) => {
   }
 });
 
-app.post(`/fav/add/:username`, async (req, res) => {
-  const { username } = req.params;
-  const { proj_abbr_name } = req.body;
+// app.post(`/fav/add/:user`, async (req, res) => {
+//   const { user } = req.params;
+//   const { proj_abbr_name } = req.body;
+//   try {
+//     // Check if the username already exists
+//     const existingFavorite = await prisma.favorite.findFirst({
+//       where: {
+//         user: String(user)
+//       }
+//     });
+
+//     let post;
+//     if (existingFavorite) {
+//       if (proj_abbr_name && proj_abbr_name !== "-") {
+//         // Update existing record by adding proj_abbr_name to the list
+//         post = await prisma.favorite.update({
+//           where: {
+//             id: existingFavorite.id
+//           },
+//           data: {
+//             proj_abbr_name_list: {
+//               push: proj_abbr_name
+//             }
+//           }
+//         });
+//       } else {
+//         // Do nothing, return the existing record
+//         post = existingFavorite;
+//       }
+//     } else {
+//       // Create new record if username doesn't exist
+//       if (proj_abbr_name && proj_abbr_name !== "-") {
+//         post = await prisma.favorite.create({
+//           data: {
+//             user: String(user),
+//             proj_abbr_name_list: [proj_abbr_name]
+//           }
+//         });
+//       } else {
+//         post = await prisma.favorite.create({
+//           data: {
+//             user: String(user),
+//             proj_abbr_name_list: []
+//           }
+//         });
+//       }
+//     }
+
+//     res.json(post);
+//   } catch (error) {
+//     res.status(500).json({ error: "An error occurred while adding the favorite." });
+//   }
+// });
+app.post(`/fav/add/:user`, async (req, res) => {
   try {
-    // Check if the username already exists
-    const existingFavorite = await prisma.favorite.findFirst({
-      where: {
-        username: String(username)
-      }
-    });
+    const { user } = req.params;
+    const { proj_abbr_name } = req.body;
 
-    let post;
-    if (existingFavorite) {
-      if (proj_abbr_name && proj_abbr_name !== "-") {
-        // Update existing record by adding proj_abbr_name to the list
-        post = await prisma.favorite.update({
-          where: {
-            id: existingFavorite.id
-          },
+    let proj_abbr_name_list: string[] = [];
+
+    if (proj_abbr_name !== "-") {
+      proj_abbr_name_list.push(proj_abbr_name);
+
+      // Fetch data from Product model
+      const productData = await prisma.product.findUnique({
+        where: { proj_abbr_name }
+      });
+
+      if (productData) {
+        // Assuming productData is defined, you can push it to product_json_list
+        // If proj_abbr_name is not found, productData will be null, handle the case accordingly
+        // Assuming productData has to be transformed into JSON
+        const productJson = productData
+        await prisma.favorite.create({
           data: {
-            proj_abbr_name_list: {
-              push: proj_abbr_name
-            }
+            user,
+            proj_abbr_name_list,
+            product_json_list: [productJson]
           }
         });
       } else {
-        // Do nothing, return the existing record
-        post = existingFavorite;
+        throw new Error(`No product found with proj_abbr_name ${proj_abbr_name}`);
       }
-    } else {
-      // Create new record if username doesn't exist
-      if (proj_abbr_name && proj_abbr_name !== "-") {
-        post = await prisma.favorite.create({
-          data: {
-            username: String(username),
-            proj_abbr_name_list: [proj_abbr_name]
-          }
-        });
-      } else {
-        post = await prisma.favorite.create({
-          data: {
-            username: String(username),
-            proj_abbr_name_list: []
-          }
-        });
-      }
-    }
+    } // else, proj_abbr_name is "-", so no need to do anything with proj_abbr_name_list
 
-    res.json(post);
+    res.status(200).json({ message: 'Favorite added successfully' });
   } catch (error) {
-    res.status(500).json({ error: "An error occurred while adding the favorite." });
+    res.status(500).json({ error:"An error occurred while adding the favorite."  });
   }
 });
 
-// app.put(`/fav/update/:username/:proj_abbr_name`, async (req, res) => {
-//   const { username, proj_abbr_name } = req.params;
-//   const { new_proj_abbr_name } = req.body;
-//   try {
-//     // Fetch the record based on username and proj_abbr_name
-//     const existingFavorite = await prisma.favorite.findFirst({
-//       where: {
-//         username: String(username),
-//         proj_abbr_name_list: {
-//           has: proj_abbr_name // Checking if proj_abbr_name exists in the list
-//         }
-//       }
-//     });
-
-//     if (!existingFavorite) {
-//       return res.status(404).json({ error: "Favorite record not found." });
-//     }
-
-//     // Update the proj_abbr_name_list array
-//     const updatedFavorite = await prisma.favorite.update({
-//       where: {
-//         id: existingFavorite.id // Use the ID to uniquely identify the record
-//       },
-//       data: {
-//         proj_abbr_name_list: {
-//           set: [new_proj_abbr_name]
-//         }
-//       }
-//     });
-//     res.json(updatedFavorite);
-//   } catch (error) {
-//     res.status(500).json({ error: "An error occurred while updating the favorite." });
-//   }
-// });
-app.delete(`/fav/delete/:username/:proj_abbr_name`, async (req, res) => {
-  const { username, proj_abbr_name } = req.params;
+app.delete(`/fav/delete/:user/:proj_abbr_name`, async (req, res) => {
+  const { user, proj_abbr_name } = req.params;
   try {
     // Find the record based on username
     const existingFavorite = await prisma.favorite.findFirst({
       where: {
-        username: String(username),
+        user: String(user),
         proj_abbr_name_list: {
           has: proj_abbr_name // Check if proj_abbr_name exists in the list
         }
@@ -376,6 +380,26 @@ app.get('/allpro', async (req, res) => {
   const all = await prisma.allProductInfo.findMany()
   res.json(all)
 })
+
+app.get('/allpro/:proj_abbr_name', async (req, res) => {
+  try {
+    const { proj_abbr_name } = req.params;
+
+    // Use Prisma to query the database
+    const fund = await prisma.fund.findMany({
+      where: { proj_abbr_name},
+    }); 
+
+    if (!fund) {
+      return res.status(404).json({ error: 'Fund not found' });
+    }
+
+    res.json(fund);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 app.listen(5050, () => console.log("Server ready on port 5050."));
 module.exports = app;
 async function main() {
