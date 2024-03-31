@@ -138,20 +138,15 @@ exports.Prisma.ProductScalarFieldEnum = {
   risk_spectrum: 'risk_spectrum'
 };
 
-exports.Prisma.UserScalarFieldEnum = {
-  id: 'id',
-  email: 'email',
-  username: 'username'
-};
-
 exports.Prisma.FavoriteScalarFieldEnum = {
   id: 'id',
-  proj_id: 'proj_id',
-  favID: 'favID'
+  username: 'username',
+  proj_abbr_name_list: 'proj_abbr_name_list'
 };
 
-exports.Prisma.CompareinfomationScalarFieldEnum = {
+exports.Prisma.Page1compareinfomationScalarFieldEnum = {
   id: 'id',
+  proj_abbr_name: 'proj_abbr_name',
   fundType: 'fundType',
   risk_spectrum: 'risk_spectrum',
   Feeder_Fund: 'Feeder_Fund',
@@ -166,46 +161,39 @@ exports.Prisma.CompareinfomationScalarFieldEnum = {
   Net_asset_value: 'Net_asset_value'
 };
 
-exports.Prisma.Type_assets_investedScalarFieldEnum = {
+exports.Prisma.Page2Operating_results_and_dividendsScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  data: 'data'
+  proj_abbr_name: 'proj_abbr_name'
 };
 
-exports.Prisma.Top_five_investment_assetsScalarFieldEnum = {
+exports.Prisma.Page3topfiveCompareportScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  data: 'data'
+  proj_abbr_name: 'proj_abbr_name',
+  top_five_holding: 'top_five_holding'
 };
 
-exports.Prisma.Fees_charged_by_mutual_fundsScalarFieldEnum = {
+exports.Prisma.Page3typeCompareportScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  data: 'data'
+  proj_abbr_name: 'proj_abbr_name',
+  type_data: 'type_data'
 };
 
-exports.Prisma.Fees_charged_to_unitholdersScalarFieldEnum = {
+exports.Prisma.Page3Investment_proportionCompareportScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  data: 'data'
+  proj_abbr_name: 'proj_abbr_name',
+  Investment_proportion_data: 'Investment_proportion_data'
 };
 
-exports.Prisma.Investment_allocation_in_the_top_five_issuersScalarFieldEnum = {
+exports.Prisma.Page4FeeScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
-  data: 'data'
-};
-
-exports.Prisma.Investment_allocation_according_to_credit_ratingScalarFieldEnum = {
-  id: 'id',
-  proj_id: 'proj_id',
-  data: 'data'
-};
-
-exports.Prisma.Investment_In_CountryScalarFieldEnum = {
-  id: 'id',
-  proj_id: 'proj_id',
-  Countrydata: 'Countrydata'
+  proj_abbr_name: 'proj_abbr_name',
+  datafromsheet: 'datafromsheet',
+  datafromReal: 'datafromReal'
 };
 
 exports.Prisma.AllProductInfoScalarFieldEnum = {
@@ -229,16 +217,13 @@ exports.Prisma.QueryMode = {
 exports.Prisma.ModelName = {
   Fund: 'Fund',
   Product: 'Product',
-  User: 'User',
   Favorite: 'Favorite',
-  Compareinfomation: 'Compareinfomation',
-  Type_assets_invested: 'Type_assets_invested',
-  Top_five_investment_assets: 'Top_five_investment_assets',
-  Fees_charged_by_mutual_funds: 'Fees_charged_by_mutual_funds',
-  Fees_charged_to_unitholders: 'Fees_charged_to_unitholders',
-  Investment_allocation_in_the_top_five_issuers: 'Investment_allocation_in_the_top_five_issuers',
-  Investment_allocation_according_to_credit_rating: 'Investment_allocation_according_to_credit_rating',
-  Investment_In_Country: 'Investment_In_Country',
+  Page1compareinfomation: 'Page1compareinfomation',
+  Page2Operating_results_and_dividends: 'Page2Operating_results_and_dividends',
+  Page3topfiveCompareport: 'Page3topfiveCompareport',
+  Page3typeCompareport: 'Page3typeCompareport',
+  Page3Investment_proportionCompareport: 'Page3Investment_proportionCompareport',
+  Page4Fee: 'Page4Fee',
   AllProductInfo: 'AllProductInfo'
 };
 

@@ -27,27 +27,32 @@ model Fund {
 model Product {
    id       String    @id @default(auto()) @map("_id") @db.ObjectId
    proj_id String    @unique
-   proj_abbr_name  String
+   proj_abbr_name  String @unique
    proj_name_en  String
    proj_name_th  String
    unique_id String
    risk_spectrum String
 }
-model User {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  email String @unique
-  username String
-  favorites Favorite[]
-}
+// model User {
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   email String @unique
+//   username String
+//   favorites Favorite[]
+// }
+// model Favorite{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   fav User @relation(fields: [favID],references: [id])
+//   proj_id String @unique
+//   favID String @db.ObjectId
+// }
 model Favorite{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  fav User @relation(fields: [favID],references: [id])
-  proj_id String @unique
-  favID String @db.ObjectId
+  username String @unique
+  proj_abbr_name_list  String[]
 }
-
-model Compareinfomation{
+model Page1compareinfomation{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_abbr_name  String @unique
   fundType String
   risk_spectrum String
   Feeder_Fund String
@@ -61,44 +66,75 @@ model Compareinfomation{
   Investment_registration_date String
   Net_asset_value String
 }
-model Type_assets_invested{// สัดส่วนประเภททรัพย์สินที่ลงทุน
+model Page2Operating_results_and_dividends{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   proj_id String    @unique
-  data Json
+  proj_abbr_name  String@unique
+}
+model Page3topfiveCompareport{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  proj_abbr_name  String @unique
+  top_five_holding Json
+}
+model Page3typeCompareport{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String    @unique
+  proj_abbr_name  String @unique
+  type_data Json
+}
+model Page3Investment_proportionCompareport{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String @unique
+  proj_abbr_name  String @unique
+  Investment_proportion_data Json
+}
+model Page4Fee{
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id String @unique
+  proj_abbr_name  String @unique
+  datafromsheet Json
+  datafromReal Json
 }
 
-model Top_five_investment_assets{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  data Json
-}
+// model Type_assets_invested{// สัดส่วนประเภททรัพย์สินที่ลงทุน
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// }
 
-model Fees_charged_by_mutual_funds{//(% ต่อปีของ NAV)
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  data Json
-}
-model Fees_charged_to_unitholders{//(% ของมูลค่าซื้อขาย)
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  data Json
-}
+// model Top_five_investment_assets{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// }
 
-model Investment_allocation_in_the_top_five_issuers{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  data Json
-}
-model Investment_allocation_according_to_credit_rating{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  data Json
-} 
-model Investment_In_Country{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  Countrydata Json
-}
+// model Fees_charged_by_mutual_funds{//(% ต่อปีของ NAV)
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// }
+// model Fees_charged_to_unitholders{//(% ของมูลค่าซื้อขาย)
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// }
+
+// model Investment_allocation_in_the_top_five_issuers{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// }
+// model Investment_allocation_according_to_credit_rating{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   data Json
+// } 
+// model Investment_In_Country{
+//   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//   proj_id String    @unique
+//   Countrydata Json
+// }
 
 model AllProductInfo{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId

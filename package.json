@@ -5,8 +5,9 @@
   "main": "/api/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node /api/index.ts",
-    "build": "prisma generate && tsc"
+    "dev": "ts-node index.ts",
+    "build": "prisma generate && tsc",
+    "postinstall": "npx prisma generate && prisma generate"
   },
   "keywords": [],
   "author": "",

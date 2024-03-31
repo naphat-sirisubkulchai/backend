@@ -24,55 +24,40 @@ export type Fund = $Result.DefaultSelection<Prisma.$FundPayload>
  */
 export type Product = $Result.DefaultSelection<Prisma.$ProductPayload>
 /**
- * Model User
- * 
- */
-export type User = $Result.DefaultSelection<Prisma.$UserPayload>
-/**
  * Model Favorite
  * 
  */
 export type Favorite = $Result.DefaultSelection<Prisma.$FavoritePayload>
 /**
- * Model Compareinfomation
+ * Model Page1compareinfomation
  * 
  */
-export type Compareinfomation = $Result.DefaultSelection<Prisma.$CompareinfomationPayload>
+export type Page1compareinfomation = $Result.DefaultSelection<Prisma.$Page1compareinfomationPayload>
 /**
- * Model Type_assets_invested
+ * Model Page2Operating_results_and_dividends
  * 
  */
-export type Type_assets_invested = $Result.DefaultSelection<Prisma.$Type_assets_investedPayload>
+export type Page2Operating_results_and_dividends = $Result.DefaultSelection<Prisma.$Page2Operating_results_and_dividendsPayload>
 /**
- * Model Top_five_investment_assets
+ * Model Page3topfiveCompareport
  * 
  */
-export type Top_five_investment_assets = $Result.DefaultSelection<Prisma.$Top_five_investment_assetsPayload>
+export type Page3topfiveCompareport = $Result.DefaultSelection<Prisma.$Page3topfiveCompareportPayload>
 /**
- * Model Fees_charged_by_mutual_funds
+ * Model Page3typeCompareport
  * 
  */
-export type Fees_charged_by_mutual_funds = $Result.DefaultSelection<Prisma.$Fees_charged_by_mutual_fundsPayload>
+export type Page3typeCompareport = $Result.DefaultSelection<Prisma.$Page3typeCompareportPayload>
 /**
- * Model Fees_charged_to_unitholders
+ * Model Page3Investment_proportionCompareport
  * 
  */
-export type Fees_charged_to_unitholders = $Result.DefaultSelection<Prisma.$Fees_charged_to_unitholdersPayload>
+export type Page3Investment_proportionCompareport = $Result.DefaultSelection<Prisma.$Page3Investment_proportionCompareportPayload>
 /**
- * Model Investment_allocation_in_the_top_five_issuers
+ * Model Page4Fee
  * 
  */
-export type Investment_allocation_in_the_top_five_issuers = $Result.DefaultSelection<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
-/**
- * Model Investment_allocation_according_to_credit_rating
- * 
- */
-export type Investment_allocation_according_to_credit_rating = $Result.DefaultSelection<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-/**
- * Model Investment_In_Country
- * 
- */
-export type Investment_In_Country = $Result.DefaultSelection<Prisma.$Investment_In_CountryPayload>
+export type Page4Fee = $Result.DefaultSelection<Prisma.$Page4FeePayload>
 /**
  * Model AllProductInfo
  * 
@@ -190,16 +175,6 @@ export class PrismaClient<
   get product(): Prisma.ProductDelegate<ExtArgs>;
 
   /**
-   * `prisma.user`: Exposes CRUD operations for the **User** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Users
-    * const users = await prisma.user.findMany()
-    * ```
-    */
-  get user(): Prisma.UserDelegate<ExtArgs>;
-
-  /**
    * `prisma.favorite`: Exposes CRUD operations for the **Favorite** model.
     * Example usage:
     * ```ts
@@ -210,84 +185,64 @@ export class PrismaClient<
   get favorite(): Prisma.FavoriteDelegate<ExtArgs>;
 
   /**
-   * `prisma.compareinfomation`: Exposes CRUD operations for the **Compareinfomation** model.
+   * `prisma.page1compareinfomation`: Exposes CRUD operations for the **Page1compareinfomation** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Compareinfomations
-    * const compareinfomations = await prisma.compareinfomation.findMany()
+    * // Fetch zero or more Page1compareinfomations
+    * const page1compareinfomations = await prisma.page1compareinfomation.findMany()
     * ```
     */
-  get compareinfomation(): Prisma.CompareinfomationDelegate<ExtArgs>;
+  get page1compareinfomation(): Prisma.Page1compareinfomationDelegate<ExtArgs>;
 
   /**
-   * `prisma.type_assets_invested`: Exposes CRUD operations for the **Type_assets_invested** model.
+   * `prisma.page2Operating_results_and_dividends`: Exposes CRUD operations for the **Page2Operating_results_and_dividends** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Type_assets_investeds
-    * const type_assets_investeds = await prisma.type_assets_invested.findMany()
+    * // Fetch zero or more Page2Operating_results_and_dividends
+    * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findMany()
     * ```
     */
-  get type_assets_invested(): Prisma.Type_assets_investedDelegate<ExtArgs>;
+  get page2Operating_results_and_dividends(): Prisma.Page2Operating_results_and_dividendsDelegate<ExtArgs>;
 
   /**
-   * `prisma.top_five_investment_assets`: Exposes CRUD operations for the **Top_five_investment_assets** model.
+   * `prisma.page3topfiveCompareport`: Exposes CRUD operations for the **Page3topfiveCompareport** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Top_five_investment_assets
-    * const top_five_investment_assets = await prisma.top_five_investment_assets.findMany()
+    * // Fetch zero or more Page3topfiveCompareports
+    * const page3topfiveCompareports = await prisma.page3topfiveCompareport.findMany()
     * ```
     */
-  get top_five_investment_assets(): Prisma.Top_five_investment_assetsDelegate<ExtArgs>;
+  get page3topfiveCompareport(): Prisma.Page3topfiveCompareportDelegate<ExtArgs>;
 
   /**
-   * `prisma.fees_charged_by_mutual_funds`: Exposes CRUD operations for the **Fees_charged_by_mutual_funds** model.
+   * `prisma.page3typeCompareport`: Exposes CRUD operations for the **Page3typeCompareport** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Fees_charged_by_mutual_funds
-    * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findMany()
+    * // Fetch zero or more Page3typeCompareports
+    * const page3typeCompareports = await prisma.page3typeCompareport.findMany()
     * ```
     */
-  get fees_charged_by_mutual_funds(): Prisma.Fees_charged_by_mutual_fundsDelegate<ExtArgs>;
+  get page3typeCompareport(): Prisma.Page3typeCompareportDelegate<ExtArgs>;
 
   /**
-   * `prisma.fees_charged_to_unitholders`: Exposes CRUD operations for the **Fees_charged_to_unitholders** model.
+   * `prisma.page3Investment_proportionCompareport`: Exposes CRUD operations for the **Page3Investment_proportionCompareport** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Fees_charged_to_unitholders
-    * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findMany()
+    * // Fetch zero or more Page3Investment_proportionCompareports
+    * const page3Investment_proportionCompareports = await prisma.page3Investment_proportionCompareport.findMany()
     * ```
     */
-  get fees_charged_to_unitholders(): Prisma.Fees_charged_to_unitholdersDelegate<ExtArgs>;
+  get page3Investment_proportionCompareport(): Prisma.Page3Investment_proportionCompareportDelegate<ExtArgs>;
 
   /**
-   * `prisma.investment_allocation_in_the_top_five_issuers`: Exposes CRUD operations for the **Investment_allocation_in_the_top_five_issuers** model.
+   * `prisma.page4Fee`: Exposes CRUD operations for the **Page4Fee** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Investment_allocation_in_the_top_five_issuers
-    * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findMany()
+    * // Fetch zero or more Page4Fees
+    * const page4Fees = await prisma.page4Fee.findMany()
     * ```
     */
-  get investment_allocation_in_the_top_five_issuers(): Prisma.Investment_allocation_in_the_top_five_issuersDelegate<ExtArgs>;
-
-  /**
-   * `prisma.investment_allocation_according_to_credit_rating`: Exposes CRUD operations for the **Investment_allocation_according_to_credit_rating** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Investment_allocation_according_to_credit_ratings
-    * const investment_allocation_according_to_credit_ratings = await prisma.investment_allocation_according_to_credit_rating.findMany()
-    * ```
-    */
-  get investment_allocation_according_to_credit_rating(): Prisma.Investment_allocation_according_to_credit_ratingDelegate<ExtArgs>;
-
-  /**
-   * `prisma.investment_In_Country`: Exposes CRUD operations for the **Investment_In_Country** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Investment_In_Countries
-    * const investment_In_Countries = await prisma.investment_In_Country.findMany()
-    * ```
-    */
-  get investment_In_Country(): Prisma.Investment_In_CountryDelegate<ExtArgs>;
+  get page4Fee(): Prisma.Page4FeeDelegate<ExtArgs>;
 
   /**
    * `prisma.allProductInfo`: Exposes CRUD operations for the **AllProductInfo** model.
@@ -770,16 +725,13 @@ export namespace Prisma {
   export const ModelName: {
     Fund: 'Fund',
     Product: 'Product',
-    User: 'User',
     Favorite: 'Favorite',
-    Compareinfomation: 'Compareinfomation',
-    Type_assets_invested: 'Type_assets_invested',
-    Top_five_investment_assets: 'Top_five_investment_assets',
-    Fees_charged_by_mutual_funds: 'Fees_charged_by_mutual_funds',
-    Fees_charged_to_unitholders: 'Fees_charged_to_unitholders',
-    Investment_allocation_in_the_top_five_issuers: 'Investment_allocation_in_the_top_five_issuers',
-    Investment_allocation_according_to_credit_rating: 'Investment_allocation_according_to_credit_rating',
-    Investment_In_Country: 'Investment_In_Country',
+    Page1compareinfomation: 'Page1compareinfomation',
+    Page2Operating_results_and_dividends: 'Page2Operating_results_and_dividends',
+    Page3topfiveCompareport: 'Page3topfiveCompareport',
+    Page3typeCompareport: 'Page3typeCompareport',
+    Page3Investment_proportionCompareport: 'Page3Investment_proportionCompareport',
+    Page4Fee: 'Page4Fee',
     AllProductInfo: 'AllProductInfo'
   };
 
@@ -797,7 +749,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'fund' | 'product' | 'user' | 'favorite' | 'compareinfomation' | 'type_assets_invested' | 'top_five_investment_assets' | 'fees_charged_by_mutual_funds' | 'fees_charged_to_unitholders' | 'investment_allocation_in_the_top_five_issuers' | 'investment_allocation_according_to_credit_rating' | 'investment_In_Country' | 'allProductInfo'
+      modelProps: 'fund' | 'product' | 'favorite' | 'page1compareinfomation' | 'page2Operating_results_and_dividends' | 'page3topfiveCompareport' | 'page3typeCompareport' | 'page3Investment_proportionCompareport' | 'page4Fee' | 'allProductInfo'
       txIsolationLevel: never
     },
     model: {
@@ -949,80 +901,6 @@ export namespace Prisma {
           }
         }
       }
-      User: {
-        payload: Prisma.$UserPayload<ExtArgs>
-        fields: Prisma.UserFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.UserFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          findFirst: {
-            args: Prisma.UserFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          findMany: {
-            args: Prisma.UserFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>[]
-          }
-          create: {
-            args: Prisma.UserCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          createMany: {
-            args: Prisma.UserCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.UserDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          update: {
-            args: Prisma.UserUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          deleteMany: {
-            args: Prisma.UserDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.UserUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.UserUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$UserPayload>
-          }
-          aggregate: {
-            args: Prisma.UserAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateUser>
-          }
-          groupBy: {
-            args: Prisma.UserGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<UserGroupByOutputType>[]
-          }
-          findRaw: {
-            args: Prisma.UserFindRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          aggregateRaw: {
-            args: Prisma.UserAggregateRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          count: {
-            args: Prisma.UserCountArgs<ExtArgs>,
-            result: $Utils.Optional<UserCountAggregateOutputType> | number
-          }
-        }
-      }
       Favorite: {
         payload: Prisma.$FavoritePayload<ExtArgs>
         fields: Prisma.FavoriteFieldRefs
@@ -1097,595 +975,447 @@ export namespace Prisma {
           }
         }
       }
-      Compareinfomation: {
-        payload: Prisma.$CompareinfomationPayload<ExtArgs>
-        fields: Prisma.CompareinfomationFieldRefs
+      Page1compareinfomation: {
+        payload: Prisma.$Page1compareinfomationPayload<ExtArgs>
+        fields: Prisma.Page1compareinfomationFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.CompareinfomationFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload> | null
+            args: Prisma.Page1compareinfomationFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.CompareinfomationFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           findFirst: {
-            args: Prisma.CompareinfomationFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload> | null
+            args: Prisma.Page1compareinfomationFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.CompareinfomationFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           findMany: {
-            args: Prisma.CompareinfomationFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>[]
+            args: Prisma.Page1compareinfomationFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>[]
           }
           create: {
-            args: Prisma.CompareinfomationCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           createMany: {
-            args: Prisma.CompareinfomationCreateManyArgs<ExtArgs>,
+            args: Prisma.Page1compareinfomationCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.CompareinfomationDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           update: {
-            args: Prisma.CompareinfomationUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           deleteMany: {
-            args: Prisma.CompareinfomationDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page1compareinfomationDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.CompareinfomationUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page1compareinfomationUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.CompareinfomationUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$CompareinfomationPayload>
+            args: Prisma.Page1compareinfomationUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page1compareinfomationPayload>
           }
           aggregate: {
-            args: Prisma.CompareinfomationAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateCompareinfomation>
+            args: Prisma.Page1compareinfomationAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage1compareinfomation>
           }
           groupBy: {
-            args: Prisma.CompareinfomationGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<CompareinfomationGroupByOutputType>[]
+            args: Prisma.Page1compareinfomationGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page1compareinfomationGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.CompareinfomationFindRawArgs<ExtArgs>,
+            args: Prisma.Page1compareinfomationFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.CompareinfomationAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page1compareinfomationAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.CompareinfomationCountArgs<ExtArgs>,
-            result: $Utils.Optional<CompareinfomationCountAggregateOutputType> | number
+            args: Prisma.Page1compareinfomationCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page1compareinfomationCountAggregateOutputType> | number
           }
         }
       }
-      Type_assets_invested: {
-        payload: Prisma.$Type_assets_investedPayload<ExtArgs>
-        fields: Prisma.Type_assets_investedFieldRefs
+      Page2Operating_results_and_dividends: {
+        payload: Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>
+        fields: Prisma.Page2Operating_results_and_dividendsFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Type_assets_investedFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload> | null
+            args: Prisma.Page2Operating_results_and_dividendsFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Type_assets_investedFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           findFirst: {
-            args: Prisma.Type_assets_investedFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload> | null
+            args: Prisma.Page2Operating_results_and_dividendsFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Type_assets_investedFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           findMany: {
-            args: Prisma.Type_assets_investedFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>[]
+            args: Prisma.Page2Operating_results_and_dividendsFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>[]
           }
           create: {
-            args: Prisma.Type_assets_investedCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           createMany: {
-            args: Prisma.Type_assets_investedCreateManyArgs<ExtArgs>,
+            args: Prisma.Page2Operating_results_and_dividendsCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.Type_assets_investedDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           update: {
-            args: Prisma.Type_assets_investedUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           deleteMany: {
-            args: Prisma.Type_assets_investedDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page2Operating_results_and_dividendsDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.Type_assets_investedUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page2Operating_results_and_dividendsUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.Type_assets_investedUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Type_assets_investedPayload>
+            args: Prisma.Page2Operating_results_and_dividendsUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page2Operating_results_and_dividendsPayload>
           }
           aggregate: {
-            args: Prisma.Type_assets_investedAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateType_assets_invested>
+            args: Prisma.Page2Operating_results_and_dividendsAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage2Operating_results_and_dividends>
           }
           groupBy: {
-            args: Prisma.Type_assets_investedGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Type_assets_investedGroupByOutputType>[]
+            args: Prisma.Page2Operating_results_and_dividendsGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page2Operating_results_and_dividendsGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.Type_assets_investedFindRawArgs<ExtArgs>,
+            args: Prisma.Page2Operating_results_and_dividendsFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.Type_assets_investedAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page2Operating_results_and_dividendsAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.Type_assets_investedCountArgs<ExtArgs>,
-            result: $Utils.Optional<Type_assets_investedCountAggregateOutputType> | number
+            args: Prisma.Page2Operating_results_and_dividendsCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page2Operating_results_and_dividendsCountAggregateOutputType> | number
           }
         }
       }
-      Top_five_investment_assets: {
-        payload: Prisma.$Top_five_investment_assetsPayload<ExtArgs>
-        fields: Prisma.Top_five_investment_assetsFieldRefs
+      Page3topfiveCompareport: {
+        payload: Prisma.$Page3topfiveCompareportPayload<ExtArgs>
+        fields: Prisma.Page3topfiveCompareportFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Top_five_investment_assetsFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload> | null
+            args: Prisma.Page3topfiveCompareportFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Top_five_investment_assetsFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           findFirst: {
-            args: Prisma.Top_five_investment_assetsFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload> | null
+            args: Prisma.Page3topfiveCompareportFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Top_five_investment_assetsFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           findMany: {
-            args: Prisma.Top_five_investment_assetsFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>[]
+            args: Prisma.Page3topfiveCompareportFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>[]
           }
           create: {
-            args: Prisma.Top_five_investment_assetsCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           createMany: {
-            args: Prisma.Top_five_investment_assetsCreateManyArgs<ExtArgs>,
+            args: Prisma.Page3topfiveCompareportCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.Top_five_investment_assetsDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           update: {
-            args: Prisma.Top_five_investment_assetsUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           deleteMany: {
-            args: Prisma.Top_five_investment_assetsDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page3topfiveCompareportDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.Top_five_investment_assetsUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page3topfiveCompareportUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.Top_five_investment_assetsUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Top_five_investment_assetsPayload>
+            args: Prisma.Page3topfiveCompareportUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3topfiveCompareportPayload>
           }
           aggregate: {
-            args: Prisma.Top_five_investment_assetsAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateTop_five_investment_assets>
+            args: Prisma.Page3topfiveCompareportAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage3topfiveCompareport>
           }
           groupBy: {
-            args: Prisma.Top_five_investment_assetsGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Top_five_investment_assetsGroupByOutputType>[]
+            args: Prisma.Page3topfiveCompareportGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page3topfiveCompareportGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.Top_five_investment_assetsFindRawArgs<ExtArgs>,
+            args: Prisma.Page3topfiveCompareportFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.Top_five_investment_assetsAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page3topfiveCompareportAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.Top_five_investment_assetsCountArgs<ExtArgs>,
-            result: $Utils.Optional<Top_five_investment_assetsCountAggregateOutputType> | number
+            args: Prisma.Page3topfiveCompareportCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page3topfiveCompareportCountAggregateOutputType> | number
           }
         }
       }
-      Fees_charged_by_mutual_funds: {
-        payload: Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>
-        fields: Prisma.Fees_charged_by_mutual_fundsFieldRefs
+      Page3typeCompareport: {
+        payload: Prisma.$Page3typeCompareportPayload<ExtArgs>
+        fields: Prisma.Page3typeCompareportFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload> | null
+            args: Prisma.Page3typeCompareportFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           findFirst: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload> | null
+            args: Prisma.Page3typeCompareportFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           findMany: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>[]
+            args: Prisma.Page3typeCompareportFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>[]
           }
           create: {
-            args: Prisma.Fees_charged_by_mutual_fundsCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           createMany: {
-            args: Prisma.Fees_charged_by_mutual_fundsCreateManyArgs<ExtArgs>,
+            args: Prisma.Page3typeCompareportCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.Fees_charged_by_mutual_fundsDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           update: {
-            args: Prisma.Fees_charged_by_mutual_fundsUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           deleteMany: {
-            args: Prisma.Fees_charged_by_mutual_fundsDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page3typeCompareportDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.Fees_charged_by_mutual_fundsUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page3typeCompareportUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.Fees_charged_by_mutual_fundsUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_by_mutual_fundsPayload>
+            args: Prisma.Page3typeCompareportUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3typeCompareportPayload>
           }
           aggregate: {
-            args: Prisma.Fees_charged_by_mutual_fundsAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateFees_charged_by_mutual_funds>
+            args: Prisma.Page3typeCompareportAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage3typeCompareport>
           }
           groupBy: {
-            args: Prisma.Fees_charged_by_mutual_fundsGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Fees_charged_by_mutual_fundsGroupByOutputType>[]
+            args: Prisma.Page3typeCompareportGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page3typeCompareportGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.Fees_charged_by_mutual_fundsFindRawArgs<ExtArgs>,
+            args: Prisma.Page3typeCompareportFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.Fees_charged_by_mutual_fundsAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page3typeCompareportAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.Fees_charged_by_mutual_fundsCountArgs<ExtArgs>,
-            result: $Utils.Optional<Fees_charged_by_mutual_fundsCountAggregateOutputType> | number
+            args: Prisma.Page3typeCompareportCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page3typeCompareportCountAggregateOutputType> | number
           }
         }
       }
-      Fees_charged_to_unitholders: {
-        payload: Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>
-        fields: Prisma.Fees_charged_to_unitholdersFieldRefs
+      Page3Investment_proportionCompareport: {
+        payload: Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>
+        fields: Prisma.Page3Investment_proportionCompareportFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Fees_charged_to_unitholdersFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload> | null
+            args: Prisma.Page3Investment_proportionCompareportFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Fees_charged_to_unitholdersFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           findFirst: {
-            args: Prisma.Fees_charged_to_unitholdersFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload> | null
+            args: Prisma.Page3Investment_proportionCompareportFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Fees_charged_to_unitholdersFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           findMany: {
-            args: Prisma.Fees_charged_to_unitholdersFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>[]
+            args: Prisma.Page3Investment_proportionCompareportFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>[]
           }
           create: {
-            args: Prisma.Fees_charged_to_unitholdersCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           createMany: {
-            args: Prisma.Fees_charged_to_unitholdersCreateManyArgs<ExtArgs>,
+            args: Prisma.Page3Investment_proportionCompareportCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.Fees_charged_to_unitholdersDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           update: {
-            args: Prisma.Fees_charged_to_unitholdersUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           deleteMany: {
-            args: Prisma.Fees_charged_to_unitholdersDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page3Investment_proportionCompareportDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.Fees_charged_to_unitholdersUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page3Investment_proportionCompareportUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.Fees_charged_to_unitholdersUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Fees_charged_to_unitholdersPayload>
+            args: Prisma.Page3Investment_proportionCompareportUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page3Investment_proportionCompareportPayload>
           }
           aggregate: {
-            args: Prisma.Fees_charged_to_unitholdersAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateFees_charged_to_unitholders>
+            args: Prisma.Page3Investment_proportionCompareportAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage3Investment_proportionCompareport>
           }
           groupBy: {
-            args: Prisma.Fees_charged_to_unitholdersGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Fees_charged_to_unitholdersGroupByOutputType>[]
+            args: Prisma.Page3Investment_proportionCompareportGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page3Investment_proportionCompareportGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.Fees_charged_to_unitholdersFindRawArgs<ExtArgs>,
+            args: Prisma.Page3Investment_proportionCompareportFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.Fees_charged_to_unitholdersAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page3Investment_proportionCompareportAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.Fees_charged_to_unitholdersCountArgs<ExtArgs>,
-            result: $Utils.Optional<Fees_charged_to_unitholdersCountAggregateOutputType> | number
+            args: Prisma.Page3Investment_proportionCompareportCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page3Investment_proportionCompareportCountAggregateOutputType> | number
           }
         }
       }
-      Investment_allocation_in_the_top_five_issuers: {
-        payload: Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>
-        fields: Prisma.Investment_allocation_in_the_top_five_issuersFieldRefs
+      Page4Fee: {
+        payload: Prisma.$Page4FeePayload<ExtArgs>
+        fields: Prisma.Page4FeeFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload> | null
+            args: Prisma.Page4FeeFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           findFirst: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload> | null
+            args: Prisma.Page4FeeFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           findMany: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>[]
+            args: Prisma.Page4FeeFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>[]
           }
           create: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           createMany: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersCreateManyArgs<ExtArgs>,
+            args: Prisma.Page4FeeCreateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           delete: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           update: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           deleteMany: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersDeleteManyArgs<ExtArgs>,
+            args: Prisma.Page4FeeDeleteManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           updateMany: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersUpdateManyArgs<ExtArgs>,
+            args: Prisma.Page4FeeUpdateManyArgs<ExtArgs>,
             result: Prisma.BatchPayload
           }
           upsert: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload>
+            args: Prisma.Page4FeeUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$Page4FeePayload>
           }
           aggregate: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateInvestment_allocation_in_the_top_five_issuers>
+            args: Prisma.Page4FeeAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregatePage4Fee>
           }
           groupBy: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_allocation_in_the_top_five_issuersGroupByOutputType>[]
+            args: Prisma.Page4FeeGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<Page4FeeGroupByOutputType>[]
           }
           findRaw: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersFindRawArgs<ExtArgs>,
+            args: Prisma.Page4FeeFindRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           aggregateRaw: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersAggregateRawArgs<ExtArgs>,
+            args: Prisma.Page4FeeAggregateRawArgs<ExtArgs>,
             result: Prisma.JsonObject
           }
           count: {
-            args: Prisma.Investment_allocation_in_the_top_five_issuersCountArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_allocation_in_the_top_five_issuersCountAggregateOutputType> | number
-          }
-        }
-      }
-      Investment_allocation_according_to_credit_rating: {
-        payload: Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>
-        fields: Prisma.Investment_allocation_according_to_credit_ratingFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          findFirst: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          findMany: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>[]
-          }
-          create: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          createMany: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          update: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          deleteMany: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload>
-          }
-          aggregate: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateInvestment_allocation_according_to_credit_rating>
-          }
-          groupBy: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_allocation_according_to_credit_ratingGroupByOutputType>[]
-          }
-          findRaw: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingFindRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          aggregateRaw: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingAggregateRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          count: {
-            args: Prisma.Investment_allocation_according_to_credit_ratingCountArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_allocation_according_to_credit_ratingCountAggregateOutputType> | number
-          }
-        }
-      }
-      Investment_In_Country: {
-        payload: Prisma.$Investment_In_CountryPayload<ExtArgs>
-        fields: Prisma.Investment_In_CountryFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.Investment_In_CountryFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.Investment_In_CountryFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          findFirst: {
-            args: Prisma.Investment_In_CountryFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.Investment_In_CountryFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          findMany: {
-            args: Prisma.Investment_In_CountryFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>[]
-          }
-          create: {
-            args: Prisma.Investment_In_CountryCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          createMany: {
-            args: Prisma.Investment_In_CountryCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.Investment_In_CountryDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          update: {
-            args: Prisma.Investment_In_CountryUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          deleteMany: {
-            args: Prisma.Investment_In_CountryDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.Investment_In_CountryUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.Investment_In_CountryUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$Investment_In_CountryPayload>
-          }
-          aggregate: {
-            args: Prisma.Investment_In_CountryAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateInvestment_In_Country>
-          }
-          groupBy: {
-            args: Prisma.Investment_In_CountryGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_In_CountryGroupByOutputType>[]
-          }
-          findRaw: {
-            args: Prisma.Investment_In_CountryFindRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          aggregateRaw: {
-            args: Prisma.Investment_In_CountryAggregateRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          count: {
-            args: Prisma.Investment_In_CountryCountArgs<ExtArgs>,
-            result: $Utils.Optional<Investment_In_CountryCountAggregateOutputType> | number
+            args: Prisma.Page4FeeCountArgs<ExtArgs>,
+            result: $Utils.Optional<Page4FeeCountAggregateOutputType> | number
           }
         }
       }
@@ -1902,39 +1632,6 @@ export namespace Prisma {
   /**
    * Count Types
    */
-
-
-  /**
-   * Count Type UserCountOutputType
-   */
-
-  export type UserCountOutputType = {
-    favorites: number
-  }
-
-  export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    favorites?: boolean | UserCountOutputTypeCountFavoritesArgs
-  }
-
-  // Custom InputTypes
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the UserCountOutputType
-     */
-    select?: UserCountOutputTypeSelect<ExtArgs> | null
-  }
-
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountFavoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FavoriteWhereInput
-  }
 
 
 
@@ -3905,981 +3602,6 @@ export namespace Prisma {
 
 
   /**
-   * Model User
-   */
-
-  export type AggregateUser = {
-    _count: UserCountAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  export type UserMinAggregateOutputType = {
-    id: string | null
-    email: string | null
-    username: string | null
-  }
-
-  export type UserMaxAggregateOutputType = {
-    id: string | null
-    email: string | null
-    username: string | null
-  }
-
-  export type UserCountAggregateOutputType = {
-    id: number
-    email: number
-    username: number
-    _all: number
-  }
-
-
-  export type UserMinAggregateInputType = {
-    id?: true
-    email?: true
-    username?: true
-  }
-
-  export type UserMaxAggregateInputType = {
-    id?: true
-    email?: true
-    username?: true
-  }
-
-  export type UserCountAggregateInputType = {
-    id?: true
-    email?: true
-    username?: true
-    _all?: true
-  }
-
-  export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which User to aggregate.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Users
-    **/
-    _count?: true | UserCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: UserMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type GetUserAggregateType<T extends UserAggregateArgs> = {
-        [P in keyof T & keyof AggregateUser]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateUser[P]>
-      : GetScalarType<T[P], AggregateUser[P]>
-  }
-
-
-
-
-  export type UserGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: UserWhereInput
-    orderBy?: UserOrderByWithAggregationInput | UserOrderByWithAggregationInput[]
-    by: UserScalarFieldEnum[] | UserScalarFieldEnum
-    having?: UserScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: UserCountAggregateInputType | true
-    _min?: UserMinAggregateInputType
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type UserGroupByOutputType = {
-    id: string
-    email: string
-    username: string
-    _count: UserCountAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  type GetUserGroupByPayload<T extends UserGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<UserGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof UserGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], UserGroupByOutputType[P]>
-            : GetScalarType<T[P], UserGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    email?: boolean
-    username?: boolean
-    favorites?: boolean | User$favoritesArgs<ExtArgs>
-    _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["user"]>
-
-  export type UserSelectScalar = {
-    id?: boolean
-    email?: boolean
-    username?: boolean
-  }
-
-  export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    favorites?: boolean | User$favoritesArgs<ExtArgs>
-    _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
-  }
-
-
-  export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "User"
-    objects: {
-      favorites: Prisma.$FavoritePayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      email: string
-      username: string
-    }, ExtArgs["result"]["user"]>
-    composites: {}
-  }
-
-
-  type UserGetPayload<S extends boolean | null | undefined | UserDefaultArgs> = $Result.GetResult<Prisma.$UserPayload, S>
-
-  type UserCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<UserFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: UserCountAggregateInputType | true
-    }
-
-  export interface UserDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['User'], meta: { name: 'User' } }
-    /**
-     * Find zero or one User that matches the filter.
-     * @param {UserFindUniqueArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends UserFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, UserFindUniqueArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one User that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {UserFindUniqueOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends UserFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first User that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends UserFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserFindFirstArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first User that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindFirstOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends UserFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Users that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Users
-     * const users = await prisma.user.findMany()
-     * 
-     * // Get first 10 Users
-     * const users = await prisma.user.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends UserFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a User.
-     * @param {UserCreateArgs} args - Arguments to create a User.
-     * @example
-     * // Create one User
-     * const User = await prisma.user.create({
-     *   data: {
-     *     // ... data to create a User
-     *   }
-     * })
-     * 
-    **/
-    create<T extends UserCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, UserCreateArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Users.
-     *     @param {UserCreateManyArgs} args - Arguments to create many Users.
-     *     @example
-     *     // Create many Users
-     *     const user = await prisma.user.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends UserCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a User.
-     * @param {UserDeleteArgs} args - Arguments to delete one User.
-     * @example
-     * // Delete one User
-     * const User = await prisma.user.delete({
-     *   where: {
-     *     // ... filter to delete one User
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends UserDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, UserDeleteArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one User.
-     * @param {UserUpdateArgs} args - Arguments to update one User.
-     * @example
-     * // Update one User
-     * const user = await prisma.user.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends UserUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, UserUpdateArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Users.
-     * @param {UserDeleteManyArgs} args - Arguments to filter Users to delete.
-     * @example
-     * // Delete a few Users
-     * const { count } = await prisma.user.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends UserDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, UserDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Users
-     * const user = await prisma.user.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends UserUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, UserUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one User.
-     * @param {UserUpsertArgs} args - Arguments to update or create a User.
-     * @example
-     * // Update or create a User
-     * const user = await prisma.user.upsert({
-     *   create: {
-     *     // ... data to create a User
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the User we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends UserUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, UserUpsertArgs<ExtArgs>>
-    ): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Users that matches the filter.
-     * @param {UserFindRawArgs} args - Select which filters you would like to apply.
-     * @example
-     * const user = await prisma.user.findRaw({
-     *   filter: { age: { $gt: 25 } } 
-     * })
-    **/
-    findRaw(
-      args?: UserFindRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Perform aggregation operations on a User.
-     * @param {UserAggregateRawArgs} args - Select which aggregations you would like to apply.
-     * @example
-     * const user = await prisma.user.aggregateRaw({
-     *   pipeline: [
-     *     { $match: { status: "registered" } },
-     *     { $group: { _id: "$country", total: { $sum: 1 } } }
-     *   ]
-     * })
-    **/
-    aggregateRaw(
-      args?: UserAggregateRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Count the number of Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserCountArgs} args - Arguments to filter Users to count.
-     * @example
-     * // Count the number of Users
-     * const count = await prisma.user.count({
-     *   where: {
-     *     // ... the filter for the Users we want to count
-     *   }
-     * })
-    **/
-    count<T extends UserCountArgs>(
-      args?: Subset<T, UserCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], UserCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends UserAggregateArgs>(args: Subset<T, UserAggregateArgs>): Prisma.PrismaPromise<GetUserAggregateType<T>>
-
-    /**
-     * Group by User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends UserGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: UserGroupByArgs['orderBy'] }
-        : { orderBy?: UserGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, UserGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the User model
-   */
-  readonly fields: UserFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for User.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-    favorites<T extends User$favoritesArgs<ExtArgs> = {}>(args?: Subset<T, User$favoritesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, 'findMany'> | Null>;
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the User model
-   */ 
-  interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'String'>
-    readonly email: FieldRef<"User", 'String'>
-    readonly username: FieldRef<"User", 'String'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * User findUnique
-   */
-  export type UserFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where: UserWhereUniqueInput
-  }
-
-
-  /**
-   * User findUniqueOrThrow
-   */
-  export type UserFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where: UserWhereUniqueInput
-  }
-
-
-  /**
-   * User findFirst
-   */
-  export type UserFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-
-  /**
-   * User findFirstOrThrow
-   */
-  export type UserFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which User to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-
-  /**
-   * User findMany
-   */
-  export type UserFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter, which Users to fetch.
-     */
-    where?: UserWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Users to fetch.
-     */
-    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Users.
-     */
-    cursor?: UserWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Users.
-     */
-    skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-
-  /**
-   * User create
-   */
-  export type UserCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The data needed to create a User.
-     */
-    data: XOR<UserCreateInput, UserUncheckedCreateInput>
-  }
-
-
-  /**
-   * User createMany
-   */
-  export type UserCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Users.
-     */
-    data: UserCreateManyInput | UserCreateManyInput[]
-  }
-
-
-  /**
-   * User update
-   */
-  export type UserUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The data needed to update a User.
-     */
-    data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
-    /**
-     * Choose, which User to update.
-     */
-    where: UserWhereUniqueInput
-  }
-
-
-  /**
-   * User updateMany
-   */
-  export type UserUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Users.
-     */
-    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyInput>
-    /**
-     * Filter which Users to update
-     */
-    where?: UserWhereInput
-  }
-
-
-  /**
-   * User upsert
-   */
-  export type UserUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * The filter to search for the User to update in case it exists.
-     */
-    where: UserWhereUniqueInput
-    /**
-     * In case the User found by the `where` argument doesn't exist, create a new User with this data.
-     */
-    create: XOR<UserCreateInput, UserUncheckedCreateInput>
-    /**
-     * In case the User was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<UserUpdateInput, UserUncheckedUpdateInput>
-  }
-
-
-  /**
-   * User delete
-   */
-  export type UserDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-    /**
-     * Filter which User to delete.
-     */
-    where: UserWhereUniqueInput
-  }
-
-
-  /**
-   * User deleteMany
-   */
-  export type UserDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Users to delete
-     */
-    where?: UserWhereInput
-  }
-
-
-  /**
-   * User findRaw
-   */
-  export type UserFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
-     */
-    filter?: InputJsonValue
-    /**
-     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * User aggregateRaw
-   */
-  export type UserAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
-     */
-    pipeline?: InputJsonValue[]
-    /**
-     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * User.favorites
-   */
-  export type User$favoritesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Favorite
-     */
-    select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    where?: FavoriteWhereInput
-    orderBy?: FavoriteOrderByWithRelationInput | FavoriteOrderByWithRelationInput[]
-    cursor?: FavoriteWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
-  }
-
-
-  /**
-   * User without action
-   */
-  export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the User
-     */
-    select?: UserSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: UserInclude<ExtArgs> | null
-  }
-
-
-
-  /**
    * Model Favorite
    */
 
@@ -4891,40 +3613,36 @@ export namespace Prisma {
 
   export type FavoriteMinAggregateOutputType = {
     id: string | null
-    proj_id: string | null
-    favID: string | null
+    username: string | null
   }
 
   export type FavoriteMaxAggregateOutputType = {
     id: string | null
-    proj_id: string | null
-    favID: string | null
+    username: string | null
   }
 
   export type FavoriteCountAggregateOutputType = {
     id: number
-    proj_id: number
-    favID: number
+    username: number
+    proj_abbr_name_list: number
     _all: number
   }
 
 
   export type FavoriteMinAggregateInputType = {
     id?: true
-    proj_id?: true
-    favID?: true
+    username?: true
   }
 
   export type FavoriteMaxAggregateInputType = {
     id?: true
-    proj_id?: true
-    favID?: true
+    username?: true
   }
 
   export type FavoriteCountAggregateInputType = {
     id?: true
-    proj_id?: true
-    favID?: true
+    username?: true
+    proj_abbr_name_list?: true
     _all?: true
   }
 
@@ -5002,8 +3720,8 @@ export namespace Prisma {
 
   export type FavoriteGroupByOutputType = {
     id: string
-    proj_id: string
-    favID: string
+    username: string
+    proj_abbr_name_list: string[]
     _count: FavoriteCountAggregateOutputType | null
     _min: FavoriteMinAggregateOutputType | null
     _max: FavoriteMaxAggregateOutputType | null
@@ -5025,31 +3743,24 @@ export namespace Prisma {
 
   export type FavoriteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    proj_id?: boolean
-    favID?: boolean
-    fav?: boolean | UserDefaultArgs<ExtArgs>
+    username?: boolean
+    proj_abbr_name_list?: boolean
   }, ExtArgs["result"]["favorite"]>
 
   export type FavoriteSelectScalar = {
     id?: boolean
-    proj_id?: boolean
-    favID?: boolean
-  }
-
-  export type FavoriteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    fav?: boolean | UserDefaultArgs<ExtArgs>
+    username?: boolean
+    proj_abbr_name_list?: boolean
   }
 
 
   export type $FavoritePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Favorite"
-    objects: {
-      fav: Prisma.$UserPayload<ExtArgs>
-    }
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      proj_id: string
-      favID: string
+      username: string
+      proj_abbr_name_list: string[]
     }, ExtArgs["result"]["favorite"]>
     composites: {}
   }
@@ -5442,7 +4153,6 @@ export namespace Prisma {
   export interface Prisma__FavoriteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    fav<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5473,8 +4183,8 @@ export namespace Prisma {
    */ 
   interface FavoriteFieldRefs {
     readonly id: FieldRef<"Favorite", 'String'>
-    readonly proj_id: FieldRef<"Favorite", 'String'>
-    readonly favID: FieldRef<"Favorite", 'String'>
+    readonly username: FieldRef<"Favorite", 'String'>
+    readonly proj_abbr_name_list: FieldRef<"Favorite", 'String[]'>
   }
     
 
@@ -5488,10 +4198,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the Favorite
      */
     select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
     /**
      * Filter, which Favorite to fetch.
      */
@@ -5508,10 +4214,6 @@ export namespace Prisma {
      */
     select?: FavoriteSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    /**
      * Filter, which Favorite to fetch.
      */
     where: FavoriteWhereUniqueInput
@@ -5526,10 +4228,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the Favorite
      */
     select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
     /**
      * Filter, which Favorite to fetch.
      */
@@ -5576,10 +4274,6 @@ export namespace Prisma {
      */
     select?: FavoriteSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    /**
      * Filter, which Favorite to fetch.
      */
     where?: FavoriteWhereInput
@@ -5625,10 +4319,6 @@ export namespace Prisma {
      */
     select?: FavoriteSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    /**
      * Filter, which Favorites to fetch.
      */
     where?: FavoriteWhereInput
@@ -5669,10 +4359,6 @@ export namespace Prisma {
      */
     select?: FavoriteSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    /**
      * The data needed to create a Favorite.
      */
     data: XOR<FavoriteCreateInput, FavoriteUncheckedCreateInput>
@@ -5698,10 +4384,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the Favorite
      */
     select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
     /**
      * The data needed to update a Favorite.
      */
@@ -5737,10 +4419,6 @@ export namespace Prisma {
      */
     select?: FavoriteSelect<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
-    /**
      * The filter to search for the Favorite to update in case it exists.
      */
     where: FavoriteWhereUniqueInput
@@ -5763,10 +4441,6 @@ export namespace Prisma {
      * Select specific fields to fetch from the Favorite
      */
     select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
     /**
      * Filter which Favorite to delete.
      */
@@ -5823,26 +4497,23 @@ export namespace Prisma {
      * Select specific fields to fetch from the Favorite
      */
     select?: FavoriteSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: FavoriteInclude<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Compareinfomation
+   * Model Page1compareinfomation
    */
 
-  export type AggregateCompareinfomation = {
-    _count: CompareinfomationCountAggregateOutputType | null
-    _min: CompareinfomationMinAggregateOutputType | null
-    _max: CompareinfomationMaxAggregateOutputType | null
+  export type AggregatePage1compareinfomation = {
+    _count: Page1compareinfomationCountAggregateOutputType | null
+    _min: Page1compareinfomationMinAggregateOutputType | null
+    _max: Page1compareinfomationMaxAggregateOutputType | null
   }
 
-  export type CompareinfomationMinAggregateOutputType = {
+  export type Page1compareinfomationMinAggregateOutputType = {
     id: string | null
+    proj_abbr_name: string | null
     fundType: string | null
     risk_spectrum: string | null
     Feeder_Fund: string | null
@@ -5857,8 +4528,9 @@ export namespace Prisma {
     Net_asset_value: string | null
   }
 
-  export type CompareinfomationMaxAggregateOutputType = {
+  export type Page1compareinfomationMaxAggregateOutputType = {
     id: string | null
+    proj_abbr_name: string | null
     fundType: string | null
     risk_spectrum: string | null
     Feeder_Fund: string | null
@@ -5873,8 +4545,9 @@ export namespace Prisma {
     Net_asset_value: string | null
   }
 
-  export type CompareinfomationCountAggregateOutputType = {
+  export type Page1compareinfomationCountAggregateOutputType = {
     id: number
+    proj_abbr_name: number
     fundType: number
     risk_spectrum: number
     Feeder_Fund: number
@@ -5891,8 +4564,9 @@ export namespace Prisma {
   }
 
 
-  export type CompareinfomationMinAggregateInputType = {
+  export type Page1compareinfomationMinAggregateInputType = {
     id?: true
+    proj_abbr_name?: true
     fundType?: true
     risk_spectrum?: true
     Feeder_Fund?: true
@@ -5907,8 +4581,9 @@ export namespace Prisma {
     Net_asset_value?: true
   }
 
-  export type CompareinfomationMaxAggregateInputType = {
+  export type Page1compareinfomationMaxAggregateInputType = {
     id?: true
+    proj_abbr_name?: true
     fundType?: true
     risk_spectrum?: true
     Feeder_Fund?: true
@@ -5923,8 +4598,9 @@ export namespace Prisma {
     Net_asset_value?: true
   }
 
-  export type CompareinfomationCountAggregateInputType = {
+  export type Page1compareinfomationCountAggregateInputType = {
     id?: true
+    proj_abbr_name?: true
     fundType?: true
     risk_spectrum?: true
     Feeder_Fund?: true
@@ -5940,80 +4616,81 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type CompareinfomationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Compareinfomation to aggregate.
+     * Filter which Page1compareinfomation to aggregate.
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Compareinfomations to fetch.
+     * Determine the order of Page1compareinfomations to fetch.
      */
-    orderBy?: CompareinfomationOrderByWithRelationInput | CompareinfomationOrderByWithRelationInput[]
+    orderBy?: Page1compareinfomationOrderByWithRelationInput | Page1compareinfomationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: CompareinfomationWhereUniqueInput
+    cursor?: Page1compareinfomationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Compareinfomations from the position of the cursor.
+     * Take `±n` Page1compareinfomations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Compareinfomations.
+     * Skip the first `n` Page1compareinfomations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Compareinfomations
+     * Count returned Page1compareinfomations
     **/
-    _count?: true | CompareinfomationCountAggregateInputType
+    _count?: true | Page1compareinfomationCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: CompareinfomationMinAggregateInputType
+    _min?: Page1compareinfomationMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: CompareinfomationMaxAggregateInputType
+    _max?: Page1compareinfomationMaxAggregateInputType
   }
 
-  export type GetCompareinfomationAggregateType<T extends CompareinfomationAggregateArgs> = {
-        [P in keyof T & keyof AggregateCompareinfomation]: P extends '_count' | 'count'
+  export type GetPage1compareinfomationAggregateType<T extends Page1compareinfomationAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage1compareinfomation]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateCompareinfomation[P]>
-      : GetScalarType<T[P], AggregateCompareinfomation[P]>
+        : GetScalarType<T[P], AggregatePage1compareinfomation[P]>
+      : GetScalarType<T[P], AggregatePage1compareinfomation[P]>
   }
 
 
 
 
-  export type CompareinfomationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CompareinfomationWhereInput
-    orderBy?: CompareinfomationOrderByWithAggregationInput | CompareinfomationOrderByWithAggregationInput[]
-    by: CompareinfomationScalarFieldEnum[] | CompareinfomationScalarFieldEnum
-    having?: CompareinfomationScalarWhereWithAggregatesInput
+  export type Page1compareinfomationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page1compareinfomationWhereInput
+    orderBy?: Page1compareinfomationOrderByWithAggregationInput | Page1compareinfomationOrderByWithAggregationInput[]
+    by: Page1compareinfomationScalarFieldEnum[] | Page1compareinfomationScalarFieldEnum
+    having?: Page1compareinfomationScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: CompareinfomationCountAggregateInputType | true
-    _min?: CompareinfomationMinAggregateInputType
-    _max?: CompareinfomationMaxAggregateInputType
+    _count?: Page1compareinfomationCountAggregateInputType | true
+    _min?: Page1compareinfomationMinAggregateInputType
+    _max?: Page1compareinfomationMaxAggregateInputType
   }
 
-  export type CompareinfomationGroupByOutputType = {
+  export type Page1compareinfomationGroupByOutputType = {
     id: string
+    proj_abbr_name: string
     fundType: string
     risk_spectrum: string
     Feeder_Fund: string
@@ -6026,27 +4703,28 @@ export namespace Prisma {
     Minimum_next_investment: string
     Investment_registration_date: string
     Net_asset_value: string
-    _count: CompareinfomationCountAggregateOutputType | null
-    _min: CompareinfomationMinAggregateOutputType | null
-    _max: CompareinfomationMaxAggregateOutputType | null
+    _count: Page1compareinfomationCountAggregateOutputType | null
+    _min: Page1compareinfomationMinAggregateOutputType | null
+    _max: Page1compareinfomationMaxAggregateOutputType | null
   }
 
-  type GetCompareinfomationGroupByPayload<T extends CompareinfomationGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage1compareinfomationGroupByPayload<T extends Page1compareinfomationGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<CompareinfomationGroupByOutputType, T['by']> &
+      PickEnumerable<Page1compareinfomationGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof CompareinfomationGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page1compareinfomationGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], CompareinfomationGroupByOutputType[P]>
-            : GetScalarType<T[P], CompareinfomationGroupByOutputType[P]>
+              : GetScalarType<T[P], Page1compareinfomationGroupByOutputType[P]>
+            : GetScalarType<T[P], Page1compareinfomationGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type CompareinfomationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page1compareinfomationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    proj_abbr_name?: boolean
     fundType?: boolean
     risk_spectrum?: boolean
     Feeder_Fund?: boolean
@@ -6059,10 +4737,11 @@ export namespace Prisma {
     Minimum_next_investment?: boolean
     Investment_registration_date?: boolean
     Net_asset_value?: boolean
-  }, ExtArgs["result"]["compareinfomation"]>
+  }, ExtArgs["result"]["page1compareinfomation"]>
 
-  export type CompareinfomationSelectScalar = {
+  export type Page1compareinfomationSelectScalar = {
     id?: boolean
+    proj_abbr_name?: boolean
     fundType?: boolean
     risk_spectrum?: boolean
     Feeder_Fund?: boolean
@@ -6078,11 +4757,12 @@ export namespace Prisma {
   }
 
 
-  export type $CompareinfomationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Compareinfomation"
+  export type $Page1compareinfomationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page1compareinfomation"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      proj_abbr_name: string
       fundType: string
       risk_spectrum: string
       Feeder_Fund: string
@@ -6095,160 +4775,160 @@ export namespace Prisma {
       Minimum_next_investment: string
       Investment_registration_date: string
       Net_asset_value: string
-    }, ExtArgs["result"]["compareinfomation"]>
+    }, ExtArgs["result"]["page1compareinfomation"]>
     composites: {}
   }
 
 
-  type CompareinfomationGetPayload<S extends boolean | null | undefined | CompareinfomationDefaultArgs> = $Result.GetResult<Prisma.$CompareinfomationPayload, S>
+  type Page1compareinfomationGetPayload<S extends boolean | null | undefined | Page1compareinfomationDefaultArgs> = $Result.GetResult<Prisma.$Page1compareinfomationPayload, S>
 
-  type CompareinfomationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<CompareinfomationFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: CompareinfomationCountAggregateInputType | true
+  type Page1compareinfomationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page1compareinfomationFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page1compareinfomationCountAggregateInputType | true
     }
 
-  export interface CompareinfomationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Compareinfomation'], meta: { name: 'Compareinfomation' } }
+  export interface Page1compareinfomationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page1compareinfomation'], meta: { name: 'Page1compareinfomation' } }
     /**
-     * Find zero or one Compareinfomation that matches the filter.
-     * @param {CompareinfomationFindUniqueArgs} args - Arguments to find a Compareinfomation
+     * Find zero or one Page1compareinfomation that matches the filter.
+     * @param {Page1compareinfomationFindUniqueArgs} args - Arguments to find a Page1compareinfomation
      * @example
-     * // Get one Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.findUnique({
+     * // Get one Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends CompareinfomationFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationFindUniqueArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page1compareinfomationFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Compareinfomation that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page1compareinfomation that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {CompareinfomationFindUniqueOrThrowArgs} args - Arguments to find a Compareinfomation
+     * @param {Page1compareinfomationFindUniqueOrThrowArgs} args - Arguments to find a Page1compareinfomation
      * @example
-     * // Get one Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.findUniqueOrThrow({
+     * // Get one Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends CompareinfomationFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page1compareinfomationFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Compareinfomation that matches the filter.
+     * Find the first Page1compareinfomation that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationFindFirstArgs} args - Arguments to find a Compareinfomation
+     * @param {Page1compareinfomationFindFirstArgs} args - Arguments to find a Page1compareinfomation
      * @example
-     * // Get one Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.findFirst({
+     * // Get one Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends CompareinfomationFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationFindFirstArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page1compareinfomationFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationFindFirstArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Compareinfomation that matches the filter or
+     * Find the first Page1compareinfomation that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationFindFirstOrThrowArgs} args - Arguments to find a Compareinfomation
+     * @param {Page1compareinfomationFindFirstOrThrowArgs} args - Arguments to find a Page1compareinfomation
      * @example
-     * // Get one Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.findFirstOrThrow({
+     * // Get one Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends CompareinfomationFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page1compareinfomationFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Compareinfomations that matches the filter.
+     * Find zero or more Page1compareinfomations that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page1compareinfomationFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Compareinfomations
-     * const compareinfomations = await prisma.compareinfomation.findMany()
+     * // Get all Page1compareinfomations
+     * const page1compareinfomations = await prisma.page1compareinfomation.findMany()
      * 
-     * // Get first 10 Compareinfomations
-     * const compareinfomations = await prisma.compareinfomation.findMany({ take: 10 })
+     * // Get first 10 Page1compareinfomations
+     * const page1compareinfomations = await prisma.page1compareinfomation.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const compareinfomationWithIdOnly = await prisma.compareinfomation.findMany({ select: { id: true } })
+     * const page1compareinfomationWithIdOnly = await prisma.page1compareinfomation.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends CompareinfomationFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page1compareinfomationFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Compareinfomation.
-     * @param {CompareinfomationCreateArgs} args - Arguments to create a Compareinfomation.
+     * Create a Page1compareinfomation.
+     * @param {Page1compareinfomationCreateArgs} args - Arguments to create a Page1compareinfomation.
      * @example
-     * // Create one Compareinfomation
-     * const Compareinfomation = await prisma.compareinfomation.create({
+     * // Create one Page1compareinfomation
+     * const Page1compareinfomation = await prisma.page1compareinfomation.create({
      *   data: {
-     *     // ... data to create a Compareinfomation
+     *     // ... data to create a Page1compareinfomation
      *   }
      * })
      * 
     **/
-    create<T extends CompareinfomationCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationCreateArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page1compareinfomationCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationCreateArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Compareinfomations.
-     *     @param {CompareinfomationCreateManyArgs} args - Arguments to create many Compareinfomations.
+     * Create many Page1compareinfomations.
+     *     @param {Page1compareinfomationCreateManyArgs} args - Arguments to create many Page1compareinfomations.
      *     @example
-     *     // Create many Compareinfomations
-     *     const compareinfomation = await prisma.compareinfomation.createMany({
+     *     // Create many Page1compareinfomations
+     *     const page1compareinfomation = await prisma.page1compareinfomation.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends CompareinfomationCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationCreateManyArgs<ExtArgs>>
+    createMany<T extends Page1compareinfomationCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Compareinfomation.
-     * @param {CompareinfomationDeleteArgs} args - Arguments to delete one Compareinfomation.
+     * Delete a Page1compareinfomation.
+     * @param {Page1compareinfomationDeleteArgs} args - Arguments to delete one Page1compareinfomation.
      * @example
-     * // Delete one Compareinfomation
-     * const Compareinfomation = await prisma.compareinfomation.delete({
+     * // Delete one Page1compareinfomation
+     * const Page1compareinfomation = await prisma.page1compareinfomation.delete({
      *   where: {
-     *     // ... filter to delete one Compareinfomation
+     *     // ... filter to delete one Page1compareinfomation
      *   }
      * })
      * 
     **/
-    delete<T extends CompareinfomationDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationDeleteArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page1compareinfomationDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationDeleteArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Compareinfomation.
-     * @param {CompareinfomationUpdateArgs} args - Arguments to update one Compareinfomation.
+     * Update one Page1compareinfomation.
+     * @param {Page1compareinfomationUpdateArgs} args - Arguments to update one Page1compareinfomation.
      * @example
-     * // Update one Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.update({
+     * // Update one Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6258,34 +4938,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends CompareinfomationUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationUpdateArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page1compareinfomationUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationUpdateArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Compareinfomations.
-     * @param {CompareinfomationDeleteManyArgs} args - Arguments to filter Compareinfomations to delete.
+     * Delete zero or more Page1compareinfomations.
+     * @param {Page1compareinfomationDeleteManyArgs} args - Arguments to filter Page1compareinfomations to delete.
      * @example
-     * // Delete a few Compareinfomations
-     * const { count } = await prisma.compareinfomation.deleteMany({
+     * // Delete a few Page1compareinfomations
+     * const { count } = await prisma.page1compareinfomation.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends CompareinfomationDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, CompareinfomationDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page1compareinfomationDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page1compareinfomationDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Compareinfomations.
+     * Update zero or more Page1compareinfomations.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page1compareinfomationUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Compareinfomations
-     * const compareinfomation = await prisma.compareinfomation.updateMany({
+     * // Update many Page1compareinfomations
+     * const page1compareinfomation = await prisma.page1compareinfomation.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6295,48 +4975,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends CompareinfomationUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page1compareinfomationUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Compareinfomation.
-     * @param {CompareinfomationUpsertArgs} args - Arguments to update or create a Compareinfomation.
+     * Create or update one Page1compareinfomation.
+     * @param {Page1compareinfomationUpsertArgs} args - Arguments to update or create a Page1compareinfomation.
      * @example
-     * // Update or create a Compareinfomation
-     * const compareinfomation = await prisma.compareinfomation.upsert({
+     * // Update or create a Page1compareinfomation
+     * const page1compareinfomation = await prisma.page1compareinfomation.upsert({
      *   create: {
-     *     // ... data to create a Compareinfomation
+     *     // ... data to create a Page1compareinfomation
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Compareinfomation we want to update
+     *     // ... the filter for the Page1compareinfomation we want to update
      *   }
      * })
     **/
-    upsert<T extends CompareinfomationUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, CompareinfomationUpsertArgs<ExtArgs>>
-    ): Prisma__CompareinfomationClient<$Result.GetResult<Prisma.$CompareinfomationPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page1compareinfomationUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page1compareinfomationUpsertArgs<ExtArgs>>
+    ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Compareinfomations that matches the filter.
-     * @param {CompareinfomationFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page1compareinfomations that matches the filter.
+     * @param {Page1compareinfomationFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const compareinfomation = await prisma.compareinfomation.findRaw({
+     * const page1compareinfomation = await prisma.page1compareinfomation.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: CompareinfomationFindRawArgs
+      args?: Page1compareinfomationFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Compareinfomation.
-     * @param {CompareinfomationAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page1compareinfomation.
+     * @param {Page1compareinfomationAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const compareinfomation = await prisma.compareinfomation.aggregateRaw({
+     * const page1compareinfomation = await prisma.page1compareinfomation.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -6344,37 +5024,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: CompareinfomationAggregateRawArgs
+      args?: Page1compareinfomationAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Compareinfomations.
+     * Count the number of Page1compareinfomations.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationCountArgs} args - Arguments to filter Compareinfomations to count.
+     * @param {Page1compareinfomationCountArgs} args - Arguments to filter Page1compareinfomations to count.
      * @example
-     * // Count the number of Compareinfomations
-     * const count = await prisma.compareinfomation.count({
+     * // Count the number of Page1compareinfomations
+     * const count = await prisma.page1compareinfomation.count({
      *   where: {
-     *     // ... the filter for the Compareinfomations we want to count
+     *     // ... the filter for the Page1compareinfomations we want to count
      *   }
      * })
     **/
-    count<T extends CompareinfomationCountArgs>(
-      args?: Subset<T, CompareinfomationCountArgs>,
+    count<T extends Page1compareinfomationCountArgs>(
+      args?: Subset<T, Page1compareinfomationCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], CompareinfomationCountAggregateOutputType>
+          : GetScalarType<T['select'], Page1compareinfomationCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Compareinfomation.
+     * Allows you to perform aggregations operations on a Page1compareinfomation.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page1compareinfomationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -6394,13 +5074,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends CompareinfomationAggregateArgs>(args: Subset<T, CompareinfomationAggregateArgs>): Prisma.PrismaPromise<GetCompareinfomationAggregateType<T>>
+    aggregate<T extends Page1compareinfomationAggregateArgs>(args: Subset<T, Page1compareinfomationAggregateArgs>): Prisma.PrismaPromise<GetPage1compareinfomationAggregateType<T>>
 
     /**
-     * Group by Compareinfomation.
+     * Group by Page1compareinfomation.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {CompareinfomationGroupByArgs} args - Group by arguments.
+     * @param {Page1compareinfomationGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -6415,14 +5095,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends CompareinfomationGroupByArgs,
+      T extends Page1compareinfomationGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: CompareinfomationGroupByArgs['orderBy'] }
-        : { orderBy?: CompareinfomationGroupByArgs['orderBy'] },
+        ? { orderBy: Page1compareinfomationGroupByArgs['orderBy'] }
+        : { orderBy?: Page1compareinfomationGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -6471,20 +5151,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, CompareinfomationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCompareinfomationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page1compareinfomationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage1compareinfomationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Compareinfomation model
+   * Fields of the Page1compareinfomation model
    */
-  readonly fields: CompareinfomationFieldRefs;
+  readonly fields: Page1compareinfomationFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Compareinfomation.
+   * The delegate class that acts as a "Promise-like" for Page1compareinfomation.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__CompareinfomationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page1compareinfomationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -6513,300 +5193,301 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Compareinfomation model
+   * Fields of the Page1compareinfomation model
    */ 
-  interface CompareinfomationFieldRefs {
-    readonly id: FieldRef<"Compareinfomation", 'String'>
-    readonly fundType: FieldRef<"Compareinfomation", 'String'>
-    readonly risk_spectrum: FieldRef<"Compareinfomation", 'String'>
-    readonly Feeder_Fund: FieldRef<"Compareinfomation", 'String'>
-    readonly Currency_policy: FieldRef<"Compareinfomation", 'String'>
-    readonly Dividend_payment_policy: FieldRef<"Compareinfomation", 'String'>
-    readonly Sales_fees: FieldRef<"Compareinfomation", 'String'>
-    readonly Buyback_fee: FieldRef<"Compareinfomation", 'String'>
-    readonly Mutual_fund_expenses: FieldRef<"Compareinfomation", 'String'>
-    readonly Minimum_initial_investment: FieldRef<"Compareinfomation", 'String'>
-    readonly Minimum_next_investment: FieldRef<"Compareinfomation", 'String'>
-    readonly Investment_registration_date: FieldRef<"Compareinfomation", 'String'>
-    readonly Net_asset_value: FieldRef<"Compareinfomation", 'String'>
+  interface Page1compareinfomationFieldRefs {
+    readonly id: FieldRef<"Page1compareinfomation", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page1compareinfomation", 'String'>
+    readonly fundType: FieldRef<"Page1compareinfomation", 'String'>
+    readonly risk_spectrum: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Feeder_Fund: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Currency_policy: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Dividend_payment_policy: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Sales_fees: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Buyback_fee: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Mutual_fund_expenses: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Minimum_initial_investment: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Minimum_next_investment: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Investment_registration_date: FieldRef<"Page1compareinfomation", 'String'>
+    readonly Net_asset_value: FieldRef<"Page1compareinfomation", 'String'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Compareinfomation findUnique
+   * Page1compareinfomation findUnique
    */
-  export type CompareinfomationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter, which Compareinfomation to fetch.
+     * Filter, which Page1compareinfomation to fetch.
      */
-    where: CompareinfomationWhereUniqueInput
+    where: Page1compareinfomationWhereUniqueInput
   }
 
 
   /**
-   * Compareinfomation findUniqueOrThrow
+   * Page1compareinfomation findUniqueOrThrow
    */
-  export type CompareinfomationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter, which Compareinfomation to fetch.
+     * Filter, which Page1compareinfomation to fetch.
      */
-    where: CompareinfomationWhereUniqueInput
+    where: Page1compareinfomationWhereUniqueInput
   }
 
 
   /**
-   * Compareinfomation findFirst
+   * Page1compareinfomation findFirst
    */
-  export type CompareinfomationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter, which Compareinfomation to fetch.
+     * Filter, which Page1compareinfomation to fetch.
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Compareinfomations to fetch.
+     * Determine the order of Page1compareinfomations to fetch.
      */
-    orderBy?: CompareinfomationOrderByWithRelationInput | CompareinfomationOrderByWithRelationInput[]
+    orderBy?: Page1compareinfomationOrderByWithRelationInput | Page1compareinfomationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Compareinfomations.
+     * Sets the position for searching for Page1compareinfomations.
      */
-    cursor?: CompareinfomationWhereUniqueInput
+    cursor?: Page1compareinfomationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Compareinfomations from the position of the cursor.
+     * Take `±n` Page1compareinfomations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Compareinfomations.
+     * Skip the first `n` Page1compareinfomations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Compareinfomations.
+     * Filter by unique combinations of Page1compareinfomations.
      */
-    distinct?: CompareinfomationScalarFieldEnum | CompareinfomationScalarFieldEnum[]
+    distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
 
   /**
-   * Compareinfomation findFirstOrThrow
+   * Page1compareinfomation findFirstOrThrow
    */
-  export type CompareinfomationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter, which Compareinfomation to fetch.
+     * Filter, which Page1compareinfomation to fetch.
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Compareinfomations to fetch.
+     * Determine the order of Page1compareinfomations to fetch.
      */
-    orderBy?: CompareinfomationOrderByWithRelationInput | CompareinfomationOrderByWithRelationInput[]
+    orderBy?: Page1compareinfomationOrderByWithRelationInput | Page1compareinfomationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Compareinfomations.
+     * Sets the position for searching for Page1compareinfomations.
      */
-    cursor?: CompareinfomationWhereUniqueInput
+    cursor?: Page1compareinfomationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Compareinfomations from the position of the cursor.
+     * Take `±n` Page1compareinfomations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Compareinfomations.
+     * Skip the first `n` Page1compareinfomations.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Compareinfomations.
+     * Filter by unique combinations of Page1compareinfomations.
      */
-    distinct?: CompareinfomationScalarFieldEnum | CompareinfomationScalarFieldEnum[]
+    distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
 
   /**
-   * Compareinfomation findMany
+   * Page1compareinfomation findMany
    */
-  export type CompareinfomationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter, which Compareinfomations to fetch.
+     * Filter, which Page1compareinfomations to fetch.
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Compareinfomations to fetch.
+     * Determine the order of Page1compareinfomations to fetch.
      */
-    orderBy?: CompareinfomationOrderByWithRelationInput | CompareinfomationOrderByWithRelationInput[]
+    orderBy?: Page1compareinfomationOrderByWithRelationInput | Page1compareinfomationOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Compareinfomations.
+     * Sets the position for listing Page1compareinfomations.
      */
-    cursor?: CompareinfomationWhereUniqueInput
+    cursor?: Page1compareinfomationWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Compareinfomations from the position of the cursor.
+     * Take `±n` Page1compareinfomations from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Compareinfomations.
+     * Skip the first `n` Page1compareinfomations.
      */
     skip?: number
-    distinct?: CompareinfomationScalarFieldEnum | CompareinfomationScalarFieldEnum[]
+    distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
 
   /**
-   * Compareinfomation create
+   * Page1compareinfomation create
    */
-  export type CompareinfomationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * The data needed to create a Compareinfomation.
+     * The data needed to create a Page1compareinfomation.
      */
-    data: XOR<CompareinfomationCreateInput, CompareinfomationUncheckedCreateInput>
+    data: XOR<Page1compareinfomationCreateInput, Page1compareinfomationUncheckedCreateInput>
   }
 
 
   /**
-   * Compareinfomation createMany
+   * Page1compareinfomation createMany
    */
-  export type CompareinfomationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Compareinfomations.
+     * The data used to create many Page1compareinfomations.
      */
-    data: CompareinfomationCreateManyInput | CompareinfomationCreateManyInput[]
+    data: Page1compareinfomationCreateManyInput | Page1compareinfomationCreateManyInput[]
   }
 
 
   /**
-   * Compareinfomation update
+   * Page1compareinfomation update
    */
-  export type CompareinfomationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * The data needed to update a Compareinfomation.
+     * The data needed to update a Page1compareinfomation.
      */
-    data: XOR<CompareinfomationUpdateInput, CompareinfomationUncheckedUpdateInput>
+    data: XOR<Page1compareinfomationUpdateInput, Page1compareinfomationUncheckedUpdateInput>
     /**
-     * Choose, which Compareinfomation to update.
+     * Choose, which Page1compareinfomation to update.
      */
-    where: CompareinfomationWhereUniqueInput
+    where: Page1compareinfomationWhereUniqueInput
   }
 
 
   /**
-   * Compareinfomation updateMany
+   * Page1compareinfomation updateMany
    */
-  export type CompareinfomationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Compareinfomations.
+     * The data used to update Page1compareinfomations.
      */
-    data: XOR<CompareinfomationUpdateManyMutationInput, CompareinfomationUncheckedUpdateManyInput>
+    data: XOR<Page1compareinfomationUpdateManyMutationInput, Page1compareinfomationUncheckedUpdateManyInput>
     /**
-     * Filter which Compareinfomations to update
+     * Filter which Page1compareinfomations to update
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
   }
 
 
   /**
-   * Compareinfomation upsert
+   * Page1compareinfomation upsert
    */
-  export type CompareinfomationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * The filter to search for the Compareinfomation to update in case it exists.
+     * The filter to search for the Page1compareinfomation to update in case it exists.
      */
-    where: CompareinfomationWhereUniqueInput
+    where: Page1compareinfomationWhereUniqueInput
     /**
-     * In case the Compareinfomation found by the `where` argument doesn't exist, create a new Compareinfomation with this data.
+     * In case the Page1compareinfomation found by the `where` argument doesn't exist, create a new Page1compareinfomation with this data.
      */
-    create: XOR<CompareinfomationCreateInput, CompareinfomationUncheckedCreateInput>
+    create: XOR<Page1compareinfomationCreateInput, Page1compareinfomationUncheckedCreateInput>
     /**
-     * In case the Compareinfomation was found with the provided `where` argument, update it with this data.
+     * In case the Page1compareinfomation was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<CompareinfomationUpdateInput, CompareinfomationUncheckedUpdateInput>
+    update: XOR<Page1compareinfomationUpdateInput, Page1compareinfomationUncheckedUpdateInput>
   }
 
 
   /**
-   * Compareinfomation delete
+   * Page1compareinfomation delete
    */
-  export type CompareinfomationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
     /**
-     * Filter which Compareinfomation to delete.
+     * Filter which Page1compareinfomation to delete.
      */
-    where: CompareinfomationWhereUniqueInput
+    where: Page1compareinfomationWhereUniqueInput
   }
 
 
   /**
-   * Compareinfomation deleteMany
+   * Page1compareinfomation deleteMany
    */
-  export type CompareinfomationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Compareinfomations to delete
+     * Filter which Page1compareinfomations to delete
      */
-    where?: CompareinfomationWhereInput
+    where?: Page1compareinfomationWhereInput
   }
 
 
   /**
-   * Compareinfomation findRaw
+   * Page1compareinfomation findRaw
    */
-  export type CompareinfomationFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -6819,9 +5500,9 @@ export namespace Prisma {
 
 
   /**
-   * Compareinfomation aggregateRaw
+   * Page1compareinfomation aggregateRaw
    */
-  export type CompareinfomationAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -6834,331 +5515,335 @@ export namespace Prisma {
 
 
   /**
-   * Compareinfomation without action
+   * Page1compareinfomation without action
    */
-  export type CompareinfomationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page1compareinfomationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Compareinfomation
+     * Select specific fields to fetch from the Page1compareinfomation
      */
-    select?: CompareinfomationSelect<ExtArgs> | null
+    select?: Page1compareinfomationSelect<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Type_assets_invested
+   * Model Page2Operating_results_and_dividends
    */
 
-  export type AggregateType_assets_invested = {
-    _count: Type_assets_investedCountAggregateOutputType | null
-    _min: Type_assets_investedMinAggregateOutputType | null
-    _max: Type_assets_investedMaxAggregateOutputType | null
+  export type AggregatePage2Operating_results_and_dividends = {
+    _count: Page2Operating_results_and_dividendsCountAggregateOutputType | null
+    _min: Page2Operating_results_and_dividendsMinAggregateOutputType | null
+    _max: Page2Operating_results_and_dividendsMaxAggregateOutputType | null
   }
 
-  export type Type_assets_investedMinAggregateOutputType = {
+  export type Page2Operating_results_and_dividendsMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Type_assets_investedMaxAggregateOutputType = {
+  export type Page2Operating_results_and_dividendsMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Type_assets_investedCountAggregateOutputType = {
+  export type Page2Operating_results_and_dividendsCountAggregateOutputType = {
     id: number
     proj_id: number
-    data: number
+    proj_abbr_name: number
     _all: number
   }
 
 
-  export type Type_assets_investedMinAggregateInputType = {
+  export type Page2Operating_results_and_dividendsMinAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Type_assets_investedMaxAggregateInputType = {
+  export type Page2Operating_results_and_dividendsMaxAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Type_assets_investedCountAggregateInputType = {
+  export type Page2Operating_results_and_dividendsCountAggregateInputType = {
     id?: true
     proj_id?: true
-    data?: true
+    proj_abbr_name?: true
     _all?: true
   }
 
-  export type Type_assets_investedAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Type_assets_invested to aggregate.
+     * Filter which Page2Operating_results_and_dividends to aggregate.
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Type_assets_investeds to fetch.
+     * Determine the order of Page2Operating_results_and_dividends to fetch.
      */
-    orderBy?: Type_assets_investedOrderByWithRelationInput | Type_assets_investedOrderByWithRelationInput[]
+    orderBy?: Page2Operating_results_and_dividendsOrderByWithRelationInput | Page2Operating_results_and_dividendsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Type_assets_investedWhereUniqueInput
+    cursor?: Page2Operating_results_and_dividendsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Type_assets_investeds from the position of the cursor.
+     * Take `±n` Page2Operating_results_and_dividends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Type_assets_investeds.
+     * Skip the first `n` Page2Operating_results_and_dividends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Type_assets_investeds
+     * Count returned Page2Operating_results_and_dividends
     **/
-    _count?: true | Type_assets_investedCountAggregateInputType
+    _count?: true | Page2Operating_results_and_dividendsCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Type_assets_investedMinAggregateInputType
+    _min?: Page2Operating_results_and_dividendsMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Type_assets_investedMaxAggregateInputType
+    _max?: Page2Operating_results_and_dividendsMaxAggregateInputType
   }
 
-  export type GetType_assets_investedAggregateType<T extends Type_assets_investedAggregateArgs> = {
-        [P in keyof T & keyof AggregateType_assets_invested]: P extends '_count' | 'count'
+  export type GetPage2Operating_results_and_dividendsAggregateType<T extends Page2Operating_results_and_dividendsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage2Operating_results_and_dividends]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateType_assets_invested[P]>
-      : GetScalarType<T[P], AggregateType_assets_invested[P]>
+        : GetScalarType<T[P], AggregatePage2Operating_results_and_dividends[P]>
+      : GetScalarType<T[P], AggregatePage2Operating_results_and_dividends[P]>
   }
 
 
 
 
-  export type Type_assets_investedGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Type_assets_investedWhereInput
-    orderBy?: Type_assets_investedOrderByWithAggregationInput | Type_assets_investedOrderByWithAggregationInput[]
-    by: Type_assets_investedScalarFieldEnum[] | Type_assets_investedScalarFieldEnum
-    having?: Type_assets_investedScalarWhereWithAggregatesInput
+  export type Page2Operating_results_and_dividendsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page2Operating_results_and_dividendsWhereInput
+    orderBy?: Page2Operating_results_and_dividendsOrderByWithAggregationInput | Page2Operating_results_and_dividendsOrderByWithAggregationInput[]
+    by: Page2Operating_results_and_dividendsScalarFieldEnum[] | Page2Operating_results_and_dividendsScalarFieldEnum
+    having?: Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Type_assets_investedCountAggregateInputType | true
-    _min?: Type_assets_investedMinAggregateInputType
-    _max?: Type_assets_investedMaxAggregateInputType
+    _count?: Page2Operating_results_and_dividendsCountAggregateInputType | true
+    _min?: Page2Operating_results_and_dividendsMinAggregateInputType
+    _max?: Page2Operating_results_and_dividendsMaxAggregateInputType
   }
 
-  export type Type_assets_investedGroupByOutputType = {
+  export type Page2Operating_results_and_dividendsGroupByOutputType = {
     id: string
     proj_id: string
-    data: JsonValue
-    _count: Type_assets_investedCountAggregateOutputType | null
-    _min: Type_assets_investedMinAggregateOutputType | null
-    _max: Type_assets_investedMaxAggregateOutputType | null
+    proj_abbr_name: string
+    _count: Page2Operating_results_and_dividendsCountAggregateOutputType | null
+    _min: Page2Operating_results_and_dividendsMinAggregateOutputType | null
+    _max: Page2Operating_results_and_dividendsMaxAggregateOutputType | null
   }
 
-  type GetType_assets_investedGroupByPayload<T extends Type_assets_investedGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage2Operating_results_and_dividendsGroupByPayload<T extends Page2Operating_results_and_dividendsGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Type_assets_investedGroupByOutputType, T['by']> &
+      PickEnumerable<Page2Operating_results_and_dividendsGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Type_assets_investedGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page2Operating_results_and_dividendsGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Type_assets_investedGroupByOutputType[P]>
-            : GetScalarType<T[P], Type_assets_investedGroupByOutputType[P]>
+              : GetScalarType<T[P], Page2Operating_results_and_dividendsGroupByOutputType[P]>
+            : GetScalarType<T[P], Page2Operating_results_and_dividendsGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Type_assets_investedSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page2Operating_results_and_dividendsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["type_assets_invested"]>
+    proj_abbr_name?: boolean
+  }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
 
-  export type Type_assets_investedSelectScalar = {
+  export type Page2Operating_results_and_dividendsSelectScalar = {
     id?: boolean
     proj_id?: boolean
-    data?: boolean
+    proj_abbr_name?: boolean
   }
 
 
-  export type $Type_assets_investedPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Type_assets_invested"
+  export type $Page2Operating_results_and_dividendsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page2Operating_results_and_dividends"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["type_assets_invested"]>
+      proj_abbr_name: string
+    }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
     composites: {}
   }
 
 
-  type Type_assets_investedGetPayload<S extends boolean | null | undefined | Type_assets_investedDefaultArgs> = $Result.GetResult<Prisma.$Type_assets_investedPayload, S>
+  type Page2Operating_results_and_dividendsGetPayload<S extends boolean | null | undefined | Page2Operating_results_and_dividendsDefaultArgs> = $Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload, S>
 
-  type Type_assets_investedCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Type_assets_investedFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Type_assets_investedCountAggregateInputType | true
+  type Page2Operating_results_and_dividendsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page2Operating_results_and_dividendsFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page2Operating_results_and_dividendsCountAggregateInputType | true
     }
 
-  export interface Type_assets_investedDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Type_assets_invested'], meta: { name: 'Type_assets_invested' } }
+  export interface Page2Operating_results_and_dividendsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page2Operating_results_and_dividends'], meta: { name: 'Page2Operating_results_and_dividends' } }
     /**
-     * Find zero or one Type_assets_invested that matches the filter.
-     * @param {Type_assets_investedFindUniqueArgs} args - Arguments to find a Type_assets_invested
+     * Find zero or one Page2Operating_results_and_dividends that matches the filter.
+     * @param {Page2Operating_results_and_dividendsFindUniqueArgs} args - Arguments to find a Page2Operating_results_and_dividends
      * @example
-     * // Get one Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.findUnique({
+     * // Get one Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends Type_assets_investedFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedFindUniqueArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page2Operating_results_and_dividendsFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Type_assets_invested that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page2Operating_results_and_dividends that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {Type_assets_investedFindUniqueOrThrowArgs} args - Arguments to find a Type_assets_invested
+     * @param {Page2Operating_results_and_dividendsFindUniqueOrThrowArgs} args - Arguments to find a Page2Operating_results_and_dividends
      * @example
-     * // Get one Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.findUniqueOrThrow({
+     * // Get one Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends Type_assets_investedFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page2Operating_results_and_dividendsFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Type_assets_invested that matches the filter.
+     * Find the first Page2Operating_results_and_dividends that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedFindFirstArgs} args - Arguments to find a Type_assets_invested
+     * @param {Page2Operating_results_and_dividendsFindFirstArgs} args - Arguments to find a Page2Operating_results_and_dividends
      * @example
-     * // Get one Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.findFirst({
+     * // Get one Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends Type_assets_investedFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedFindFirstArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page2Operating_results_and_dividendsFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsFindFirstArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Type_assets_invested that matches the filter or
+     * Find the first Page2Operating_results_and_dividends that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedFindFirstOrThrowArgs} args - Arguments to find a Type_assets_invested
+     * @param {Page2Operating_results_and_dividendsFindFirstOrThrowArgs} args - Arguments to find a Page2Operating_results_and_dividends
      * @example
-     * // Get one Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.findFirstOrThrow({
+     * // Get one Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends Type_assets_investedFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page2Operating_results_and_dividendsFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Type_assets_investeds that matches the filter.
+     * Find zero or more Page2Operating_results_and_dividends that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page2Operating_results_and_dividendsFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Type_assets_investeds
-     * const type_assets_investeds = await prisma.type_assets_invested.findMany()
+     * // Get all Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findMany()
      * 
-     * // Get first 10 Type_assets_investeds
-     * const type_assets_investeds = await prisma.type_assets_invested.findMany({ take: 10 })
+     * // Get first 10 Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const type_assets_investedWithIdOnly = await prisma.type_assets_invested.findMany({ select: { id: true } })
+     * const page2Operating_results_and_dividendsWithIdOnly = await prisma.page2Operating_results_and_dividends.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends Type_assets_investedFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page2Operating_results_and_dividendsFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Type_assets_invested.
-     * @param {Type_assets_investedCreateArgs} args - Arguments to create a Type_assets_invested.
+     * Create a Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsCreateArgs} args - Arguments to create a Page2Operating_results_and_dividends.
      * @example
-     * // Create one Type_assets_invested
-     * const Type_assets_invested = await prisma.type_assets_invested.create({
+     * // Create one Page2Operating_results_and_dividends
+     * const Page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.create({
      *   data: {
-     *     // ... data to create a Type_assets_invested
+     *     // ... data to create a Page2Operating_results_and_dividends
      *   }
      * })
      * 
     **/
-    create<T extends Type_assets_investedCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedCreateArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page2Operating_results_and_dividendsCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsCreateArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Type_assets_investeds.
-     *     @param {Type_assets_investedCreateManyArgs} args - Arguments to create many Type_assets_investeds.
+     * Create many Page2Operating_results_and_dividends.
+     *     @param {Page2Operating_results_and_dividendsCreateManyArgs} args - Arguments to create many Page2Operating_results_and_dividends.
      *     @example
-     *     // Create many Type_assets_investeds
-     *     const type_assets_invested = await prisma.type_assets_invested.createMany({
+     *     // Create many Page2Operating_results_and_dividends
+     *     const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends Type_assets_investedCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedCreateManyArgs<ExtArgs>>
+    createMany<T extends Page2Operating_results_and_dividendsCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Type_assets_invested.
-     * @param {Type_assets_investedDeleteArgs} args - Arguments to delete one Type_assets_invested.
+     * Delete a Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsDeleteArgs} args - Arguments to delete one Page2Operating_results_and_dividends.
      * @example
-     * // Delete one Type_assets_invested
-     * const Type_assets_invested = await prisma.type_assets_invested.delete({
+     * // Delete one Page2Operating_results_and_dividends
+     * const Page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.delete({
      *   where: {
-     *     // ... filter to delete one Type_assets_invested
+     *     // ... filter to delete one Page2Operating_results_and_dividends
      *   }
      * })
      * 
     **/
-    delete<T extends Type_assets_investedDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedDeleteArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page2Operating_results_and_dividendsDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsDeleteArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Type_assets_invested.
-     * @param {Type_assets_investedUpdateArgs} args - Arguments to update one Type_assets_invested.
+     * Update one Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsUpdateArgs} args - Arguments to update one Page2Operating_results_and_dividends.
      * @example
-     * // Update one Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.update({
+     * // Update one Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -7168,34 +5853,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends Type_assets_investedUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedUpdateArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page2Operating_results_and_dividendsUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsUpdateArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Type_assets_investeds.
-     * @param {Type_assets_investedDeleteManyArgs} args - Arguments to filter Type_assets_investeds to delete.
+     * Delete zero or more Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsDeleteManyArgs} args - Arguments to filter Page2Operating_results_and_dividends to delete.
      * @example
-     * // Delete a few Type_assets_investeds
-     * const { count } = await prisma.type_assets_invested.deleteMany({
+     * // Delete a few Page2Operating_results_and_dividends
+     * const { count } = await prisma.page2Operating_results_and_dividends.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends Type_assets_investedDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Type_assets_investedDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page2Operating_results_and_dividendsDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page2Operating_results_and_dividendsDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Type_assets_investeds.
+     * Update zero or more Page2Operating_results_and_dividends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page2Operating_results_and_dividendsUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Type_assets_investeds
-     * const type_assets_invested = await prisma.type_assets_invested.updateMany({
+     * // Update many Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -7205,48 +5890,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends Type_assets_investedUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page2Operating_results_and_dividendsUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Type_assets_invested.
-     * @param {Type_assets_investedUpsertArgs} args - Arguments to update or create a Type_assets_invested.
+     * Create or update one Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsUpsertArgs} args - Arguments to update or create a Page2Operating_results_and_dividends.
      * @example
-     * // Update or create a Type_assets_invested
-     * const type_assets_invested = await prisma.type_assets_invested.upsert({
+     * // Update or create a Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.upsert({
      *   create: {
-     *     // ... data to create a Type_assets_invested
+     *     // ... data to create a Page2Operating_results_and_dividends
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Type_assets_invested we want to update
+     *     // ... the filter for the Page2Operating_results_and_dividends we want to update
      *   }
      * })
     **/
-    upsert<T extends Type_assets_investedUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Type_assets_investedUpsertArgs<ExtArgs>>
-    ): Prisma__Type_assets_investedClient<$Result.GetResult<Prisma.$Type_assets_investedPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page2Operating_results_and_dividendsUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page2Operating_results_and_dividendsUpsertArgs<ExtArgs>>
+    ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Type_assets_investeds that matches the filter.
-     * @param {Type_assets_investedFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page2Operating_results_and_dividends that matches the filter.
+     * @param {Page2Operating_results_and_dividendsFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const type_assets_invested = await prisma.type_assets_invested.findRaw({
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: Type_assets_investedFindRawArgs
+      args?: Page2Operating_results_and_dividendsFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Type_assets_invested.
-     * @param {Type_assets_investedAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page2Operating_results_and_dividends.
+     * @param {Page2Operating_results_and_dividendsAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const type_assets_invested = await prisma.type_assets_invested.aggregateRaw({
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -7254,37 +5939,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: Type_assets_investedAggregateRawArgs
+      args?: Page2Operating_results_and_dividendsAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Type_assets_investeds.
+     * Count the number of Page2Operating_results_and_dividends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedCountArgs} args - Arguments to filter Type_assets_investeds to count.
+     * @param {Page2Operating_results_and_dividendsCountArgs} args - Arguments to filter Page2Operating_results_and_dividends to count.
      * @example
-     * // Count the number of Type_assets_investeds
-     * const count = await prisma.type_assets_invested.count({
+     * // Count the number of Page2Operating_results_and_dividends
+     * const count = await prisma.page2Operating_results_and_dividends.count({
      *   where: {
-     *     // ... the filter for the Type_assets_investeds we want to count
+     *     // ... the filter for the Page2Operating_results_and_dividends we want to count
      *   }
      * })
     **/
-    count<T extends Type_assets_investedCountArgs>(
-      args?: Subset<T, Type_assets_investedCountArgs>,
+    count<T extends Page2Operating_results_and_dividendsCountArgs>(
+      args?: Subset<T, Page2Operating_results_and_dividendsCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Type_assets_investedCountAggregateOutputType>
+          : GetScalarType<T['select'], Page2Operating_results_and_dividendsCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Type_assets_invested.
+     * Allows you to perform aggregations operations on a Page2Operating_results_and_dividends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page2Operating_results_and_dividendsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -7304,13 +5989,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Type_assets_investedAggregateArgs>(args: Subset<T, Type_assets_investedAggregateArgs>): Prisma.PrismaPromise<GetType_assets_investedAggregateType<T>>
+    aggregate<T extends Page2Operating_results_and_dividendsAggregateArgs>(args: Subset<T, Page2Operating_results_and_dividendsAggregateArgs>): Prisma.PrismaPromise<GetPage2Operating_results_and_dividendsAggregateType<T>>
 
     /**
-     * Group by Type_assets_invested.
+     * Group by Page2Operating_results_and_dividends.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Type_assets_investedGroupByArgs} args - Group by arguments.
+     * @param {Page2Operating_results_and_dividendsGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -7325,14 +6010,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Type_assets_investedGroupByArgs,
+      T extends Page2Operating_results_and_dividendsGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Type_assets_investedGroupByArgs['orderBy'] }
-        : { orderBy?: Type_assets_investedGroupByArgs['orderBy'] },
+        ? { orderBy: Page2Operating_results_and_dividendsGroupByArgs['orderBy'] }
+        : { orderBy?: Page2Operating_results_and_dividendsGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -7381,20 +6066,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Type_assets_investedGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetType_assets_investedGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page2Operating_results_and_dividendsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage2Operating_results_and_dividendsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Type_assets_invested model
+   * Fields of the Page2Operating_results_and_dividends model
    */
-  readonly fields: Type_assets_investedFieldRefs;
+  readonly fields: Page2Operating_results_and_dividendsFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Type_assets_invested.
+   * The delegate class that acts as a "Promise-like" for Page2Operating_results_and_dividends.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Type_assets_investedClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page2Operating_results_and_dividendsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -7423,290 +6108,290 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Type_assets_invested model
+   * Fields of the Page2Operating_results_and_dividends model
    */ 
-  interface Type_assets_investedFieldRefs {
-    readonly id: FieldRef<"Type_assets_invested", 'String'>
-    readonly proj_id: FieldRef<"Type_assets_invested", 'String'>
-    readonly data: FieldRef<"Type_assets_invested", 'Json'>
+  interface Page2Operating_results_and_dividendsFieldRefs {
+    readonly id: FieldRef<"Page2Operating_results_and_dividends", 'String'>
+    readonly proj_id: FieldRef<"Page2Operating_results_and_dividends", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page2Operating_results_and_dividends", 'String'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Type_assets_invested findUnique
+   * Page2Operating_results_and_dividends findUnique
    */
-  export type Type_assets_investedFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter, which Type_assets_invested to fetch.
+     * Filter, which Page2Operating_results_and_dividends to fetch.
      */
-    where: Type_assets_investedWhereUniqueInput
+    where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
 
   /**
-   * Type_assets_invested findUniqueOrThrow
+   * Page2Operating_results_and_dividends findUniqueOrThrow
    */
-  export type Type_assets_investedFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter, which Type_assets_invested to fetch.
+     * Filter, which Page2Operating_results_and_dividends to fetch.
      */
-    where: Type_assets_investedWhereUniqueInput
+    where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
 
   /**
-   * Type_assets_invested findFirst
+   * Page2Operating_results_and_dividends findFirst
    */
-  export type Type_assets_investedFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter, which Type_assets_invested to fetch.
+     * Filter, which Page2Operating_results_and_dividends to fetch.
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Type_assets_investeds to fetch.
+     * Determine the order of Page2Operating_results_and_dividends to fetch.
      */
-    orderBy?: Type_assets_investedOrderByWithRelationInput | Type_assets_investedOrderByWithRelationInput[]
+    orderBy?: Page2Operating_results_and_dividendsOrderByWithRelationInput | Page2Operating_results_and_dividendsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Type_assets_investeds.
+     * Sets the position for searching for Page2Operating_results_and_dividends.
      */
-    cursor?: Type_assets_investedWhereUniqueInput
+    cursor?: Page2Operating_results_and_dividendsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Type_assets_investeds from the position of the cursor.
+     * Take `±n` Page2Operating_results_and_dividends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Type_assets_investeds.
+     * Skip the first `n` Page2Operating_results_and_dividends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Type_assets_investeds.
+     * Filter by unique combinations of Page2Operating_results_and_dividends.
      */
-    distinct?: Type_assets_investedScalarFieldEnum | Type_assets_investedScalarFieldEnum[]
+    distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
 
   /**
-   * Type_assets_invested findFirstOrThrow
+   * Page2Operating_results_and_dividends findFirstOrThrow
    */
-  export type Type_assets_investedFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter, which Type_assets_invested to fetch.
+     * Filter, which Page2Operating_results_and_dividends to fetch.
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Type_assets_investeds to fetch.
+     * Determine the order of Page2Operating_results_and_dividends to fetch.
      */
-    orderBy?: Type_assets_investedOrderByWithRelationInput | Type_assets_investedOrderByWithRelationInput[]
+    orderBy?: Page2Operating_results_and_dividendsOrderByWithRelationInput | Page2Operating_results_and_dividendsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Type_assets_investeds.
+     * Sets the position for searching for Page2Operating_results_and_dividends.
      */
-    cursor?: Type_assets_investedWhereUniqueInput
+    cursor?: Page2Operating_results_and_dividendsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Type_assets_investeds from the position of the cursor.
+     * Take `±n` Page2Operating_results_and_dividends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Type_assets_investeds.
+     * Skip the first `n` Page2Operating_results_and_dividends.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Type_assets_investeds.
+     * Filter by unique combinations of Page2Operating_results_and_dividends.
      */
-    distinct?: Type_assets_investedScalarFieldEnum | Type_assets_investedScalarFieldEnum[]
+    distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
 
   /**
-   * Type_assets_invested findMany
+   * Page2Operating_results_and_dividends findMany
    */
-  export type Type_assets_investedFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter, which Type_assets_investeds to fetch.
+     * Filter, which Page2Operating_results_and_dividends to fetch.
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Type_assets_investeds to fetch.
+     * Determine the order of Page2Operating_results_and_dividends to fetch.
      */
-    orderBy?: Type_assets_investedOrderByWithRelationInput | Type_assets_investedOrderByWithRelationInput[]
+    orderBy?: Page2Operating_results_and_dividendsOrderByWithRelationInput | Page2Operating_results_and_dividendsOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Type_assets_investeds.
+     * Sets the position for listing Page2Operating_results_and_dividends.
      */
-    cursor?: Type_assets_investedWhereUniqueInput
+    cursor?: Page2Operating_results_and_dividendsWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Type_assets_investeds from the position of the cursor.
+     * Take `±n` Page2Operating_results_and_dividends from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Type_assets_investeds.
+     * Skip the first `n` Page2Operating_results_and_dividends.
      */
     skip?: number
-    distinct?: Type_assets_investedScalarFieldEnum | Type_assets_investedScalarFieldEnum[]
+    distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
 
   /**
-   * Type_assets_invested create
+   * Page2Operating_results_and_dividends create
    */
-  export type Type_assets_investedCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * The data needed to create a Type_assets_invested.
+     * The data needed to create a Page2Operating_results_and_dividends.
      */
-    data: XOR<Type_assets_investedCreateInput, Type_assets_investedUncheckedCreateInput>
+    data: XOR<Page2Operating_results_and_dividendsCreateInput, Page2Operating_results_and_dividendsUncheckedCreateInput>
   }
 
 
   /**
-   * Type_assets_invested createMany
+   * Page2Operating_results_and_dividends createMany
    */
-  export type Type_assets_investedCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Type_assets_investeds.
+     * The data used to create many Page2Operating_results_and_dividends.
      */
-    data: Type_assets_investedCreateManyInput | Type_assets_investedCreateManyInput[]
+    data: Page2Operating_results_and_dividendsCreateManyInput | Page2Operating_results_and_dividendsCreateManyInput[]
   }
 
 
   /**
-   * Type_assets_invested update
+   * Page2Operating_results_and_dividends update
    */
-  export type Type_assets_investedUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * The data needed to update a Type_assets_invested.
+     * The data needed to update a Page2Operating_results_and_dividends.
      */
-    data: XOR<Type_assets_investedUpdateInput, Type_assets_investedUncheckedUpdateInput>
+    data: XOR<Page2Operating_results_and_dividendsUpdateInput, Page2Operating_results_and_dividendsUncheckedUpdateInput>
     /**
-     * Choose, which Type_assets_invested to update.
+     * Choose, which Page2Operating_results_and_dividends to update.
      */
-    where: Type_assets_investedWhereUniqueInput
+    where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
 
   /**
-   * Type_assets_invested updateMany
+   * Page2Operating_results_and_dividends updateMany
    */
-  export type Type_assets_investedUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Type_assets_investeds.
+     * The data used to update Page2Operating_results_and_dividends.
      */
-    data: XOR<Type_assets_investedUpdateManyMutationInput, Type_assets_investedUncheckedUpdateManyInput>
+    data: XOR<Page2Operating_results_and_dividendsUpdateManyMutationInput, Page2Operating_results_and_dividendsUncheckedUpdateManyInput>
     /**
-     * Filter which Type_assets_investeds to update
+     * Filter which Page2Operating_results_and_dividends to update
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
   }
 
 
   /**
-   * Type_assets_invested upsert
+   * Page2Operating_results_and_dividends upsert
    */
-  export type Type_assets_investedUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * The filter to search for the Type_assets_invested to update in case it exists.
+     * The filter to search for the Page2Operating_results_and_dividends to update in case it exists.
      */
-    where: Type_assets_investedWhereUniqueInput
+    where: Page2Operating_results_and_dividendsWhereUniqueInput
     /**
-     * In case the Type_assets_invested found by the `where` argument doesn't exist, create a new Type_assets_invested with this data.
+     * In case the Page2Operating_results_and_dividends found by the `where` argument doesn't exist, create a new Page2Operating_results_and_dividends with this data.
      */
-    create: XOR<Type_assets_investedCreateInput, Type_assets_investedUncheckedCreateInput>
+    create: XOR<Page2Operating_results_and_dividendsCreateInput, Page2Operating_results_and_dividendsUncheckedCreateInput>
     /**
-     * In case the Type_assets_invested was found with the provided `where` argument, update it with this data.
+     * In case the Page2Operating_results_and_dividends was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Type_assets_investedUpdateInput, Type_assets_investedUncheckedUpdateInput>
+    update: XOR<Page2Operating_results_and_dividendsUpdateInput, Page2Operating_results_and_dividendsUncheckedUpdateInput>
   }
 
 
   /**
-   * Type_assets_invested delete
+   * Page2Operating_results_and_dividends delete
    */
-  export type Type_assets_investedDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
     /**
-     * Filter which Type_assets_invested to delete.
+     * Filter which Page2Operating_results_and_dividends to delete.
      */
-    where: Type_assets_investedWhereUniqueInput
+    where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
 
   /**
-   * Type_assets_invested deleteMany
+   * Page2Operating_results_and_dividends deleteMany
    */
-  export type Type_assets_investedDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Type_assets_investeds to delete
+     * Filter which Page2Operating_results_and_dividends to delete
      */
-    where?: Type_assets_investedWhereInput
+    where?: Page2Operating_results_and_dividendsWhereInput
   }
 
 
   /**
-   * Type_assets_invested findRaw
+   * Page2Operating_results_and_dividends findRaw
    */
-  export type Type_assets_investedFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -7719,9 +6404,9 @@ export namespace Prisma {
 
 
   /**
-   * Type_assets_invested aggregateRaw
+   * Page2Operating_results_and_dividends aggregateRaw
    */
-  export type Type_assets_investedAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -7734,331 +6419,341 @@ export namespace Prisma {
 
 
   /**
-   * Type_assets_invested without action
+   * Page2Operating_results_and_dividends without action
    */
-  export type Type_assets_investedDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page2Operating_results_and_dividendsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Type_assets_invested
+     * Select specific fields to fetch from the Page2Operating_results_and_dividends
      */
-    select?: Type_assets_investedSelect<ExtArgs> | null
+    select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Top_five_investment_assets
+   * Model Page3topfiveCompareport
    */
 
-  export type AggregateTop_five_investment_assets = {
-    _count: Top_five_investment_assetsCountAggregateOutputType | null
-    _min: Top_five_investment_assetsMinAggregateOutputType | null
-    _max: Top_five_investment_assetsMaxAggregateOutputType | null
+  export type AggregatePage3topfiveCompareport = {
+    _count: Page3topfiveCompareportCountAggregateOutputType | null
+    _min: Page3topfiveCompareportMinAggregateOutputType | null
+    _max: Page3topfiveCompareportMaxAggregateOutputType | null
   }
 
-  export type Top_five_investment_assetsMinAggregateOutputType = {
+  export type Page3topfiveCompareportMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Top_five_investment_assetsMaxAggregateOutputType = {
+  export type Page3topfiveCompareportMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Top_five_investment_assetsCountAggregateOutputType = {
+  export type Page3topfiveCompareportCountAggregateOutputType = {
     id: number
     proj_id: number
-    data: number
+    proj_abbr_name: number
+    top_five_holding: number
     _all: number
   }
 
 
-  export type Top_five_investment_assetsMinAggregateInputType = {
+  export type Page3topfiveCompareportMinAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Top_five_investment_assetsMaxAggregateInputType = {
+  export type Page3topfiveCompareportMaxAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Top_five_investment_assetsCountAggregateInputType = {
+  export type Page3topfiveCompareportCountAggregateInputType = {
     id?: true
     proj_id?: true
-    data?: true
+    proj_abbr_name?: true
+    top_five_holding?: true
     _all?: true
   }
 
-  export type Top_five_investment_assetsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Top_five_investment_assets to aggregate.
+     * Filter which Page3topfiveCompareport to aggregate.
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Top_five_investment_assets to fetch.
+     * Determine the order of Page3topfiveCompareports to fetch.
      */
-    orderBy?: Top_five_investment_assetsOrderByWithRelationInput | Top_five_investment_assetsOrderByWithRelationInput[]
+    orderBy?: Page3topfiveCompareportOrderByWithRelationInput | Page3topfiveCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Top_five_investment_assetsWhereUniqueInput
+    cursor?: Page3topfiveCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Top_five_investment_assets from the position of the cursor.
+     * Take `±n` Page3topfiveCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Top_five_investment_assets.
+     * Skip the first `n` Page3topfiveCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Top_five_investment_assets
+     * Count returned Page3topfiveCompareports
     **/
-    _count?: true | Top_five_investment_assetsCountAggregateInputType
+    _count?: true | Page3topfiveCompareportCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Top_five_investment_assetsMinAggregateInputType
+    _min?: Page3topfiveCompareportMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Top_five_investment_assetsMaxAggregateInputType
+    _max?: Page3topfiveCompareportMaxAggregateInputType
   }
 
-  export type GetTop_five_investment_assetsAggregateType<T extends Top_five_investment_assetsAggregateArgs> = {
-        [P in keyof T & keyof AggregateTop_five_investment_assets]: P extends '_count' | 'count'
+  export type GetPage3topfiveCompareportAggregateType<T extends Page3topfiveCompareportAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage3topfiveCompareport]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTop_five_investment_assets[P]>
-      : GetScalarType<T[P], AggregateTop_five_investment_assets[P]>
+        : GetScalarType<T[P], AggregatePage3topfiveCompareport[P]>
+      : GetScalarType<T[P], AggregatePage3topfiveCompareport[P]>
   }
 
 
 
 
-  export type Top_five_investment_assetsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Top_five_investment_assetsWhereInput
-    orderBy?: Top_five_investment_assetsOrderByWithAggregationInput | Top_five_investment_assetsOrderByWithAggregationInput[]
-    by: Top_five_investment_assetsScalarFieldEnum[] | Top_five_investment_assetsScalarFieldEnum
-    having?: Top_five_investment_assetsScalarWhereWithAggregatesInput
+  export type Page3topfiveCompareportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page3topfiveCompareportWhereInput
+    orderBy?: Page3topfiveCompareportOrderByWithAggregationInput | Page3topfiveCompareportOrderByWithAggregationInput[]
+    by: Page3topfiveCompareportScalarFieldEnum[] | Page3topfiveCompareportScalarFieldEnum
+    having?: Page3topfiveCompareportScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Top_five_investment_assetsCountAggregateInputType | true
-    _min?: Top_five_investment_assetsMinAggregateInputType
-    _max?: Top_five_investment_assetsMaxAggregateInputType
+    _count?: Page3topfiveCompareportCountAggregateInputType | true
+    _min?: Page3topfiveCompareportMinAggregateInputType
+    _max?: Page3topfiveCompareportMaxAggregateInputType
   }
 
-  export type Top_five_investment_assetsGroupByOutputType = {
+  export type Page3topfiveCompareportGroupByOutputType = {
     id: string
     proj_id: string
-    data: JsonValue
-    _count: Top_five_investment_assetsCountAggregateOutputType | null
-    _min: Top_five_investment_assetsMinAggregateOutputType | null
-    _max: Top_five_investment_assetsMaxAggregateOutputType | null
+    proj_abbr_name: string
+    top_five_holding: JsonValue
+    _count: Page3topfiveCompareportCountAggregateOutputType | null
+    _min: Page3topfiveCompareportMinAggregateOutputType | null
+    _max: Page3topfiveCompareportMaxAggregateOutputType | null
   }
 
-  type GetTop_five_investment_assetsGroupByPayload<T extends Top_five_investment_assetsGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage3topfiveCompareportGroupByPayload<T extends Page3topfiveCompareportGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Top_five_investment_assetsGroupByOutputType, T['by']> &
+      PickEnumerable<Page3topfiveCompareportGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Top_five_investment_assetsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page3topfiveCompareportGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Top_five_investment_assetsGroupByOutputType[P]>
-            : GetScalarType<T[P], Top_five_investment_assetsGroupByOutputType[P]>
+              : GetScalarType<T[P], Page3topfiveCompareportGroupByOutputType[P]>
+            : GetScalarType<T[P], Page3topfiveCompareportGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Top_five_investment_assetsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page3topfiveCompareportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["top_five_investment_assets"]>
+    proj_abbr_name?: boolean
+    top_five_holding?: boolean
+  }, ExtArgs["result"]["page3topfiveCompareport"]>
 
-  export type Top_five_investment_assetsSelectScalar = {
+  export type Page3topfiveCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
-    data?: boolean
+    proj_abbr_name?: boolean
+    top_five_holding?: boolean
   }
 
 
-  export type $Top_five_investment_assetsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Top_five_investment_assets"
+  export type $Page3topfiveCompareportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page3topfiveCompareport"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["top_five_investment_assets"]>
+      proj_abbr_name: string
+      top_five_holding: Prisma.JsonValue
+    }, ExtArgs["result"]["page3topfiveCompareport"]>
     composites: {}
   }
 
 
-  type Top_five_investment_assetsGetPayload<S extends boolean | null | undefined | Top_five_investment_assetsDefaultArgs> = $Result.GetResult<Prisma.$Top_five_investment_assetsPayload, S>
+  type Page3topfiveCompareportGetPayload<S extends boolean | null | undefined | Page3topfiveCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3topfiveCompareportPayload, S>
 
-  type Top_five_investment_assetsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Top_five_investment_assetsFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Top_five_investment_assetsCountAggregateInputType | true
+  type Page3topfiveCompareportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page3topfiveCompareportFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page3topfiveCompareportCountAggregateInputType | true
     }
 
-  export interface Top_five_investment_assetsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Top_five_investment_assets'], meta: { name: 'Top_five_investment_assets' } }
+  export interface Page3topfiveCompareportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page3topfiveCompareport'], meta: { name: 'Page3topfiveCompareport' } }
     /**
-     * Find zero or one Top_five_investment_assets that matches the filter.
-     * @param {Top_five_investment_assetsFindUniqueArgs} args - Arguments to find a Top_five_investment_assets
+     * Find zero or one Page3topfiveCompareport that matches the filter.
+     * @param {Page3topfiveCompareportFindUniqueArgs} args - Arguments to find a Page3topfiveCompareport
      * @example
-     * // Get one Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findUnique({
+     * // Get one Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends Top_five_investment_assetsFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsFindUniqueArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page3topfiveCompareportFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Top_five_investment_assets that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page3topfiveCompareport that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {Top_five_investment_assetsFindUniqueOrThrowArgs} args - Arguments to find a Top_five_investment_assets
+     * @param {Page3topfiveCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3topfiveCompareport
      * @example
-     * // Get one Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findUniqueOrThrow({
+     * // Get one Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends Top_five_investment_assetsFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page3topfiveCompareportFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Top_five_investment_assets that matches the filter.
+     * Find the first Page3topfiveCompareport that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsFindFirstArgs} args - Arguments to find a Top_five_investment_assets
+     * @param {Page3topfiveCompareportFindFirstArgs} args - Arguments to find a Page3topfiveCompareport
      * @example
-     * // Get one Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findFirst({
+     * // Get one Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends Top_five_investment_assetsFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsFindFirstArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page3topfiveCompareportFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportFindFirstArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Top_five_investment_assets that matches the filter or
+     * Find the first Page3topfiveCompareport that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsFindFirstOrThrowArgs} args - Arguments to find a Top_five_investment_assets
+     * @param {Page3topfiveCompareportFindFirstOrThrowArgs} args - Arguments to find a Page3topfiveCompareport
      * @example
-     * // Get one Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findFirstOrThrow({
+     * // Get one Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends Top_five_investment_assetsFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page3topfiveCompareportFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Top_five_investment_assets that matches the filter.
+     * Find zero or more Page3topfiveCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3topfiveCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findMany()
+     * // Get all Page3topfiveCompareports
+     * const page3topfiveCompareports = await prisma.page3topfiveCompareport.findMany()
      * 
-     * // Get first 10 Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findMany({ take: 10 })
+     * // Get first 10 Page3topfiveCompareports
+     * const page3topfiveCompareports = await prisma.page3topfiveCompareport.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const top_five_investment_assetsWithIdOnly = await prisma.top_five_investment_assets.findMany({ select: { id: true } })
+     * const page3topfiveCompareportWithIdOnly = await prisma.page3topfiveCompareport.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends Top_five_investment_assetsFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page3topfiveCompareportFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Top_five_investment_assets.
-     * @param {Top_five_investment_assetsCreateArgs} args - Arguments to create a Top_five_investment_assets.
+     * Create a Page3topfiveCompareport.
+     * @param {Page3topfiveCompareportCreateArgs} args - Arguments to create a Page3topfiveCompareport.
      * @example
-     * // Create one Top_five_investment_assets
-     * const Top_five_investment_assets = await prisma.top_five_investment_assets.create({
+     * // Create one Page3topfiveCompareport
+     * const Page3topfiveCompareport = await prisma.page3topfiveCompareport.create({
      *   data: {
-     *     // ... data to create a Top_five_investment_assets
+     *     // ... data to create a Page3topfiveCompareport
      *   }
      * })
      * 
     **/
-    create<T extends Top_five_investment_assetsCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsCreateArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page3topfiveCompareportCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportCreateArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Top_five_investment_assets.
-     *     @param {Top_five_investment_assetsCreateManyArgs} args - Arguments to create many Top_five_investment_assets.
+     * Create many Page3topfiveCompareports.
+     *     @param {Page3topfiveCompareportCreateManyArgs} args - Arguments to create many Page3topfiveCompareports.
      *     @example
-     *     // Create many Top_five_investment_assets
-     *     const top_five_investment_assets = await prisma.top_five_investment_assets.createMany({
+     *     // Create many Page3topfiveCompareports
+     *     const page3topfiveCompareport = await prisma.page3topfiveCompareport.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends Top_five_investment_assetsCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsCreateManyArgs<ExtArgs>>
+    createMany<T extends Page3topfiveCompareportCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Top_five_investment_assets.
-     * @param {Top_five_investment_assetsDeleteArgs} args - Arguments to delete one Top_five_investment_assets.
+     * Delete a Page3topfiveCompareport.
+     * @param {Page3topfiveCompareportDeleteArgs} args - Arguments to delete one Page3topfiveCompareport.
      * @example
-     * // Delete one Top_five_investment_assets
-     * const Top_five_investment_assets = await prisma.top_five_investment_assets.delete({
+     * // Delete one Page3topfiveCompareport
+     * const Page3topfiveCompareport = await prisma.page3topfiveCompareport.delete({
      *   where: {
-     *     // ... filter to delete one Top_five_investment_assets
+     *     // ... filter to delete one Page3topfiveCompareport
      *   }
      * })
      * 
     **/
-    delete<T extends Top_five_investment_assetsDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsDeleteArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page3topfiveCompareportDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportDeleteArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Top_five_investment_assets.
-     * @param {Top_five_investment_assetsUpdateArgs} args - Arguments to update one Top_five_investment_assets.
+     * Update one Page3topfiveCompareport.
+     * @param {Page3topfiveCompareportUpdateArgs} args - Arguments to update one Page3topfiveCompareport.
      * @example
-     * // Update one Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.update({
+     * // Update one Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8068,34 +6763,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends Top_five_investment_assetsUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsUpdateArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page3topfiveCompareportUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportUpdateArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Top_five_investment_assets.
-     * @param {Top_five_investment_assetsDeleteManyArgs} args - Arguments to filter Top_five_investment_assets to delete.
+     * Delete zero or more Page3topfiveCompareports.
+     * @param {Page3topfiveCompareportDeleteManyArgs} args - Arguments to filter Page3topfiveCompareports to delete.
      * @example
-     * // Delete a few Top_five_investment_assets
-     * const { count } = await prisma.top_five_investment_assets.deleteMany({
+     * // Delete a few Page3topfiveCompareports
+     * const { count } = await prisma.page3topfiveCompareport.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends Top_five_investment_assetsDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Top_five_investment_assetsDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page3topfiveCompareportDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3topfiveCompareportDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Top_five_investment_assets.
+     * Update zero or more Page3topfiveCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page3topfiveCompareportUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.updateMany({
+     * // Update many Page3topfiveCompareports
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8105,48 +6800,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends Top_five_investment_assetsUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page3topfiveCompareportUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Top_five_investment_assets.
-     * @param {Top_five_investment_assetsUpsertArgs} args - Arguments to update or create a Top_five_investment_assets.
+     * Create or update one Page3topfiveCompareport.
+     * @param {Page3topfiveCompareportUpsertArgs} args - Arguments to update or create a Page3topfiveCompareport.
      * @example
-     * // Update or create a Top_five_investment_assets
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.upsert({
+     * // Update or create a Page3topfiveCompareport
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.upsert({
      *   create: {
-     *     // ... data to create a Top_five_investment_assets
+     *     // ... data to create a Page3topfiveCompareport
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Top_five_investment_assets we want to update
+     *     // ... the filter for the Page3topfiveCompareport we want to update
      *   }
      * })
     **/
-    upsert<T extends Top_five_investment_assetsUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Top_five_investment_assetsUpsertArgs<ExtArgs>>
-    ): Prisma__Top_five_investment_assetsClient<$Result.GetResult<Prisma.$Top_five_investment_assetsPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page3topfiveCompareportUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3topfiveCompareportUpsertArgs<ExtArgs>>
+    ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Top_five_investment_assets that matches the filter.
-     * @param {Top_five_investment_assetsFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page3topfiveCompareports that matches the filter.
+     * @param {Page3topfiveCompareportFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.findRaw({
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: Top_five_investment_assetsFindRawArgs
+      args?: Page3topfiveCompareportFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Top_five_investment_assets.
-     * @param {Top_five_investment_assetsAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page3topfiveCompareport.
+     * @param {Page3topfiveCompareportAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const top_five_investment_assets = await prisma.top_five_investment_assets.aggregateRaw({
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -8154,37 +6849,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: Top_five_investment_assetsAggregateRawArgs
+      args?: Page3topfiveCompareportAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Top_five_investment_assets.
+     * Count the number of Page3topfiveCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsCountArgs} args - Arguments to filter Top_five_investment_assets to count.
+     * @param {Page3topfiveCompareportCountArgs} args - Arguments to filter Page3topfiveCompareports to count.
      * @example
-     * // Count the number of Top_five_investment_assets
-     * const count = await prisma.top_five_investment_assets.count({
+     * // Count the number of Page3topfiveCompareports
+     * const count = await prisma.page3topfiveCompareport.count({
      *   where: {
-     *     // ... the filter for the Top_five_investment_assets we want to count
+     *     // ... the filter for the Page3topfiveCompareports we want to count
      *   }
      * })
     **/
-    count<T extends Top_five_investment_assetsCountArgs>(
-      args?: Subset<T, Top_five_investment_assetsCountArgs>,
+    count<T extends Page3topfiveCompareportCountArgs>(
+      args?: Subset<T, Page3topfiveCompareportCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Top_five_investment_assetsCountAggregateOutputType>
+          : GetScalarType<T['select'], Page3topfiveCompareportCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Top_five_investment_assets.
+     * Allows you to perform aggregations operations on a Page3topfiveCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page3topfiveCompareportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -8204,13 +6899,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Top_five_investment_assetsAggregateArgs>(args: Subset<T, Top_five_investment_assetsAggregateArgs>): Prisma.PrismaPromise<GetTop_five_investment_assetsAggregateType<T>>
+    aggregate<T extends Page3topfiveCompareportAggregateArgs>(args: Subset<T, Page3topfiveCompareportAggregateArgs>): Prisma.PrismaPromise<GetPage3topfiveCompareportAggregateType<T>>
 
     /**
-     * Group by Top_five_investment_assets.
+     * Group by Page3topfiveCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Top_five_investment_assetsGroupByArgs} args - Group by arguments.
+     * @param {Page3topfiveCompareportGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -8225,14 +6920,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Top_five_investment_assetsGroupByArgs,
+      T extends Page3topfiveCompareportGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Top_five_investment_assetsGroupByArgs['orderBy'] }
-        : { orderBy?: Top_five_investment_assetsGroupByArgs['orderBy'] },
+        ? { orderBy: Page3topfiveCompareportGroupByArgs['orderBy'] }
+        : { orderBy?: Page3topfiveCompareportGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -8281,20 +6976,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Top_five_investment_assetsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTop_five_investment_assetsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page3topfiveCompareportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage3topfiveCompareportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Top_five_investment_assets model
+   * Fields of the Page3topfiveCompareport model
    */
-  readonly fields: Top_five_investment_assetsFieldRefs;
+  readonly fields: Page3topfiveCompareportFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Top_five_investment_assets.
+   * The delegate class that acts as a "Promise-like" for Page3topfiveCompareport.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Top_five_investment_assetsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page3topfiveCompareportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -8323,290 +7018,291 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Top_five_investment_assets model
+   * Fields of the Page3topfiveCompareport model
    */ 
-  interface Top_five_investment_assetsFieldRefs {
-    readonly id: FieldRef<"Top_five_investment_assets", 'String'>
-    readonly proj_id: FieldRef<"Top_five_investment_assets", 'String'>
-    readonly data: FieldRef<"Top_five_investment_assets", 'Json'>
+  interface Page3topfiveCompareportFieldRefs {
+    readonly id: FieldRef<"Page3topfiveCompareport", 'String'>
+    readonly proj_id: FieldRef<"Page3topfiveCompareport", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page3topfiveCompareport", 'String'>
+    readonly top_five_holding: FieldRef<"Page3topfiveCompareport", 'Json'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Top_five_investment_assets findUnique
+   * Page3topfiveCompareport findUnique
    */
-  export type Top_five_investment_assetsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Top_five_investment_assets to fetch.
+     * Filter, which Page3topfiveCompareport to fetch.
      */
-    where: Top_five_investment_assetsWhereUniqueInput
+    where: Page3topfiveCompareportWhereUniqueInput
   }
 
 
   /**
-   * Top_five_investment_assets findUniqueOrThrow
+   * Page3topfiveCompareport findUniqueOrThrow
    */
-  export type Top_five_investment_assetsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Top_five_investment_assets to fetch.
+     * Filter, which Page3topfiveCompareport to fetch.
      */
-    where: Top_five_investment_assetsWhereUniqueInput
+    where: Page3topfiveCompareportWhereUniqueInput
   }
 
 
   /**
-   * Top_five_investment_assets findFirst
+   * Page3topfiveCompareport findFirst
    */
-  export type Top_five_investment_assetsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Top_five_investment_assets to fetch.
+     * Filter, which Page3topfiveCompareport to fetch.
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Top_five_investment_assets to fetch.
+     * Determine the order of Page3topfiveCompareports to fetch.
      */
-    orderBy?: Top_five_investment_assetsOrderByWithRelationInput | Top_five_investment_assetsOrderByWithRelationInput[]
+    orderBy?: Page3topfiveCompareportOrderByWithRelationInput | Page3topfiveCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Top_five_investment_assets.
+     * Sets the position for searching for Page3topfiveCompareports.
      */
-    cursor?: Top_five_investment_assetsWhereUniqueInput
+    cursor?: Page3topfiveCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Top_five_investment_assets from the position of the cursor.
+     * Take `±n` Page3topfiveCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Top_five_investment_assets.
+     * Skip the first `n` Page3topfiveCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Top_five_investment_assets.
+     * Filter by unique combinations of Page3topfiveCompareports.
      */
-    distinct?: Top_five_investment_assetsScalarFieldEnum | Top_five_investment_assetsScalarFieldEnum[]
+    distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Top_five_investment_assets findFirstOrThrow
+   * Page3topfiveCompareport findFirstOrThrow
    */
-  export type Top_five_investment_assetsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Top_five_investment_assets to fetch.
+     * Filter, which Page3topfiveCompareport to fetch.
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Top_five_investment_assets to fetch.
+     * Determine the order of Page3topfiveCompareports to fetch.
      */
-    orderBy?: Top_five_investment_assetsOrderByWithRelationInput | Top_five_investment_assetsOrderByWithRelationInput[]
+    orderBy?: Page3topfiveCompareportOrderByWithRelationInput | Page3topfiveCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Top_five_investment_assets.
+     * Sets the position for searching for Page3topfiveCompareports.
      */
-    cursor?: Top_five_investment_assetsWhereUniqueInput
+    cursor?: Page3topfiveCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Top_five_investment_assets from the position of the cursor.
+     * Take `±n` Page3topfiveCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Top_five_investment_assets.
+     * Skip the first `n` Page3topfiveCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Top_five_investment_assets.
+     * Filter by unique combinations of Page3topfiveCompareports.
      */
-    distinct?: Top_five_investment_assetsScalarFieldEnum | Top_five_investment_assetsScalarFieldEnum[]
+    distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Top_five_investment_assets findMany
+   * Page3topfiveCompareport findMany
    */
-  export type Top_five_investment_assetsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Top_five_investment_assets to fetch.
+     * Filter, which Page3topfiveCompareports to fetch.
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Top_five_investment_assets to fetch.
+     * Determine the order of Page3topfiveCompareports to fetch.
      */
-    orderBy?: Top_five_investment_assetsOrderByWithRelationInput | Top_five_investment_assetsOrderByWithRelationInput[]
+    orderBy?: Page3topfiveCompareportOrderByWithRelationInput | Page3topfiveCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Top_five_investment_assets.
+     * Sets the position for listing Page3topfiveCompareports.
      */
-    cursor?: Top_five_investment_assetsWhereUniqueInput
+    cursor?: Page3topfiveCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Top_five_investment_assets from the position of the cursor.
+     * Take `±n` Page3topfiveCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Top_five_investment_assets.
+     * Skip the first `n` Page3topfiveCompareports.
      */
     skip?: number
-    distinct?: Top_five_investment_assetsScalarFieldEnum | Top_five_investment_assetsScalarFieldEnum[]
+    distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Top_five_investment_assets create
+   * Page3topfiveCompareport create
    */
-  export type Top_five_investment_assetsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to create a Top_five_investment_assets.
+     * The data needed to create a Page3topfiveCompareport.
      */
-    data: XOR<Top_five_investment_assetsCreateInput, Top_five_investment_assetsUncheckedCreateInput>
+    data: XOR<Page3topfiveCompareportCreateInput, Page3topfiveCompareportUncheckedCreateInput>
   }
 
 
   /**
-   * Top_five_investment_assets createMany
+   * Page3topfiveCompareport createMany
    */
-  export type Top_five_investment_assetsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Top_five_investment_assets.
+     * The data used to create many Page3topfiveCompareports.
      */
-    data: Top_five_investment_assetsCreateManyInput | Top_five_investment_assetsCreateManyInput[]
+    data: Page3topfiveCompareportCreateManyInput | Page3topfiveCompareportCreateManyInput[]
   }
 
 
   /**
-   * Top_five_investment_assets update
+   * Page3topfiveCompareport update
    */
-  export type Top_five_investment_assetsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to update a Top_five_investment_assets.
+     * The data needed to update a Page3topfiveCompareport.
      */
-    data: XOR<Top_five_investment_assetsUpdateInput, Top_five_investment_assetsUncheckedUpdateInput>
+    data: XOR<Page3topfiveCompareportUpdateInput, Page3topfiveCompareportUncheckedUpdateInput>
     /**
-     * Choose, which Top_five_investment_assets to update.
+     * Choose, which Page3topfiveCompareport to update.
      */
-    where: Top_five_investment_assetsWhereUniqueInput
+    where: Page3topfiveCompareportWhereUniqueInput
   }
 
 
   /**
-   * Top_five_investment_assets updateMany
+   * Page3topfiveCompareport updateMany
    */
-  export type Top_five_investment_assetsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Top_five_investment_assets.
+     * The data used to update Page3topfiveCompareports.
      */
-    data: XOR<Top_five_investment_assetsUpdateManyMutationInput, Top_five_investment_assetsUncheckedUpdateManyInput>
+    data: XOR<Page3topfiveCompareportUpdateManyMutationInput, Page3topfiveCompareportUncheckedUpdateManyInput>
     /**
-     * Filter which Top_five_investment_assets to update
+     * Filter which Page3topfiveCompareports to update
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
   }
 
 
   /**
-   * Top_five_investment_assets upsert
+   * Page3topfiveCompareport upsert
    */
-  export type Top_five_investment_assetsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * The filter to search for the Top_five_investment_assets to update in case it exists.
+     * The filter to search for the Page3topfiveCompareport to update in case it exists.
      */
-    where: Top_five_investment_assetsWhereUniqueInput
+    where: Page3topfiveCompareportWhereUniqueInput
     /**
-     * In case the Top_five_investment_assets found by the `where` argument doesn't exist, create a new Top_five_investment_assets with this data.
+     * In case the Page3topfiveCompareport found by the `where` argument doesn't exist, create a new Page3topfiveCompareport with this data.
      */
-    create: XOR<Top_five_investment_assetsCreateInput, Top_five_investment_assetsUncheckedCreateInput>
+    create: XOR<Page3topfiveCompareportCreateInput, Page3topfiveCompareportUncheckedCreateInput>
     /**
-     * In case the Top_five_investment_assets was found with the provided `where` argument, update it with this data.
+     * In case the Page3topfiveCompareport was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Top_five_investment_assetsUpdateInput, Top_five_investment_assetsUncheckedUpdateInput>
+    update: XOR<Page3topfiveCompareportUpdateInput, Page3topfiveCompareportUncheckedUpdateInput>
   }
 
 
   /**
-   * Top_five_investment_assets delete
+   * Page3topfiveCompareport delete
    */
-  export type Top_five_investment_assetsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
     /**
-     * Filter which Top_five_investment_assets to delete.
+     * Filter which Page3topfiveCompareport to delete.
      */
-    where: Top_five_investment_assetsWhereUniqueInput
+    where: Page3topfiveCompareportWhereUniqueInput
   }
 
 
   /**
-   * Top_five_investment_assets deleteMany
+   * Page3topfiveCompareport deleteMany
    */
-  export type Top_five_investment_assetsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Top_five_investment_assets to delete
+     * Filter which Page3topfiveCompareports to delete
      */
-    where?: Top_five_investment_assetsWhereInput
+    where?: Page3topfiveCompareportWhereInput
   }
 
 
   /**
-   * Top_five_investment_assets findRaw
+   * Page3topfiveCompareport findRaw
    */
-  export type Top_five_investment_assetsFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -8619,9 +7315,9 @@ export namespace Prisma {
 
 
   /**
-   * Top_five_investment_assets aggregateRaw
+   * Page3topfiveCompareport aggregateRaw
    */
-  export type Top_five_investment_assetsAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -8634,331 +7330,341 @@ export namespace Prisma {
 
 
   /**
-   * Top_five_investment_assets without action
+   * Page3topfiveCompareport without action
    */
-  export type Top_five_investment_assetsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3topfiveCompareportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Top_five_investment_assets
+     * Select specific fields to fetch from the Page3topfiveCompareport
      */
-    select?: Top_five_investment_assetsSelect<ExtArgs> | null
+    select?: Page3topfiveCompareportSelect<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Fees_charged_by_mutual_funds
+   * Model Page3typeCompareport
    */
 
-  export type AggregateFees_charged_by_mutual_funds = {
-    _count: Fees_charged_by_mutual_fundsCountAggregateOutputType | null
-    _min: Fees_charged_by_mutual_fundsMinAggregateOutputType | null
-    _max: Fees_charged_by_mutual_fundsMaxAggregateOutputType | null
+  export type AggregatePage3typeCompareport = {
+    _count: Page3typeCompareportCountAggregateOutputType | null
+    _min: Page3typeCompareportMinAggregateOutputType | null
+    _max: Page3typeCompareportMaxAggregateOutputType | null
   }
 
-  export type Fees_charged_by_mutual_fundsMinAggregateOutputType = {
+  export type Page3typeCompareportMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Fees_charged_by_mutual_fundsMaxAggregateOutputType = {
+  export type Page3typeCompareportMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Fees_charged_by_mutual_fundsCountAggregateOutputType = {
+  export type Page3typeCompareportCountAggregateOutputType = {
     id: number
     proj_id: number
-    data: number
+    proj_abbr_name: number
+    type_data: number
     _all: number
   }
 
 
-  export type Fees_charged_by_mutual_fundsMinAggregateInputType = {
+  export type Page3typeCompareportMinAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Fees_charged_by_mutual_fundsMaxAggregateInputType = {
+  export type Page3typeCompareportMaxAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Fees_charged_by_mutual_fundsCountAggregateInputType = {
+  export type Page3typeCompareportCountAggregateInputType = {
     id?: true
     proj_id?: true
-    data?: true
+    proj_abbr_name?: true
+    type_data?: true
     _all?: true
   }
 
-  export type Fees_charged_by_mutual_fundsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Fees_charged_by_mutual_funds to aggregate.
+     * Filter which Page3typeCompareport to aggregate.
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_by_mutual_funds to fetch.
+     * Determine the order of Page3typeCompareports to fetch.
      */
-    orderBy?: Fees_charged_by_mutual_fundsOrderByWithRelationInput | Fees_charged_by_mutual_fundsOrderByWithRelationInput[]
+    orderBy?: Page3typeCompareportOrderByWithRelationInput | Page3typeCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Fees_charged_by_mutual_fundsWhereUniqueInput
+    cursor?: Page3typeCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_by_mutual_funds from the position of the cursor.
+     * Take `±n` Page3typeCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_by_mutual_funds.
+     * Skip the first `n` Page3typeCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Fees_charged_by_mutual_funds
+     * Count returned Page3typeCompareports
     **/
-    _count?: true | Fees_charged_by_mutual_fundsCountAggregateInputType
+    _count?: true | Page3typeCompareportCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Fees_charged_by_mutual_fundsMinAggregateInputType
+    _min?: Page3typeCompareportMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Fees_charged_by_mutual_fundsMaxAggregateInputType
+    _max?: Page3typeCompareportMaxAggregateInputType
   }
 
-  export type GetFees_charged_by_mutual_fundsAggregateType<T extends Fees_charged_by_mutual_fundsAggregateArgs> = {
-        [P in keyof T & keyof AggregateFees_charged_by_mutual_funds]: P extends '_count' | 'count'
+  export type GetPage3typeCompareportAggregateType<T extends Page3typeCompareportAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage3typeCompareport]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateFees_charged_by_mutual_funds[P]>
-      : GetScalarType<T[P], AggregateFees_charged_by_mutual_funds[P]>
+        : GetScalarType<T[P], AggregatePage3typeCompareport[P]>
+      : GetScalarType<T[P], AggregatePage3typeCompareport[P]>
   }
 
 
 
 
-  export type Fees_charged_by_mutual_fundsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Fees_charged_by_mutual_fundsWhereInput
-    orderBy?: Fees_charged_by_mutual_fundsOrderByWithAggregationInput | Fees_charged_by_mutual_fundsOrderByWithAggregationInput[]
-    by: Fees_charged_by_mutual_fundsScalarFieldEnum[] | Fees_charged_by_mutual_fundsScalarFieldEnum
-    having?: Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput
+  export type Page3typeCompareportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page3typeCompareportWhereInput
+    orderBy?: Page3typeCompareportOrderByWithAggregationInput | Page3typeCompareportOrderByWithAggregationInput[]
+    by: Page3typeCompareportScalarFieldEnum[] | Page3typeCompareportScalarFieldEnum
+    having?: Page3typeCompareportScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Fees_charged_by_mutual_fundsCountAggregateInputType | true
-    _min?: Fees_charged_by_mutual_fundsMinAggregateInputType
-    _max?: Fees_charged_by_mutual_fundsMaxAggregateInputType
+    _count?: Page3typeCompareportCountAggregateInputType | true
+    _min?: Page3typeCompareportMinAggregateInputType
+    _max?: Page3typeCompareportMaxAggregateInputType
   }
 
-  export type Fees_charged_by_mutual_fundsGroupByOutputType = {
+  export type Page3typeCompareportGroupByOutputType = {
     id: string
     proj_id: string
-    data: JsonValue
-    _count: Fees_charged_by_mutual_fundsCountAggregateOutputType | null
-    _min: Fees_charged_by_mutual_fundsMinAggregateOutputType | null
-    _max: Fees_charged_by_mutual_fundsMaxAggregateOutputType | null
+    proj_abbr_name: string
+    type_data: JsonValue
+    _count: Page3typeCompareportCountAggregateOutputType | null
+    _min: Page3typeCompareportMinAggregateOutputType | null
+    _max: Page3typeCompareportMaxAggregateOutputType | null
   }
 
-  type GetFees_charged_by_mutual_fundsGroupByPayload<T extends Fees_charged_by_mutual_fundsGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage3typeCompareportGroupByPayload<T extends Page3typeCompareportGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Fees_charged_by_mutual_fundsGroupByOutputType, T['by']> &
+      PickEnumerable<Page3typeCompareportGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Fees_charged_by_mutual_fundsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page3typeCompareportGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Fees_charged_by_mutual_fundsGroupByOutputType[P]>
-            : GetScalarType<T[P], Fees_charged_by_mutual_fundsGroupByOutputType[P]>
+              : GetScalarType<T[P], Page3typeCompareportGroupByOutputType[P]>
+            : GetScalarType<T[P], Page3typeCompareportGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Fees_charged_by_mutual_fundsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page3typeCompareportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["fees_charged_by_mutual_funds"]>
+    proj_abbr_name?: boolean
+    type_data?: boolean
+  }, ExtArgs["result"]["page3typeCompareport"]>
 
-  export type Fees_charged_by_mutual_fundsSelectScalar = {
+  export type Page3typeCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
-    data?: boolean
+    proj_abbr_name?: boolean
+    type_data?: boolean
   }
 
 
-  export type $Fees_charged_by_mutual_fundsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Fees_charged_by_mutual_funds"
+  export type $Page3typeCompareportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page3typeCompareport"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["fees_charged_by_mutual_funds"]>
+      proj_abbr_name: string
+      type_data: Prisma.JsonValue
+    }, ExtArgs["result"]["page3typeCompareport"]>
     composites: {}
   }
 
 
-  type Fees_charged_by_mutual_fundsGetPayload<S extends boolean | null | undefined | Fees_charged_by_mutual_fundsDefaultArgs> = $Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload, S>
+  type Page3typeCompareportGetPayload<S extends boolean | null | undefined | Page3typeCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3typeCompareportPayload, S>
 
-  type Fees_charged_by_mutual_fundsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Fees_charged_by_mutual_fundsFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Fees_charged_by_mutual_fundsCountAggregateInputType | true
+  type Page3typeCompareportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page3typeCompareportFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page3typeCompareportCountAggregateInputType | true
     }
 
-  export interface Fees_charged_by_mutual_fundsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Fees_charged_by_mutual_funds'], meta: { name: 'Fees_charged_by_mutual_funds' } }
+  export interface Page3typeCompareportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page3typeCompareport'], meta: { name: 'Page3typeCompareport' } }
     /**
-     * Find zero or one Fees_charged_by_mutual_funds that matches the filter.
-     * @param {Fees_charged_by_mutual_fundsFindUniqueArgs} args - Arguments to find a Fees_charged_by_mutual_funds
+     * Find zero or one Page3typeCompareport that matches the filter.
+     * @param {Page3typeCompareportFindUniqueArgs} args - Arguments to find a Page3typeCompareport
      * @example
-     * // Get one Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findUnique({
+     * // Get one Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends Fees_charged_by_mutual_fundsFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsFindUniqueArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page3typeCompareportFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Fees_charged_by_mutual_funds that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page3typeCompareport that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {Fees_charged_by_mutual_fundsFindUniqueOrThrowArgs} args - Arguments to find a Fees_charged_by_mutual_funds
+     * @param {Page3typeCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3typeCompareport
      * @example
-     * // Get one Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findUniqueOrThrow({
+     * // Get one Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends Fees_charged_by_mutual_fundsFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page3typeCompareportFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Fees_charged_by_mutual_funds that matches the filter.
+     * Find the first Page3typeCompareport that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsFindFirstArgs} args - Arguments to find a Fees_charged_by_mutual_funds
+     * @param {Page3typeCompareportFindFirstArgs} args - Arguments to find a Page3typeCompareport
      * @example
-     * // Get one Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findFirst({
+     * // Get one Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends Fees_charged_by_mutual_fundsFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsFindFirstArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page3typeCompareportFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportFindFirstArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Fees_charged_by_mutual_funds that matches the filter or
+     * Find the first Page3typeCompareport that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsFindFirstOrThrowArgs} args - Arguments to find a Fees_charged_by_mutual_funds
+     * @param {Page3typeCompareportFindFirstOrThrowArgs} args - Arguments to find a Page3typeCompareport
      * @example
-     * // Get one Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findFirstOrThrow({
+     * // Get one Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends Fees_charged_by_mutual_fundsFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page3typeCompareportFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Fees_charged_by_mutual_funds that matches the filter.
+     * Find zero or more Page3typeCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3typeCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findMany()
+     * // Get all Page3typeCompareports
+     * const page3typeCompareports = await prisma.page3typeCompareport.findMany()
      * 
-     * // Get first 10 Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findMany({ take: 10 })
+     * // Get first 10 Page3typeCompareports
+     * const page3typeCompareports = await prisma.page3typeCompareport.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const fees_charged_by_mutual_fundsWithIdOnly = await prisma.fees_charged_by_mutual_funds.findMany({ select: { id: true } })
+     * const page3typeCompareportWithIdOnly = await prisma.page3typeCompareport.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends Fees_charged_by_mutual_fundsFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page3typeCompareportFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsCreateArgs} args - Arguments to create a Fees_charged_by_mutual_funds.
+     * Create a Page3typeCompareport.
+     * @param {Page3typeCompareportCreateArgs} args - Arguments to create a Page3typeCompareport.
      * @example
-     * // Create one Fees_charged_by_mutual_funds
-     * const Fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.create({
+     * // Create one Page3typeCompareport
+     * const Page3typeCompareport = await prisma.page3typeCompareport.create({
      *   data: {
-     *     // ... data to create a Fees_charged_by_mutual_funds
+     *     // ... data to create a Page3typeCompareport
      *   }
      * })
      * 
     **/
-    create<T extends Fees_charged_by_mutual_fundsCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsCreateArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page3typeCompareportCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportCreateArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Fees_charged_by_mutual_funds.
-     *     @param {Fees_charged_by_mutual_fundsCreateManyArgs} args - Arguments to create many Fees_charged_by_mutual_funds.
+     * Create many Page3typeCompareports.
+     *     @param {Page3typeCompareportCreateManyArgs} args - Arguments to create many Page3typeCompareports.
      *     @example
-     *     // Create many Fees_charged_by_mutual_funds
-     *     const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.createMany({
+     *     // Create many Page3typeCompareports
+     *     const page3typeCompareport = await prisma.page3typeCompareport.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends Fees_charged_by_mutual_fundsCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsCreateManyArgs<ExtArgs>>
+    createMany<T extends Page3typeCompareportCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsDeleteArgs} args - Arguments to delete one Fees_charged_by_mutual_funds.
+     * Delete a Page3typeCompareport.
+     * @param {Page3typeCompareportDeleteArgs} args - Arguments to delete one Page3typeCompareport.
      * @example
-     * // Delete one Fees_charged_by_mutual_funds
-     * const Fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.delete({
+     * // Delete one Page3typeCompareport
+     * const Page3typeCompareport = await prisma.page3typeCompareport.delete({
      *   where: {
-     *     // ... filter to delete one Fees_charged_by_mutual_funds
+     *     // ... filter to delete one Page3typeCompareport
      *   }
      * })
      * 
     **/
-    delete<T extends Fees_charged_by_mutual_fundsDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsDeleteArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page3typeCompareportDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportDeleteArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsUpdateArgs} args - Arguments to update one Fees_charged_by_mutual_funds.
+     * Update one Page3typeCompareport.
+     * @param {Page3typeCompareportUpdateArgs} args - Arguments to update one Page3typeCompareport.
      * @example
-     * // Update one Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.update({
+     * // Update one Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -8968,34 +7674,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends Fees_charged_by_mutual_fundsUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsUpdateArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page3typeCompareportUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportUpdateArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsDeleteManyArgs} args - Arguments to filter Fees_charged_by_mutual_funds to delete.
+     * Delete zero or more Page3typeCompareports.
+     * @param {Page3typeCompareportDeleteManyArgs} args - Arguments to filter Page3typeCompareports to delete.
      * @example
-     * // Delete a few Fees_charged_by_mutual_funds
-     * const { count } = await prisma.fees_charged_by_mutual_funds.deleteMany({
+     * // Delete a few Page3typeCompareports
+     * const { count } = await prisma.page3typeCompareport.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends Fees_charged_by_mutual_fundsDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_by_mutual_fundsDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page3typeCompareportDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3typeCompareportDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Fees_charged_by_mutual_funds.
+     * Update zero or more Page3typeCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page3typeCompareportUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.updateMany({
+     * // Update many Page3typeCompareports
+     * const page3typeCompareport = await prisma.page3typeCompareport.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9005,48 +7711,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends Fees_charged_by_mutual_fundsUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page3typeCompareportUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsUpsertArgs} args - Arguments to update or create a Fees_charged_by_mutual_funds.
+     * Create or update one Page3typeCompareport.
+     * @param {Page3typeCompareportUpsertArgs} args - Arguments to update or create a Page3typeCompareport.
      * @example
-     * // Update or create a Fees_charged_by_mutual_funds
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.upsert({
+     * // Update or create a Page3typeCompareport
+     * const page3typeCompareport = await prisma.page3typeCompareport.upsert({
      *   create: {
-     *     // ... data to create a Fees_charged_by_mutual_funds
+     *     // ... data to create a Page3typeCompareport
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Fees_charged_by_mutual_funds we want to update
+     *     // ... the filter for the Page3typeCompareport we want to update
      *   }
      * })
     **/
-    upsert<T extends Fees_charged_by_mutual_fundsUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_by_mutual_fundsUpsertArgs<ExtArgs>>
-    ): Prisma__Fees_charged_by_mutual_fundsClient<$Result.GetResult<Prisma.$Fees_charged_by_mutual_fundsPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page3typeCompareportUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3typeCompareportUpsertArgs<ExtArgs>>
+    ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Fees_charged_by_mutual_funds that matches the filter.
-     * @param {Fees_charged_by_mutual_fundsFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page3typeCompareports that matches the filter.
+     * @param {Page3typeCompareportFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.findRaw({
+     * const page3typeCompareport = await prisma.page3typeCompareport.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: Fees_charged_by_mutual_fundsFindRawArgs
+      args?: Page3typeCompareportFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Fees_charged_by_mutual_funds.
-     * @param {Fees_charged_by_mutual_fundsAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page3typeCompareport.
+     * @param {Page3typeCompareportAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const fees_charged_by_mutual_funds = await prisma.fees_charged_by_mutual_funds.aggregateRaw({
+     * const page3typeCompareport = await prisma.page3typeCompareport.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -9054,37 +7760,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: Fees_charged_by_mutual_fundsAggregateRawArgs
+      args?: Page3typeCompareportAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Fees_charged_by_mutual_funds.
+     * Count the number of Page3typeCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsCountArgs} args - Arguments to filter Fees_charged_by_mutual_funds to count.
+     * @param {Page3typeCompareportCountArgs} args - Arguments to filter Page3typeCompareports to count.
      * @example
-     * // Count the number of Fees_charged_by_mutual_funds
-     * const count = await prisma.fees_charged_by_mutual_funds.count({
+     * // Count the number of Page3typeCompareports
+     * const count = await prisma.page3typeCompareport.count({
      *   where: {
-     *     // ... the filter for the Fees_charged_by_mutual_funds we want to count
+     *     // ... the filter for the Page3typeCompareports we want to count
      *   }
      * })
     **/
-    count<T extends Fees_charged_by_mutual_fundsCountArgs>(
-      args?: Subset<T, Fees_charged_by_mutual_fundsCountArgs>,
+    count<T extends Page3typeCompareportCountArgs>(
+      args?: Subset<T, Page3typeCompareportCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Fees_charged_by_mutual_fundsCountAggregateOutputType>
+          : GetScalarType<T['select'], Page3typeCompareportCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Fees_charged_by_mutual_funds.
+     * Allows you to perform aggregations operations on a Page3typeCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page3typeCompareportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -9104,13 +7810,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Fees_charged_by_mutual_fundsAggregateArgs>(args: Subset<T, Fees_charged_by_mutual_fundsAggregateArgs>): Prisma.PrismaPromise<GetFees_charged_by_mutual_fundsAggregateType<T>>
+    aggregate<T extends Page3typeCompareportAggregateArgs>(args: Subset<T, Page3typeCompareportAggregateArgs>): Prisma.PrismaPromise<GetPage3typeCompareportAggregateType<T>>
 
     /**
-     * Group by Fees_charged_by_mutual_funds.
+     * Group by Page3typeCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_by_mutual_fundsGroupByArgs} args - Group by arguments.
+     * @param {Page3typeCompareportGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -9125,14 +7831,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Fees_charged_by_mutual_fundsGroupByArgs,
+      T extends Page3typeCompareportGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Fees_charged_by_mutual_fundsGroupByArgs['orderBy'] }
-        : { orderBy?: Fees_charged_by_mutual_fundsGroupByArgs['orderBy'] },
+        ? { orderBy: Page3typeCompareportGroupByArgs['orderBy'] }
+        : { orderBy?: Page3typeCompareportGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -9181,20 +7887,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Fees_charged_by_mutual_fundsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFees_charged_by_mutual_fundsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page3typeCompareportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage3typeCompareportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Fees_charged_by_mutual_funds model
+   * Fields of the Page3typeCompareport model
    */
-  readonly fields: Fees_charged_by_mutual_fundsFieldRefs;
+  readonly fields: Page3typeCompareportFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Fees_charged_by_mutual_funds.
+   * The delegate class that acts as a "Promise-like" for Page3typeCompareport.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Fees_charged_by_mutual_fundsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page3typeCompareportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -9223,290 +7929,291 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Fees_charged_by_mutual_funds model
+   * Fields of the Page3typeCompareport model
    */ 
-  interface Fees_charged_by_mutual_fundsFieldRefs {
-    readonly id: FieldRef<"Fees_charged_by_mutual_funds", 'String'>
-    readonly proj_id: FieldRef<"Fees_charged_by_mutual_funds", 'String'>
-    readonly data: FieldRef<"Fees_charged_by_mutual_funds", 'Json'>
+  interface Page3typeCompareportFieldRefs {
+    readonly id: FieldRef<"Page3typeCompareport", 'String'>
+    readonly proj_id: FieldRef<"Page3typeCompareport", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page3typeCompareport", 'String'>
+    readonly type_data: FieldRef<"Page3typeCompareport", 'Json'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Fees_charged_by_mutual_funds findUnique
+   * Page3typeCompareport findUnique
    */
-  export type Fees_charged_by_mutual_fundsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_by_mutual_funds to fetch.
+     * Filter, which Page3typeCompareport to fetch.
      */
-    where: Fees_charged_by_mutual_fundsWhereUniqueInput
+    where: Page3typeCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds findUniqueOrThrow
+   * Page3typeCompareport findUniqueOrThrow
    */
-  export type Fees_charged_by_mutual_fundsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_by_mutual_funds to fetch.
+     * Filter, which Page3typeCompareport to fetch.
      */
-    where: Fees_charged_by_mutual_fundsWhereUniqueInput
+    where: Page3typeCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds findFirst
+   * Page3typeCompareport findFirst
    */
-  export type Fees_charged_by_mutual_fundsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_by_mutual_funds to fetch.
+     * Filter, which Page3typeCompareport to fetch.
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_by_mutual_funds to fetch.
+     * Determine the order of Page3typeCompareports to fetch.
      */
-    orderBy?: Fees_charged_by_mutual_fundsOrderByWithRelationInput | Fees_charged_by_mutual_fundsOrderByWithRelationInput[]
+    orderBy?: Page3typeCompareportOrderByWithRelationInput | Page3typeCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fees_charged_by_mutual_funds.
+     * Sets the position for searching for Page3typeCompareports.
      */
-    cursor?: Fees_charged_by_mutual_fundsWhereUniqueInput
+    cursor?: Page3typeCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_by_mutual_funds from the position of the cursor.
+     * Take `±n` Page3typeCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_by_mutual_funds.
+     * Skip the first `n` Page3typeCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fees_charged_by_mutual_funds.
+     * Filter by unique combinations of Page3typeCompareports.
      */
-    distinct?: Fees_charged_by_mutual_fundsScalarFieldEnum | Fees_charged_by_mutual_fundsScalarFieldEnum[]
+    distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds findFirstOrThrow
+   * Page3typeCompareport findFirstOrThrow
    */
-  export type Fees_charged_by_mutual_fundsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_by_mutual_funds to fetch.
+     * Filter, which Page3typeCompareport to fetch.
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_by_mutual_funds to fetch.
+     * Determine the order of Page3typeCompareports to fetch.
      */
-    orderBy?: Fees_charged_by_mutual_fundsOrderByWithRelationInput | Fees_charged_by_mutual_fundsOrderByWithRelationInput[]
+    orderBy?: Page3typeCompareportOrderByWithRelationInput | Page3typeCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fees_charged_by_mutual_funds.
+     * Sets the position for searching for Page3typeCompareports.
      */
-    cursor?: Fees_charged_by_mutual_fundsWhereUniqueInput
+    cursor?: Page3typeCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_by_mutual_funds from the position of the cursor.
+     * Take `±n` Page3typeCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_by_mutual_funds.
+     * Skip the first `n` Page3typeCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fees_charged_by_mutual_funds.
+     * Filter by unique combinations of Page3typeCompareports.
      */
-    distinct?: Fees_charged_by_mutual_fundsScalarFieldEnum | Fees_charged_by_mutual_fundsScalarFieldEnum[]
+    distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds findMany
+   * Page3typeCompareport findMany
    */
-  export type Fees_charged_by_mutual_fundsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_by_mutual_funds to fetch.
+     * Filter, which Page3typeCompareports to fetch.
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_by_mutual_funds to fetch.
+     * Determine the order of Page3typeCompareports to fetch.
      */
-    orderBy?: Fees_charged_by_mutual_fundsOrderByWithRelationInput | Fees_charged_by_mutual_fundsOrderByWithRelationInput[]
+    orderBy?: Page3typeCompareportOrderByWithRelationInput | Page3typeCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Fees_charged_by_mutual_funds.
+     * Sets the position for listing Page3typeCompareports.
      */
-    cursor?: Fees_charged_by_mutual_fundsWhereUniqueInput
+    cursor?: Page3typeCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_by_mutual_funds from the position of the cursor.
+     * Take `±n` Page3typeCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_by_mutual_funds.
+     * Skip the first `n` Page3typeCompareports.
      */
     skip?: number
-    distinct?: Fees_charged_by_mutual_fundsScalarFieldEnum | Fees_charged_by_mutual_fundsScalarFieldEnum[]
+    distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds create
+   * Page3typeCompareport create
    */
-  export type Fees_charged_by_mutual_fundsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to create a Fees_charged_by_mutual_funds.
+     * The data needed to create a Page3typeCompareport.
      */
-    data: XOR<Fees_charged_by_mutual_fundsCreateInput, Fees_charged_by_mutual_fundsUncheckedCreateInput>
+    data: XOR<Page3typeCompareportCreateInput, Page3typeCompareportUncheckedCreateInput>
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds createMany
+   * Page3typeCompareport createMany
    */
-  export type Fees_charged_by_mutual_fundsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Fees_charged_by_mutual_funds.
+     * The data used to create many Page3typeCompareports.
      */
-    data: Fees_charged_by_mutual_fundsCreateManyInput | Fees_charged_by_mutual_fundsCreateManyInput[]
+    data: Page3typeCompareportCreateManyInput | Page3typeCompareportCreateManyInput[]
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds update
+   * Page3typeCompareport update
    */
-  export type Fees_charged_by_mutual_fundsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to update a Fees_charged_by_mutual_funds.
+     * The data needed to update a Page3typeCompareport.
      */
-    data: XOR<Fees_charged_by_mutual_fundsUpdateInput, Fees_charged_by_mutual_fundsUncheckedUpdateInput>
+    data: XOR<Page3typeCompareportUpdateInput, Page3typeCompareportUncheckedUpdateInput>
     /**
-     * Choose, which Fees_charged_by_mutual_funds to update.
+     * Choose, which Page3typeCompareport to update.
      */
-    where: Fees_charged_by_mutual_fundsWhereUniqueInput
+    where: Page3typeCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds updateMany
+   * Page3typeCompareport updateMany
    */
-  export type Fees_charged_by_mutual_fundsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Fees_charged_by_mutual_funds.
+     * The data used to update Page3typeCompareports.
      */
-    data: XOR<Fees_charged_by_mutual_fundsUpdateManyMutationInput, Fees_charged_by_mutual_fundsUncheckedUpdateManyInput>
+    data: XOR<Page3typeCompareportUpdateManyMutationInput, Page3typeCompareportUncheckedUpdateManyInput>
     /**
-     * Filter which Fees_charged_by_mutual_funds to update
+     * Filter which Page3typeCompareports to update
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds upsert
+   * Page3typeCompareport upsert
    */
-  export type Fees_charged_by_mutual_fundsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * The filter to search for the Fees_charged_by_mutual_funds to update in case it exists.
+     * The filter to search for the Page3typeCompareport to update in case it exists.
      */
-    where: Fees_charged_by_mutual_fundsWhereUniqueInput
+    where: Page3typeCompareportWhereUniqueInput
     /**
-     * In case the Fees_charged_by_mutual_funds found by the `where` argument doesn't exist, create a new Fees_charged_by_mutual_funds with this data.
+     * In case the Page3typeCompareport found by the `where` argument doesn't exist, create a new Page3typeCompareport with this data.
      */
-    create: XOR<Fees_charged_by_mutual_fundsCreateInput, Fees_charged_by_mutual_fundsUncheckedCreateInput>
+    create: XOR<Page3typeCompareportCreateInput, Page3typeCompareportUncheckedCreateInput>
     /**
-     * In case the Fees_charged_by_mutual_funds was found with the provided `where` argument, update it with this data.
+     * In case the Page3typeCompareport was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Fees_charged_by_mutual_fundsUpdateInput, Fees_charged_by_mutual_fundsUncheckedUpdateInput>
+    update: XOR<Page3typeCompareportUpdateInput, Page3typeCompareportUncheckedUpdateInput>
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds delete
+   * Page3typeCompareport delete
    */
-  export type Fees_charged_by_mutual_fundsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
     /**
-     * Filter which Fees_charged_by_mutual_funds to delete.
+     * Filter which Page3typeCompareport to delete.
      */
-    where: Fees_charged_by_mutual_fundsWhereUniqueInput
+    where: Page3typeCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds deleteMany
+   * Page3typeCompareport deleteMany
    */
-  export type Fees_charged_by_mutual_fundsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Fees_charged_by_mutual_funds to delete
+     * Filter which Page3typeCompareports to delete
      */
-    where?: Fees_charged_by_mutual_fundsWhereInput
+    where?: Page3typeCompareportWhereInput
   }
 
 
   /**
-   * Fees_charged_by_mutual_funds findRaw
+   * Page3typeCompareport findRaw
    */
-  export type Fees_charged_by_mutual_fundsFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -9519,9 +8226,9 @@ export namespace Prisma {
 
 
   /**
-   * Fees_charged_by_mutual_funds aggregateRaw
+   * Page3typeCompareport aggregateRaw
    */
-  export type Fees_charged_by_mutual_fundsAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -9534,331 +8241,341 @@ export namespace Prisma {
 
 
   /**
-   * Fees_charged_by_mutual_funds without action
+   * Page3typeCompareport without action
    */
-  export type Fees_charged_by_mutual_fundsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3typeCompareportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_by_mutual_funds
+     * Select specific fields to fetch from the Page3typeCompareport
      */
-    select?: Fees_charged_by_mutual_fundsSelect<ExtArgs> | null
+    select?: Page3typeCompareportSelect<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Fees_charged_to_unitholders
+   * Model Page3Investment_proportionCompareport
    */
 
-  export type AggregateFees_charged_to_unitholders = {
-    _count: Fees_charged_to_unitholdersCountAggregateOutputType | null
-    _min: Fees_charged_to_unitholdersMinAggregateOutputType | null
-    _max: Fees_charged_to_unitholdersMaxAggregateOutputType | null
+  export type AggregatePage3Investment_proportionCompareport = {
+    _count: Page3Investment_proportionCompareportCountAggregateOutputType | null
+    _min: Page3Investment_proportionCompareportMinAggregateOutputType | null
+    _max: Page3Investment_proportionCompareportMaxAggregateOutputType | null
   }
 
-  export type Fees_charged_to_unitholdersMinAggregateOutputType = {
+  export type Page3Investment_proportionCompareportMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Fees_charged_to_unitholdersMaxAggregateOutputType = {
+  export type Page3Investment_proportionCompareportMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Fees_charged_to_unitholdersCountAggregateOutputType = {
+  export type Page3Investment_proportionCompareportCountAggregateOutputType = {
     id: number
     proj_id: number
-    data: number
+    proj_abbr_name: number
+    Investment_proportion_data: number
     _all: number
   }
 
 
-  export type Fees_charged_to_unitholdersMinAggregateInputType = {
+  export type Page3Investment_proportionCompareportMinAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Fees_charged_to_unitholdersMaxAggregateInputType = {
+  export type Page3Investment_proportionCompareportMaxAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Fees_charged_to_unitholdersCountAggregateInputType = {
+  export type Page3Investment_proportionCompareportCountAggregateInputType = {
     id?: true
     proj_id?: true
-    data?: true
+    proj_abbr_name?: true
+    Investment_proportion_data?: true
     _all?: true
   }
 
-  export type Fees_charged_to_unitholdersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Fees_charged_to_unitholders to aggregate.
+     * Filter which Page3Investment_proportionCompareport to aggregate.
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_to_unitholders to fetch.
+     * Determine the order of Page3Investment_proportionCompareports to fetch.
      */
-    orderBy?: Fees_charged_to_unitholdersOrderByWithRelationInput | Fees_charged_to_unitholdersOrderByWithRelationInput[]
+    orderBy?: Page3Investment_proportionCompareportOrderByWithRelationInput | Page3Investment_proportionCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Fees_charged_to_unitholdersWhereUniqueInput
+    cursor?: Page3Investment_proportionCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_to_unitholders from the position of the cursor.
+     * Take `±n` Page3Investment_proportionCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_to_unitholders.
+     * Skip the first `n` Page3Investment_proportionCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Fees_charged_to_unitholders
+     * Count returned Page3Investment_proportionCompareports
     **/
-    _count?: true | Fees_charged_to_unitholdersCountAggregateInputType
+    _count?: true | Page3Investment_proportionCompareportCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Fees_charged_to_unitholdersMinAggregateInputType
+    _min?: Page3Investment_proportionCompareportMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Fees_charged_to_unitholdersMaxAggregateInputType
+    _max?: Page3Investment_proportionCompareportMaxAggregateInputType
   }
 
-  export type GetFees_charged_to_unitholdersAggregateType<T extends Fees_charged_to_unitholdersAggregateArgs> = {
-        [P in keyof T & keyof AggregateFees_charged_to_unitholders]: P extends '_count' | 'count'
+  export type GetPage3Investment_proportionCompareportAggregateType<T extends Page3Investment_proportionCompareportAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage3Investment_proportionCompareport]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateFees_charged_to_unitholders[P]>
-      : GetScalarType<T[P], AggregateFees_charged_to_unitholders[P]>
+        : GetScalarType<T[P], AggregatePage3Investment_proportionCompareport[P]>
+      : GetScalarType<T[P], AggregatePage3Investment_proportionCompareport[P]>
   }
 
 
 
 
-  export type Fees_charged_to_unitholdersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Fees_charged_to_unitholdersWhereInput
-    orderBy?: Fees_charged_to_unitholdersOrderByWithAggregationInput | Fees_charged_to_unitholdersOrderByWithAggregationInput[]
-    by: Fees_charged_to_unitholdersScalarFieldEnum[] | Fees_charged_to_unitholdersScalarFieldEnum
-    having?: Fees_charged_to_unitholdersScalarWhereWithAggregatesInput
+  export type Page3Investment_proportionCompareportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page3Investment_proportionCompareportWhereInput
+    orderBy?: Page3Investment_proportionCompareportOrderByWithAggregationInput | Page3Investment_proportionCompareportOrderByWithAggregationInput[]
+    by: Page3Investment_proportionCompareportScalarFieldEnum[] | Page3Investment_proportionCompareportScalarFieldEnum
+    having?: Page3Investment_proportionCompareportScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Fees_charged_to_unitholdersCountAggregateInputType | true
-    _min?: Fees_charged_to_unitholdersMinAggregateInputType
-    _max?: Fees_charged_to_unitholdersMaxAggregateInputType
+    _count?: Page3Investment_proportionCompareportCountAggregateInputType | true
+    _min?: Page3Investment_proportionCompareportMinAggregateInputType
+    _max?: Page3Investment_proportionCompareportMaxAggregateInputType
   }
 
-  export type Fees_charged_to_unitholdersGroupByOutputType = {
+  export type Page3Investment_proportionCompareportGroupByOutputType = {
     id: string
     proj_id: string
-    data: JsonValue
-    _count: Fees_charged_to_unitholdersCountAggregateOutputType | null
-    _min: Fees_charged_to_unitholdersMinAggregateOutputType | null
-    _max: Fees_charged_to_unitholdersMaxAggregateOutputType | null
+    proj_abbr_name: string
+    Investment_proportion_data: JsonValue
+    _count: Page3Investment_proportionCompareportCountAggregateOutputType | null
+    _min: Page3Investment_proportionCompareportMinAggregateOutputType | null
+    _max: Page3Investment_proportionCompareportMaxAggregateOutputType | null
   }
 
-  type GetFees_charged_to_unitholdersGroupByPayload<T extends Fees_charged_to_unitholdersGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage3Investment_proportionCompareportGroupByPayload<T extends Page3Investment_proportionCompareportGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Fees_charged_to_unitholdersGroupByOutputType, T['by']> &
+      PickEnumerable<Page3Investment_proportionCompareportGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Fees_charged_to_unitholdersGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page3Investment_proportionCompareportGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Fees_charged_to_unitholdersGroupByOutputType[P]>
-            : GetScalarType<T[P], Fees_charged_to_unitholdersGroupByOutputType[P]>
+              : GetScalarType<T[P], Page3Investment_proportionCompareportGroupByOutputType[P]>
+            : GetScalarType<T[P], Page3Investment_proportionCompareportGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Fees_charged_to_unitholdersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page3Investment_proportionCompareportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["fees_charged_to_unitholders"]>
+    proj_abbr_name?: boolean
+    Investment_proportion_data?: boolean
+  }, ExtArgs["result"]["page3Investment_proportionCompareport"]>
 
-  export type Fees_charged_to_unitholdersSelectScalar = {
+  export type Page3Investment_proportionCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
-    data?: boolean
+    proj_abbr_name?: boolean
+    Investment_proportion_data?: boolean
   }
 
 
-  export type $Fees_charged_to_unitholdersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Fees_charged_to_unitholders"
+  export type $Page3Investment_proportionCompareportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page3Investment_proportionCompareport"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["fees_charged_to_unitholders"]>
+      proj_abbr_name: string
+      Investment_proportion_data: Prisma.JsonValue
+    }, ExtArgs["result"]["page3Investment_proportionCompareport"]>
     composites: {}
   }
 
 
-  type Fees_charged_to_unitholdersGetPayload<S extends boolean | null | undefined | Fees_charged_to_unitholdersDefaultArgs> = $Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload, S>
+  type Page3Investment_proportionCompareportGetPayload<S extends boolean | null | undefined | Page3Investment_proportionCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload, S>
 
-  type Fees_charged_to_unitholdersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Fees_charged_to_unitholdersFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Fees_charged_to_unitholdersCountAggregateInputType | true
+  type Page3Investment_proportionCompareportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page3Investment_proportionCompareportFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page3Investment_proportionCompareportCountAggregateInputType | true
     }
 
-  export interface Fees_charged_to_unitholdersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Fees_charged_to_unitholders'], meta: { name: 'Fees_charged_to_unitholders' } }
+  export interface Page3Investment_proportionCompareportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page3Investment_proportionCompareport'], meta: { name: 'Page3Investment_proportionCompareport' } }
     /**
-     * Find zero or one Fees_charged_to_unitholders that matches the filter.
-     * @param {Fees_charged_to_unitholdersFindUniqueArgs} args - Arguments to find a Fees_charged_to_unitholders
+     * Find zero or one Page3Investment_proportionCompareport that matches the filter.
+     * @param {Page3Investment_proportionCompareportFindUniqueArgs} args - Arguments to find a Page3Investment_proportionCompareport
      * @example
-     * // Get one Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findUnique({
+     * // Get one Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends Fees_charged_to_unitholdersFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersFindUniqueArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page3Investment_proportionCompareportFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Fees_charged_to_unitholders that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page3Investment_proportionCompareport that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {Fees_charged_to_unitholdersFindUniqueOrThrowArgs} args - Arguments to find a Fees_charged_to_unitholders
+     * @param {Page3Investment_proportionCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3Investment_proportionCompareport
      * @example
-     * // Get one Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findUniqueOrThrow({
+     * // Get one Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends Fees_charged_to_unitholdersFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page3Investment_proportionCompareportFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Fees_charged_to_unitholders that matches the filter.
+     * Find the first Page3Investment_proportionCompareport that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersFindFirstArgs} args - Arguments to find a Fees_charged_to_unitholders
+     * @param {Page3Investment_proportionCompareportFindFirstArgs} args - Arguments to find a Page3Investment_proportionCompareport
      * @example
-     * // Get one Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findFirst({
+     * // Get one Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends Fees_charged_to_unitholdersFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersFindFirstArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page3Investment_proportionCompareportFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportFindFirstArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Fees_charged_to_unitholders that matches the filter or
+     * Find the first Page3Investment_proportionCompareport that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersFindFirstOrThrowArgs} args - Arguments to find a Fees_charged_to_unitholders
+     * @param {Page3Investment_proportionCompareportFindFirstOrThrowArgs} args - Arguments to find a Page3Investment_proportionCompareport
      * @example
-     * // Get one Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findFirstOrThrow({
+     * // Get one Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends Fees_charged_to_unitholdersFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page3Investment_proportionCompareportFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Fees_charged_to_unitholders that matches the filter.
+     * Find zero or more Page3Investment_proportionCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3Investment_proportionCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findMany()
+     * // Get all Page3Investment_proportionCompareports
+     * const page3Investment_proportionCompareports = await prisma.page3Investment_proportionCompareport.findMany()
      * 
-     * // Get first 10 Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findMany({ take: 10 })
+     * // Get first 10 Page3Investment_proportionCompareports
+     * const page3Investment_proportionCompareports = await prisma.page3Investment_proportionCompareport.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const fees_charged_to_unitholdersWithIdOnly = await prisma.fees_charged_to_unitholders.findMany({ select: { id: true } })
+     * const page3Investment_proportionCompareportWithIdOnly = await prisma.page3Investment_proportionCompareport.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends Fees_charged_to_unitholdersFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page3Investment_proportionCompareportFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersCreateArgs} args - Arguments to create a Fees_charged_to_unitholders.
+     * Create a Page3Investment_proportionCompareport.
+     * @param {Page3Investment_proportionCompareportCreateArgs} args - Arguments to create a Page3Investment_proportionCompareport.
      * @example
-     * // Create one Fees_charged_to_unitholders
-     * const Fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.create({
+     * // Create one Page3Investment_proportionCompareport
+     * const Page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.create({
      *   data: {
-     *     // ... data to create a Fees_charged_to_unitholders
+     *     // ... data to create a Page3Investment_proportionCompareport
      *   }
      * })
      * 
     **/
-    create<T extends Fees_charged_to_unitholdersCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersCreateArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page3Investment_proportionCompareportCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportCreateArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Fees_charged_to_unitholders.
-     *     @param {Fees_charged_to_unitholdersCreateManyArgs} args - Arguments to create many Fees_charged_to_unitholders.
+     * Create many Page3Investment_proportionCompareports.
+     *     @param {Page3Investment_proportionCompareportCreateManyArgs} args - Arguments to create many Page3Investment_proportionCompareports.
      *     @example
-     *     // Create many Fees_charged_to_unitholders
-     *     const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.createMany({
+     *     // Create many Page3Investment_proportionCompareports
+     *     const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends Fees_charged_to_unitholdersCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersCreateManyArgs<ExtArgs>>
+    createMany<T extends Page3Investment_proportionCompareportCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersDeleteArgs} args - Arguments to delete one Fees_charged_to_unitholders.
+     * Delete a Page3Investment_proportionCompareport.
+     * @param {Page3Investment_proportionCompareportDeleteArgs} args - Arguments to delete one Page3Investment_proportionCompareport.
      * @example
-     * // Delete one Fees_charged_to_unitholders
-     * const Fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.delete({
+     * // Delete one Page3Investment_proportionCompareport
+     * const Page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.delete({
      *   where: {
-     *     // ... filter to delete one Fees_charged_to_unitholders
+     *     // ... filter to delete one Page3Investment_proportionCompareport
      *   }
      * })
      * 
     **/
-    delete<T extends Fees_charged_to_unitholdersDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersDeleteArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page3Investment_proportionCompareportDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportDeleteArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersUpdateArgs} args - Arguments to update one Fees_charged_to_unitholders.
+     * Update one Page3Investment_proportionCompareport.
+     * @param {Page3Investment_proportionCompareportUpdateArgs} args - Arguments to update one Page3Investment_proportionCompareport.
      * @example
-     * // Update one Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.update({
+     * // Update one Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9868,34 +8585,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends Fees_charged_to_unitholdersUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersUpdateArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page3Investment_proportionCompareportUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportUpdateArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersDeleteManyArgs} args - Arguments to filter Fees_charged_to_unitholders to delete.
+     * Delete zero or more Page3Investment_proportionCompareports.
+     * @param {Page3Investment_proportionCompareportDeleteManyArgs} args - Arguments to filter Page3Investment_proportionCompareports to delete.
      * @example
-     * // Delete a few Fees_charged_to_unitholders
-     * const { count } = await prisma.fees_charged_to_unitholders.deleteMany({
+     * // Delete a few Page3Investment_proportionCompareports
+     * const { count } = await prisma.page3Investment_proportionCompareport.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends Fees_charged_to_unitholdersDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Fees_charged_to_unitholdersDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page3Investment_proportionCompareportDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page3Investment_proportionCompareportDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Fees_charged_to_unitholders.
+     * Update zero or more Page3Investment_proportionCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page3Investment_proportionCompareportUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.updateMany({
+     * // Update many Page3Investment_proportionCompareports
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -9905,48 +8622,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends Fees_charged_to_unitholdersUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page3Investment_proportionCompareportUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersUpsertArgs} args - Arguments to update or create a Fees_charged_to_unitholders.
+     * Create or update one Page3Investment_proportionCompareport.
+     * @param {Page3Investment_proportionCompareportUpsertArgs} args - Arguments to update or create a Page3Investment_proportionCompareport.
      * @example
-     * // Update or create a Fees_charged_to_unitholders
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.upsert({
+     * // Update or create a Page3Investment_proportionCompareport
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.upsert({
      *   create: {
-     *     // ... data to create a Fees_charged_to_unitholders
+     *     // ... data to create a Page3Investment_proportionCompareport
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Fees_charged_to_unitholders we want to update
+     *     // ... the filter for the Page3Investment_proportionCompareport we want to update
      *   }
      * })
     **/
-    upsert<T extends Fees_charged_to_unitholdersUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Fees_charged_to_unitholdersUpsertArgs<ExtArgs>>
-    ): Prisma__Fees_charged_to_unitholdersClient<$Result.GetResult<Prisma.$Fees_charged_to_unitholdersPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page3Investment_proportionCompareportUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page3Investment_proportionCompareportUpsertArgs<ExtArgs>>
+    ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Fees_charged_to_unitholders that matches the filter.
-     * @param {Fees_charged_to_unitholdersFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page3Investment_proportionCompareports that matches the filter.
+     * @param {Page3Investment_proportionCompareportFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.findRaw({
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: Fees_charged_to_unitholdersFindRawArgs
+      args?: Page3Investment_proportionCompareportFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Fees_charged_to_unitholders.
-     * @param {Fees_charged_to_unitholdersAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page3Investment_proportionCompareport.
+     * @param {Page3Investment_proportionCompareportAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const fees_charged_to_unitholders = await prisma.fees_charged_to_unitholders.aggregateRaw({
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -9954,37 +8671,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: Fees_charged_to_unitholdersAggregateRawArgs
+      args?: Page3Investment_proportionCompareportAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Fees_charged_to_unitholders.
+     * Count the number of Page3Investment_proportionCompareports.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersCountArgs} args - Arguments to filter Fees_charged_to_unitholders to count.
+     * @param {Page3Investment_proportionCompareportCountArgs} args - Arguments to filter Page3Investment_proportionCompareports to count.
      * @example
-     * // Count the number of Fees_charged_to_unitholders
-     * const count = await prisma.fees_charged_to_unitholders.count({
+     * // Count the number of Page3Investment_proportionCompareports
+     * const count = await prisma.page3Investment_proportionCompareport.count({
      *   where: {
-     *     // ... the filter for the Fees_charged_to_unitholders we want to count
+     *     // ... the filter for the Page3Investment_proportionCompareports we want to count
      *   }
      * })
     **/
-    count<T extends Fees_charged_to_unitholdersCountArgs>(
-      args?: Subset<T, Fees_charged_to_unitholdersCountArgs>,
+    count<T extends Page3Investment_proportionCompareportCountArgs>(
+      args?: Subset<T, Page3Investment_proportionCompareportCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Fees_charged_to_unitholdersCountAggregateOutputType>
+          : GetScalarType<T['select'], Page3Investment_proportionCompareportCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Fees_charged_to_unitholders.
+     * Allows you to perform aggregations operations on a Page3Investment_proportionCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page3Investment_proportionCompareportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -10004,13 +8721,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Fees_charged_to_unitholdersAggregateArgs>(args: Subset<T, Fees_charged_to_unitholdersAggregateArgs>): Prisma.PrismaPromise<GetFees_charged_to_unitholdersAggregateType<T>>
+    aggregate<T extends Page3Investment_proportionCompareportAggregateArgs>(args: Subset<T, Page3Investment_proportionCompareportAggregateArgs>): Prisma.PrismaPromise<GetPage3Investment_proportionCompareportAggregateType<T>>
 
     /**
-     * Group by Fees_charged_to_unitholders.
+     * Group by Page3Investment_proportionCompareport.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Fees_charged_to_unitholdersGroupByArgs} args - Group by arguments.
+     * @param {Page3Investment_proportionCompareportGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -10025,14 +8742,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Fees_charged_to_unitholdersGroupByArgs,
+      T extends Page3Investment_proportionCompareportGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Fees_charged_to_unitholdersGroupByArgs['orderBy'] }
-        : { orderBy?: Fees_charged_to_unitholdersGroupByArgs['orderBy'] },
+        ? { orderBy: Page3Investment_proportionCompareportGroupByArgs['orderBy'] }
+        : { orderBy?: Page3Investment_proportionCompareportGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -10081,20 +8798,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Fees_charged_to_unitholdersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFees_charged_to_unitholdersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page3Investment_proportionCompareportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage3Investment_proportionCompareportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Fees_charged_to_unitholders model
+   * Fields of the Page3Investment_proportionCompareport model
    */
-  readonly fields: Fees_charged_to_unitholdersFieldRefs;
+  readonly fields: Page3Investment_proportionCompareportFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Fees_charged_to_unitholders.
+   * The delegate class that acts as a "Promise-like" for Page3Investment_proportionCompareport.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Fees_charged_to_unitholdersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page3Investment_proportionCompareportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -10123,290 +8840,291 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Fees_charged_to_unitholders model
+   * Fields of the Page3Investment_proportionCompareport model
    */ 
-  interface Fees_charged_to_unitholdersFieldRefs {
-    readonly id: FieldRef<"Fees_charged_to_unitholders", 'String'>
-    readonly proj_id: FieldRef<"Fees_charged_to_unitholders", 'String'>
-    readonly data: FieldRef<"Fees_charged_to_unitholders", 'Json'>
+  interface Page3Investment_proportionCompareportFieldRefs {
+    readonly id: FieldRef<"Page3Investment_proportionCompareport", 'String'>
+    readonly proj_id: FieldRef<"Page3Investment_proportionCompareport", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page3Investment_proportionCompareport", 'String'>
+    readonly Investment_proportion_data: FieldRef<"Page3Investment_proportionCompareport", 'Json'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Fees_charged_to_unitholders findUnique
+   * Page3Investment_proportionCompareport findUnique
    */
-  export type Fees_charged_to_unitholdersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_to_unitholders to fetch.
+     * Filter, which Page3Investment_proportionCompareport to fetch.
      */
-    where: Fees_charged_to_unitholdersWhereUniqueInput
+    where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders findUniqueOrThrow
+   * Page3Investment_proportionCompareport findUniqueOrThrow
    */
-  export type Fees_charged_to_unitholdersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_to_unitholders to fetch.
+     * Filter, which Page3Investment_proportionCompareport to fetch.
      */
-    where: Fees_charged_to_unitholdersWhereUniqueInput
+    where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders findFirst
+   * Page3Investment_proportionCompareport findFirst
    */
-  export type Fees_charged_to_unitholdersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_to_unitholders to fetch.
+     * Filter, which Page3Investment_proportionCompareport to fetch.
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_to_unitholders to fetch.
+     * Determine the order of Page3Investment_proportionCompareports to fetch.
      */
-    orderBy?: Fees_charged_to_unitholdersOrderByWithRelationInput | Fees_charged_to_unitholdersOrderByWithRelationInput[]
+    orderBy?: Page3Investment_proportionCompareportOrderByWithRelationInput | Page3Investment_proportionCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fees_charged_to_unitholders.
+     * Sets the position for searching for Page3Investment_proportionCompareports.
      */
-    cursor?: Fees_charged_to_unitholdersWhereUniqueInput
+    cursor?: Page3Investment_proportionCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_to_unitholders from the position of the cursor.
+     * Take `±n` Page3Investment_proportionCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_to_unitholders.
+     * Skip the first `n` Page3Investment_proportionCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fees_charged_to_unitholders.
+     * Filter by unique combinations of Page3Investment_proportionCompareports.
      */
-    distinct?: Fees_charged_to_unitholdersScalarFieldEnum | Fees_charged_to_unitholdersScalarFieldEnum[]
+    distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_to_unitholders findFirstOrThrow
+   * Page3Investment_proportionCompareport findFirstOrThrow
    */
-  export type Fees_charged_to_unitholdersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_to_unitholders to fetch.
+     * Filter, which Page3Investment_proportionCompareport to fetch.
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_to_unitholders to fetch.
+     * Determine the order of Page3Investment_proportionCompareports to fetch.
      */
-    orderBy?: Fees_charged_to_unitholdersOrderByWithRelationInput | Fees_charged_to_unitholdersOrderByWithRelationInput[]
+    orderBy?: Page3Investment_proportionCompareportOrderByWithRelationInput | Page3Investment_proportionCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Fees_charged_to_unitholders.
+     * Sets the position for searching for Page3Investment_proportionCompareports.
      */
-    cursor?: Fees_charged_to_unitholdersWhereUniqueInput
+    cursor?: Page3Investment_proportionCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_to_unitholders from the position of the cursor.
+     * Take `±n` Page3Investment_proportionCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_to_unitholders.
+     * Skip the first `n` Page3Investment_proportionCompareports.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Fees_charged_to_unitholders.
+     * Filter by unique combinations of Page3Investment_proportionCompareports.
      */
-    distinct?: Fees_charged_to_unitholdersScalarFieldEnum | Fees_charged_to_unitholdersScalarFieldEnum[]
+    distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_to_unitholders findMany
+   * Page3Investment_proportionCompareport findMany
    */
-  export type Fees_charged_to_unitholdersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter, which Fees_charged_to_unitholders to fetch.
+     * Filter, which Page3Investment_proportionCompareports to fetch.
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Fees_charged_to_unitholders to fetch.
+     * Determine the order of Page3Investment_proportionCompareports to fetch.
      */
-    orderBy?: Fees_charged_to_unitholdersOrderByWithRelationInput | Fees_charged_to_unitholdersOrderByWithRelationInput[]
+    orderBy?: Page3Investment_proportionCompareportOrderByWithRelationInput | Page3Investment_proportionCompareportOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Fees_charged_to_unitholders.
+     * Sets the position for listing Page3Investment_proportionCompareports.
      */
-    cursor?: Fees_charged_to_unitholdersWhereUniqueInput
+    cursor?: Page3Investment_proportionCompareportWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Fees_charged_to_unitholders from the position of the cursor.
+     * Take `±n` Page3Investment_proportionCompareports from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Fees_charged_to_unitholders.
+     * Skip the first `n` Page3Investment_proportionCompareports.
      */
     skip?: number
-    distinct?: Fees_charged_to_unitholdersScalarFieldEnum | Fees_charged_to_unitholdersScalarFieldEnum[]
+    distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
 
   /**
-   * Fees_charged_to_unitholders create
+   * Page3Investment_proportionCompareport create
    */
-  export type Fees_charged_to_unitholdersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to create a Fees_charged_to_unitholders.
+     * The data needed to create a Page3Investment_proportionCompareport.
      */
-    data: XOR<Fees_charged_to_unitholdersCreateInput, Fees_charged_to_unitholdersUncheckedCreateInput>
+    data: XOR<Page3Investment_proportionCompareportCreateInput, Page3Investment_proportionCompareportUncheckedCreateInput>
   }
 
 
   /**
-   * Fees_charged_to_unitholders createMany
+   * Page3Investment_proportionCompareport createMany
    */
-  export type Fees_charged_to_unitholdersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Fees_charged_to_unitholders.
+     * The data used to create many Page3Investment_proportionCompareports.
      */
-    data: Fees_charged_to_unitholdersCreateManyInput | Fees_charged_to_unitholdersCreateManyInput[]
+    data: Page3Investment_proportionCompareportCreateManyInput | Page3Investment_proportionCompareportCreateManyInput[]
   }
 
 
   /**
-   * Fees_charged_to_unitholders update
+   * Page3Investment_proportionCompareport update
    */
-  export type Fees_charged_to_unitholdersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * The data needed to update a Fees_charged_to_unitholders.
+     * The data needed to update a Page3Investment_proportionCompareport.
      */
-    data: XOR<Fees_charged_to_unitholdersUpdateInput, Fees_charged_to_unitholdersUncheckedUpdateInput>
+    data: XOR<Page3Investment_proportionCompareportUpdateInput, Page3Investment_proportionCompareportUncheckedUpdateInput>
     /**
-     * Choose, which Fees_charged_to_unitholders to update.
+     * Choose, which Page3Investment_proportionCompareport to update.
      */
-    where: Fees_charged_to_unitholdersWhereUniqueInput
+    where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders updateMany
+   * Page3Investment_proportionCompareport updateMany
    */
-  export type Fees_charged_to_unitholdersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Fees_charged_to_unitholders.
+     * The data used to update Page3Investment_proportionCompareports.
      */
-    data: XOR<Fees_charged_to_unitholdersUpdateManyMutationInput, Fees_charged_to_unitholdersUncheckedUpdateManyInput>
+    data: XOR<Page3Investment_proportionCompareportUpdateManyMutationInput, Page3Investment_proportionCompareportUncheckedUpdateManyInput>
     /**
-     * Filter which Fees_charged_to_unitholders to update
+     * Filter which Page3Investment_proportionCompareports to update
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders upsert
+   * Page3Investment_proportionCompareport upsert
    */
-  export type Fees_charged_to_unitholdersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * The filter to search for the Fees_charged_to_unitholders to update in case it exists.
+     * The filter to search for the Page3Investment_proportionCompareport to update in case it exists.
      */
-    where: Fees_charged_to_unitholdersWhereUniqueInput
+    where: Page3Investment_proportionCompareportWhereUniqueInput
     /**
-     * In case the Fees_charged_to_unitholders found by the `where` argument doesn't exist, create a new Fees_charged_to_unitholders with this data.
+     * In case the Page3Investment_proportionCompareport found by the `where` argument doesn't exist, create a new Page3Investment_proportionCompareport with this data.
      */
-    create: XOR<Fees_charged_to_unitholdersCreateInput, Fees_charged_to_unitholdersUncheckedCreateInput>
+    create: XOR<Page3Investment_proportionCompareportCreateInput, Page3Investment_proportionCompareportUncheckedCreateInput>
     /**
-     * In case the Fees_charged_to_unitholders was found with the provided `where` argument, update it with this data.
+     * In case the Page3Investment_proportionCompareport was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Fees_charged_to_unitholdersUpdateInput, Fees_charged_to_unitholdersUncheckedUpdateInput>
+    update: XOR<Page3Investment_proportionCompareportUpdateInput, Page3Investment_proportionCompareportUncheckedUpdateInput>
   }
 
 
   /**
-   * Fees_charged_to_unitholders delete
+   * Page3Investment_proportionCompareport delete
    */
-  export type Fees_charged_to_unitholdersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
     /**
-     * Filter which Fees_charged_to_unitholders to delete.
+     * Filter which Page3Investment_proportionCompareport to delete.
      */
-    where: Fees_charged_to_unitholdersWhereUniqueInput
+    where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders deleteMany
+   * Page3Investment_proportionCompareport deleteMany
    */
-  export type Fees_charged_to_unitholdersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Fees_charged_to_unitholders to delete
+     * Filter which Page3Investment_proportionCompareports to delete
      */
-    where?: Fees_charged_to_unitholdersWhereInput
+    where?: Page3Investment_proportionCompareportWhereInput
   }
 
 
   /**
-   * Fees_charged_to_unitholders findRaw
+   * Page3Investment_proportionCompareport findRaw
    */
-  export type Fees_charged_to_unitholdersFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -10419,9 +9137,9 @@ export namespace Prisma {
 
 
   /**
-   * Fees_charged_to_unitholders aggregateRaw
+   * Page3Investment_proportionCompareport aggregateRaw
    */
-  export type Fees_charged_to_unitholdersAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -10434,331 +9152,347 @@ export namespace Prisma {
 
 
   /**
-   * Fees_charged_to_unitholders without action
+   * Page3Investment_proportionCompareport without action
    */
-  export type Fees_charged_to_unitholdersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page3Investment_proportionCompareportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Fees_charged_to_unitholders
+     * Select specific fields to fetch from the Page3Investment_proportionCompareport
      */
-    select?: Fees_charged_to_unitholdersSelect<ExtArgs> | null
+    select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
   }
 
 
 
   /**
-   * Model Investment_allocation_in_the_top_five_issuers
+   * Model Page4Fee
    */
 
-  export type AggregateInvestment_allocation_in_the_top_five_issuers = {
-    _count: Investment_allocation_in_the_top_five_issuersCountAggregateOutputType | null
-    _min: Investment_allocation_in_the_top_five_issuersMinAggregateOutputType | null
-    _max: Investment_allocation_in_the_top_five_issuersMaxAggregateOutputType | null
+  export type AggregatePage4Fee = {
+    _count: Page4FeeCountAggregateOutputType | null
+    _min: Page4FeeMinAggregateOutputType | null
+    _max: Page4FeeMaxAggregateOutputType | null
   }
 
-  export type Investment_allocation_in_the_top_five_issuersMinAggregateOutputType = {
+  export type Page4FeeMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Investment_allocation_in_the_top_five_issuersMaxAggregateOutputType = {
+  export type Page4FeeMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
+    proj_abbr_name: string | null
   }
 
-  export type Investment_allocation_in_the_top_five_issuersCountAggregateOutputType = {
+  export type Page4FeeCountAggregateOutputType = {
     id: number
     proj_id: number
-    data: number
+    proj_abbr_name: number
+    datafromsheet: number
+    datafromReal: number
     _all: number
   }
 
 
-  export type Investment_allocation_in_the_top_five_issuersMinAggregateInputType = {
+  export type Page4FeeMinAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Investment_allocation_in_the_top_five_issuersMaxAggregateInputType = {
+  export type Page4FeeMaxAggregateInputType = {
     id?: true
     proj_id?: true
+    proj_abbr_name?: true
   }
 
-  export type Investment_allocation_in_the_top_five_issuersCountAggregateInputType = {
+  export type Page4FeeCountAggregateInputType = {
     id?: true
     proj_id?: true
-    data?: true
+    proj_abbr_name?: true
+    datafromsheet?: true
+    datafromReal?: true
     _all?: true
   }
 
-  export type Investment_allocation_in_the_top_five_issuersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Investment_allocation_in_the_top_five_issuers to aggregate.
+     * Filter which Page4Fee to aggregate.
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Investment_allocation_in_the_top_five_issuers to fetch.
+     * Determine the order of Page4Fees to fetch.
      */
-    orderBy?: Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput | Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput[]
+    orderBy?: Page4FeeOrderByWithRelationInput | Page4FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    cursor?: Page4FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Investment_allocation_in_the_top_five_issuers from the position of the cursor.
+     * Take `±n` Page4Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Investment_allocation_in_the_top_five_issuers.
+     * Skip the first `n` Page4Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Investment_allocation_in_the_top_five_issuers
+     * Count returned Page4Fees
     **/
-    _count?: true | Investment_allocation_in_the_top_five_issuersCountAggregateInputType
+    _count?: true | Page4FeeCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: Investment_allocation_in_the_top_five_issuersMinAggregateInputType
+    _min?: Page4FeeMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: Investment_allocation_in_the_top_five_issuersMaxAggregateInputType
+    _max?: Page4FeeMaxAggregateInputType
   }
 
-  export type GetInvestment_allocation_in_the_top_five_issuersAggregateType<T extends Investment_allocation_in_the_top_five_issuersAggregateArgs> = {
-        [P in keyof T & keyof AggregateInvestment_allocation_in_the_top_five_issuers]: P extends '_count' | 'count'
+  export type GetPage4FeeAggregateType<T extends Page4FeeAggregateArgs> = {
+        [P in keyof T & keyof AggregatePage4Fee]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateInvestment_allocation_in_the_top_five_issuers[P]>
-      : GetScalarType<T[P], AggregateInvestment_allocation_in_the_top_five_issuers[P]>
+        : GetScalarType<T[P], AggregatePage4Fee[P]>
+      : GetScalarType<T[P], AggregatePage4Fee[P]>
   }
 
 
 
 
-  export type Investment_allocation_in_the_top_five_issuersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
-    orderBy?: Investment_allocation_in_the_top_five_issuersOrderByWithAggregationInput | Investment_allocation_in_the_top_five_issuersOrderByWithAggregationInput[]
-    by: Investment_allocation_in_the_top_five_issuersScalarFieldEnum[] | Investment_allocation_in_the_top_five_issuersScalarFieldEnum
-    having?: Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput
+  export type Page4FeeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Page4FeeWhereInput
+    orderBy?: Page4FeeOrderByWithAggregationInput | Page4FeeOrderByWithAggregationInput[]
+    by: Page4FeeScalarFieldEnum[] | Page4FeeScalarFieldEnum
+    having?: Page4FeeScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: Investment_allocation_in_the_top_five_issuersCountAggregateInputType | true
-    _min?: Investment_allocation_in_the_top_five_issuersMinAggregateInputType
-    _max?: Investment_allocation_in_the_top_five_issuersMaxAggregateInputType
+    _count?: Page4FeeCountAggregateInputType | true
+    _min?: Page4FeeMinAggregateInputType
+    _max?: Page4FeeMaxAggregateInputType
   }
 
-  export type Investment_allocation_in_the_top_five_issuersGroupByOutputType = {
+  export type Page4FeeGroupByOutputType = {
     id: string
     proj_id: string
-    data: JsonValue
-    _count: Investment_allocation_in_the_top_five_issuersCountAggregateOutputType | null
-    _min: Investment_allocation_in_the_top_five_issuersMinAggregateOutputType | null
-    _max: Investment_allocation_in_the_top_five_issuersMaxAggregateOutputType | null
+    proj_abbr_name: string
+    datafromsheet: JsonValue
+    datafromReal: JsonValue
+    _count: Page4FeeCountAggregateOutputType | null
+    _min: Page4FeeMinAggregateOutputType | null
+    _max: Page4FeeMaxAggregateOutputType | null
   }
 
-  type GetInvestment_allocation_in_the_top_five_issuersGroupByPayload<T extends Investment_allocation_in_the_top_five_issuersGroupByArgs> = Prisma.PrismaPromise<
+  type GetPage4FeeGroupByPayload<T extends Page4FeeGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<Investment_allocation_in_the_top_five_issuersGroupByOutputType, T['by']> &
+      PickEnumerable<Page4FeeGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof Investment_allocation_in_the_top_five_issuersGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof Page4FeeGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], Investment_allocation_in_the_top_five_issuersGroupByOutputType[P]>
-            : GetScalarType<T[P], Investment_allocation_in_the_top_five_issuersGroupByOutputType[P]>
+              : GetScalarType<T[P], Page4FeeGroupByOutputType[P]>
+            : GetScalarType<T[P], Page4FeeGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type Investment_allocation_in_the_top_five_issuersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type Page4FeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["investment_allocation_in_the_top_five_issuers"]>
+    proj_abbr_name?: boolean
+    datafromsheet?: boolean
+    datafromReal?: boolean
+  }, ExtArgs["result"]["page4Fee"]>
 
-  export type Investment_allocation_in_the_top_five_issuersSelectScalar = {
+  export type Page4FeeSelectScalar = {
     id?: boolean
     proj_id?: boolean
-    data?: boolean
+    proj_abbr_name?: boolean
+    datafromsheet?: boolean
+    datafromReal?: boolean
   }
 
 
-  export type $Investment_allocation_in_the_top_five_issuersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Investment_allocation_in_the_top_five_issuers"
+  export type $Page4FeePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Page4Fee"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
       proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["investment_allocation_in_the_top_five_issuers"]>
+      proj_abbr_name: string
+      datafromsheet: Prisma.JsonValue
+      datafromReal: Prisma.JsonValue
+    }, ExtArgs["result"]["page4Fee"]>
     composites: {}
   }
 
 
-  type Investment_allocation_in_the_top_five_issuersGetPayload<S extends boolean | null | undefined | Investment_allocation_in_the_top_five_issuersDefaultArgs> = $Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload, S>
+  type Page4FeeGetPayload<S extends boolean | null | undefined | Page4FeeDefaultArgs> = $Result.GetResult<Prisma.$Page4FeePayload, S>
 
-  type Investment_allocation_in_the_top_five_issuersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Investment_allocation_in_the_top_five_issuersFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Investment_allocation_in_the_top_five_issuersCountAggregateInputType | true
+  type Page4FeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<Page4FeeFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: Page4FeeCountAggregateInputType | true
     }
 
-  export interface Investment_allocation_in_the_top_five_issuersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Investment_allocation_in_the_top_five_issuers'], meta: { name: 'Investment_allocation_in_the_top_five_issuers' } }
+  export interface Page4FeeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Page4Fee'], meta: { name: 'Page4Fee' } }
     /**
-     * Find zero or one Investment_allocation_in_the_top_five_issuers that matches the filter.
-     * @param {Investment_allocation_in_the_top_five_issuersFindUniqueArgs} args - Arguments to find a Investment_allocation_in_the_top_five_issuers
+     * Find zero or one Page4Fee that matches the filter.
+     * @param {Page4FeeFindUniqueArgs} args - Arguments to find a Page4Fee
      * @example
-     * // Get one Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findUnique({
+     * // Get one Page4Fee
+     * const page4Fee = await prisma.page4Fee.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUnique<T extends Investment_allocation_in_the_top_five_issuersFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersFindUniqueArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+    findUnique<T extends Page4FeeFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeFindUniqueArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Investment_allocation_in_the_top_five_issuers that matches the filter or throw an error  with `error.code='P2025'` 
+     * Find one Page4Fee that matches the filter or throw an error  with `error.code='P2025'` 
      *     if no matches were found.
-     * @param {Investment_allocation_in_the_top_five_issuersFindUniqueOrThrowArgs} args - Arguments to find a Investment_allocation_in_the_top_five_issuers
+     * @param {Page4FeeFindUniqueOrThrowArgs} args - Arguments to find a Page4Fee
      * @example
-     * // Get one Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findUniqueOrThrow({
+     * // Get one Page4Fee
+     * const page4Fee = await prisma.page4Fee.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findUniqueOrThrow<T extends Investment_allocation_in_the_top_five_issuersFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+    findUniqueOrThrow<T extends Page4FeeFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
 
     /**
-     * Find the first Investment_allocation_in_the_top_five_issuers that matches the filter.
+     * Find the first Page4Fee that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersFindFirstArgs} args - Arguments to find a Investment_allocation_in_the_top_five_issuers
+     * @param {Page4FeeFindFirstArgs} args - Arguments to find a Page4Fee
      * @example
-     * // Get one Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findFirst({
+     * // Get one Page4Fee
+     * const page4Fee = await prisma.page4Fee.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirst<T extends Investment_allocation_in_the_top_five_issuersFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersFindFirstArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+    findFirst<T extends Page4FeeFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeFindFirstArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
 
     /**
-     * Find the first Investment_allocation_in_the_top_five_issuers that matches the filter or
+     * Find the first Page4Fee that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersFindFirstOrThrowArgs} args - Arguments to find a Investment_allocation_in_the_top_five_issuers
+     * @param {Page4FeeFindFirstOrThrowArgs} args - Arguments to find a Page4Fee
      * @example
-     * // Get one Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findFirstOrThrow({
+     * // Get one Page4Fee
+     * const page4Fee = await prisma.page4Fee.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
     **/
-    findFirstOrThrow<T extends Investment_allocation_in_the_top_five_issuersFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+    findFirstOrThrow<T extends Page4FeeFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
 
     /**
-     * Find zero or more Investment_allocation_in_the_top_five_issuers that matches the filter.
+     * Find zero or more Page4Fees that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page4FeeFindManyArgs=} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findMany()
+     * // Get all Page4Fees
+     * const page4Fees = await prisma.page4Fee.findMany()
      * 
-     * // Get first 10 Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findMany({ take: 10 })
+     * // Get first 10 Page4Fees
+     * const page4Fees = await prisma.page4Fee.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const investment_allocation_in_the_top_five_issuersWithIdOnly = await prisma.investment_allocation_in_the_top_five_issuers.findMany({ select: { id: true } })
+     * const page4FeeWithIdOnly = await prisma.page4Fee.findMany({ select: { id: true } })
      * 
     **/
-    findMany<T extends Investment_allocation_in_the_top_five_issuersFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'findMany'>>
+    findMany<T extends Page4FeeFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findMany'>>
 
     /**
-     * Create a Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersCreateArgs} args - Arguments to create a Investment_allocation_in_the_top_five_issuers.
+     * Create a Page4Fee.
+     * @param {Page4FeeCreateArgs} args - Arguments to create a Page4Fee.
      * @example
-     * // Create one Investment_allocation_in_the_top_five_issuers
-     * const Investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.create({
+     * // Create one Page4Fee
+     * const Page4Fee = await prisma.page4Fee.create({
      *   data: {
-     *     // ... data to create a Investment_allocation_in_the_top_five_issuers
+     *     // ... data to create a Page4Fee
      *   }
      * })
      * 
     **/
-    create<T extends Investment_allocation_in_the_top_five_issuersCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersCreateArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+    create<T extends Page4FeeCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeCreateArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Investment_allocation_in_the_top_five_issuers.
-     *     @param {Investment_allocation_in_the_top_five_issuersCreateManyArgs} args - Arguments to create many Investment_allocation_in_the_top_five_issuers.
+     * Create many Page4Fees.
+     *     @param {Page4FeeCreateManyArgs} args - Arguments to create many Page4Fees.
      *     @example
-     *     // Create many Investment_allocation_in_the_top_five_issuers
-     *     const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.createMany({
+     *     // Create many Page4Fees
+     *     const page4Fee = await prisma.page4Fee.createMany({
      *       data: {
      *         // ... provide data here
      *       }
      *     })
      *     
     **/
-    createMany<T extends Investment_allocation_in_the_top_five_issuersCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersCreateManyArgs<ExtArgs>>
+    createMany<T extends Page4FeeCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeCreateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Delete a Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersDeleteArgs} args - Arguments to delete one Investment_allocation_in_the_top_five_issuers.
+     * Delete a Page4Fee.
+     * @param {Page4FeeDeleteArgs} args - Arguments to delete one Page4Fee.
      * @example
-     * // Delete one Investment_allocation_in_the_top_five_issuers
-     * const Investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.delete({
+     * // Delete one Page4Fee
+     * const Page4Fee = await prisma.page4Fee.delete({
      *   where: {
-     *     // ... filter to delete one Investment_allocation_in_the_top_five_issuers
+     *     // ... filter to delete one Page4Fee
      *   }
      * })
      * 
     **/
-    delete<T extends Investment_allocation_in_the_top_five_issuersDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersDeleteArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+    delete<T extends Page4FeeDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeDeleteArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
 
     /**
-     * Update one Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersUpdateArgs} args - Arguments to update one Investment_allocation_in_the_top_five_issuers.
+     * Update one Page4Fee.
+     * @param {Page4FeeUpdateArgs} args - Arguments to update one Page4Fee.
      * @example
-     * // Update one Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.update({
+     * // Update one Page4Fee
+     * const page4Fee = await prisma.page4Fee.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -10768,34 +9502,34 @@ export namespace Prisma {
      * })
      * 
     **/
-    update<T extends Investment_allocation_in_the_top_five_issuersUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersUpdateArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+    update<T extends Page4FeeUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeUpdateArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'update'>, never, ExtArgs>
 
     /**
-     * Delete zero or more Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersDeleteManyArgs} args - Arguments to filter Investment_allocation_in_the_top_five_issuers to delete.
+     * Delete zero or more Page4Fees.
+     * @param {Page4FeeDeleteManyArgs} args - Arguments to filter Page4Fees to delete.
      * @example
-     * // Delete a few Investment_allocation_in_the_top_five_issuers
-     * const { count } = await prisma.investment_allocation_in_the_top_five_issuers.deleteMany({
+     * // Delete a few Page4Fees
+     * const { count } = await prisma.page4Fee.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
     **/
-    deleteMany<T extends Investment_allocation_in_the_top_five_issuersDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_in_the_top_five_issuersDeleteManyArgs<ExtArgs>>
+    deleteMany<T extends Page4FeeDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, Page4FeeDeleteManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Investment_allocation_in_the_top_five_issuers.
+     * Update zero or more Page4Fees.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {Page4FeeUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.updateMany({
+     * // Update many Page4Fees
+     * const page4Fee = await prisma.page4Fee.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -10805,48 +9539,48 @@ export namespace Prisma {
      * })
      * 
     **/
-    updateMany<T extends Investment_allocation_in_the_top_five_issuersUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersUpdateManyArgs<ExtArgs>>
+    updateMany<T extends Page4FeeUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeUpdateManyArgs<ExtArgs>>
     ): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersUpsertArgs} args - Arguments to update or create a Investment_allocation_in_the_top_five_issuers.
+     * Create or update one Page4Fee.
+     * @param {Page4FeeUpsertArgs} args - Arguments to update or create a Page4Fee.
      * @example
-     * // Update or create a Investment_allocation_in_the_top_five_issuers
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.upsert({
+     * // Update or create a Page4Fee
+     * const page4Fee = await prisma.page4Fee.upsert({
      *   create: {
-     *     // ... data to create a Investment_allocation_in_the_top_five_issuers
+     *     // ... data to create a Page4Fee
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Investment_allocation_in_the_top_five_issuers we want to update
+     *     // ... the filter for the Page4Fee we want to update
      *   }
      * })
     **/
-    upsert<T extends Investment_allocation_in_the_top_five_issuersUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_in_the_top_five_issuersUpsertArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_in_the_top_five_issuersClient<$Result.GetResult<Prisma.$Investment_allocation_in_the_top_five_issuersPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+    upsert<T extends Page4FeeUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, Page4FeeUpsertArgs<ExtArgs>>
+    ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
 
     /**
-     * Find zero or more Investment_allocation_in_the_top_five_issuers that matches the filter.
-     * @param {Investment_allocation_in_the_top_five_issuersFindRawArgs} args - Select which filters you would like to apply.
+     * Find zero or more Page4Fees that matches the filter.
+     * @param {Page4FeeFindRawArgs} args - Select which filters you would like to apply.
      * @example
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.findRaw({
+     * const page4Fee = await prisma.page4Fee.findRaw({
      *   filter: { age: { $gt: 25 } } 
      * })
     **/
     findRaw(
-      args?: Investment_allocation_in_the_top_five_issuersFindRawArgs
+      args?: Page4FeeFindRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Perform aggregation operations on a Investment_allocation_in_the_top_five_issuers.
-     * @param {Investment_allocation_in_the_top_five_issuersAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * Perform aggregation operations on a Page4Fee.
+     * @param {Page4FeeAggregateRawArgs} args - Select which aggregations you would like to apply.
      * @example
-     * const investment_allocation_in_the_top_five_issuers = await prisma.investment_allocation_in_the_top_five_issuers.aggregateRaw({
+     * const page4Fee = await prisma.page4Fee.aggregateRaw({
      *   pipeline: [
      *     { $match: { status: "registered" } },
      *     { $group: { _id: "$country", total: { $sum: 1 } } }
@@ -10854,37 +9588,37 @@ export namespace Prisma {
      * })
     **/
     aggregateRaw(
-      args?: Investment_allocation_in_the_top_five_issuersAggregateRawArgs
+      args?: Page4FeeAggregateRawArgs
     ): Prisma.PrismaPromise<JsonObject>
 
     /**
-     * Count the number of Investment_allocation_in_the_top_five_issuers.
+     * Count the number of Page4Fees.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersCountArgs} args - Arguments to filter Investment_allocation_in_the_top_five_issuers to count.
+     * @param {Page4FeeCountArgs} args - Arguments to filter Page4Fees to count.
      * @example
-     * // Count the number of Investment_allocation_in_the_top_five_issuers
-     * const count = await prisma.investment_allocation_in_the_top_five_issuers.count({
+     * // Count the number of Page4Fees
+     * const count = await prisma.page4Fee.count({
      *   where: {
-     *     // ... the filter for the Investment_allocation_in_the_top_five_issuers we want to count
+     *     // ... the filter for the Page4Fees we want to count
      *   }
      * })
     **/
-    count<T extends Investment_allocation_in_the_top_five_issuersCountArgs>(
-      args?: Subset<T, Investment_allocation_in_the_top_five_issuersCountArgs>,
+    count<T extends Page4FeeCountArgs>(
+      args?: Subset<T, Page4FeeCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], Investment_allocation_in_the_top_five_issuersCountAggregateOutputType>
+          : GetScalarType<T['select'], Page4FeeCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Investment_allocation_in_the_top_five_issuers.
+     * Allows you to perform aggregations operations on a Page4Fee.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {Page4FeeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -10904,13 +9638,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends Investment_allocation_in_the_top_five_issuersAggregateArgs>(args: Subset<T, Investment_allocation_in_the_top_five_issuersAggregateArgs>): Prisma.PrismaPromise<GetInvestment_allocation_in_the_top_five_issuersAggregateType<T>>
+    aggregate<T extends Page4FeeAggregateArgs>(args: Subset<T, Page4FeeAggregateArgs>): Prisma.PrismaPromise<GetPage4FeeAggregateType<T>>
 
     /**
-     * Group by Investment_allocation_in_the_top_five_issuers.
+     * Group by Page4Fee.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_in_the_top_five_issuersGroupByArgs} args - Group by arguments.
+     * @param {Page4FeeGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -10925,14 +9659,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends Investment_allocation_in_the_top_five_issuersGroupByArgs,
+      T extends Page4FeeGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Investment_allocation_in_the_top_five_issuersGroupByArgs['orderBy'] }
-        : { orderBy?: Investment_allocation_in_the_top_five_issuersGroupByArgs['orderBy'] },
+        ? { orderBy: Page4FeeGroupByArgs['orderBy'] }
+        : { orderBy?: Page4FeeGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -10981,20 +9715,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, Investment_allocation_in_the_top_five_issuersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInvestment_allocation_in_the_top_five_issuersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, Page4FeeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPage4FeeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Investment_allocation_in_the_top_five_issuers model
+   * Fields of the Page4Fee model
    */
-  readonly fields: Investment_allocation_in_the_top_five_issuersFieldRefs;
+  readonly fields: Page4FeeFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Investment_allocation_in_the_top_five_issuers.
+   * The delegate class that acts as a "Promise-like" for Page4Fee.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__Investment_allocation_in_the_top_five_issuersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__Page4FeeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
 
@@ -11023,290 +9757,292 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Investment_allocation_in_the_top_five_issuers model
+   * Fields of the Page4Fee model
    */ 
-  interface Investment_allocation_in_the_top_five_issuersFieldRefs {
-    readonly id: FieldRef<"Investment_allocation_in_the_top_five_issuers", 'String'>
-    readonly proj_id: FieldRef<"Investment_allocation_in_the_top_five_issuers", 'String'>
-    readonly data: FieldRef<"Investment_allocation_in_the_top_five_issuers", 'Json'>
+  interface Page4FeeFieldRefs {
+    readonly id: FieldRef<"Page4Fee", 'String'>
+    readonly proj_id: FieldRef<"Page4Fee", 'String'>
+    readonly proj_abbr_name: FieldRef<"Page4Fee", 'String'>
+    readonly datafromsheet: FieldRef<"Page4Fee", 'Json'>
+    readonly datafromReal: FieldRef<"Page4Fee", 'Json'>
   }
     
 
   // Custom InputTypes
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findUnique
+   * Page4Fee findUnique
    */
-  export type Investment_allocation_in_the_top_five_issuersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter, which Investment_allocation_in_the_top_five_issuers to fetch.
+     * Filter, which Page4Fee to fetch.
      */
-    where: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    where: Page4FeeWhereUniqueInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findUniqueOrThrow
+   * Page4Fee findUniqueOrThrow
    */
-  export type Investment_allocation_in_the_top_five_issuersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter, which Investment_allocation_in_the_top_five_issuers to fetch.
+     * Filter, which Page4Fee to fetch.
      */
-    where: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    where: Page4FeeWhereUniqueInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findFirst
+   * Page4Fee findFirst
    */
-  export type Investment_allocation_in_the_top_five_issuersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter, which Investment_allocation_in_the_top_five_issuers to fetch.
+     * Filter, which Page4Fee to fetch.
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Investment_allocation_in_the_top_five_issuers to fetch.
+     * Determine the order of Page4Fees to fetch.
      */
-    orderBy?: Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput | Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput[]
+    orderBy?: Page4FeeOrderByWithRelationInput | Page4FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Investment_allocation_in_the_top_five_issuers.
+     * Sets the position for searching for Page4Fees.
      */
-    cursor?: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    cursor?: Page4FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Investment_allocation_in_the_top_five_issuers from the position of the cursor.
+     * Take `±n` Page4Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Investment_allocation_in_the_top_five_issuers.
+     * Skip the first `n` Page4Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Investment_allocation_in_the_top_five_issuers.
+     * Filter by unique combinations of Page4Fees.
      */
-    distinct?: Investment_allocation_in_the_top_five_issuersScalarFieldEnum | Investment_allocation_in_the_top_five_issuersScalarFieldEnum[]
+    distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findFirstOrThrow
+   * Page4Fee findFirstOrThrow
    */
-  export type Investment_allocation_in_the_top_five_issuersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter, which Investment_allocation_in_the_top_five_issuers to fetch.
+     * Filter, which Page4Fee to fetch.
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Investment_allocation_in_the_top_five_issuers to fetch.
+     * Determine the order of Page4Fees to fetch.
      */
-    orderBy?: Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput | Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput[]
+    orderBy?: Page4FeeOrderByWithRelationInput | Page4FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Investment_allocation_in_the_top_five_issuers.
+     * Sets the position for searching for Page4Fees.
      */
-    cursor?: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    cursor?: Page4FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Investment_allocation_in_the_top_five_issuers from the position of the cursor.
+     * Take `±n` Page4Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Investment_allocation_in_the_top_five_issuers.
+     * Skip the first `n` Page4Fees.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Investment_allocation_in_the_top_five_issuers.
+     * Filter by unique combinations of Page4Fees.
      */
-    distinct?: Investment_allocation_in_the_top_five_issuersScalarFieldEnum | Investment_allocation_in_the_top_five_issuersScalarFieldEnum[]
+    distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findMany
+   * Page4Fee findMany
    */
-  export type Investment_allocation_in_the_top_five_issuersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter, which Investment_allocation_in_the_top_five_issuers to fetch.
+     * Filter, which Page4Fees to fetch.
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Investment_allocation_in_the_top_five_issuers to fetch.
+     * Determine the order of Page4Fees to fetch.
      */
-    orderBy?: Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput | Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput[]
+    orderBy?: Page4FeeOrderByWithRelationInput | Page4FeeOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Investment_allocation_in_the_top_five_issuers.
+     * Sets the position for listing Page4Fees.
      */
-    cursor?: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    cursor?: Page4FeeWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Investment_allocation_in_the_top_five_issuers from the position of the cursor.
+     * Take `±n` Page4Fees from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Investment_allocation_in_the_top_five_issuers.
+     * Skip the first `n` Page4Fees.
      */
     skip?: number
-    distinct?: Investment_allocation_in_the_top_five_issuersScalarFieldEnum | Investment_allocation_in_the_top_five_issuersScalarFieldEnum[]
+    distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers create
+   * Page4Fee create
    */
-  export type Investment_allocation_in_the_top_five_issuersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * The data needed to create a Investment_allocation_in_the_top_five_issuers.
+     * The data needed to create a Page4Fee.
      */
-    data: XOR<Investment_allocation_in_the_top_five_issuersCreateInput, Investment_allocation_in_the_top_five_issuersUncheckedCreateInput>
+    data: XOR<Page4FeeCreateInput, Page4FeeUncheckedCreateInput>
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers createMany
+   * Page4Fee createMany
    */
-  export type Investment_allocation_in_the_top_five_issuersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Investment_allocation_in_the_top_five_issuers.
+     * The data used to create many Page4Fees.
      */
-    data: Investment_allocation_in_the_top_five_issuersCreateManyInput | Investment_allocation_in_the_top_five_issuersCreateManyInput[]
+    data: Page4FeeCreateManyInput | Page4FeeCreateManyInput[]
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers update
+   * Page4Fee update
    */
-  export type Investment_allocation_in_the_top_five_issuersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * The data needed to update a Investment_allocation_in_the_top_five_issuers.
+     * The data needed to update a Page4Fee.
      */
-    data: XOR<Investment_allocation_in_the_top_five_issuersUpdateInput, Investment_allocation_in_the_top_five_issuersUncheckedUpdateInput>
+    data: XOR<Page4FeeUpdateInput, Page4FeeUncheckedUpdateInput>
     /**
-     * Choose, which Investment_allocation_in_the_top_five_issuers to update.
+     * Choose, which Page4Fee to update.
      */
-    where: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    where: Page4FeeWhereUniqueInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers updateMany
+   * Page4Fee updateMany
    */
-  export type Investment_allocation_in_the_top_five_issuersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Investment_allocation_in_the_top_five_issuers.
+     * The data used to update Page4Fees.
      */
-    data: XOR<Investment_allocation_in_the_top_five_issuersUpdateManyMutationInput, Investment_allocation_in_the_top_five_issuersUncheckedUpdateManyInput>
+    data: XOR<Page4FeeUpdateManyMutationInput, Page4FeeUncheckedUpdateManyInput>
     /**
-     * Filter which Investment_allocation_in_the_top_five_issuers to update
+     * Filter which Page4Fees to update
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers upsert
+   * Page4Fee upsert
    */
-  export type Investment_allocation_in_the_top_five_issuersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * The filter to search for the Investment_allocation_in_the_top_five_issuers to update in case it exists.
+     * The filter to search for the Page4Fee to update in case it exists.
      */
-    where: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    where: Page4FeeWhereUniqueInput
     /**
-     * In case the Investment_allocation_in_the_top_five_issuers found by the `where` argument doesn't exist, create a new Investment_allocation_in_the_top_five_issuers with this data.
+     * In case the Page4Fee found by the `where` argument doesn't exist, create a new Page4Fee with this data.
      */
-    create: XOR<Investment_allocation_in_the_top_five_issuersCreateInput, Investment_allocation_in_the_top_five_issuersUncheckedCreateInput>
+    create: XOR<Page4FeeCreateInput, Page4FeeUncheckedCreateInput>
     /**
-     * In case the Investment_allocation_in_the_top_five_issuers was found with the provided `where` argument, update it with this data.
+     * In case the Page4Fee was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<Investment_allocation_in_the_top_five_issuersUpdateInput, Investment_allocation_in_the_top_five_issuersUncheckedUpdateInput>
+    update: XOR<Page4FeeUpdateInput, Page4FeeUncheckedUpdateInput>
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers delete
+   * Page4Fee delete
    */
-  export type Investment_allocation_in_the_top_five_issuersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
     /**
-     * Filter which Investment_allocation_in_the_top_five_issuers to delete.
+     * Filter which Page4Fee to delete.
      */
-    where: Investment_allocation_in_the_top_five_issuersWhereUniqueInput
+    where: Page4FeeWhereUniqueInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers deleteMany
+   * Page4Fee deleteMany
    */
-  export type Investment_allocation_in_the_top_five_issuersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Investment_allocation_in_the_top_five_issuers to delete
+     * Filter which Page4Fees to delete
      */
-    where?: Investment_allocation_in_the_top_five_issuersWhereInput
+    where?: Page4FeeWhereInput
   }
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers findRaw
+   * Page4Fee findRaw
    */
-  export type Investment_allocation_in_the_top_five_issuersFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
      */
@@ -11319,9 +10055,9 @@ export namespace Prisma {
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers aggregateRaw
+   * Page4Fee aggregateRaw
    */
-  export type Investment_allocation_in_the_top_five_issuersAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
      */
@@ -11334,1813 +10070,13 @@ export namespace Prisma {
 
 
   /**
-   * Investment_allocation_in_the_top_five_issuers without action
+   * Page4Fee without action
    */
-  export type Investment_allocation_in_the_top_five_issuersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Page4FeeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Investment_allocation_in_the_top_five_issuers
+     * Select specific fields to fetch from the Page4Fee
      */
-    select?: Investment_allocation_in_the_top_five_issuersSelect<ExtArgs> | null
-  }
-
-
-
-  /**
-   * Model Investment_allocation_according_to_credit_rating
-   */
-
-  export type AggregateInvestment_allocation_according_to_credit_rating = {
-    _count: Investment_allocation_according_to_credit_ratingCountAggregateOutputType | null
-    _min: Investment_allocation_according_to_credit_ratingMinAggregateOutputType | null
-    _max: Investment_allocation_according_to_credit_ratingMaxAggregateOutputType | null
-  }
-
-  export type Investment_allocation_according_to_credit_ratingMinAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-  }
-
-  export type Investment_allocation_according_to_credit_ratingMaxAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-  }
-
-  export type Investment_allocation_according_to_credit_ratingCountAggregateOutputType = {
-    id: number
-    proj_id: number
-    data: number
-    _all: number
-  }
-
-
-  export type Investment_allocation_according_to_credit_ratingMinAggregateInputType = {
-    id?: true
-    proj_id?: true
-  }
-
-  export type Investment_allocation_according_to_credit_ratingMaxAggregateInputType = {
-    id?: true
-    proj_id?: true
-  }
-
-  export type Investment_allocation_according_to_credit_ratingCountAggregateInputType = {
-    id?: true
-    proj_id?: true
-    data?: true
-    _all?: true
-  }
-
-  export type Investment_allocation_according_to_credit_ratingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Investment_allocation_according_to_credit_rating to aggregate.
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_allocation_according_to_credit_ratings to fetch.
-     */
-    orderBy?: Investment_allocation_according_to_credit_ratingOrderByWithRelationInput | Investment_allocation_according_to_credit_ratingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_allocation_according_to_credit_ratings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_allocation_according_to_credit_ratings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Investment_allocation_according_to_credit_ratings
-    **/
-    _count?: true | Investment_allocation_according_to_credit_ratingCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Investment_allocation_according_to_credit_ratingMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Investment_allocation_according_to_credit_ratingMaxAggregateInputType
-  }
-
-  export type GetInvestment_allocation_according_to_credit_ratingAggregateType<T extends Investment_allocation_according_to_credit_ratingAggregateArgs> = {
-        [P in keyof T & keyof AggregateInvestment_allocation_according_to_credit_rating]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateInvestment_allocation_according_to_credit_rating[P]>
-      : GetScalarType<T[P], AggregateInvestment_allocation_according_to_credit_rating[P]>
-  }
-
-
-
-
-  export type Investment_allocation_according_to_credit_ratingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-    orderBy?: Investment_allocation_according_to_credit_ratingOrderByWithAggregationInput | Investment_allocation_according_to_credit_ratingOrderByWithAggregationInput[]
-    by: Investment_allocation_according_to_credit_ratingScalarFieldEnum[] | Investment_allocation_according_to_credit_ratingScalarFieldEnum
-    having?: Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Investment_allocation_according_to_credit_ratingCountAggregateInputType | true
-    _min?: Investment_allocation_according_to_credit_ratingMinAggregateInputType
-    _max?: Investment_allocation_according_to_credit_ratingMaxAggregateInputType
-  }
-
-  export type Investment_allocation_according_to_credit_ratingGroupByOutputType = {
-    id: string
-    proj_id: string
-    data: JsonValue
-    _count: Investment_allocation_according_to_credit_ratingCountAggregateOutputType | null
-    _min: Investment_allocation_according_to_credit_ratingMinAggregateOutputType | null
-    _max: Investment_allocation_according_to_credit_ratingMaxAggregateOutputType | null
-  }
-
-  type GetInvestment_allocation_according_to_credit_ratingGroupByPayload<T extends Investment_allocation_according_to_credit_ratingGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Investment_allocation_according_to_credit_ratingGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Investment_allocation_according_to_credit_ratingGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Investment_allocation_according_to_credit_ratingGroupByOutputType[P]>
-            : GetScalarType<T[P], Investment_allocation_according_to_credit_ratingGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type Investment_allocation_according_to_credit_ratingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    proj_id?: boolean
-    data?: boolean
-  }, ExtArgs["result"]["investment_allocation_according_to_credit_rating"]>
-
-  export type Investment_allocation_according_to_credit_ratingSelectScalar = {
-    id?: boolean
-    proj_id?: boolean
-    data?: boolean
-  }
-
-
-  export type $Investment_allocation_according_to_credit_ratingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Investment_allocation_according_to_credit_rating"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      proj_id: string
-      data: Prisma.JsonValue
-    }, ExtArgs["result"]["investment_allocation_according_to_credit_rating"]>
-    composites: {}
-  }
-
-
-  type Investment_allocation_according_to_credit_ratingGetPayload<S extends boolean | null | undefined | Investment_allocation_according_to_credit_ratingDefaultArgs> = $Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload, S>
-
-  type Investment_allocation_according_to_credit_ratingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Investment_allocation_according_to_credit_ratingFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Investment_allocation_according_to_credit_ratingCountAggregateInputType | true
-    }
-
-  export interface Investment_allocation_according_to_credit_ratingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Investment_allocation_according_to_credit_rating'], meta: { name: 'Investment_allocation_according_to_credit_rating' } }
-    /**
-     * Find zero or one Investment_allocation_according_to_credit_rating that matches the filter.
-     * @param {Investment_allocation_according_to_credit_ratingFindUniqueArgs} args - Arguments to find a Investment_allocation_according_to_credit_rating
-     * @example
-     * // Get one Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends Investment_allocation_according_to_credit_ratingFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingFindUniqueArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Investment_allocation_according_to_credit_rating that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {Investment_allocation_according_to_credit_ratingFindUniqueOrThrowArgs} args - Arguments to find a Investment_allocation_according_to_credit_rating
-     * @example
-     * // Get one Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends Investment_allocation_according_to_credit_ratingFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Investment_allocation_according_to_credit_rating that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingFindFirstArgs} args - Arguments to find a Investment_allocation_according_to_credit_rating
-     * @example
-     * // Get one Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends Investment_allocation_according_to_credit_ratingFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingFindFirstArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Investment_allocation_according_to_credit_rating that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingFindFirstOrThrowArgs} args - Arguments to find a Investment_allocation_according_to_credit_rating
-     * @example
-     * // Get one Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends Investment_allocation_according_to_credit_ratingFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Investment_allocation_according_to_credit_ratings that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Investment_allocation_according_to_credit_ratings
-     * const investment_allocation_according_to_credit_ratings = await prisma.investment_allocation_according_to_credit_rating.findMany()
-     * 
-     * // Get first 10 Investment_allocation_according_to_credit_ratings
-     * const investment_allocation_according_to_credit_ratings = await prisma.investment_allocation_according_to_credit_rating.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const investment_allocation_according_to_credit_ratingWithIdOnly = await prisma.investment_allocation_according_to_credit_rating.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends Investment_allocation_according_to_credit_ratingFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Investment_allocation_according_to_credit_rating.
-     * @param {Investment_allocation_according_to_credit_ratingCreateArgs} args - Arguments to create a Investment_allocation_according_to_credit_rating.
-     * @example
-     * // Create one Investment_allocation_according_to_credit_rating
-     * const Investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.create({
-     *   data: {
-     *     // ... data to create a Investment_allocation_according_to_credit_rating
-     *   }
-     * })
-     * 
-    **/
-    create<T extends Investment_allocation_according_to_credit_ratingCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingCreateArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Investment_allocation_according_to_credit_ratings.
-     *     @param {Investment_allocation_according_to_credit_ratingCreateManyArgs} args - Arguments to create many Investment_allocation_according_to_credit_ratings.
-     *     @example
-     *     // Create many Investment_allocation_according_to_credit_ratings
-     *     const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends Investment_allocation_according_to_credit_ratingCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Investment_allocation_according_to_credit_rating.
-     * @param {Investment_allocation_according_to_credit_ratingDeleteArgs} args - Arguments to delete one Investment_allocation_according_to_credit_rating.
-     * @example
-     * // Delete one Investment_allocation_according_to_credit_rating
-     * const Investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.delete({
-     *   where: {
-     *     // ... filter to delete one Investment_allocation_according_to_credit_rating
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends Investment_allocation_according_to_credit_ratingDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingDeleteArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Investment_allocation_according_to_credit_rating.
-     * @param {Investment_allocation_according_to_credit_ratingUpdateArgs} args - Arguments to update one Investment_allocation_according_to_credit_rating.
-     * @example
-     * // Update one Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends Investment_allocation_according_to_credit_ratingUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingUpdateArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Investment_allocation_according_to_credit_ratings.
-     * @param {Investment_allocation_according_to_credit_ratingDeleteManyArgs} args - Arguments to filter Investment_allocation_according_to_credit_ratings to delete.
-     * @example
-     * // Delete a few Investment_allocation_according_to_credit_ratings
-     * const { count } = await prisma.investment_allocation_according_to_credit_rating.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends Investment_allocation_according_to_credit_ratingDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_allocation_according_to_credit_ratingDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Investment_allocation_according_to_credit_ratings.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Investment_allocation_according_to_credit_ratings
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends Investment_allocation_according_to_credit_ratingUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Investment_allocation_according_to_credit_rating.
-     * @param {Investment_allocation_according_to_credit_ratingUpsertArgs} args - Arguments to update or create a Investment_allocation_according_to_credit_rating.
-     * @example
-     * // Update or create a Investment_allocation_according_to_credit_rating
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.upsert({
-     *   create: {
-     *     // ... data to create a Investment_allocation_according_to_credit_rating
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Investment_allocation_according_to_credit_rating we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends Investment_allocation_according_to_credit_ratingUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_allocation_according_to_credit_ratingUpsertArgs<ExtArgs>>
-    ): Prisma__Investment_allocation_according_to_credit_ratingClient<$Result.GetResult<Prisma.$Investment_allocation_according_to_credit_ratingPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Investment_allocation_according_to_credit_ratings that matches the filter.
-     * @param {Investment_allocation_according_to_credit_ratingFindRawArgs} args - Select which filters you would like to apply.
-     * @example
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.findRaw({
-     *   filter: { age: { $gt: 25 } } 
-     * })
-    **/
-    findRaw(
-      args?: Investment_allocation_according_to_credit_ratingFindRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Perform aggregation operations on a Investment_allocation_according_to_credit_rating.
-     * @param {Investment_allocation_according_to_credit_ratingAggregateRawArgs} args - Select which aggregations you would like to apply.
-     * @example
-     * const investment_allocation_according_to_credit_rating = await prisma.investment_allocation_according_to_credit_rating.aggregateRaw({
-     *   pipeline: [
-     *     { $match: { status: "registered" } },
-     *     { $group: { _id: "$country", total: { $sum: 1 } } }
-     *   ]
-     * })
-    **/
-    aggregateRaw(
-      args?: Investment_allocation_according_to_credit_ratingAggregateRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Count the number of Investment_allocation_according_to_credit_ratings.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingCountArgs} args - Arguments to filter Investment_allocation_according_to_credit_ratings to count.
-     * @example
-     * // Count the number of Investment_allocation_according_to_credit_ratings
-     * const count = await prisma.investment_allocation_according_to_credit_rating.count({
-     *   where: {
-     *     // ... the filter for the Investment_allocation_according_to_credit_ratings we want to count
-     *   }
-     * })
-    **/
-    count<T extends Investment_allocation_according_to_credit_ratingCountArgs>(
-      args?: Subset<T, Investment_allocation_according_to_credit_ratingCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Investment_allocation_according_to_credit_ratingCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Investment_allocation_according_to_credit_rating.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Investment_allocation_according_to_credit_ratingAggregateArgs>(args: Subset<T, Investment_allocation_according_to_credit_ratingAggregateArgs>): Prisma.PrismaPromise<GetInvestment_allocation_according_to_credit_ratingAggregateType<T>>
-
-    /**
-     * Group by Investment_allocation_according_to_credit_rating.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_allocation_according_to_credit_ratingGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends Investment_allocation_according_to_credit_ratingGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Investment_allocation_according_to_credit_ratingGroupByArgs['orderBy'] }
-        : { orderBy?: Investment_allocation_according_to_credit_ratingGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, Investment_allocation_according_to_credit_ratingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInvestment_allocation_according_to_credit_ratingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Investment_allocation_according_to_credit_rating model
-   */
-  readonly fields: Investment_allocation_according_to_credit_ratingFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Investment_allocation_according_to_credit_rating.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__Investment_allocation_according_to_credit_ratingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the Investment_allocation_according_to_credit_rating model
-   */ 
-  interface Investment_allocation_according_to_credit_ratingFieldRefs {
-    readonly id: FieldRef<"Investment_allocation_according_to_credit_rating", 'String'>
-    readonly proj_id: FieldRef<"Investment_allocation_according_to_credit_rating", 'String'>
-    readonly data: FieldRef<"Investment_allocation_according_to_credit_rating", 'Json'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * Investment_allocation_according_to_credit_rating findUnique
-   */
-  export type Investment_allocation_according_to_credit_ratingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_allocation_according_to_credit_rating to fetch.
-     */
-    where: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating findUniqueOrThrow
-   */
-  export type Investment_allocation_according_to_credit_ratingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_allocation_according_to_credit_rating to fetch.
-     */
-    where: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating findFirst
-   */
-  export type Investment_allocation_according_to_credit_ratingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_allocation_according_to_credit_rating to fetch.
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_allocation_according_to_credit_ratings to fetch.
-     */
-    orderBy?: Investment_allocation_according_to_credit_ratingOrderByWithRelationInput | Investment_allocation_according_to_credit_ratingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Investment_allocation_according_to_credit_ratings.
-     */
-    cursor?: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_allocation_according_to_credit_ratings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_allocation_according_to_credit_ratings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Investment_allocation_according_to_credit_ratings.
-     */
-    distinct?: Investment_allocation_according_to_credit_ratingScalarFieldEnum | Investment_allocation_according_to_credit_ratingScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating findFirstOrThrow
-   */
-  export type Investment_allocation_according_to_credit_ratingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_allocation_according_to_credit_rating to fetch.
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_allocation_according_to_credit_ratings to fetch.
-     */
-    orderBy?: Investment_allocation_according_to_credit_ratingOrderByWithRelationInput | Investment_allocation_according_to_credit_ratingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Investment_allocation_according_to_credit_ratings.
-     */
-    cursor?: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_allocation_according_to_credit_ratings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_allocation_according_to_credit_ratings.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Investment_allocation_according_to_credit_ratings.
-     */
-    distinct?: Investment_allocation_according_to_credit_ratingScalarFieldEnum | Investment_allocation_according_to_credit_ratingScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating findMany
-   */
-  export type Investment_allocation_according_to_credit_ratingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_allocation_according_to_credit_ratings to fetch.
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_allocation_according_to_credit_ratings to fetch.
-     */
-    orderBy?: Investment_allocation_according_to_credit_ratingOrderByWithRelationInput | Investment_allocation_according_to_credit_ratingOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Investment_allocation_according_to_credit_ratings.
-     */
-    cursor?: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_allocation_according_to_credit_ratings from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_allocation_according_to_credit_ratings.
-     */
-    skip?: number
-    distinct?: Investment_allocation_according_to_credit_ratingScalarFieldEnum | Investment_allocation_according_to_credit_ratingScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating create
-   */
-  export type Investment_allocation_according_to_credit_ratingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * The data needed to create a Investment_allocation_according_to_credit_rating.
-     */
-    data: XOR<Investment_allocation_according_to_credit_ratingCreateInput, Investment_allocation_according_to_credit_ratingUncheckedCreateInput>
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating createMany
-   */
-  export type Investment_allocation_according_to_credit_ratingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Investment_allocation_according_to_credit_ratings.
-     */
-    data: Investment_allocation_according_to_credit_ratingCreateManyInput | Investment_allocation_according_to_credit_ratingCreateManyInput[]
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating update
-   */
-  export type Investment_allocation_according_to_credit_ratingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * The data needed to update a Investment_allocation_according_to_credit_rating.
-     */
-    data: XOR<Investment_allocation_according_to_credit_ratingUpdateInput, Investment_allocation_according_to_credit_ratingUncheckedUpdateInput>
-    /**
-     * Choose, which Investment_allocation_according_to_credit_rating to update.
-     */
-    where: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating updateMany
-   */
-  export type Investment_allocation_according_to_credit_ratingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Investment_allocation_according_to_credit_ratings.
-     */
-    data: XOR<Investment_allocation_according_to_credit_ratingUpdateManyMutationInput, Investment_allocation_according_to_credit_ratingUncheckedUpdateManyInput>
-    /**
-     * Filter which Investment_allocation_according_to_credit_ratings to update
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating upsert
-   */
-  export type Investment_allocation_according_to_credit_ratingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * The filter to search for the Investment_allocation_according_to_credit_rating to update in case it exists.
-     */
-    where: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-    /**
-     * In case the Investment_allocation_according_to_credit_rating found by the `where` argument doesn't exist, create a new Investment_allocation_according_to_credit_rating with this data.
-     */
-    create: XOR<Investment_allocation_according_to_credit_ratingCreateInput, Investment_allocation_according_to_credit_ratingUncheckedCreateInput>
-    /**
-     * In case the Investment_allocation_according_to_credit_rating was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<Investment_allocation_according_to_credit_ratingUpdateInput, Investment_allocation_according_to_credit_ratingUncheckedUpdateInput>
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating delete
-   */
-  export type Investment_allocation_according_to_credit_ratingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-    /**
-     * Filter which Investment_allocation_according_to_credit_rating to delete.
-     */
-    where: Investment_allocation_according_to_credit_ratingWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating deleteMany
-   */
-  export type Investment_allocation_according_to_credit_ratingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Investment_allocation_according_to_credit_ratings to delete
-     */
-    where?: Investment_allocation_according_to_credit_ratingWhereInput
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating findRaw
-   */
-  export type Investment_allocation_according_to_credit_ratingFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
-     */
-    filter?: InputJsonValue
-    /**
-     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating aggregateRaw
-   */
-  export type Investment_allocation_according_to_credit_ratingAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
-     */
-    pipeline?: InputJsonValue[]
-    /**
-     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Investment_allocation_according_to_credit_rating without action
-   */
-  export type Investment_allocation_according_to_credit_ratingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_allocation_according_to_credit_rating
-     */
-    select?: Investment_allocation_according_to_credit_ratingSelect<ExtArgs> | null
-  }
-
-
-
-  /**
-   * Model Investment_In_Country
-   */
-
-  export type AggregateInvestment_In_Country = {
-    _count: Investment_In_CountryCountAggregateOutputType | null
-    _min: Investment_In_CountryMinAggregateOutputType | null
-    _max: Investment_In_CountryMaxAggregateOutputType | null
-  }
-
-  export type Investment_In_CountryMinAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-  }
-
-  export type Investment_In_CountryMaxAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-  }
-
-  export type Investment_In_CountryCountAggregateOutputType = {
-    id: number
-    proj_id: number
-    Countrydata: number
-    _all: number
-  }
-
-
-  export type Investment_In_CountryMinAggregateInputType = {
-    id?: true
-    proj_id?: true
-  }
-
-  export type Investment_In_CountryMaxAggregateInputType = {
-    id?: true
-    proj_id?: true
-  }
-
-  export type Investment_In_CountryCountAggregateInputType = {
-    id?: true
-    proj_id?: true
-    Countrydata?: true
-    _all?: true
-  }
-
-  export type Investment_In_CountryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Investment_In_Country to aggregate.
-     */
-    where?: Investment_In_CountryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_In_Countries to fetch.
-     */
-    orderBy?: Investment_In_CountryOrderByWithRelationInput | Investment_In_CountryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: Investment_In_CountryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_In_Countries from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_In_Countries.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Investment_In_Countries
-    **/
-    _count?: true | Investment_In_CountryCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: Investment_In_CountryMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: Investment_In_CountryMaxAggregateInputType
-  }
-
-  export type GetInvestment_In_CountryAggregateType<T extends Investment_In_CountryAggregateArgs> = {
-        [P in keyof T & keyof AggregateInvestment_In_Country]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateInvestment_In_Country[P]>
-      : GetScalarType<T[P], AggregateInvestment_In_Country[P]>
-  }
-
-
-
-
-  export type Investment_In_CountryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: Investment_In_CountryWhereInput
-    orderBy?: Investment_In_CountryOrderByWithAggregationInput | Investment_In_CountryOrderByWithAggregationInput[]
-    by: Investment_In_CountryScalarFieldEnum[] | Investment_In_CountryScalarFieldEnum
-    having?: Investment_In_CountryScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: Investment_In_CountryCountAggregateInputType | true
-    _min?: Investment_In_CountryMinAggregateInputType
-    _max?: Investment_In_CountryMaxAggregateInputType
-  }
-
-  export type Investment_In_CountryGroupByOutputType = {
-    id: string
-    proj_id: string
-    Countrydata: JsonValue
-    _count: Investment_In_CountryCountAggregateOutputType | null
-    _min: Investment_In_CountryMinAggregateOutputType | null
-    _max: Investment_In_CountryMaxAggregateOutputType | null
-  }
-
-  type GetInvestment_In_CountryGroupByPayload<T extends Investment_In_CountryGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<Investment_In_CountryGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof Investment_In_CountryGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], Investment_In_CountryGroupByOutputType[P]>
-            : GetScalarType<T[P], Investment_In_CountryGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type Investment_In_CountrySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    proj_id?: boolean
-    Countrydata?: boolean
-  }, ExtArgs["result"]["investment_In_Country"]>
-
-  export type Investment_In_CountrySelectScalar = {
-    id?: boolean
-    proj_id?: boolean
-    Countrydata?: boolean
-  }
-
-
-  export type $Investment_In_CountryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Investment_In_Country"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      proj_id: string
-      Countrydata: Prisma.JsonValue
-    }, ExtArgs["result"]["investment_In_Country"]>
-    composites: {}
-  }
-
-
-  type Investment_In_CountryGetPayload<S extends boolean | null | undefined | Investment_In_CountryDefaultArgs> = $Result.GetResult<Prisma.$Investment_In_CountryPayload, S>
-
-  type Investment_In_CountryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<Investment_In_CountryFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: Investment_In_CountryCountAggregateInputType | true
-    }
-
-  export interface Investment_In_CountryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Investment_In_Country'], meta: { name: 'Investment_In_Country' } }
-    /**
-     * Find zero or one Investment_In_Country that matches the filter.
-     * @param {Investment_In_CountryFindUniqueArgs} args - Arguments to find a Investment_In_Country
-     * @example
-     * // Get one Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends Investment_In_CountryFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryFindUniqueArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Investment_In_Country that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {Investment_In_CountryFindUniqueOrThrowArgs} args - Arguments to find a Investment_In_Country
-     * @example
-     * // Get one Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends Investment_In_CountryFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Investment_In_Country that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryFindFirstArgs} args - Arguments to find a Investment_In_Country
-     * @example
-     * // Get one Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends Investment_In_CountryFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryFindFirstArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Investment_In_Country that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryFindFirstOrThrowArgs} args - Arguments to find a Investment_In_Country
-     * @example
-     * // Get one Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends Investment_In_CountryFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Investment_In_Countries that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Investment_In_Countries
-     * const investment_In_Countries = await prisma.investment_In_Country.findMany()
-     * 
-     * // Get first 10 Investment_In_Countries
-     * const investment_In_Countries = await prisma.investment_In_Country.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const investment_In_CountryWithIdOnly = await prisma.investment_In_Country.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends Investment_In_CountryFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Investment_In_Country.
-     * @param {Investment_In_CountryCreateArgs} args - Arguments to create a Investment_In_Country.
-     * @example
-     * // Create one Investment_In_Country
-     * const Investment_In_Country = await prisma.investment_In_Country.create({
-     *   data: {
-     *     // ... data to create a Investment_In_Country
-     *   }
-     * })
-     * 
-    **/
-    create<T extends Investment_In_CountryCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryCreateArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Investment_In_Countries.
-     *     @param {Investment_In_CountryCreateManyArgs} args - Arguments to create many Investment_In_Countries.
-     *     @example
-     *     // Create many Investment_In_Countries
-     *     const investment_In_Country = await prisma.investment_In_Country.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends Investment_In_CountryCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Investment_In_Country.
-     * @param {Investment_In_CountryDeleteArgs} args - Arguments to delete one Investment_In_Country.
-     * @example
-     * // Delete one Investment_In_Country
-     * const Investment_In_Country = await prisma.investment_In_Country.delete({
-     *   where: {
-     *     // ... filter to delete one Investment_In_Country
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends Investment_In_CountryDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryDeleteArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Investment_In_Country.
-     * @param {Investment_In_CountryUpdateArgs} args - Arguments to update one Investment_In_Country.
-     * @example
-     * // Update one Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends Investment_In_CountryUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryUpdateArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Investment_In_Countries.
-     * @param {Investment_In_CountryDeleteManyArgs} args - Arguments to filter Investment_In_Countries to delete.
-     * @example
-     * // Delete a few Investment_In_Countries
-     * const { count } = await prisma.investment_In_Country.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends Investment_In_CountryDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, Investment_In_CountryDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Investment_In_Countries.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Investment_In_Countries
-     * const investment_In_Country = await prisma.investment_In_Country.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends Investment_In_CountryUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Investment_In_Country.
-     * @param {Investment_In_CountryUpsertArgs} args - Arguments to update or create a Investment_In_Country.
-     * @example
-     * // Update or create a Investment_In_Country
-     * const investment_In_Country = await prisma.investment_In_Country.upsert({
-     *   create: {
-     *     // ... data to create a Investment_In_Country
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Investment_In_Country we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends Investment_In_CountryUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, Investment_In_CountryUpsertArgs<ExtArgs>>
-    ): Prisma__Investment_In_CountryClient<$Result.GetResult<Prisma.$Investment_In_CountryPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Investment_In_Countries that matches the filter.
-     * @param {Investment_In_CountryFindRawArgs} args - Select which filters you would like to apply.
-     * @example
-     * const investment_In_Country = await prisma.investment_In_Country.findRaw({
-     *   filter: { age: { $gt: 25 } } 
-     * })
-    **/
-    findRaw(
-      args?: Investment_In_CountryFindRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Perform aggregation operations on a Investment_In_Country.
-     * @param {Investment_In_CountryAggregateRawArgs} args - Select which aggregations you would like to apply.
-     * @example
-     * const investment_In_Country = await prisma.investment_In_Country.aggregateRaw({
-     *   pipeline: [
-     *     { $match: { status: "registered" } },
-     *     { $group: { _id: "$country", total: { $sum: 1 } } }
-     *   ]
-     * })
-    **/
-    aggregateRaw(
-      args?: Investment_In_CountryAggregateRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Count the number of Investment_In_Countries.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryCountArgs} args - Arguments to filter Investment_In_Countries to count.
-     * @example
-     * // Count the number of Investment_In_Countries
-     * const count = await prisma.investment_In_Country.count({
-     *   where: {
-     *     // ... the filter for the Investment_In_Countries we want to count
-     *   }
-     * })
-    **/
-    count<T extends Investment_In_CountryCountArgs>(
-      args?: Subset<T, Investment_In_CountryCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], Investment_In_CountryCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Investment_In_Country.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends Investment_In_CountryAggregateArgs>(args: Subset<T, Investment_In_CountryAggregateArgs>): Prisma.PrismaPromise<GetInvestment_In_CountryAggregateType<T>>
-
-    /**
-     * Group by Investment_In_Country.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {Investment_In_CountryGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends Investment_In_CountryGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: Investment_In_CountryGroupByArgs['orderBy'] }
-        : { orderBy?: Investment_In_CountryGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, Investment_In_CountryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetInvestment_In_CountryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Investment_In_Country model
-   */
-  readonly fields: Investment_In_CountryFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Investment_In_Country.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__Investment_In_CountryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the Investment_In_Country model
-   */ 
-  interface Investment_In_CountryFieldRefs {
-    readonly id: FieldRef<"Investment_In_Country", 'String'>
-    readonly proj_id: FieldRef<"Investment_In_Country", 'String'>
-    readonly Countrydata: FieldRef<"Investment_In_Country", 'Json'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * Investment_In_Country findUnique
-   */
-  export type Investment_In_CountryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_In_Country to fetch.
-     */
-    where: Investment_In_CountryWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_In_Country findUniqueOrThrow
-   */
-  export type Investment_In_CountryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_In_Country to fetch.
-     */
-    where: Investment_In_CountryWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_In_Country findFirst
-   */
-  export type Investment_In_CountryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_In_Country to fetch.
-     */
-    where?: Investment_In_CountryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_In_Countries to fetch.
-     */
-    orderBy?: Investment_In_CountryOrderByWithRelationInput | Investment_In_CountryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Investment_In_Countries.
-     */
-    cursor?: Investment_In_CountryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_In_Countries from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_In_Countries.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Investment_In_Countries.
-     */
-    distinct?: Investment_In_CountryScalarFieldEnum | Investment_In_CountryScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_In_Country findFirstOrThrow
-   */
-  export type Investment_In_CountryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_In_Country to fetch.
-     */
-    where?: Investment_In_CountryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_In_Countries to fetch.
-     */
-    orderBy?: Investment_In_CountryOrderByWithRelationInput | Investment_In_CountryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Investment_In_Countries.
-     */
-    cursor?: Investment_In_CountryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_In_Countries from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_In_Countries.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Investment_In_Countries.
-     */
-    distinct?: Investment_In_CountryScalarFieldEnum | Investment_In_CountryScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_In_Country findMany
-   */
-  export type Investment_In_CountryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter, which Investment_In_Countries to fetch.
-     */
-    where?: Investment_In_CountryWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Investment_In_Countries to fetch.
-     */
-    orderBy?: Investment_In_CountryOrderByWithRelationInput | Investment_In_CountryOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Investment_In_Countries.
-     */
-    cursor?: Investment_In_CountryWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Investment_In_Countries from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Investment_In_Countries.
-     */
-    skip?: number
-    distinct?: Investment_In_CountryScalarFieldEnum | Investment_In_CountryScalarFieldEnum[]
-  }
-
-
-  /**
-   * Investment_In_Country create
-   */
-  export type Investment_In_CountryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * The data needed to create a Investment_In_Country.
-     */
-    data: XOR<Investment_In_CountryCreateInput, Investment_In_CountryUncheckedCreateInput>
-  }
-
-
-  /**
-   * Investment_In_Country createMany
-   */
-  export type Investment_In_CountryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Investment_In_Countries.
-     */
-    data: Investment_In_CountryCreateManyInput | Investment_In_CountryCreateManyInput[]
-  }
-
-
-  /**
-   * Investment_In_Country update
-   */
-  export type Investment_In_CountryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * The data needed to update a Investment_In_Country.
-     */
-    data: XOR<Investment_In_CountryUpdateInput, Investment_In_CountryUncheckedUpdateInput>
-    /**
-     * Choose, which Investment_In_Country to update.
-     */
-    where: Investment_In_CountryWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_In_Country updateMany
-   */
-  export type Investment_In_CountryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Investment_In_Countries.
-     */
-    data: XOR<Investment_In_CountryUpdateManyMutationInput, Investment_In_CountryUncheckedUpdateManyInput>
-    /**
-     * Filter which Investment_In_Countries to update
-     */
-    where?: Investment_In_CountryWhereInput
-  }
-
-
-  /**
-   * Investment_In_Country upsert
-   */
-  export type Investment_In_CountryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * The filter to search for the Investment_In_Country to update in case it exists.
-     */
-    where: Investment_In_CountryWhereUniqueInput
-    /**
-     * In case the Investment_In_Country found by the `where` argument doesn't exist, create a new Investment_In_Country with this data.
-     */
-    create: XOR<Investment_In_CountryCreateInput, Investment_In_CountryUncheckedCreateInput>
-    /**
-     * In case the Investment_In_Country was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<Investment_In_CountryUpdateInput, Investment_In_CountryUncheckedUpdateInput>
-  }
-
-
-  /**
-   * Investment_In_Country delete
-   */
-  export type Investment_In_CountryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
-    /**
-     * Filter which Investment_In_Country to delete.
-     */
-    where: Investment_In_CountryWhereUniqueInput
-  }
-
-
-  /**
-   * Investment_In_Country deleteMany
-   */
-  export type Investment_In_CountryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Investment_In_Countries to delete
-     */
-    where?: Investment_In_CountryWhereInput
-  }
-
-
-  /**
-   * Investment_In_Country findRaw
-   */
-  export type Investment_In_CountryFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
-     */
-    filter?: InputJsonValue
-    /**
-     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Investment_In_Country aggregateRaw
-   */
-  export type Investment_In_CountryAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
-     */
-    pipeline?: InputJsonValue[]
-    /**
-     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Investment_In_Country without action
-   */
-  export type Investment_In_CountryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Investment_In_Country
-     */
-    select?: Investment_In_CountrySelect<ExtArgs> | null
+    select?: Page4FeeSelect<ExtArgs> | null
   }
 
 
@@ -14092,26 +11028,18 @@ export namespace Prisma {
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
 
 
-  export const UserScalarFieldEnum: {
-    id: 'id',
-    email: 'email',
-    username: 'username'
-  };
-
-  export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
   export const FavoriteScalarFieldEnum: {
     id: 'id',
-    proj_id: 'proj_id',
-    favID: 'favID'
+    username: 'username',
+    proj_abbr_name_list: 'proj_abbr_name_list'
   };
 
   export type FavoriteScalarFieldEnum = (typeof FavoriteScalarFieldEnum)[keyof typeof FavoriteScalarFieldEnum]
 
 
-  export const CompareinfomationScalarFieldEnum: {
+  export const Page1compareinfomationScalarFieldEnum: {
     id: 'id',
+    proj_abbr_name: 'proj_abbr_name',
     fundType: 'fundType',
     risk_spectrum: 'risk_spectrum',
     Feeder_Fund: 'Feeder_Fund',
@@ -14126,70 +11054,57 @@ export namespace Prisma {
     Net_asset_value: 'Net_asset_value'
   };
 
-  export type CompareinfomationScalarFieldEnum = (typeof CompareinfomationScalarFieldEnum)[keyof typeof CompareinfomationScalarFieldEnum]
+  export type Page1compareinfomationScalarFieldEnum = (typeof Page1compareinfomationScalarFieldEnum)[keyof typeof Page1compareinfomationScalarFieldEnum]
 
 
-  export const Type_assets_investedScalarFieldEnum: {
+  export const Page2Operating_results_and_dividendsScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    data: 'data'
+    proj_abbr_name: 'proj_abbr_name'
   };
 
-  export type Type_assets_investedScalarFieldEnum = (typeof Type_assets_investedScalarFieldEnum)[keyof typeof Type_assets_investedScalarFieldEnum]
+  export type Page2Operating_results_and_dividendsScalarFieldEnum = (typeof Page2Operating_results_and_dividendsScalarFieldEnum)[keyof typeof Page2Operating_results_and_dividendsScalarFieldEnum]
 
 
-  export const Top_five_investment_assetsScalarFieldEnum: {
+  export const Page3topfiveCompareportScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    data: 'data'
+    proj_abbr_name: 'proj_abbr_name',
+    top_five_holding: 'top_five_holding'
   };
 
-  export type Top_five_investment_assetsScalarFieldEnum = (typeof Top_five_investment_assetsScalarFieldEnum)[keyof typeof Top_five_investment_assetsScalarFieldEnum]
+  export type Page3topfiveCompareportScalarFieldEnum = (typeof Page3topfiveCompareportScalarFieldEnum)[keyof typeof Page3topfiveCompareportScalarFieldEnum]
 
 
-  export const Fees_charged_by_mutual_fundsScalarFieldEnum: {
+  export const Page3typeCompareportScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    data: 'data'
+    proj_abbr_name: 'proj_abbr_name',
+    type_data: 'type_data'
   };
 
-  export type Fees_charged_by_mutual_fundsScalarFieldEnum = (typeof Fees_charged_by_mutual_fundsScalarFieldEnum)[keyof typeof Fees_charged_by_mutual_fundsScalarFieldEnum]
+  export type Page3typeCompareportScalarFieldEnum = (typeof Page3typeCompareportScalarFieldEnum)[keyof typeof Page3typeCompareportScalarFieldEnum]
 
 
-  export const Fees_charged_to_unitholdersScalarFieldEnum: {
+  export const Page3Investment_proportionCompareportScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    data: 'data'
+    proj_abbr_name: 'proj_abbr_name',
+    Investment_proportion_data: 'Investment_proportion_data'
   };
 
-  export type Fees_charged_to_unitholdersScalarFieldEnum = (typeof Fees_charged_to_unitholdersScalarFieldEnum)[keyof typeof Fees_charged_to_unitholdersScalarFieldEnum]
+  export type Page3Investment_proportionCompareportScalarFieldEnum = (typeof Page3Investment_proportionCompareportScalarFieldEnum)[keyof typeof Page3Investment_proportionCompareportScalarFieldEnum]
 
 
-  export const Investment_allocation_in_the_top_five_issuersScalarFieldEnum: {
+  export const Page4FeeScalarFieldEnum: {
     id: 'id',
     proj_id: 'proj_id',
-    data: 'data'
+    proj_abbr_name: 'proj_abbr_name',
+    datafromsheet: 'datafromsheet',
+    datafromReal: 'datafromReal'
   };
 
-  export type Investment_allocation_in_the_top_five_issuersScalarFieldEnum = (typeof Investment_allocation_in_the_top_five_issuersScalarFieldEnum)[keyof typeof Investment_allocation_in_the_top_five_issuersScalarFieldEnum]
-
-
-  export const Investment_allocation_according_to_credit_ratingScalarFieldEnum: {
-    id: 'id',
-    proj_id: 'proj_id',
-    data: 'data'
-  };
-
-  export type Investment_allocation_according_to_credit_ratingScalarFieldEnum = (typeof Investment_allocation_according_to_credit_ratingScalarFieldEnum)[keyof typeof Investment_allocation_according_to_credit_ratingScalarFieldEnum]
-
-
-  export const Investment_In_CountryScalarFieldEnum: {
-    id: 'id',
-    proj_id: 'proj_id',
-    Countrydata: 'Countrydata'
-  };
-
-  export type Investment_In_CountryScalarFieldEnum = (typeof Investment_In_CountryScalarFieldEnum)[keyof typeof Investment_In_CountryScalarFieldEnum]
+  export type Page4FeeScalarFieldEnum = (typeof Page4FeeScalarFieldEnum)[keyof typeof Page4FeeScalarFieldEnum]
 
 
   export const AllProductInfoScalarFieldEnum: {
@@ -14379,15 +11294,15 @@ export namespace Prisma {
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
+    proj_abbr_name?: string
     AND?: ProductWhereInput | ProductWhereInput[]
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
-    proj_abbr_name?: StringFilter<"Product"> | string
     proj_name_en?: StringFilter<"Product"> | string
     proj_name_th?: StringFilter<"Product"> | string
     unique_id?: StringFilter<"Product"> | string
     risk_spectrum?: StringFilter<"Product"> | string
-  }, "id" | "proj_id">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
   export type ProductOrderByWithAggregationInput = {
     id?: SortOrder
@@ -14415,82 +11330,34 @@ export namespace Prisma {
     risk_spectrum?: StringWithAggregatesFilter<"Product"> | string
   }
 
-  export type UserWhereInput = {
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    id?: StringFilter<"User"> | string
-    email?: StringFilter<"User"> | string
-    username?: StringFilter<"User"> | string
-    favorites?: FavoriteListRelationFilter
-  }
-
-  export type UserOrderByWithRelationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    username?: SortOrder
-    favorites?: FavoriteOrderByRelationAggregateInput
-  }
-
-  export type UserWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    email?: string
-    AND?: UserWhereInput | UserWhereInput[]
-    OR?: UserWhereInput[]
-    NOT?: UserWhereInput | UserWhereInput[]
-    username?: StringFilter<"User"> | string
-    favorites?: FavoriteListRelationFilter
-  }, "id" | "email">
-
-  export type UserOrderByWithAggregationInput = {
-    id?: SortOrder
-    email?: SortOrder
-    username?: SortOrder
-    _count?: UserCountOrderByAggregateInput
-    _max?: UserMaxOrderByAggregateInput
-    _min?: UserMinOrderByAggregateInput
-  }
-
-  export type UserScalarWhereWithAggregatesInput = {
-    AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    OR?: UserScalarWhereWithAggregatesInput[]
-    NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"User"> | string
-    email?: StringWithAggregatesFilter<"User"> | string
-    username?: StringWithAggregatesFilter<"User"> | string
-  }
-
   export type FavoriteWhereInput = {
     AND?: FavoriteWhereInput | FavoriteWhereInput[]
     OR?: FavoriteWhereInput[]
     NOT?: FavoriteWhereInput | FavoriteWhereInput[]
     id?: StringFilter<"Favorite"> | string
-    proj_id?: StringFilter<"Favorite"> | string
-    favID?: StringFilter<"Favorite"> | string
-    fav?: XOR<UserRelationFilter, UserWhereInput>
+    username?: StringFilter<"Favorite"> | string
+    proj_abbr_name_list?: StringNullableListFilter<"Favorite">
   }
 
   export type FavoriteOrderByWithRelationInput = {
     id?: SortOrder
-    proj_id?: SortOrder
-    favID?: SortOrder
-    fav?: UserOrderByWithRelationInput
+    username?: SortOrder
+    proj_abbr_name_list?: SortOrder
   }
 
   export type FavoriteWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    proj_id?: string
+    username?: string
     AND?: FavoriteWhereInput | FavoriteWhereInput[]
     OR?: FavoriteWhereInput[]
     NOT?: FavoriteWhereInput | FavoriteWhereInput[]
-    favID?: StringFilter<"Favorite"> | string
-    fav?: XOR<UserRelationFilter, UserWhereInput>
-  }, "id" | "proj_id">
+    proj_abbr_name_list?: StringNullableListFilter<"Favorite">
+  }, "id" | "username">
 
   export type FavoriteOrderByWithAggregationInput = {
     id?: SortOrder
-    proj_id?: SortOrder
-    favID?: SortOrder
+    username?: SortOrder
+    proj_abbr_name_list?: SortOrder
     _count?: FavoriteCountOrderByAggregateInput
     _max?: FavoriteMaxOrderByAggregateInput
     _min?: FavoriteMinOrderByAggregateInput
@@ -14501,31 +11368,33 @@ export namespace Prisma {
     OR?: FavoriteScalarWhereWithAggregatesInput[]
     NOT?: FavoriteScalarWhereWithAggregatesInput | FavoriteScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Favorite"> | string
-    proj_id?: StringWithAggregatesFilter<"Favorite"> | string
-    favID?: StringWithAggregatesFilter<"Favorite"> | string
+    username?: StringWithAggregatesFilter<"Favorite"> | string
+    proj_abbr_name_list?: StringNullableListFilter<"Favorite">
   }
 
-  export type CompareinfomationWhereInput = {
-    AND?: CompareinfomationWhereInput | CompareinfomationWhereInput[]
-    OR?: CompareinfomationWhereInput[]
-    NOT?: CompareinfomationWhereInput | CompareinfomationWhereInput[]
-    id?: StringFilter<"Compareinfomation"> | string
-    fundType?: StringFilter<"Compareinfomation"> | string
-    risk_spectrum?: StringFilter<"Compareinfomation"> | string
-    Feeder_Fund?: StringFilter<"Compareinfomation"> | string
-    Currency_policy?: StringFilter<"Compareinfomation"> | string
-    Dividend_payment_policy?: StringFilter<"Compareinfomation"> | string
-    Sales_fees?: StringFilter<"Compareinfomation"> | string
-    Buyback_fee?: StringFilter<"Compareinfomation"> | string
-    Mutual_fund_expenses?: StringFilter<"Compareinfomation"> | string
-    Minimum_initial_investment?: StringFilter<"Compareinfomation"> | string
-    Minimum_next_investment?: StringFilter<"Compareinfomation"> | string
-    Investment_registration_date?: StringFilter<"Compareinfomation"> | string
-    Net_asset_value?: StringFilter<"Compareinfomation"> | string
+  export type Page1compareinfomationWhereInput = {
+    AND?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
+    OR?: Page1compareinfomationWhereInput[]
+    NOT?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
+    id?: StringFilter<"Page1compareinfomation"> | string
+    proj_abbr_name?: StringFilter<"Page1compareinfomation"> | string
+    fundType?: StringFilter<"Page1compareinfomation"> | string
+    risk_spectrum?: StringFilter<"Page1compareinfomation"> | string
+    Feeder_Fund?: StringFilter<"Page1compareinfomation"> | string
+    Currency_policy?: StringFilter<"Page1compareinfomation"> | string
+    Dividend_payment_policy?: StringFilter<"Page1compareinfomation"> | string
+    Sales_fees?: StringFilter<"Page1compareinfomation"> | string
+    Buyback_fee?: StringFilter<"Page1compareinfomation"> | string
+    Mutual_fund_expenses?: StringFilter<"Page1compareinfomation"> | string
+    Minimum_initial_investment?: StringFilter<"Page1compareinfomation"> | string
+    Minimum_next_investment?: StringFilter<"Page1compareinfomation"> | string
+    Investment_registration_date?: StringFilter<"Page1compareinfomation"> | string
+    Net_asset_value?: StringFilter<"Page1compareinfomation"> | string
   }
 
-  export type CompareinfomationOrderByWithRelationInput = {
+  export type Page1compareinfomationOrderByWithRelationInput = {
     id?: SortOrder
+    proj_abbr_name?: SortOrder
     fundType?: SortOrder
     risk_spectrum?: SortOrder
     Feeder_Fund?: SortOrder
@@ -14540,27 +11409,29 @@ export namespace Prisma {
     Net_asset_value?: SortOrder
   }
 
-  export type CompareinfomationWhereUniqueInput = Prisma.AtLeast<{
+  export type Page1compareinfomationWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: CompareinfomationWhereInput | CompareinfomationWhereInput[]
-    OR?: CompareinfomationWhereInput[]
-    NOT?: CompareinfomationWhereInput | CompareinfomationWhereInput[]
-    fundType?: StringFilter<"Compareinfomation"> | string
-    risk_spectrum?: StringFilter<"Compareinfomation"> | string
-    Feeder_Fund?: StringFilter<"Compareinfomation"> | string
-    Currency_policy?: StringFilter<"Compareinfomation"> | string
-    Dividend_payment_policy?: StringFilter<"Compareinfomation"> | string
-    Sales_fees?: StringFilter<"Compareinfomation"> | string
-    Buyback_fee?: StringFilter<"Compareinfomation"> | string
-    Mutual_fund_expenses?: StringFilter<"Compareinfomation"> | string
-    Minimum_initial_investment?: StringFilter<"Compareinfomation"> | string
-    Minimum_next_investment?: StringFilter<"Compareinfomation"> | string
-    Investment_registration_date?: StringFilter<"Compareinfomation"> | string
-    Net_asset_value?: StringFilter<"Compareinfomation"> | string
-  }, "id">
+    proj_abbr_name?: string
+    AND?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
+    OR?: Page1compareinfomationWhereInput[]
+    NOT?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
+    fundType?: StringFilter<"Page1compareinfomation"> | string
+    risk_spectrum?: StringFilter<"Page1compareinfomation"> | string
+    Feeder_Fund?: StringFilter<"Page1compareinfomation"> | string
+    Currency_policy?: StringFilter<"Page1compareinfomation"> | string
+    Dividend_payment_policy?: StringFilter<"Page1compareinfomation"> | string
+    Sales_fees?: StringFilter<"Page1compareinfomation"> | string
+    Buyback_fee?: StringFilter<"Page1compareinfomation"> | string
+    Mutual_fund_expenses?: StringFilter<"Page1compareinfomation"> | string
+    Minimum_initial_investment?: StringFilter<"Page1compareinfomation"> | string
+    Minimum_next_investment?: StringFilter<"Page1compareinfomation"> | string
+    Investment_registration_date?: StringFilter<"Page1compareinfomation"> | string
+    Net_asset_value?: StringFilter<"Page1compareinfomation"> | string
+  }, "id" | "proj_abbr_name">
 
-  export type CompareinfomationOrderByWithAggregationInput = {
+  export type Page1compareinfomationOrderByWithAggregationInput = {
     id?: SortOrder
+    proj_abbr_name?: SortOrder
     fundType?: SortOrder
     risk_spectrum?: SortOrder
     Feeder_Fund?: SortOrder
@@ -14573,322 +11444,264 @@ export namespace Prisma {
     Minimum_next_investment?: SortOrder
     Investment_registration_date?: SortOrder
     Net_asset_value?: SortOrder
-    _count?: CompareinfomationCountOrderByAggregateInput
-    _max?: CompareinfomationMaxOrderByAggregateInput
-    _min?: CompareinfomationMinOrderByAggregateInput
+    _count?: Page1compareinfomationCountOrderByAggregateInput
+    _max?: Page1compareinfomationMaxOrderByAggregateInput
+    _min?: Page1compareinfomationMinOrderByAggregateInput
   }
 
-  export type CompareinfomationScalarWhereWithAggregatesInput = {
-    AND?: CompareinfomationScalarWhereWithAggregatesInput | CompareinfomationScalarWhereWithAggregatesInput[]
-    OR?: CompareinfomationScalarWhereWithAggregatesInput[]
-    NOT?: CompareinfomationScalarWhereWithAggregatesInput | CompareinfomationScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    fundType?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    risk_spectrum?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Feeder_Fund?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Currency_policy?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Dividend_payment_policy?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Sales_fees?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Buyback_fee?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Mutual_fund_expenses?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Minimum_initial_investment?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Minimum_next_investment?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Investment_registration_date?: StringWithAggregatesFilter<"Compareinfomation"> | string
-    Net_asset_value?: StringWithAggregatesFilter<"Compareinfomation"> | string
+  export type Page1compareinfomationScalarWhereWithAggregatesInput = {
+    AND?: Page1compareinfomationScalarWhereWithAggregatesInput | Page1compareinfomationScalarWhereWithAggregatesInput[]
+    OR?: Page1compareinfomationScalarWhereWithAggregatesInput[]
+    NOT?: Page1compareinfomationScalarWhereWithAggregatesInput | Page1compareinfomationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    fundType?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    risk_spectrum?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Feeder_Fund?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Currency_policy?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Dividend_payment_policy?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Sales_fees?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Buyback_fee?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Mutual_fund_expenses?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Minimum_initial_investment?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Minimum_next_investment?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Investment_registration_date?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    Net_asset_value?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
   }
 
-  export type Type_assets_investedWhereInput = {
-    AND?: Type_assets_investedWhereInput | Type_assets_investedWhereInput[]
-    OR?: Type_assets_investedWhereInput[]
-    NOT?: Type_assets_investedWhereInput | Type_assets_investedWhereInput[]
-    id?: StringFilter<"Type_assets_invested"> | string
-    proj_id?: StringFilter<"Type_assets_invested"> | string
-    data?: JsonFilter<"Type_assets_invested">
+  export type Page2Operating_results_and_dividendsWhereInput = {
+    AND?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
+    OR?: Page2Operating_results_and_dividendsWhereInput[]
+    NOT?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
+    id?: StringFilter<"Page2Operating_results_and_dividends"> | string
+    proj_id?: StringFilter<"Page2Operating_results_and_dividends"> | string
+    proj_abbr_name?: StringFilter<"Page2Operating_results_and_dividends"> | string
   }
 
-  export type Type_assets_investedOrderByWithRelationInput = {
+  export type Page2Operating_results_and_dividendsOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Type_assets_investedWhereUniqueInput = Prisma.AtLeast<{
+  export type Page2Operating_results_and_dividendsWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
-    AND?: Type_assets_investedWhereInput | Type_assets_investedWhereInput[]
-    OR?: Type_assets_investedWhereInput[]
-    NOT?: Type_assets_investedWhereInput | Type_assets_investedWhereInput[]
-    data?: JsonFilter<"Type_assets_invested">
-  }, "id" | "proj_id">
+    proj_abbr_name?: string
+    AND?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
+    OR?: Page2Operating_results_and_dividendsWhereInput[]
+    NOT?: Page2Operating_results_and_dividendsWhereInput | Page2Operating_results_and_dividendsWhereInput[]
+  }, "id" | "proj_id" | "proj_abbr_name">
 
-  export type Type_assets_investedOrderByWithAggregationInput = {
+  export type Page2Operating_results_and_dividendsOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Type_assets_investedCountOrderByAggregateInput
-    _max?: Type_assets_investedMaxOrderByAggregateInput
-    _min?: Type_assets_investedMinOrderByAggregateInput
+    proj_abbr_name?: SortOrder
+    _count?: Page2Operating_results_and_dividendsCountOrderByAggregateInput
+    _max?: Page2Operating_results_and_dividendsMaxOrderByAggregateInput
+    _min?: Page2Operating_results_and_dividendsMinOrderByAggregateInput
   }
 
-  export type Type_assets_investedScalarWhereWithAggregatesInput = {
-    AND?: Type_assets_investedScalarWhereWithAggregatesInput | Type_assets_investedScalarWhereWithAggregatesInput[]
-    OR?: Type_assets_investedScalarWhereWithAggregatesInput[]
-    NOT?: Type_assets_investedScalarWhereWithAggregatesInput | Type_assets_investedScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Type_assets_invested"> | string
-    proj_id?: StringWithAggregatesFilter<"Type_assets_invested"> | string
-    data?: JsonWithAggregatesFilter<"Type_assets_invested">
+  export type Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput = {
+    AND?: Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput | Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput[]
+    OR?: Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput[]
+    NOT?: Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput | Page2Operating_results_and_dividendsScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
+    proj_id?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page2Operating_results_and_dividends"> | string
   }
 
-  export type Top_five_investment_assetsWhereInput = {
-    AND?: Top_five_investment_assetsWhereInput | Top_five_investment_assetsWhereInput[]
-    OR?: Top_five_investment_assetsWhereInput[]
-    NOT?: Top_five_investment_assetsWhereInput | Top_five_investment_assetsWhereInput[]
-    id?: StringFilter<"Top_five_investment_assets"> | string
-    proj_id?: StringFilter<"Top_five_investment_assets"> | string
-    data?: JsonFilter<"Top_five_investment_assets">
+  export type Page3topfiveCompareportWhereInput = {
+    AND?: Page3topfiveCompareportWhereInput | Page3topfiveCompareportWhereInput[]
+    OR?: Page3topfiveCompareportWhereInput[]
+    NOT?: Page3topfiveCompareportWhereInput | Page3topfiveCompareportWhereInput[]
+    id?: StringFilter<"Page3topfiveCompareport"> | string
+    proj_id?: StringFilter<"Page3topfiveCompareport"> | string
+    proj_abbr_name?: StringFilter<"Page3topfiveCompareport"> | string
+    top_five_holding?: JsonFilter<"Page3topfiveCompareport">
   }
 
-  export type Top_five_investment_assetsOrderByWithRelationInput = {
+  export type Page3topfiveCompareportOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    top_five_holding?: SortOrder
   }
 
-  export type Top_five_investment_assetsWhereUniqueInput = Prisma.AtLeast<{
+  export type Page3topfiveCompareportWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
-    AND?: Top_five_investment_assetsWhereInput | Top_five_investment_assetsWhereInput[]
-    OR?: Top_five_investment_assetsWhereInput[]
-    NOT?: Top_five_investment_assetsWhereInput | Top_five_investment_assetsWhereInput[]
-    data?: JsonFilter<"Top_five_investment_assets">
-  }, "id" | "proj_id">
+    proj_abbr_name?: string
+    AND?: Page3topfiveCompareportWhereInput | Page3topfiveCompareportWhereInput[]
+    OR?: Page3topfiveCompareportWhereInput[]
+    NOT?: Page3topfiveCompareportWhereInput | Page3topfiveCompareportWhereInput[]
+    top_five_holding?: JsonFilter<"Page3topfiveCompareport">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
-  export type Top_five_investment_assetsOrderByWithAggregationInput = {
+  export type Page3topfiveCompareportOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Top_five_investment_assetsCountOrderByAggregateInput
-    _max?: Top_five_investment_assetsMaxOrderByAggregateInput
-    _min?: Top_five_investment_assetsMinOrderByAggregateInput
+    proj_abbr_name?: SortOrder
+    top_five_holding?: SortOrder
+    _count?: Page3topfiveCompareportCountOrderByAggregateInput
+    _max?: Page3topfiveCompareportMaxOrderByAggregateInput
+    _min?: Page3topfiveCompareportMinOrderByAggregateInput
   }
 
-  export type Top_five_investment_assetsScalarWhereWithAggregatesInput = {
-    AND?: Top_five_investment_assetsScalarWhereWithAggregatesInput | Top_five_investment_assetsScalarWhereWithAggregatesInput[]
-    OR?: Top_five_investment_assetsScalarWhereWithAggregatesInput[]
-    NOT?: Top_five_investment_assetsScalarWhereWithAggregatesInput | Top_five_investment_assetsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Top_five_investment_assets"> | string
-    proj_id?: StringWithAggregatesFilter<"Top_five_investment_assets"> | string
-    data?: JsonWithAggregatesFilter<"Top_five_investment_assets">
+  export type Page3topfiveCompareportScalarWhereWithAggregatesInput = {
+    AND?: Page3topfiveCompareportScalarWhereWithAggregatesInput | Page3topfiveCompareportScalarWhereWithAggregatesInput[]
+    OR?: Page3topfiveCompareportScalarWhereWithAggregatesInput[]
+    NOT?: Page3topfiveCompareportScalarWhereWithAggregatesInput | Page3topfiveCompareportScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page3topfiveCompareport"> | string
+    proj_id?: StringWithAggregatesFilter<"Page3topfiveCompareport"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page3topfiveCompareport"> | string
+    top_five_holding?: JsonWithAggregatesFilter<"Page3topfiveCompareport">
   }
 
-  export type Fees_charged_by_mutual_fundsWhereInput = {
-    AND?: Fees_charged_by_mutual_fundsWhereInput | Fees_charged_by_mutual_fundsWhereInput[]
-    OR?: Fees_charged_by_mutual_fundsWhereInput[]
-    NOT?: Fees_charged_by_mutual_fundsWhereInput | Fees_charged_by_mutual_fundsWhereInput[]
-    id?: StringFilter<"Fees_charged_by_mutual_funds"> | string
-    proj_id?: StringFilter<"Fees_charged_by_mutual_funds"> | string
-    data?: JsonFilter<"Fees_charged_by_mutual_funds">
+  export type Page3typeCompareportWhereInput = {
+    AND?: Page3typeCompareportWhereInput | Page3typeCompareportWhereInput[]
+    OR?: Page3typeCompareportWhereInput[]
+    NOT?: Page3typeCompareportWhereInput | Page3typeCompareportWhereInput[]
+    id?: StringFilter<"Page3typeCompareport"> | string
+    proj_id?: StringFilter<"Page3typeCompareport"> | string
+    proj_abbr_name?: StringFilter<"Page3typeCompareport"> | string
+    type_data?: JsonFilter<"Page3typeCompareport">
   }
 
-  export type Fees_charged_by_mutual_fundsOrderByWithRelationInput = {
+  export type Page3typeCompareportOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    type_data?: SortOrder
   }
 
-  export type Fees_charged_by_mutual_fundsWhereUniqueInput = Prisma.AtLeast<{
+  export type Page3typeCompareportWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
-    AND?: Fees_charged_by_mutual_fundsWhereInput | Fees_charged_by_mutual_fundsWhereInput[]
-    OR?: Fees_charged_by_mutual_fundsWhereInput[]
-    NOT?: Fees_charged_by_mutual_fundsWhereInput | Fees_charged_by_mutual_fundsWhereInput[]
-    data?: JsonFilter<"Fees_charged_by_mutual_funds">
-  }, "id" | "proj_id">
+    proj_abbr_name?: string
+    AND?: Page3typeCompareportWhereInput | Page3typeCompareportWhereInput[]
+    OR?: Page3typeCompareportWhereInput[]
+    NOT?: Page3typeCompareportWhereInput | Page3typeCompareportWhereInput[]
+    type_data?: JsonFilter<"Page3typeCompareport">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
-  export type Fees_charged_by_mutual_fundsOrderByWithAggregationInput = {
+  export type Page3typeCompareportOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Fees_charged_by_mutual_fundsCountOrderByAggregateInput
-    _max?: Fees_charged_by_mutual_fundsMaxOrderByAggregateInput
-    _min?: Fees_charged_by_mutual_fundsMinOrderByAggregateInput
+    proj_abbr_name?: SortOrder
+    type_data?: SortOrder
+    _count?: Page3typeCompareportCountOrderByAggregateInput
+    _max?: Page3typeCompareportMaxOrderByAggregateInput
+    _min?: Page3typeCompareportMinOrderByAggregateInput
   }
 
-  export type Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput = {
-    AND?: Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput | Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput[]
-    OR?: Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput[]
-    NOT?: Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput | Fees_charged_by_mutual_fundsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Fees_charged_by_mutual_funds"> | string
-    proj_id?: StringWithAggregatesFilter<"Fees_charged_by_mutual_funds"> | string
-    data?: JsonWithAggregatesFilter<"Fees_charged_by_mutual_funds">
+  export type Page3typeCompareportScalarWhereWithAggregatesInput = {
+    AND?: Page3typeCompareportScalarWhereWithAggregatesInput | Page3typeCompareportScalarWhereWithAggregatesInput[]
+    OR?: Page3typeCompareportScalarWhereWithAggregatesInput[]
+    NOT?: Page3typeCompareportScalarWhereWithAggregatesInput | Page3typeCompareportScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page3typeCompareport"> | string
+    proj_id?: StringWithAggregatesFilter<"Page3typeCompareport"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page3typeCompareport"> | string
+    type_data?: JsonWithAggregatesFilter<"Page3typeCompareport">
   }
 
-  export type Fees_charged_to_unitholdersWhereInput = {
-    AND?: Fees_charged_to_unitholdersWhereInput | Fees_charged_to_unitholdersWhereInput[]
-    OR?: Fees_charged_to_unitholdersWhereInput[]
-    NOT?: Fees_charged_to_unitholdersWhereInput | Fees_charged_to_unitholdersWhereInput[]
-    id?: StringFilter<"Fees_charged_to_unitholders"> | string
-    proj_id?: StringFilter<"Fees_charged_to_unitholders"> | string
-    data?: JsonFilter<"Fees_charged_to_unitholders">
+  export type Page3Investment_proportionCompareportWhereInput = {
+    AND?: Page3Investment_proportionCompareportWhereInput | Page3Investment_proportionCompareportWhereInput[]
+    OR?: Page3Investment_proportionCompareportWhereInput[]
+    NOT?: Page3Investment_proportionCompareportWhereInput | Page3Investment_proportionCompareportWhereInput[]
+    id?: StringFilter<"Page3Investment_proportionCompareport"> | string
+    proj_id?: StringFilter<"Page3Investment_proportionCompareport"> | string
+    proj_abbr_name?: StringFilter<"Page3Investment_proportionCompareport"> | string
+    Investment_proportion_data?: JsonFilter<"Page3Investment_proportionCompareport">
   }
 
-  export type Fees_charged_to_unitholdersOrderByWithRelationInput = {
+  export type Page3Investment_proportionCompareportOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    Investment_proportion_data?: SortOrder
   }
 
-  export type Fees_charged_to_unitholdersWhereUniqueInput = Prisma.AtLeast<{
+  export type Page3Investment_proportionCompareportWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
-    AND?: Fees_charged_to_unitholdersWhereInput | Fees_charged_to_unitholdersWhereInput[]
-    OR?: Fees_charged_to_unitholdersWhereInput[]
-    NOT?: Fees_charged_to_unitholdersWhereInput | Fees_charged_to_unitholdersWhereInput[]
-    data?: JsonFilter<"Fees_charged_to_unitholders">
-  }, "id" | "proj_id">
+    proj_abbr_name?: string
+    AND?: Page3Investment_proportionCompareportWhereInput | Page3Investment_proportionCompareportWhereInput[]
+    OR?: Page3Investment_proportionCompareportWhereInput[]
+    NOT?: Page3Investment_proportionCompareportWhereInput | Page3Investment_proportionCompareportWhereInput[]
+    Investment_proportion_data?: JsonFilter<"Page3Investment_proportionCompareport">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
-  export type Fees_charged_to_unitholdersOrderByWithAggregationInput = {
+  export type Page3Investment_proportionCompareportOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Fees_charged_to_unitholdersCountOrderByAggregateInput
-    _max?: Fees_charged_to_unitholdersMaxOrderByAggregateInput
-    _min?: Fees_charged_to_unitholdersMinOrderByAggregateInput
+    proj_abbr_name?: SortOrder
+    Investment_proportion_data?: SortOrder
+    _count?: Page3Investment_proportionCompareportCountOrderByAggregateInput
+    _max?: Page3Investment_proportionCompareportMaxOrderByAggregateInput
+    _min?: Page3Investment_proportionCompareportMinOrderByAggregateInput
   }
 
-  export type Fees_charged_to_unitholdersScalarWhereWithAggregatesInput = {
-    AND?: Fees_charged_to_unitholdersScalarWhereWithAggregatesInput | Fees_charged_to_unitholdersScalarWhereWithAggregatesInput[]
-    OR?: Fees_charged_to_unitholdersScalarWhereWithAggregatesInput[]
-    NOT?: Fees_charged_to_unitholdersScalarWhereWithAggregatesInput | Fees_charged_to_unitholdersScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Fees_charged_to_unitholders"> | string
-    proj_id?: StringWithAggregatesFilter<"Fees_charged_to_unitholders"> | string
-    data?: JsonWithAggregatesFilter<"Fees_charged_to_unitholders">
+  export type Page3Investment_proportionCompareportScalarWhereWithAggregatesInput = {
+    AND?: Page3Investment_proportionCompareportScalarWhereWithAggregatesInput | Page3Investment_proportionCompareportScalarWhereWithAggregatesInput[]
+    OR?: Page3Investment_proportionCompareportScalarWhereWithAggregatesInput[]
+    NOT?: Page3Investment_proportionCompareportScalarWhereWithAggregatesInput | Page3Investment_proportionCompareportScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page3Investment_proportionCompareport"> | string
+    proj_id?: StringWithAggregatesFilter<"Page3Investment_proportionCompareport"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page3Investment_proportionCompareport"> | string
+    Investment_proportion_data?: JsonWithAggregatesFilter<"Page3Investment_proportionCompareport">
   }
 
-  export type Investment_allocation_in_the_top_five_issuersWhereInput = {
-    AND?: Investment_allocation_in_the_top_five_issuersWhereInput | Investment_allocation_in_the_top_five_issuersWhereInput[]
-    OR?: Investment_allocation_in_the_top_five_issuersWhereInput[]
-    NOT?: Investment_allocation_in_the_top_five_issuersWhereInput | Investment_allocation_in_the_top_five_issuersWhereInput[]
-    id?: StringFilter<"Investment_allocation_in_the_top_five_issuers"> | string
-    proj_id?: StringFilter<"Investment_allocation_in_the_top_five_issuers"> | string
-    data?: JsonFilter<"Investment_allocation_in_the_top_five_issuers">
+  export type Page4FeeWhereInput = {
+    AND?: Page4FeeWhereInput | Page4FeeWhereInput[]
+    OR?: Page4FeeWhereInput[]
+    NOT?: Page4FeeWhereInput | Page4FeeWhereInput[]
+    id?: StringFilter<"Page4Fee"> | string
+    proj_id?: StringFilter<"Page4Fee"> | string
+    proj_abbr_name?: StringFilter<"Page4Fee"> | string
+    datafromsheet?: JsonFilter<"Page4Fee">
+    datafromReal?: JsonFilter<"Page4Fee">
   }
 
-  export type Investment_allocation_in_the_top_five_issuersOrderByWithRelationInput = {
+  export type Page4FeeOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    datafromsheet?: SortOrder
+    datafromReal?: SortOrder
   }
 
-  export type Investment_allocation_in_the_top_five_issuersWhereUniqueInput = Prisma.AtLeast<{
+  export type Page4FeeWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     proj_id?: string
-    AND?: Investment_allocation_in_the_top_five_issuersWhereInput | Investment_allocation_in_the_top_five_issuersWhereInput[]
-    OR?: Investment_allocation_in_the_top_five_issuersWhereInput[]
-    NOT?: Investment_allocation_in_the_top_five_issuersWhereInput | Investment_allocation_in_the_top_five_issuersWhereInput[]
-    data?: JsonFilter<"Investment_allocation_in_the_top_five_issuers">
-  }, "id" | "proj_id">
+    proj_abbr_name?: string
+    AND?: Page4FeeWhereInput | Page4FeeWhereInput[]
+    OR?: Page4FeeWhereInput[]
+    NOT?: Page4FeeWhereInput | Page4FeeWhereInput[]
+    datafromsheet?: JsonFilter<"Page4Fee">
+    datafromReal?: JsonFilter<"Page4Fee">
+  }, "id" | "proj_id" | "proj_abbr_name">
 
-  export type Investment_allocation_in_the_top_five_issuersOrderByWithAggregationInput = {
+  export type Page4FeeOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Investment_allocation_in_the_top_five_issuersCountOrderByAggregateInput
-    _max?: Investment_allocation_in_the_top_five_issuersMaxOrderByAggregateInput
-    _min?: Investment_allocation_in_the_top_five_issuersMinOrderByAggregateInput
+    proj_abbr_name?: SortOrder
+    datafromsheet?: SortOrder
+    datafromReal?: SortOrder
+    _count?: Page4FeeCountOrderByAggregateInput
+    _max?: Page4FeeMaxOrderByAggregateInput
+    _min?: Page4FeeMinOrderByAggregateInput
   }
 
-  export type Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput = {
-    AND?: Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput | Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput[]
-    OR?: Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput[]
-    NOT?: Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput | Investment_allocation_in_the_top_five_issuersScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Investment_allocation_in_the_top_five_issuers"> | string
-    proj_id?: StringWithAggregatesFilter<"Investment_allocation_in_the_top_five_issuers"> | string
-    data?: JsonWithAggregatesFilter<"Investment_allocation_in_the_top_five_issuers">
-  }
-
-  export type Investment_allocation_according_to_credit_ratingWhereInput = {
-    AND?: Investment_allocation_according_to_credit_ratingWhereInput | Investment_allocation_according_to_credit_ratingWhereInput[]
-    OR?: Investment_allocation_according_to_credit_ratingWhereInput[]
-    NOT?: Investment_allocation_according_to_credit_ratingWhereInput | Investment_allocation_according_to_credit_ratingWhereInput[]
-    id?: StringFilter<"Investment_allocation_according_to_credit_rating"> | string
-    proj_id?: StringFilter<"Investment_allocation_according_to_credit_rating"> | string
-    data?: JsonFilter<"Investment_allocation_according_to_credit_rating">
-  }
-
-  export type Investment_allocation_according_to_credit_ratingOrderByWithRelationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    data?: SortOrder
-  }
-
-  export type Investment_allocation_according_to_credit_ratingWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    proj_id?: string
-    AND?: Investment_allocation_according_to_credit_ratingWhereInput | Investment_allocation_according_to_credit_ratingWhereInput[]
-    OR?: Investment_allocation_according_to_credit_ratingWhereInput[]
-    NOT?: Investment_allocation_according_to_credit_ratingWhereInput | Investment_allocation_according_to_credit_ratingWhereInput[]
-    data?: JsonFilter<"Investment_allocation_according_to_credit_rating">
-  }, "id" | "proj_id">
-
-  export type Investment_allocation_according_to_credit_ratingOrderByWithAggregationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    data?: SortOrder
-    _count?: Investment_allocation_according_to_credit_ratingCountOrderByAggregateInput
-    _max?: Investment_allocation_according_to_credit_ratingMaxOrderByAggregateInput
-    _min?: Investment_allocation_according_to_credit_ratingMinOrderByAggregateInput
-  }
-
-  export type Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput = {
-    AND?: Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput | Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput[]
-    OR?: Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput[]
-    NOT?: Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput | Investment_allocation_according_to_credit_ratingScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Investment_allocation_according_to_credit_rating"> | string
-    proj_id?: StringWithAggregatesFilter<"Investment_allocation_according_to_credit_rating"> | string
-    data?: JsonWithAggregatesFilter<"Investment_allocation_according_to_credit_rating">
-  }
-
-  export type Investment_In_CountryWhereInput = {
-    AND?: Investment_In_CountryWhereInput | Investment_In_CountryWhereInput[]
-    OR?: Investment_In_CountryWhereInput[]
-    NOT?: Investment_In_CountryWhereInput | Investment_In_CountryWhereInput[]
-    id?: StringFilter<"Investment_In_Country"> | string
-    proj_id?: StringFilter<"Investment_In_Country"> | string
-    Countrydata?: JsonFilter<"Investment_In_Country">
-  }
-
-  export type Investment_In_CountryOrderByWithRelationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    Countrydata?: SortOrder
-  }
-
-  export type Investment_In_CountryWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    proj_id?: string
-    AND?: Investment_In_CountryWhereInput | Investment_In_CountryWhereInput[]
-    OR?: Investment_In_CountryWhereInput[]
-    NOT?: Investment_In_CountryWhereInput | Investment_In_CountryWhereInput[]
-    Countrydata?: JsonFilter<"Investment_In_Country">
-  }, "id" | "proj_id">
-
-  export type Investment_In_CountryOrderByWithAggregationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    Countrydata?: SortOrder
-    _count?: Investment_In_CountryCountOrderByAggregateInput
-    _max?: Investment_In_CountryMaxOrderByAggregateInput
-    _min?: Investment_In_CountryMinOrderByAggregateInput
-  }
-
-  export type Investment_In_CountryScalarWhereWithAggregatesInput = {
-    AND?: Investment_In_CountryScalarWhereWithAggregatesInput | Investment_In_CountryScalarWhereWithAggregatesInput[]
-    OR?: Investment_In_CountryScalarWhereWithAggregatesInput[]
-    NOT?: Investment_In_CountryScalarWhereWithAggregatesInput | Investment_In_CountryScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Investment_In_Country"> | string
-    proj_id?: StringWithAggregatesFilter<"Investment_In_Country"> | string
-    Countrydata?: JsonWithAggregatesFilter<"Investment_In_Country">
+  export type Page4FeeScalarWhereWithAggregatesInput = {
+    AND?: Page4FeeScalarWhereWithAggregatesInput | Page4FeeScalarWhereWithAggregatesInput[]
+    OR?: Page4FeeScalarWhereWithAggregatesInput[]
+    NOT?: Page4FeeScalarWhereWithAggregatesInput | Page4FeeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Page4Fee"> | string
+    proj_id?: StringWithAggregatesFilter<"Page4Fee"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"Page4Fee"> | string
+    datafromsheet?: JsonWithAggregatesFilter<"Page4Fee">
+    datafromReal?: JsonWithAggregatesFilter<"Page4Fee">
   }
 
   export type AllProductInfoWhereInput = {
@@ -15112,87 +11925,47 @@ export namespace Prisma {
     risk_spectrum?: StringFieldUpdateOperationsInput | string
   }
 
-  export type UserCreateInput = {
-    id?: string
-    email: string
-    username: string
-    favorites?: FavoriteCreateNestedManyWithoutFavInput
-  }
-
-  export type UserUncheckedCreateInput = {
-    id?: string
-    email: string
-    username: string
-    favorites?: FavoriteUncheckedCreateNestedManyWithoutFavInput
-  }
-
-  export type UserUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    favorites?: FavoriteUpdateManyWithoutFavNestedInput
-  }
-
-  export type UserUncheckedUpdateInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-    favorites?: FavoriteUncheckedUpdateManyWithoutFavNestedInput
-  }
-
-  export type UserCreateManyInput = {
-    id?: string
-    email: string
-    username: string
-  }
-
-  export type UserUpdateManyMutationInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type UserUncheckedUpdateManyInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-  }
-
   export type FavoriteCreateInput = {
     id?: string
-    proj_id: string
-    fav: UserCreateNestedOneWithoutFavoritesInput
+    username: string
+    proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteUncheckedCreateInput = {
     id?: string
-    proj_id: string
-    favID: string
+    username: string
+    proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    fav?: UserUpdateOneRequiredWithoutFavoritesNestedInput
+    username?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteUncheckedUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    favID?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteCreateManyInput = {
     id?: string
-    proj_id: string
-    favID: string
+    username: string
+    proj_abbr_name_list?: FavoriteCreateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteUpdateManyMutationInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
   }
 
   export type FavoriteUncheckedUpdateManyInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    favID?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name_list?: FavoriteUpdateproj_abbr_name_listInput | string[]
   }
 
-  export type CompareinfomationCreateInput = {
+  export type Page1compareinfomationCreateInput = {
     id?: string
+    proj_abbr_name: string
     fundType: string
     risk_spectrum: string
     Feeder_Fund: string
@@ -15207,8 +11980,9 @@ export namespace Prisma {
     Net_asset_value: string
   }
 
-  export type CompareinfomationUncheckedCreateInput = {
+  export type Page1compareinfomationUncheckedCreateInput = {
     id?: string
+    proj_abbr_name: string
     fundType: string
     risk_spectrum: string
     Feeder_Fund: string
@@ -15223,7 +11997,8 @@ export namespace Prisma {
     Net_asset_value: string
   }
 
-  export type CompareinfomationUpdateInput = {
+  export type Page1compareinfomationUpdateInput = {
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
     fundType?: StringFieldUpdateOperationsInput | string
     risk_spectrum?: StringFieldUpdateOperationsInput | string
     Feeder_Fund?: StringFieldUpdateOperationsInput | string
@@ -15238,7 +12013,8 @@ export namespace Prisma {
     Net_asset_value?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CompareinfomationUncheckedUpdateInput = {
+  export type Page1compareinfomationUncheckedUpdateInput = {
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
     fundType?: StringFieldUpdateOperationsInput | string
     risk_spectrum?: StringFieldUpdateOperationsInput | string
     Feeder_Fund?: StringFieldUpdateOperationsInput | string
@@ -15253,8 +12029,9 @@ export namespace Prisma {
     Net_asset_value?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CompareinfomationCreateManyInput = {
+  export type Page1compareinfomationCreateManyInput = {
     id?: string
+    proj_abbr_name: string
     fundType: string
     risk_spectrum: string
     Feeder_Fund: string
@@ -15269,7 +12046,8 @@ export namespace Prisma {
     Net_asset_value: string
   }
 
-  export type CompareinfomationUpdateManyMutationInput = {
+  export type Page1compareinfomationUpdateManyMutationInput = {
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
     fundType?: StringFieldUpdateOperationsInput | string
     risk_spectrum?: StringFieldUpdateOperationsInput | string
     Feeder_Fund?: StringFieldUpdateOperationsInput | string
@@ -15284,7 +12062,8 @@ export namespace Prisma {
     Net_asset_value?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CompareinfomationUncheckedUpdateManyInput = {
+  export type Page1compareinfomationUncheckedUpdateManyInput = {
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
     fundType?: StringFieldUpdateOperationsInput | string
     risk_spectrum?: StringFieldUpdateOperationsInput | string
     Feeder_Fund?: StringFieldUpdateOperationsInput | string
@@ -15299,270 +12078,229 @@ export namespace Prisma {
     Net_asset_value?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Type_assets_investedCreateInput = {
+  export type Page2Operating_results_and_dividendsCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
   }
 
-  export type Type_assets_investedUncheckedCreateInput = {
+  export type Page2Operating_results_and_dividendsUncheckedCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
   }
 
-  export type Type_assets_investedUpdateInput = {
+  export type Page2Operating_results_and_dividendsUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Type_assets_investedUncheckedUpdateInput = {
+  export type Page2Operating_results_and_dividendsUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Type_assets_investedCreateManyInput = {
+  export type Page2Operating_results_and_dividendsCreateManyInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
   }
 
-  export type Type_assets_investedUpdateManyMutationInput = {
+  export type Page2Operating_results_and_dividendsUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Type_assets_investedUncheckedUpdateManyInput = {
+  export type Page2Operating_results_and_dividendsUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type Top_five_investment_assetsCreateInput = {
+  export type Page3topfiveCompareportCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    top_five_holding: InputJsonValue
   }
 
-  export type Top_five_investment_assetsUncheckedCreateInput = {
+  export type Page3topfiveCompareportUncheckedCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    top_five_holding: InputJsonValue
   }
 
-  export type Top_five_investment_assetsUpdateInput = {
+  export type Page3topfiveCompareportUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    top_five_holding?: InputJsonValue | InputJsonValue
   }
 
-  export type Top_five_investment_assetsUncheckedUpdateInput = {
+  export type Page3topfiveCompareportUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    top_five_holding?: InputJsonValue | InputJsonValue
   }
 
-  export type Top_five_investment_assetsCreateManyInput = {
+  export type Page3topfiveCompareportCreateManyInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    top_five_holding: InputJsonValue
   }
 
-  export type Top_five_investment_assetsUpdateManyMutationInput = {
+  export type Page3topfiveCompareportUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    top_five_holding?: InputJsonValue | InputJsonValue
   }
 
-  export type Top_five_investment_assetsUncheckedUpdateManyInput = {
+  export type Page3topfiveCompareportUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    top_five_holding?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsCreateInput = {
+  export type Page3typeCompareportCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    type_data: InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsUncheckedCreateInput = {
+  export type Page3typeCompareportUncheckedCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    type_data: InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsUpdateInput = {
+  export type Page3typeCompareportUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    type_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsUncheckedUpdateInput = {
+  export type Page3typeCompareportUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    type_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsCreateManyInput = {
+  export type Page3typeCompareportCreateManyInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    type_data: InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsUpdateManyMutationInput = {
+  export type Page3typeCompareportUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    type_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_by_mutual_fundsUncheckedUpdateManyInput = {
+  export type Page3typeCompareportUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    type_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersCreateInput = {
+  export type Page3Investment_proportionCompareportCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    Investment_proportion_data: InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersUncheckedCreateInput = {
+  export type Page3Investment_proportionCompareportUncheckedCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    Investment_proportion_data: InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersUpdateInput = {
+  export type Page3Investment_proportionCompareportUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    Investment_proportion_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersUncheckedUpdateInput = {
+  export type Page3Investment_proportionCompareportUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    Investment_proportion_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersCreateManyInput = {
+  export type Page3Investment_proportionCompareportCreateManyInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    Investment_proportion_data: InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersUpdateManyMutationInput = {
+  export type Page3Investment_proportionCompareportUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    Investment_proportion_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Fees_charged_to_unitholdersUncheckedUpdateManyInput = {
+  export type Page3Investment_proportionCompareportUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    Investment_proportion_data?: InputJsonValue | InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersCreateInput = {
+  export type Page4FeeCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    datafromsheet: InputJsonValue
+    datafromReal: InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersUncheckedCreateInput = {
+  export type Page4FeeUncheckedCreateInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    datafromsheet: InputJsonValue
+    datafromReal: InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersUpdateInput = {
+  export type Page4FeeUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    datafromsheet?: InputJsonValue | InputJsonValue
+    datafromReal?: InputJsonValue | InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersUncheckedUpdateInput = {
+  export type Page4FeeUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    datafromsheet?: InputJsonValue | InputJsonValue
+    datafromReal?: InputJsonValue | InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersCreateManyInput = {
+  export type Page4FeeCreateManyInput = {
     id?: string
     proj_id: string
-    data: InputJsonValue
+    proj_abbr_name: string
+    datafromsheet: InputJsonValue
+    datafromReal: InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersUpdateManyMutationInput = {
+  export type Page4FeeUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    datafromsheet?: InputJsonValue | InputJsonValue
+    datafromReal?: InputJsonValue | InputJsonValue
   }
 
-  export type Investment_allocation_in_the_top_five_issuersUncheckedUpdateManyInput = {
+  export type Page4FeeUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingCreateInput = {
-    id?: string
-    proj_id: string
-    data: InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingUncheckedCreateInput = {
-    id?: string
-    proj_id: string
-    data: InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingUncheckedUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingCreateManyInput = {
-    id?: string
-    proj_id: string
-    data: InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingUpdateManyMutationInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_allocation_according_to_credit_ratingUncheckedUpdateManyInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_In_CountryCreateInput = {
-    id?: string
-    proj_id: string
-    Countrydata: InputJsonValue
-  }
-
-  export type Investment_In_CountryUncheckedCreateInput = {
-    id?: string
-    proj_id: string
-    Countrydata: InputJsonValue
-  }
-
-  export type Investment_In_CountryUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    Countrydata?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_In_CountryUncheckedUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    Countrydata?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_In_CountryCreateManyInput = {
-    id?: string
-    proj_id: string
-    Countrydata: InputJsonValue
-  }
-
-  export type Investment_In_CountryUpdateManyMutationInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    Countrydata?: InputJsonValue | InputJsonValue
-  }
-
-  export type Investment_In_CountryUncheckedUpdateManyInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    Countrydata?: InputJsonValue | InputJsonValue
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    datafromsheet?: InputJsonValue | InputJsonValue
+    datafromReal?: InputJsonValue | InputJsonValue
   }
 
   export type AllProductInfoCreateInput = {
@@ -15756,103 +12494,97 @@ export namespace Prisma {
     risk_spectrum?: SortOrder
   }
 
-  export type FavoriteListRelationFilter = {
-    every?: FavoriteWhereInput
-    some?: FavoriteWhereInput
-    none?: FavoriteWhereInput
-  }
-
-  export type FavoriteOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type UserCountOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    username?: SortOrder
-  }
-
-  export type UserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    username?: SortOrder
-  }
-
-  export type UserMinOrderByAggregateInput = {
-    id?: SortOrder
-    email?: SortOrder
-    username?: SortOrder
-  }
-
-  export type UserRelationFilter = {
-    is?: UserWhereInput
-    isNot?: UserWhereInput
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
   }
 
   export type FavoriteCountOrderByAggregateInput = {
     id?: SortOrder
-    proj_id?: SortOrder
-    favID?: SortOrder
+    username?: SortOrder
+    proj_abbr_name_list?: SortOrder
   }
 
   export type FavoriteMaxOrderByAggregateInput = {
     id?: SortOrder
-    proj_id?: SortOrder
-    favID?: SortOrder
+    username?: SortOrder
   }
 
   export type FavoriteMinOrderByAggregateInput = {
     id?: SortOrder
+    username?: SortOrder
+  }
+
+  export type Page1compareinfomationCountOrderByAggregateInput = {
+    id?: SortOrder
+    proj_abbr_name?: SortOrder
+    fundType?: SortOrder
+    risk_spectrum?: SortOrder
+    Feeder_Fund?: SortOrder
+    Currency_policy?: SortOrder
+    Dividend_payment_policy?: SortOrder
+    Sales_fees?: SortOrder
+    Buyback_fee?: SortOrder
+    Mutual_fund_expenses?: SortOrder
+    Minimum_initial_investment?: SortOrder
+    Minimum_next_investment?: SortOrder
+    Investment_registration_date?: SortOrder
+    Net_asset_value?: SortOrder
+  }
+
+  export type Page1compareinfomationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    proj_abbr_name?: SortOrder
+    fundType?: SortOrder
+    risk_spectrum?: SortOrder
+    Feeder_Fund?: SortOrder
+    Currency_policy?: SortOrder
+    Dividend_payment_policy?: SortOrder
+    Sales_fees?: SortOrder
+    Buyback_fee?: SortOrder
+    Mutual_fund_expenses?: SortOrder
+    Minimum_initial_investment?: SortOrder
+    Minimum_next_investment?: SortOrder
+    Investment_registration_date?: SortOrder
+    Net_asset_value?: SortOrder
+  }
+
+  export type Page1compareinfomationMinOrderByAggregateInput = {
+    id?: SortOrder
+    proj_abbr_name?: SortOrder
+    fundType?: SortOrder
+    risk_spectrum?: SortOrder
+    Feeder_Fund?: SortOrder
+    Currency_policy?: SortOrder
+    Dividend_payment_policy?: SortOrder
+    Sales_fees?: SortOrder
+    Buyback_fee?: SortOrder
+    Mutual_fund_expenses?: SortOrder
+    Minimum_initial_investment?: SortOrder
+    Minimum_next_investment?: SortOrder
+    Investment_registration_date?: SortOrder
+    Net_asset_value?: SortOrder
+  }
+
+  export type Page2Operating_results_and_dividendsCountOrderByAggregateInput = {
+    id?: SortOrder
     proj_id?: SortOrder
-    favID?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type CompareinfomationCountOrderByAggregateInput = {
+  export type Page2Operating_results_and_dividendsMaxOrderByAggregateInput = {
     id?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type CompareinfomationMaxOrderByAggregateInput = {
+  export type Page2Operating_results_and_dividendsMinOrderByAggregateInput = {
     id?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
-  }
-
-  export type CompareinfomationMinOrderByAggregateInput = {
-    id?: SortOrder
-    fundType?: SortOrder
-    risk_spectrum?: SortOrder
-    Feeder_Fund?: SortOrder
-    Currency_policy?: SortOrder
-    Dividend_payment_policy?: SortOrder
-    Sales_fees?: SortOrder
-    Buyback_fee?: SortOrder
-    Mutual_fund_expenses?: SortOrder
-    Minimum_initial_investment?: SortOrder
-    Minimum_next_investment?: SortOrder
-    Investment_registration_date?: SortOrder
-    Net_asset_value?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
   export type JsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -15866,20 +12598,23 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
   }
 
-  export type Type_assets_investedCountOrderByAggregateInput = {
+  export type Page3topfiveCompareportCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    top_five_holding?: SortOrder
   }
 
-  export type Type_assets_investedMaxOrderByAggregateInput = {
+  export type Page3topfiveCompareportMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Type_assets_investedMinOrderByAggregateInput = {
+  export type Page3topfiveCompareportMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
   export type JsonWithAggregatesFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -15896,100 +12631,62 @@ export namespace Prisma {
     _max?: NestedJsonFilter<$PrismaModel>
   }
 
-  export type Top_five_investment_assetsCountOrderByAggregateInput = {
+  export type Page3typeCompareportCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    type_data?: SortOrder
   }
 
-  export type Top_five_investment_assetsMaxOrderByAggregateInput = {
+  export type Page3typeCompareportMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Top_five_investment_assetsMinOrderByAggregateInput = {
+  export type Page3typeCompareportMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Fees_charged_by_mutual_fundsCountOrderByAggregateInput = {
+  export type Page3Investment_proportionCompareportCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    Investment_proportion_data?: SortOrder
   }
 
-  export type Fees_charged_by_mutual_fundsMaxOrderByAggregateInput = {
+  export type Page3Investment_proportionCompareportMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Fees_charged_by_mutual_fundsMinOrderByAggregateInput = {
+  export type Page3Investment_proportionCompareportMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Fees_charged_to_unitholdersCountOrderByAggregateInput = {
+  export type Page4FeeCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    data?: SortOrder
+    proj_abbr_name?: SortOrder
+    datafromsheet?: SortOrder
+    datafromReal?: SortOrder
   }
 
-  export type Fees_charged_to_unitholdersMaxOrderByAggregateInput = {
+  export type Page4FeeMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
-  export type Fees_charged_to_unitholdersMinOrderByAggregateInput = {
+  export type Page4FeeMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-  }
-
-  export type Investment_allocation_in_the_top_five_issuersCountOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    data?: SortOrder
-  }
-
-  export type Investment_allocation_in_the_top_five_issuersMaxOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-  }
-
-  export type Investment_allocation_in_the_top_five_issuersMinOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-  }
-
-  export type Investment_allocation_according_to_credit_ratingCountOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    data?: SortOrder
-  }
-
-  export type Investment_allocation_according_to_credit_ratingMaxOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-  }
-
-  export type Investment_allocation_according_to_credit_ratingMinOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-  }
-
-  export type Investment_In_CountryCountOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    Countrydata?: SortOrder
-  }
-
-  export type Investment_In_CountryMaxOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-  }
-
-  export type Investment_In_CountryMinOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
   }
 
   export type AllProductInfoCountOrderByAggregateInput = {
@@ -16020,60 +12717,13 @@ export namespace Prisma {
     unset?: boolean
   }
 
-  export type FavoriteCreateNestedManyWithoutFavInput = {
-    create?: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput> | FavoriteCreateWithoutFavInput[] | FavoriteUncheckedCreateWithoutFavInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutFavInput | FavoriteCreateOrConnectWithoutFavInput[]
-    createMany?: FavoriteCreateManyFavInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
+  export type FavoriteCreateproj_abbr_name_listInput = {
+    set: string[]
   }
 
-  export type FavoriteUncheckedCreateNestedManyWithoutFavInput = {
-    create?: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput> | FavoriteCreateWithoutFavInput[] | FavoriteUncheckedCreateWithoutFavInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutFavInput | FavoriteCreateOrConnectWithoutFavInput[]
-    createMany?: FavoriteCreateManyFavInputEnvelope
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-  }
-
-  export type FavoriteUpdateManyWithoutFavNestedInput = {
-    create?: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput> | FavoriteCreateWithoutFavInput[] | FavoriteUncheckedCreateWithoutFavInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutFavInput | FavoriteCreateOrConnectWithoutFavInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutFavInput | FavoriteUpsertWithWhereUniqueWithoutFavInput[]
-    createMany?: FavoriteCreateManyFavInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutFavInput | FavoriteUpdateWithWhereUniqueWithoutFavInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutFavInput | FavoriteUpdateManyWithWhereWithoutFavInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-  }
-
-  export type FavoriteUncheckedUpdateManyWithoutFavNestedInput = {
-    create?: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput> | FavoriteCreateWithoutFavInput[] | FavoriteUncheckedCreateWithoutFavInput[]
-    connectOrCreate?: FavoriteCreateOrConnectWithoutFavInput | FavoriteCreateOrConnectWithoutFavInput[]
-    upsert?: FavoriteUpsertWithWhereUniqueWithoutFavInput | FavoriteUpsertWithWhereUniqueWithoutFavInput[]
-    createMany?: FavoriteCreateManyFavInputEnvelope
-    set?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    disconnect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    delete?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    connect?: FavoriteWhereUniqueInput | FavoriteWhereUniqueInput[]
-    update?: FavoriteUpdateWithWhereUniqueWithoutFavInput | FavoriteUpdateWithWhereUniqueWithoutFavInput[]
-    updateMany?: FavoriteUpdateManyWithWhereWithoutFavInput | FavoriteUpdateManyWithWhereWithoutFavInput[]
-    deleteMany?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-  }
-
-  export type UserCreateNestedOneWithoutFavoritesInput = {
-    create?: XOR<UserCreateWithoutFavoritesInput, UserUncheckedCreateWithoutFavoritesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFavoritesInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserUpdateOneRequiredWithoutFavoritesNestedInput = {
-    create?: XOR<UserCreateWithoutFavoritesInput, UserUncheckedCreateWithoutFavoritesInput>
-    connectOrCreate?: UserCreateOrConnectWithoutFavoritesInput
-    upsert?: UserUpsertWithoutFavoritesInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFavoritesInput, UserUpdateWithoutFavoritesInput>, UserUncheckedUpdateWithoutFavoritesInput>
+  export type FavoriteUpdateproj_abbr_name_listInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -16174,114 +12824,11 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
   }
 
-  export type FavoriteCreateWithoutFavInput = {
-    id?: string
-    proj_id: string
-  }
-
-  export type FavoriteUncheckedCreateWithoutFavInput = {
-    id?: string
-    proj_id: string
-  }
-
-  export type FavoriteCreateOrConnectWithoutFavInput = {
-    where: FavoriteWhereUniqueInput
-    create: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput>
-  }
-
-  export type FavoriteCreateManyFavInputEnvelope = {
-    data: FavoriteCreateManyFavInput | FavoriteCreateManyFavInput[]
-  }
-
-  export type FavoriteUpsertWithWhereUniqueWithoutFavInput = {
-    where: FavoriteWhereUniqueInput
-    update: XOR<FavoriteUpdateWithoutFavInput, FavoriteUncheckedUpdateWithoutFavInput>
-    create: XOR<FavoriteCreateWithoutFavInput, FavoriteUncheckedCreateWithoutFavInput>
-  }
-
-  export type FavoriteUpdateWithWhereUniqueWithoutFavInput = {
-    where: FavoriteWhereUniqueInput
-    data: XOR<FavoriteUpdateWithoutFavInput, FavoriteUncheckedUpdateWithoutFavInput>
-  }
-
-  export type FavoriteUpdateManyWithWhereWithoutFavInput = {
-    where: FavoriteScalarWhereInput
-    data: XOR<FavoriteUpdateManyMutationInput, FavoriteUncheckedUpdateManyWithoutFavInput>
-  }
-
-  export type FavoriteScalarWhereInput = {
-    AND?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-    OR?: FavoriteScalarWhereInput[]
-    NOT?: FavoriteScalarWhereInput | FavoriteScalarWhereInput[]
-    id?: StringFilter<"Favorite"> | string
-    proj_id?: StringFilter<"Favorite"> | string
-    favID?: StringFilter<"Favorite"> | string
-  }
-
-  export type UserCreateWithoutFavoritesInput = {
-    id?: string
-    email: string
-    username: string
-  }
-
-  export type UserUncheckedCreateWithoutFavoritesInput = {
-    id?: string
-    email: string
-    username: string
-  }
-
-  export type UserCreateOrConnectWithoutFavoritesInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutFavoritesInput, UserUncheckedCreateWithoutFavoritesInput>
-  }
-
-  export type UserUpsertWithoutFavoritesInput = {
-    update: XOR<UserUpdateWithoutFavoritesInput, UserUncheckedUpdateWithoutFavoritesInput>
-    create: XOR<UserCreateWithoutFavoritesInput, UserUncheckedCreateWithoutFavoritesInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutFavoritesInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutFavoritesInput, UserUncheckedUpdateWithoutFavoritesInput>
-  }
-
-  export type UserUpdateWithoutFavoritesInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type UserUncheckedUpdateWithoutFavoritesInput = {
-    email?: StringFieldUpdateOperationsInput | string
-    username?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FavoriteCreateManyFavInput = {
-    id?: string
-    proj_id: string
-  }
-
-  export type FavoriteUpdateWithoutFavInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FavoriteUncheckedUpdateWithoutFavInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FavoriteUncheckedUpdateManyWithoutFavInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-  }
-
 
 
   /**
    * Aliases for legacy arg types
    */
-    /**
-     * @deprecated Use UserCountOutputTypeDefaultArgs instead
-     */
-    export type UserCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = UserCountOutputTypeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use FundDefaultArgs instead
      */
@@ -16291,45 +12838,33 @@ export namespace Prisma {
      */
     export type ProductArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ProductDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use UserDefaultArgs instead
-     */
-    export type UserArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = UserDefaultArgs<ExtArgs>
-    /**
      * @deprecated Use FavoriteDefaultArgs instead
      */
     export type FavoriteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FavoriteDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use CompareinfomationDefaultArgs instead
+     * @deprecated Use Page1compareinfomationDefaultArgs instead
      */
-    export type CompareinfomationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = CompareinfomationDefaultArgs<ExtArgs>
+    export type Page1compareinfomationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page1compareinfomationDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Type_assets_investedDefaultArgs instead
+     * @deprecated Use Page2Operating_results_and_dividendsDefaultArgs instead
      */
-    export type Type_assets_investedArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Type_assets_investedDefaultArgs<ExtArgs>
+    export type Page2Operating_results_and_dividendsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page2Operating_results_and_dividendsDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Top_five_investment_assetsDefaultArgs instead
+     * @deprecated Use Page3topfiveCompareportDefaultArgs instead
      */
-    export type Top_five_investment_assetsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Top_five_investment_assetsDefaultArgs<ExtArgs>
+    export type Page3topfiveCompareportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page3topfiveCompareportDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Fees_charged_by_mutual_fundsDefaultArgs instead
+     * @deprecated Use Page3typeCompareportDefaultArgs instead
      */
-    export type Fees_charged_by_mutual_fundsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Fees_charged_by_mutual_fundsDefaultArgs<ExtArgs>
+    export type Page3typeCompareportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page3typeCompareportDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Fees_charged_to_unitholdersDefaultArgs instead
+     * @deprecated Use Page3Investment_proportionCompareportDefaultArgs instead
      */
-    export type Fees_charged_to_unitholdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Fees_charged_to_unitholdersDefaultArgs<ExtArgs>
+    export type Page3Investment_proportionCompareportArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page3Investment_proportionCompareportDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use Investment_allocation_in_the_top_five_issuersDefaultArgs instead
+     * @deprecated Use Page4FeeDefaultArgs instead
      */
-    export type Investment_allocation_in_the_top_five_issuersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Investment_allocation_in_the_top_five_issuersDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use Investment_allocation_according_to_credit_ratingDefaultArgs instead
-     */
-    export type Investment_allocation_according_to_credit_ratingArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Investment_allocation_according_to_credit_ratingDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use Investment_In_CountryDefaultArgs instead
-     */
-    export type Investment_In_CountryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Investment_In_CountryDefaultArgs<ExtArgs>
+    export type Page4FeeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = Page4FeeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use AllProductInfoDefaultArgs instead
      */
