@@ -124,6 +124,7 @@ app.get('/filter/product', async (req, res) => {
 
   res.json(products)
 })
+
 app.put('/product/put/:proj_abbr_name', async (req, res) => {
   try {
     const { proj_abbr_name } = req.params;
@@ -746,7 +747,7 @@ app.put('/detail/put/:proj_abbr_name', async (req, res) => {
   try {
     const productId = req.params.proj_abbr_name;
     const {
-      ,
+      proj_id,
       proj_abbr_name,
       proj_name_en,
       proj_name_th,
