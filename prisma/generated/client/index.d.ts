@@ -14,11 +14,6 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Fund
- * 
- */
-export type Fund = $Result.DefaultSelection<Prisma.$FundPayload>
-/**
  * Model Product
  * 
  */
@@ -63,6 +58,16 @@ export type Page4Fee = $Result.DefaultSelection<Prisma.$Page4FeePayload>
  * 
  */
 export type AllProductInfo = $Result.DefaultSelection<Prisma.$AllProductInfoPayload>
+/**
+ * Model SearchTest
+ * 
+ */
+export type SearchTest = $Result.DefaultSelection<Prisma.$SearchTestPayload>
+/**
+ * Model ProductDetail
+ * 
+ */
+export type ProductDetail = $Result.DefaultSelection<Prisma.$ProductDetailPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -71,8 +76,8 @@ export type AllProductInfo = $Result.DefaultSelection<Prisma.$AllProductInfoPayl
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Funds
- * const funds = await prisma.fund.findMany()
+ * // Fetch zero or more Products
+ * const products = await prisma.product.findMany()
  * ```
  *
  * 
@@ -92,8 +97,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Funds
-   * const funds = await prisma.fund.findMany()
+   * // Fetch zero or more Products
+   * const products = await prisma.product.findMany()
    * ```
    *
    * 
@@ -155,16 +160,6 @@ export class PrismaClient<
   $extends: $Extensions.ExtendsHook<'extends', Prisma.TypeMapCb, ExtArgs>
 
       /**
-   * `prisma.fund`: Exposes CRUD operations for the **Fund** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Funds
-    * const funds = await prisma.fund.findMany()
-    * ```
-    */
-  get fund(): Prisma.FundDelegate<ExtArgs>;
-
-  /**
    * `prisma.product`: Exposes CRUD operations for the **Product** model.
     * Example usage:
     * ```ts
@@ -253,6 +248,26 @@ export class PrismaClient<
     * ```
     */
   get allProductInfo(): Prisma.AllProductInfoDelegate<ExtArgs>;
+
+  /**
+   * `prisma.searchTest`: Exposes CRUD operations for the **SearchTest** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more SearchTests
+    * const searchTests = await prisma.searchTest.findMany()
+    * ```
+    */
+  get searchTest(): Prisma.SearchTestDelegate<ExtArgs>;
+
+  /**
+   * `prisma.productDetail`: Exposes CRUD operations for the **ProductDetail** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProductDetails
+    * const productDetails = await prisma.productDetail.findMany()
+    * ```
+    */
+  get productDetail(): Prisma.ProductDetailDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -723,7 +738,6 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Fund: 'Fund',
     Product: 'Product',
     Favorite: 'Favorite',
     Page1compareinfomation: 'Page1compareinfomation',
@@ -732,7 +746,9 @@ export namespace Prisma {
     Page3typeCompareport: 'Page3typeCompareport',
     Page3Investment_proportionCompareport: 'Page3Investment_proportionCompareport',
     Page4Fee: 'Page4Fee',
-    AllProductInfo: 'AllProductInfo'
+    AllProductInfo: 'AllProductInfo',
+    SearchTest: 'SearchTest',
+    ProductDetail: 'ProductDetail'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -749,84 +765,10 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'fund' | 'product' | 'favorite' | 'page1compareinfomation' | 'page2Operating_results_and_dividends' | 'page3topfiveCompareport' | 'page3typeCompareport' | 'page3Investment_proportionCompareport' | 'page4Fee' | 'allProductInfo'
+      modelProps: 'product' | 'favorite' | 'page1compareinfomation' | 'page2Operating_results_and_dividends' | 'page3topfiveCompareport' | 'page3typeCompareport' | 'page3Investment_proportionCompareport' | 'page4Fee' | 'allProductInfo' | 'searchTest' | 'productDetail'
       txIsolationLevel: never
     },
     model: {
-      Fund: {
-        payload: Prisma.$FundPayload<ExtArgs>
-        fields: Prisma.FundFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.FundFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.FundFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          findFirst: {
-            args: Prisma.FundFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.FundFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          findMany: {
-            args: Prisma.FundFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>[]
-          }
-          create: {
-            args: Prisma.FundCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          createMany: {
-            args: Prisma.FundCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.FundDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          update: {
-            args: Prisma.FundUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          deleteMany: {
-            args: Prisma.FundDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.FundUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.FundUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$FundPayload>
-          }
-          aggregate: {
-            args: Prisma.FundAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateFund>
-          }
-          groupBy: {
-            args: Prisma.FundGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<FundGroupByOutputType>[]
-          }
-          findRaw: {
-            args: Prisma.FundFindRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          aggregateRaw: {
-            args: Prisma.FundAggregateRawArgs<ExtArgs>,
-            result: Prisma.JsonObject
-          }
-          count: {
-            args: Prisma.FundCountArgs<ExtArgs>,
-            result: $Utils.Optional<FundCountAggregateOutputType> | number
-          }
-        }
-      }
       Product: {
         payload: Prisma.$ProductPayload<ExtArgs>
         fields: Prisma.ProductFieldRefs
@@ -1493,6 +1435,154 @@ export namespace Prisma {
           }
         }
       }
+      SearchTest: {
+        payload: Prisma.$SearchTestPayload<ExtArgs>
+        fields: Prisma.SearchTestFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.SearchTestFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.SearchTestFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          findFirst: {
+            args: Prisma.SearchTestFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.SearchTestFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          findMany: {
+            args: Prisma.SearchTestFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>[]
+          }
+          create: {
+            args: Prisma.SearchTestCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          createMany: {
+            args: Prisma.SearchTestCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.SearchTestDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          update: {
+            args: Prisma.SearchTestUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          deleteMany: {
+            args: Prisma.SearchTestDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.SearchTestUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.SearchTestUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$SearchTestPayload>
+          }
+          aggregate: {
+            args: Prisma.SearchTestAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateSearchTest>
+          }
+          groupBy: {
+            args: Prisma.SearchTestGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<SearchTestGroupByOutputType>[]
+          }
+          findRaw: {
+            args: Prisma.SearchTestFindRawArgs<ExtArgs>,
+            result: Prisma.JsonObject
+          }
+          aggregateRaw: {
+            args: Prisma.SearchTestAggregateRawArgs<ExtArgs>,
+            result: Prisma.JsonObject
+          }
+          count: {
+            args: Prisma.SearchTestCountArgs<ExtArgs>,
+            result: $Utils.Optional<SearchTestCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProductDetail: {
+        payload: Prisma.$ProductDetailPayload<ExtArgs>
+        fields: Prisma.ProductDetailFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProductDetailFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProductDetailFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          findFirst: {
+            args: Prisma.ProductDetailFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProductDetailFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          findMany: {
+            args: Prisma.ProductDetailFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>[]
+          }
+          create: {
+            args: Prisma.ProductDetailCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          createMany: {
+            args: Prisma.ProductDetailCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.ProductDetailDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          update: {
+            args: Prisma.ProductDetailUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProductDetailDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProductDetailUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.ProductDetailUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ProductDetailPayload>
+          }
+          aggregate: {
+            args: Prisma.ProductDetailAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateProductDetail>
+          }
+          groupBy: {
+            args: Prisma.ProductDetailGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<ProductDetailGroupByOutputType>[]
+          }
+          findRaw: {
+            args: Prisma.ProductDetailFindRawArgs<ExtArgs>,
+            result: Prisma.JsonObject
+          }
+          aggregateRaw: {
+            args: Prisma.ProductDetailAggregateRawArgs<ExtArgs>,
+            result: Prisma.JsonObject
+          }
+          count: {
+            args: Prisma.ProductDetailCountArgs<ExtArgs>,
+            result: $Utils.Optional<ProductDetailCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1640,1020 +1730,6 @@ export namespace Prisma {
    */
 
   /**
-   * Model Fund
-   */
-
-  export type AggregateFund = {
-    _count: FundCountAggregateOutputType | null
-    _min: FundMinAggregateOutputType | null
-    _max: FundMaxAggregateOutputType | null
-  }
-
-  export type FundMinAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-    regis_id: string | null
-    regis_date: string | null
-    cancel_date: string | null
-    proj_name_th: string | null
-    proj_name_en: string | null
-    proj_abbr_name: string | null
-    fund_status: string | null
-    unique_id: string | null
-    permit_us_investment: string | null
-    invest_country_flag: string | null
-    last_upd_date: string | null
-  }
-
-  export type FundMaxAggregateOutputType = {
-    id: string | null
-    proj_id: string | null
-    regis_id: string | null
-    regis_date: string | null
-    cancel_date: string | null
-    proj_name_th: string | null
-    proj_name_en: string | null
-    proj_abbr_name: string | null
-    fund_status: string | null
-    unique_id: string | null
-    permit_us_investment: string | null
-    invest_country_flag: string | null
-    last_upd_date: string | null
-  }
-
-  export type FundCountAggregateOutputType = {
-    id: number
-    proj_id: number
-    regis_id: number
-    regis_date: number
-    cancel_date: number
-    proj_name_th: number
-    proj_name_en: number
-    proj_abbr_name: number
-    fund_status: number
-    unique_id: number
-    permit_us_investment: number
-    invest_country_flag: number
-    last_upd_date: number
-    _all: number
-  }
-
-
-  export type FundMinAggregateInputType = {
-    id?: true
-    proj_id?: true
-    regis_id?: true
-    regis_date?: true
-    cancel_date?: true
-    proj_name_th?: true
-    proj_name_en?: true
-    proj_abbr_name?: true
-    fund_status?: true
-    unique_id?: true
-    permit_us_investment?: true
-    invest_country_flag?: true
-    last_upd_date?: true
-  }
-
-  export type FundMaxAggregateInputType = {
-    id?: true
-    proj_id?: true
-    regis_id?: true
-    regis_date?: true
-    cancel_date?: true
-    proj_name_th?: true
-    proj_name_en?: true
-    proj_abbr_name?: true
-    fund_status?: true
-    unique_id?: true
-    permit_us_investment?: true
-    invest_country_flag?: true
-    last_upd_date?: true
-  }
-
-  export type FundCountAggregateInputType = {
-    id?: true
-    proj_id?: true
-    regis_id?: true
-    regis_date?: true
-    cancel_date?: true
-    proj_name_th?: true
-    proj_name_en?: true
-    proj_abbr_name?: true
-    fund_status?: true
-    unique_id?: true
-    permit_us_investment?: true
-    invest_country_flag?: true
-    last_upd_date?: true
-    _all?: true
-  }
-
-  export type FundAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Fund to aggregate.
-     */
-    where?: FundWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Funds to fetch.
-     */
-    orderBy?: FundOrderByWithRelationInput | FundOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: FundWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Funds from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Funds.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned Funds
-    **/
-    _count?: true | FundCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: FundMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: FundMaxAggregateInputType
-  }
-
-  export type GetFundAggregateType<T extends FundAggregateArgs> = {
-        [P in keyof T & keyof AggregateFund]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateFund[P]>
-      : GetScalarType<T[P], AggregateFund[P]>
-  }
-
-
-
-
-  export type FundGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FundWhereInput
-    orderBy?: FundOrderByWithAggregationInput | FundOrderByWithAggregationInput[]
-    by: FundScalarFieldEnum[] | FundScalarFieldEnum
-    having?: FundScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: FundCountAggregateInputType | true
-    _min?: FundMinAggregateInputType
-    _max?: FundMaxAggregateInputType
-  }
-
-  export type FundGroupByOutputType = {
-    id: string
-    proj_id: string
-    regis_id: string
-    regis_date: string
-    cancel_date: string
-    proj_name_th: string
-    proj_name_en: string
-    proj_abbr_name: string
-    fund_status: string
-    unique_id: string
-    permit_us_investment: string | null
-    invest_country_flag: string
-    last_upd_date: string
-    _count: FundCountAggregateOutputType | null
-    _min: FundMinAggregateOutputType | null
-    _max: FundMaxAggregateOutputType | null
-  }
-
-  type GetFundGroupByPayload<T extends FundGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<FundGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof FundGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], FundGroupByOutputType[P]>
-            : GetScalarType<T[P], FundGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type FundSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    proj_id?: boolean
-    regis_id?: boolean
-    regis_date?: boolean
-    cancel_date?: boolean
-    proj_name_th?: boolean
-    proj_name_en?: boolean
-    proj_abbr_name?: boolean
-    fund_status?: boolean
-    unique_id?: boolean
-    permit_us_investment?: boolean
-    invest_country_flag?: boolean
-    last_upd_date?: boolean
-  }, ExtArgs["result"]["fund"]>
-
-  export type FundSelectScalar = {
-    id?: boolean
-    proj_id?: boolean
-    regis_id?: boolean
-    regis_date?: boolean
-    cancel_date?: boolean
-    proj_name_th?: boolean
-    proj_name_en?: boolean
-    proj_abbr_name?: boolean
-    fund_status?: boolean
-    unique_id?: boolean
-    permit_us_investment?: boolean
-    invest_country_flag?: boolean
-    last_upd_date?: boolean
-  }
-
-
-  export type $FundPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Fund"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      proj_id: string
-      regis_id: string
-      regis_date: string
-      cancel_date: string
-      proj_name_th: string
-      proj_name_en: string
-      proj_abbr_name: string
-      fund_status: string
-      unique_id: string
-      permit_us_investment: string | null
-      invest_country_flag: string
-      last_upd_date: string
-    }, ExtArgs["result"]["fund"]>
-    composites: {}
-  }
-
-
-  type FundGetPayload<S extends boolean | null | undefined | FundDefaultArgs> = $Result.GetResult<Prisma.$FundPayload, S>
-
-  type FundCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<FundFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: FundCountAggregateInputType | true
-    }
-
-  export interface FundDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Fund'], meta: { name: 'Fund' } }
-    /**
-     * Find zero or one Fund that matches the filter.
-     * @param {FundFindUniqueArgs} args - Arguments to find a Fund
-     * @example
-     * // Get one Fund
-     * const fund = await prisma.fund.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends FundFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, FundFindUniqueArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one Fund that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {FundFindUniqueOrThrowArgs} args - Arguments to find a Fund
-     * @example
-     * // Get one Fund
-     * const fund = await prisma.fund.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends FundFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first Fund that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundFindFirstArgs} args - Arguments to find a Fund
-     * @example
-     * // Get one Fund
-     * const fund = await prisma.fund.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends FundFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundFindFirstArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first Fund that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundFindFirstOrThrowArgs} args - Arguments to find a Fund
-     * @example
-     * // Get one Fund
-     * const fund = await prisma.fund.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends FundFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Funds that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Funds
-     * const funds = await prisma.fund.findMany()
-     * 
-     * // Get first 10 Funds
-     * const funds = await prisma.fund.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const fundWithIdOnly = await prisma.fund.findMany({ select: { id: true } })
-     * 
-    **/
-    findMany<T extends FundFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a Fund.
-     * @param {FundCreateArgs} args - Arguments to create a Fund.
-     * @example
-     * // Create one Fund
-     * const Fund = await prisma.fund.create({
-     *   data: {
-     *     // ... data to create a Fund
-     *   }
-     * })
-     * 
-    **/
-    create<T extends FundCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, FundCreateArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Funds.
-     *     @param {FundCreateManyArgs} args - Arguments to create many Funds.
-     *     @example
-     *     // Create many Funds
-     *     const fund = await prisma.fund.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends FundCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a Fund.
-     * @param {FundDeleteArgs} args - Arguments to delete one Fund.
-     * @example
-     * // Delete one Fund
-     * const Fund = await prisma.fund.delete({
-     *   where: {
-     *     // ... filter to delete one Fund
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends FundDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, FundDeleteArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one Fund.
-     * @param {FundUpdateArgs} args - Arguments to update one Fund.
-     * @example
-     * // Update one Fund
-     * const fund = await prisma.fund.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends FundUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, FundUpdateArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more Funds.
-     * @param {FundDeleteManyArgs} args - Arguments to filter Funds to delete.
-     * @example
-     * // Delete a few Funds
-     * const { count } = await prisma.fund.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends FundDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, FundDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Funds.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Funds
-     * const fund = await prisma.fund.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends FundUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, FundUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one Fund.
-     * @param {FundUpsertArgs} args - Arguments to update or create a Fund.
-     * @example
-     * // Update or create a Fund
-     * const fund = await prisma.fund.upsert({
-     *   create: {
-     *     // ... data to create a Fund
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the Fund we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends FundUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, FundUpsertArgs<ExtArgs>>
-    ): Prisma__FundClient<$Result.GetResult<Prisma.$FundPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Find zero or more Funds that matches the filter.
-     * @param {FundFindRawArgs} args - Select which filters you would like to apply.
-     * @example
-     * const fund = await prisma.fund.findRaw({
-     *   filter: { age: { $gt: 25 } } 
-     * })
-    **/
-    findRaw(
-      args?: FundFindRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Perform aggregation operations on a Fund.
-     * @param {FundAggregateRawArgs} args - Select which aggregations you would like to apply.
-     * @example
-     * const fund = await prisma.fund.aggregateRaw({
-     *   pipeline: [
-     *     { $match: { status: "registered" } },
-     *     { $group: { _id: "$country", total: { $sum: 1 } } }
-     *   ]
-     * })
-    **/
-    aggregateRaw(
-      args?: FundAggregateRawArgs
-    ): Prisma.PrismaPromise<JsonObject>
-
-    /**
-     * Count the number of Funds.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundCountArgs} args - Arguments to filter Funds to count.
-     * @example
-     * // Count the number of Funds
-     * const count = await prisma.fund.count({
-     *   where: {
-     *     // ... the filter for the Funds we want to count
-     *   }
-     * })
-    **/
-    count<T extends FundCountArgs>(
-      args?: Subset<T, FundCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], FundCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a Fund.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends FundAggregateArgs>(args: Subset<T, FundAggregateArgs>): Prisma.PrismaPromise<GetFundAggregateType<T>>
-
-    /**
-     * Group by Fund.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {FundGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends FundGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: FundGroupByArgs['orderBy'] }
-        : { orderBy?: FundGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, FundGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFundGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the Fund model
-   */
-  readonly fields: FundFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for Fund.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__FundClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the Fund model
-   */ 
-  interface FundFieldRefs {
-    readonly id: FieldRef<"Fund", 'String'>
-    readonly proj_id: FieldRef<"Fund", 'String'>
-    readonly regis_id: FieldRef<"Fund", 'String'>
-    readonly regis_date: FieldRef<"Fund", 'String'>
-    readonly cancel_date: FieldRef<"Fund", 'String'>
-    readonly proj_name_th: FieldRef<"Fund", 'String'>
-    readonly proj_name_en: FieldRef<"Fund", 'String'>
-    readonly proj_abbr_name: FieldRef<"Fund", 'String'>
-    readonly fund_status: FieldRef<"Fund", 'String'>
-    readonly unique_id: FieldRef<"Fund", 'String'>
-    readonly permit_us_investment: FieldRef<"Fund", 'String'>
-    readonly invest_country_flag: FieldRef<"Fund", 'String'>
-    readonly last_upd_date: FieldRef<"Fund", 'String'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * Fund findUnique
-   */
-  export type FundFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter, which Fund to fetch.
-     */
-    where: FundWhereUniqueInput
-  }
-
-
-  /**
-   * Fund findUniqueOrThrow
-   */
-  export type FundFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter, which Fund to fetch.
-     */
-    where: FundWhereUniqueInput
-  }
-
-
-  /**
-   * Fund findFirst
-   */
-  export type FundFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter, which Fund to fetch.
-     */
-    where?: FundWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Funds to fetch.
-     */
-    orderBy?: FundOrderByWithRelationInput | FundOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Funds.
-     */
-    cursor?: FundWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Funds from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Funds.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Funds.
-     */
-    distinct?: FundScalarFieldEnum | FundScalarFieldEnum[]
-  }
-
-
-  /**
-   * Fund findFirstOrThrow
-   */
-  export type FundFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter, which Fund to fetch.
-     */
-    where?: FundWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Funds to fetch.
-     */
-    orderBy?: FundOrderByWithRelationInput | FundOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for Funds.
-     */
-    cursor?: FundWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Funds from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Funds.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of Funds.
-     */
-    distinct?: FundScalarFieldEnum | FundScalarFieldEnum[]
-  }
-
-
-  /**
-   * Fund findMany
-   */
-  export type FundFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter, which Funds to fetch.
-     */
-    where?: FundWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of Funds to fetch.
-     */
-    orderBy?: FundOrderByWithRelationInput | FundOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing Funds.
-     */
-    cursor?: FundWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` Funds from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` Funds.
-     */
-    skip?: number
-    distinct?: FundScalarFieldEnum | FundScalarFieldEnum[]
-  }
-
-
-  /**
-   * Fund create
-   */
-  export type FundCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * The data needed to create a Fund.
-     */
-    data: XOR<FundCreateInput, FundUncheckedCreateInput>
-  }
-
-
-  /**
-   * Fund createMany
-   */
-  export type FundCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Funds.
-     */
-    data: FundCreateManyInput | FundCreateManyInput[]
-  }
-
-
-  /**
-   * Fund update
-   */
-  export type FundUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * The data needed to update a Fund.
-     */
-    data: XOR<FundUpdateInput, FundUncheckedUpdateInput>
-    /**
-     * Choose, which Fund to update.
-     */
-    where: FundWhereUniqueInput
-  }
-
-
-  /**
-   * Fund updateMany
-   */
-  export type FundUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update Funds.
-     */
-    data: XOR<FundUpdateManyMutationInput, FundUncheckedUpdateManyInput>
-    /**
-     * Filter which Funds to update
-     */
-    where?: FundWhereInput
-  }
-
-
-  /**
-   * Fund upsert
-   */
-  export type FundUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * The filter to search for the Fund to update in case it exists.
-     */
-    where: FundWhereUniqueInput
-    /**
-     * In case the Fund found by the `where` argument doesn't exist, create a new Fund with this data.
-     */
-    create: XOR<FundCreateInput, FundUncheckedCreateInput>
-    /**
-     * In case the Fund was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<FundUpdateInput, FundUncheckedUpdateInput>
-  }
-
-
-  /**
-   * Fund delete
-   */
-  export type FundDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-    /**
-     * Filter which Fund to delete.
-     */
-    where: FundWhereUniqueInput
-  }
-
-
-  /**
-   * Fund deleteMany
-   */
-  export type FundDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Funds to delete
-     */
-    where?: FundWhereInput
-  }
-
-
-  /**
-   * Fund findRaw
-   */
-  export type FundFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
-     */
-    filter?: InputJsonValue
-    /**
-     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Fund aggregateRaw
-   */
-  export type FundAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
-     */
-    pipeline?: InputJsonValue[]
-    /**
-     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
-     */
-    options?: InputJsonValue
-  }
-
-
-  /**
-   * Fund without action
-   */
-  export type FundDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Fund
-     */
-    select?: FundSelect<ExtArgs> | null
-  }
-
-
-
-  /**
    * Model Product
    */
 
@@ -2670,6 +1746,9 @@ export namespace Prisma {
     proj_name_en: string | null
     proj_name_th: string | null
     unique_id: string | null
+    risk_spectrum: string | null
+    companyTH: string | null
+    companyEN: string | null
   }
 
   export type ProductMaxAggregateOutputType = {
@@ -2679,6 +1758,9 @@ export namespace Prisma {
     proj_name_en: string | null
     proj_name_th: string | null
     unique_id: string | null
+    risk_spectrum: string | null
+    companyTH: string | null
+    companyEN: string | null
   }
 
   export type ProductCountAggregateOutputType = {
@@ -2688,7 +1770,11 @@ export namespace Prisma {
     proj_name_en: number
     proj_name_th: number
     unique_id: number
-    data: number
+    risk_spectrum: number
+    companyTH: number
+    companyEN: number
+    Allinfo: number
+    feefunds: number
     _all: number
   }
 
@@ -2700,6 +1786,9 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
   }
 
   export type ProductMaxAggregateInputType = {
@@ -2709,6 +1798,9 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
   }
 
   export type ProductCountAggregateInputType = {
@@ -2718,7 +1810,11 @@ export namespace Prisma {
     proj_name_en?: true
     proj_name_th?: true
     unique_id?: true
-    data?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
+    Allinfo?: true
+    feefunds?: true
     _all?: true
   }
 
@@ -2801,7 +1897,11 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    data: JsonValue
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    Allinfo: JsonValue
+    feefunds: string[]
     _count: ProductCountAggregateOutputType | null
     _min: ProductMinAggregateOutputType | null
     _max: ProductMaxAggregateOutputType | null
@@ -2828,7 +1928,11 @@ export namespace Prisma {
     proj_name_en?: boolean
     proj_name_th?: boolean
     unique_id?: boolean
-    data?: boolean
+    risk_spectrum?: boolean
+    companyTH?: boolean
+    companyEN?: boolean
+    Allinfo?: boolean
+    feefunds?: boolean
   }, ExtArgs["result"]["product"]>
 
   export type ProductSelectScalar = {
@@ -2838,7 +1942,11 @@ export namespace Prisma {
     proj_name_en?: boolean
     proj_name_th?: boolean
     unique_id?: boolean
-    data?: boolean
+    risk_spectrum?: boolean
+    companyTH?: boolean
+    companyEN?: boolean
+    Allinfo?: boolean
+    feefunds?: boolean
   }
 
 
@@ -2852,7 +1960,11 @@ export namespace Prisma {
       proj_name_en: string
       proj_name_th: string
       unique_id: string
-      data: Prisma.JsonValue
+      risk_spectrum: string
+      companyTH: string
+      companyEN: string
+      Allinfo: Prisma.JsonValue
+      feefunds: string[]
     }, ExtArgs["result"]["product"]>
     composites: {}
   }
@@ -3280,7 +2392,11 @@ export namespace Prisma {
     readonly proj_name_en: FieldRef<"Product", 'String'>
     readonly proj_name_th: FieldRef<"Product", 'String'>
     readonly unique_id: FieldRef<"Product", 'String'>
-    readonly data: FieldRef<"Product", 'Json'>
+    readonly risk_spectrum: FieldRef<"Product", 'String'>
+    readonly companyTH: FieldRef<"Product", 'String'>
+    readonly companyEN: FieldRef<"Product", 'String'>
+    readonly Allinfo: FieldRef<"Product", 'Json'>
+    readonly feefunds: FieldRef<"Product", 'String[]'>
   }
     
 
@@ -9073,20 +8189,24 @@ export namespace Prisma {
     id: string | null
     proj_id: string | null
     proj_abbr_name: string | null
+    fund_fact_url: string | null
   }
 
   export type Page4FeeMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
     proj_abbr_name: string | null
+    fund_fact_url: string | null
   }
 
   export type Page4FeeCountAggregateOutputType = {
     id: number
     proj_id: number
     proj_abbr_name: number
-    datafromsheet: number
-    datafromReal: number
+    data_from_sheet: number
+    data_from_real: number
+    fund_fact_url: number
+    buyInfo: number
     _all: number
   }
 
@@ -9095,20 +8215,24 @@ export namespace Prisma {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
+    fund_fact_url?: true
   }
 
   export type Page4FeeMaxAggregateInputType = {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
+    fund_fact_url?: true
   }
 
   export type Page4FeeCountAggregateInputType = {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
-    datafromsheet?: true
-    datafromReal?: true
+    data_from_sheet?: true
+    data_from_real?: true
+    fund_fact_url?: true
+    buyInfo?: true
     _all?: true
   }
 
@@ -9188,8 +8312,10 @@ export namespace Prisma {
     id: string
     proj_id: string
     proj_abbr_name: string
-    datafromsheet: JsonValue
-    datafromReal: JsonValue
+    data_from_sheet: JsonValue
+    data_from_real: JsonValue
+    fund_fact_url: string
+    buyInfo: JsonValue
     _count: Page4FeeCountAggregateOutputType | null
     _min: Page4FeeMinAggregateOutputType | null
     _max: Page4FeeMaxAggregateOutputType | null
@@ -9213,16 +8339,20 @@ export namespace Prisma {
     id?: boolean
     proj_id?: boolean
     proj_abbr_name?: boolean
-    datafromsheet?: boolean
-    datafromReal?: boolean
+    data_from_sheet?: boolean
+    data_from_real?: boolean
+    fund_fact_url?: boolean
+    buyInfo?: boolean
   }, ExtArgs["result"]["page4Fee"]>
 
   export type Page4FeeSelectScalar = {
     id?: boolean
     proj_id?: boolean
     proj_abbr_name?: boolean
-    datafromsheet?: boolean
-    datafromReal?: boolean
+    data_from_sheet?: boolean
+    data_from_real?: boolean
+    fund_fact_url?: boolean
+    buyInfo?: boolean
   }
 
 
@@ -9233,8 +8363,10 @@ export namespace Prisma {
       id: string
       proj_id: string
       proj_abbr_name: string
-      datafromsheet: Prisma.JsonValue
-      datafromReal: Prisma.JsonValue
+      data_from_sheet: Prisma.JsonValue
+      data_from_real: Prisma.JsonValue
+      fund_fact_url: string
+      buyInfo: Prisma.JsonValue
     }, ExtArgs["result"]["page4Fee"]>
     composites: {}
   }
@@ -9659,8 +8791,10 @@ export namespace Prisma {
     readonly id: FieldRef<"Page4Fee", 'String'>
     readonly proj_id: FieldRef<"Page4Fee", 'String'>
     readonly proj_abbr_name: FieldRef<"Page4Fee", 'String'>
-    readonly datafromsheet: FieldRef<"Page4Fee", 'Json'>
-    readonly datafromReal: FieldRef<"Page4Fee", 'Json'>
+    readonly data_from_sheet: FieldRef<"Page4Fee", 'Json'>
+    readonly data_from_real: FieldRef<"Page4Fee", 'Json'>
+    readonly fund_fact_url: FieldRef<"Page4Fee", 'String'>
+    readonly buyInfo: FieldRef<"Page4Fee", 'Json'>
   }
     
 
@@ -10889,27 +10023,1947 @@ export namespace Prisma {
 
 
   /**
-   * Enums
+   * Model SearchTest
    */
 
-  export const FundScalarFieldEnum: {
-    id: 'id',
-    proj_id: 'proj_id',
-    regis_id: 'regis_id',
-    regis_date: 'regis_date',
-    cancel_date: 'cancel_date',
-    proj_name_th: 'proj_name_th',
-    proj_name_en: 'proj_name_en',
-    proj_abbr_name: 'proj_abbr_name',
-    fund_status: 'fund_status',
-    unique_id: 'unique_id',
-    permit_us_investment: 'permit_us_investment',
-    invest_country_flag: 'invest_country_flag',
-    last_upd_date: 'last_upd_date'
-  };
+  export type AggregateSearchTest = {
+    _count: SearchTestCountAggregateOutputType | null
+    _min: SearchTestMinAggregateOutputType | null
+    _max: SearchTestMaxAggregateOutputType | null
+  }
 
-  export type FundScalarFieldEnum = (typeof FundScalarFieldEnum)[keyof typeof FundScalarFieldEnum]
+  export type SearchTestMinAggregateOutputType = {
+    id: string | null
+    proj_id: string | null
+    proj_abbr_name: string | null
+    proj_name_en: string | null
+    proj_name_th: string | null
+    unique_id: string | null
+    risk_spectrum: string | null
+  }
 
+  export type SearchTestMaxAggregateOutputType = {
+    id: string | null
+    proj_id: string | null
+    proj_abbr_name: string | null
+    proj_name_en: string | null
+    proj_name_th: string | null
+    unique_id: string | null
+    risk_spectrum: string | null
+  }
+
+  export type SearchTestCountAggregateOutputType = {
+    id: number
+    proj_id: number
+    proj_abbr_name: number
+    proj_name_en: number
+    proj_name_th: number
+    unique_id: number
+    risk_spectrum: number
+    _all: number
+  }
+
+
+  export type SearchTestMinAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+  }
+
+  export type SearchTestMaxAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+  }
+
+  export type SearchTestCountAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+    _all?: true
+  }
+
+  export type SearchTestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SearchTest to aggregate.
+     */
+    where?: SearchTestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchTests to fetch.
+     */
+    orderBy?: SearchTestOrderByWithRelationInput | SearchTestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: SearchTestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchTests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchTests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned SearchTests
+    **/
+    _count?: true | SearchTestCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SearchTestMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SearchTestMaxAggregateInputType
+  }
+
+  export type GetSearchTestAggregateType<T extends SearchTestAggregateArgs> = {
+        [P in keyof T & keyof AggregateSearchTest]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSearchTest[P]>
+      : GetScalarType<T[P], AggregateSearchTest[P]>
+  }
+
+
+
+
+  export type SearchTestGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: SearchTestWhereInput
+    orderBy?: SearchTestOrderByWithAggregationInput | SearchTestOrderByWithAggregationInput[]
+    by: SearchTestScalarFieldEnum[] | SearchTestScalarFieldEnum
+    having?: SearchTestScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SearchTestCountAggregateInputType | true
+    _min?: SearchTestMinAggregateInputType
+    _max?: SearchTestMaxAggregateInputType
+  }
+
+  export type SearchTestGroupByOutputType = {
+    id: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+    _count: SearchTestCountAggregateOutputType | null
+    _min: SearchTestMinAggregateOutputType | null
+    _max: SearchTestMaxAggregateOutputType | null
+  }
+
+  type GetSearchTestGroupByPayload<T extends SearchTestGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SearchTestGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SearchTestGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SearchTestGroupByOutputType[P]>
+            : GetScalarType<T[P], SearchTestGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type SearchTestSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    proj_id?: boolean
+    proj_abbr_name?: boolean
+    proj_name_en?: boolean
+    proj_name_th?: boolean
+    unique_id?: boolean
+    risk_spectrum?: boolean
+  }, ExtArgs["result"]["searchTest"]>
+
+  export type SearchTestSelectScalar = {
+    id?: boolean
+    proj_id?: boolean
+    proj_abbr_name?: boolean
+    proj_name_en?: boolean
+    proj_name_th?: boolean
+    unique_id?: boolean
+    risk_spectrum?: boolean
+  }
+
+
+  export type $SearchTestPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "SearchTest"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      proj_id: string
+      proj_abbr_name: string
+      proj_name_en: string
+      proj_name_th: string
+      unique_id: string
+      risk_spectrum: string
+    }, ExtArgs["result"]["searchTest"]>
+    composites: {}
+  }
+
+
+  type SearchTestGetPayload<S extends boolean | null | undefined | SearchTestDefaultArgs> = $Result.GetResult<Prisma.$SearchTestPayload, S>
+
+  type SearchTestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<SearchTestFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: SearchTestCountAggregateInputType | true
+    }
+
+  export interface SearchTestDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['SearchTest'], meta: { name: 'SearchTest' } }
+    /**
+     * Find zero or one SearchTest that matches the filter.
+     * @param {SearchTestFindUniqueArgs} args - Arguments to find a SearchTest
+     * @example
+     * // Get one SearchTest
+     * const searchTest = await prisma.searchTest.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends SearchTestFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestFindUniqueArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one SearchTest that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {SearchTestFindUniqueOrThrowArgs} args - Arguments to find a SearchTest
+     * @example
+     * // Get one SearchTest
+     * const searchTest = await prisma.searchTest.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends SearchTestFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first SearchTest that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestFindFirstArgs} args - Arguments to find a SearchTest
+     * @example
+     * // Get one SearchTest
+     * const searchTest = await prisma.searchTest.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends SearchTestFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestFindFirstArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first SearchTest that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestFindFirstOrThrowArgs} args - Arguments to find a SearchTest
+     * @example
+     * // Get one SearchTest
+     * const searchTest = await prisma.searchTest.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends SearchTestFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more SearchTests that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all SearchTests
+     * const searchTests = await prisma.searchTest.findMany()
+     * 
+     * // Get first 10 SearchTests
+     * const searchTests = await prisma.searchTest.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const searchTestWithIdOnly = await prisma.searchTest.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends SearchTestFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a SearchTest.
+     * @param {SearchTestCreateArgs} args - Arguments to create a SearchTest.
+     * @example
+     * // Create one SearchTest
+     * const SearchTest = await prisma.searchTest.create({
+     *   data: {
+     *     // ... data to create a SearchTest
+     *   }
+     * })
+     * 
+    **/
+    create<T extends SearchTestCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestCreateArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many SearchTests.
+     *     @param {SearchTestCreateManyArgs} args - Arguments to create many SearchTests.
+     *     @example
+     *     // Create many SearchTests
+     *     const searchTest = await prisma.searchTest.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends SearchTestCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a SearchTest.
+     * @param {SearchTestDeleteArgs} args - Arguments to delete one SearchTest.
+     * @example
+     * // Delete one SearchTest
+     * const SearchTest = await prisma.searchTest.delete({
+     *   where: {
+     *     // ... filter to delete one SearchTest
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends SearchTestDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestDeleteArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one SearchTest.
+     * @param {SearchTestUpdateArgs} args - Arguments to update one SearchTest.
+     * @example
+     * // Update one SearchTest
+     * const searchTest = await prisma.searchTest.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends SearchTestUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestUpdateArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more SearchTests.
+     * @param {SearchTestDeleteManyArgs} args - Arguments to filter SearchTests to delete.
+     * @example
+     * // Delete a few SearchTests
+     * const { count } = await prisma.searchTest.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends SearchTestDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, SearchTestDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more SearchTests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many SearchTests
+     * const searchTest = await prisma.searchTest.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends SearchTestUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one SearchTest.
+     * @param {SearchTestUpsertArgs} args - Arguments to update or create a SearchTest.
+     * @example
+     * // Update or create a SearchTest
+     * const searchTest = await prisma.searchTest.upsert({
+     *   create: {
+     *     // ... data to create a SearchTest
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the SearchTest we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends SearchTestUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, SearchTestUpsertArgs<ExtArgs>>
+    ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Find zero or more SearchTests that matches the filter.
+     * @param {SearchTestFindRawArgs} args - Select which filters you would like to apply.
+     * @example
+     * const searchTest = await prisma.searchTest.findRaw({
+     *   filter: { age: { $gt: 25 } } 
+     * })
+    **/
+    findRaw(
+      args?: SearchTestFindRawArgs
+    ): Prisma.PrismaPromise<JsonObject>
+
+    /**
+     * Perform aggregation operations on a SearchTest.
+     * @param {SearchTestAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @example
+     * const searchTest = await prisma.searchTest.aggregateRaw({
+     *   pipeline: [
+     *     { $match: { status: "registered" } },
+     *     { $group: { _id: "$country", total: { $sum: 1 } } }
+     *   ]
+     * })
+    **/
+    aggregateRaw(
+      args?: SearchTestAggregateRawArgs
+    ): Prisma.PrismaPromise<JsonObject>
+
+    /**
+     * Count the number of SearchTests.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestCountArgs} args - Arguments to filter SearchTests to count.
+     * @example
+     * // Count the number of SearchTests
+     * const count = await prisma.searchTest.count({
+     *   where: {
+     *     // ... the filter for the SearchTests we want to count
+     *   }
+     * })
+    **/
+    count<T extends SearchTestCountArgs>(
+      args?: Subset<T, SearchTestCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SearchTestCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a SearchTest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SearchTestAggregateArgs>(args: Subset<T, SearchTestAggregateArgs>): Prisma.PrismaPromise<GetSearchTestAggregateType<T>>
+
+    /**
+     * Group by SearchTest.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SearchTestGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends SearchTestGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: SearchTestGroupByArgs['orderBy'] }
+        : { orderBy?: SearchTestGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, SearchTestGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSearchTestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the SearchTest model
+   */
+  readonly fields: SearchTestFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for SearchTest.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__SearchTestClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the SearchTest model
+   */ 
+  interface SearchTestFieldRefs {
+    readonly id: FieldRef<"SearchTest", 'String'>
+    readonly proj_id: FieldRef<"SearchTest", 'String'>
+    readonly proj_abbr_name: FieldRef<"SearchTest", 'String'>
+    readonly proj_name_en: FieldRef<"SearchTest", 'String'>
+    readonly proj_name_th: FieldRef<"SearchTest", 'String'>
+    readonly unique_id: FieldRef<"SearchTest", 'String'>
+    readonly risk_spectrum: FieldRef<"SearchTest", 'String'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * SearchTest findUnique
+   */
+  export type SearchTestFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter, which SearchTest to fetch.
+     */
+    where: SearchTestWhereUniqueInput
+  }
+
+
+  /**
+   * SearchTest findUniqueOrThrow
+   */
+  export type SearchTestFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter, which SearchTest to fetch.
+     */
+    where: SearchTestWhereUniqueInput
+  }
+
+
+  /**
+   * SearchTest findFirst
+   */
+  export type SearchTestFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter, which SearchTest to fetch.
+     */
+    where?: SearchTestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchTests to fetch.
+     */
+    orderBy?: SearchTestOrderByWithRelationInput | SearchTestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SearchTests.
+     */
+    cursor?: SearchTestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchTests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchTests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SearchTests.
+     */
+    distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
+  }
+
+
+  /**
+   * SearchTest findFirstOrThrow
+   */
+  export type SearchTestFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter, which SearchTest to fetch.
+     */
+    where?: SearchTestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchTests to fetch.
+     */
+    orderBy?: SearchTestOrderByWithRelationInput | SearchTestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for SearchTests.
+     */
+    cursor?: SearchTestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchTests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchTests.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of SearchTests.
+     */
+    distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
+  }
+
+
+  /**
+   * SearchTest findMany
+   */
+  export type SearchTestFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter, which SearchTests to fetch.
+     */
+    where?: SearchTestWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of SearchTests to fetch.
+     */
+    orderBy?: SearchTestOrderByWithRelationInput | SearchTestOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing SearchTests.
+     */
+    cursor?: SearchTestWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` SearchTests from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` SearchTests.
+     */
+    skip?: number
+    distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
+  }
+
+
+  /**
+   * SearchTest create
+   */
+  export type SearchTestCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * The data needed to create a SearchTest.
+     */
+    data: XOR<SearchTestCreateInput, SearchTestUncheckedCreateInput>
+  }
+
+
+  /**
+   * SearchTest createMany
+   */
+  export type SearchTestCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many SearchTests.
+     */
+    data: SearchTestCreateManyInput | SearchTestCreateManyInput[]
+  }
+
+
+  /**
+   * SearchTest update
+   */
+  export type SearchTestUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * The data needed to update a SearchTest.
+     */
+    data: XOR<SearchTestUpdateInput, SearchTestUncheckedUpdateInput>
+    /**
+     * Choose, which SearchTest to update.
+     */
+    where: SearchTestWhereUniqueInput
+  }
+
+
+  /**
+   * SearchTest updateMany
+   */
+  export type SearchTestUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update SearchTests.
+     */
+    data: XOR<SearchTestUpdateManyMutationInput, SearchTestUncheckedUpdateManyInput>
+    /**
+     * Filter which SearchTests to update
+     */
+    where?: SearchTestWhereInput
+  }
+
+
+  /**
+   * SearchTest upsert
+   */
+  export type SearchTestUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * The filter to search for the SearchTest to update in case it exists.
+     */
+    where: SearchTestWhereUniqueInput
+    /**
+     * In case the SearchTest found by the `where` argument doesn't exist, create a new SearchTest with this data.
+     */
+    create: XOR<SearchTestCreateInput, SearchTestUncheckedCreateInput>
+    /**
+     * In case the SearchTest was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<SearchTestUpdateInput, SearchTestUncheckedUpdateInput>
+  }
+
+
+  /**
+   * SearchTest delete
+   */
+  export type SearchTestDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+    /**
+     * Filter which SearchTest to delete.
+     */
+    where: SearchTestWhereUniqueInput
+  }
+
+
+  /**
+   * SearchTest deleteMany
+   */
+  export type SearchTestDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which SearchTests to delete
+     */
+    where?: SearchTestWhereInput
+  }
+
+
+  /**
+   * SearchTest findRaw
+   */
+  export type SearchTestFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
+     */
+    filter?: InputJsonValue
+    /**
+     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
+     */
+    options?: InputJsonValue
+  }
+
+
+  /**
+   * SearchTest aggregateRaw
+   */
+  export type SearchTestAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
+     */
+    pipeline?: InputJsonValue[]
+    /**
+     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
+     */
+    options?: InputJsonValue
+  }
+
+
+  /**
+   * SearchTest without action
+   */
+  export type SearchTestDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the SearchTest
+     */
+    select?: SearchTestSelect<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model ProductDetail
+   */
+
+  export type AggregateProductDetail = {
+    _count: ProductDetailCountAggregateOutputType | null
+    _min: ProductDetailMinAggregateOutputType | null
+    _max: ProductDetailMaxAggregateOutputType | null
+  }
+
+  export type ProductDetailMinAggregateOutputType = {
+    id: string | null
+    proj_id: string | null
+    proj_abbr_name: string | null
+    proj_name_en: string | null
+    proj_name_th: string | null
+    unique_id: string | null
+    risk_spectrum: string | null
+    companyTH: string | null
+    companyEN: string | null
+  }
+
+  export type ProductDetailMaxAggregateOutputType = {
+    id: string | null
+    proj_id: string | null
+    proj_abbr_name: string | null
+    proj_name_en: string | null
+    proj_name_th: string | null
+    unique_id: string | null
+    risk_spectrum: string | null
+    companyTH: string | null
+    companyEN: string | null
+  }
+
+  export type ProductDetailCountAggregateOutputType = {
+    id: number
+    proj_id: number
+    proj_abbr_name: number
+    proj_name_en: number
+    proj_name_th: number
+    unique_id: number
+    risk_spectrum: number
+    companyTH: number
+    companyEN: number
+    fundType: number
+    fund_resYTD: number
+    Allinfo: number
+    _all: number
+  }
+
+
+  export type ProductDetailMinAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
+  }
+
+  export type ProductDetailMaxAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
+  }
+
+  export type ProductDetailCountAggregateInputType = {
+    id?: true
+    proj_id?: true
+    proj_abbr_name?: true
+    proj_name_en?: true
+    proj_name_th?: true
+    unique_id?: true
+    risk_spectrum?: true
+    companyTH?: true
+    companyEN?: true
+    fundType?: true
+    fund_resYTD?: true
+    Allinfo?: true
+    _all?: true
+  }
+
+  export type ProductDetailAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProductDetail to aggregate.
+     */
+    where?: ProductDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductDetails to fetch.
+     */
+    orderBy?: ProductDetailOrderByWithRelationInput | ProductDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProductDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProductDetails
+    **/
+    _count?: true | ProductDetailCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProductDetailMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProductDetailMaxAggregateInputType
+  }
+
+  export type GetProductDetailAggregateType<T extends ProductDetailAggregateArgs> = {
+        [P in keyof T & keyof AggregateProductDetail]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProductDetail[P]>
+      : GetScalarType<T[P], AggregateProductDetail[P]>
+  }
+
+
+
+
+  export type ProductDetailGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductDetailWhereInput
+    orderBy?: ProductDetailOrderByWithAggregationInput | ProductDetailOrderByWithAggregationInput[]
+    by: ProductDetailScalarFieldEnum[] | ProductDetailScalarFieldEnum
+    having?: ProductDetailScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProductDetailCountAggregateInputType | true
+    _min?: ProductDetailMinAggregateInputType
+    _max?: ProductDetailMaxAggregateInputType
+  }
+
+  export type ProductDetailGroupByOutputType = {
+    id: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    fundType: string[]
+    fund_resYTD: JsonValue
+    Allinfo: JsonValue
+    _count: ProductDetailCountAggregateOutputType | null
+    _min: ProductDetailMinAggregateOutputType | null
+    _max: ProductDetailMaxAggregateOutputType | null
+  }
+
+  type GetProductDetailGroupByPayload<T extends ProductDetailGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProductDetailGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProductDetailGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProductDetailGroupByOutputType[P]>
+            : GetScalarType<T[P], ProductDetailGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProductDetailSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    proj_id?: boolean
+    proj_abbr_name?: boolean
+    proj_name_en?: boolean
+    proj_name_th?: boolean
+    unique_id?: boolean
+    risk_spectrum?: boolean
+    companyTH?: boolean
+    companyEN?: boolean
+    fundType?: boolean
+    fund_resYTD?: boolean
+    Allinfo?: boolean
+  }, ExtArgs["result"]["productDetail"]>
+
+  export type ProductDetailSelectScalar = {
+    id?: boolean
+    proj_id?: boolean
+    proj_abbr_name?: boolean
+    proj_name_en?: boolean
+    proj_name_th?: boolean
+    unique_id?: boolean
+    risk_spectrum?: boolean
+    companyTH?: boolean
+    companyEN?: boolean
+    fundType?: boolean
+    fund_resYTD?: boolean
+    Allinfo?: boolean
+  }
+
+
+  export type $ProductDetailPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProductDetail"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      proj_id: string
+      proj_abbr_name: string
+      proj_name_en: string
+      proj_name_th: string
+      unique_id: string
+      risk_spectrum: string
+      companyTH: string
+      companyEN: string
+      fundType: string[]
+      fund_resYTD: Prisma.JsonValue
+      Allinfo: Prisma.JsonValue
+    }, ExtArgs["result"]["productDetail"]>
+    composites: {}
+  }
+
+
+  type ProductDetailGetPayload<S extends boolean | null | undefined | ProductDetailDefaultArgs> = $Result.GetResult<Prisma.$ProductDetailPayload, S>
+
+  type ProductDetailCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<ProductDetailFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: ProductDetailCountAggregateInputType | true
+    }
+
+  export interface ProductDetailDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProductDetail'], meta: { name: 'ProductDetail' } }
+    /**
+     * Find zero or one ProductDetail that matches the filter.
+     * @param {ProductDetailFindUniqueArgs} args - Arguments to find a ProductDetail
+     * @example
+     * // Get one ProductDetail
+     * const productDetail = await prisma.productDetail.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends ProductDetailFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailFindUniqueArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one ProductDetail that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {ProductDetailFindUniqueOrThrowArgs} args - Arguments to find a ProductDetail
+     * @example
+     * // Get one ProductDetail
+     * const productDetail = await prisma.productDetail.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends ProductDetailFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first ProductDetail that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailFindFirstArgs} args - Arguments to find a ProductDetail
+     * @example
+     * // Get one ProductDetail
+     * const productDetail = await prisma.productDetail.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends ProductDetailFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailFindFirstArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first ProductDetail that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailFindFirstOrThrowArgs} args - Arguments to find a ProductDetail
+     * @example
+     * // Get one ProductDetail
+     * const productDetail = await prisma.productDetail.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends ProductDetailFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more ProductDetails that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProductDetails
+     * const productDetails = await prisma.productDetail.findMany()
+     * 
+     * // Get first 10 ProductDetails
+     * const productDetails = await prisma.productDetail.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const productDetailWithIdOnly = await prisma.productDetail.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends ProductDetailFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a ProductDetail.
+     * @param {ProductDetailCreateArgs} args - Arguments to create a ProductDetail.
+     * @example
+     * // Create one ProductDetail
+     * const ProductDetail = await prisma.productDetail.create({
+     *   data: {
+     *     // ... data to create a ProductDetail
+     *   }
+     * })
+     * 
+    **/
+    create<T extends ProductDetailCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailCreateArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many ProductDetails.
+     *     @param {ProductDetailCreateManyArgs} args - Arguments to create many ProductDetails.
+     *     @example
+     *     // Create many ProductDetails
+     *     const productDetail = await prisma.productDetail.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends ProductDetailCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a ProductDetail.
+     * @param {ProductDetailDeleteArgs} args - Arguments to delete one ProductDetail.
+     * @example
+     * // Delete one ProductDetail
+     * const ProductDetail = await prisma.productDetail.delete({
+     *   where: {
+     *     // ... filter to delete one ProductDetail
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends ProductDetailDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailDeleteArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one ProductDetail.
+     * @param {ProductDetailUpdateArgs} args - Arguments to update one ProductDetail.
+     * @example
+     * // Update one ProductDetail
+     * const productDetail = await prisma.productDetail.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends ProductDetailUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailUpdateArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more ProductDetails.
+     * @param {ProductDetailDeleteManyArgs} args - Arguments to filter ProductDetails to delete.
+     * @example
+     * // Delete a few ProductDetails
+     * const { count } = await prisma.productDetail.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends ProductDetailDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, ProductDetailDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProductDetails.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProductDetails
+     * const productDetail = await prisma.productDetail.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends ProductDetailUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one ProductDetail.
+     * @param {ProductDetailUpsertArgs} args - Arguments to update or create a ProductDetail.
+     * @example
+     * // Update or create a ProductDetail
+     * const productDetail = await prisma.productDetail.upsert({
+     *   create: {
+     *     // ... data to create a ProductDetail
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProductDetail we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends ProductDetailUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, ProductDetailUpsertArgs<ExtArgs>>
+    ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Find zero or more ProductDetails that matches the filter.
+     * @param {ProductDetailFindRawArgs} args - Select which filters you would like to apply.
+     * @example
+     * const productDetail = await prisma.productDetail.findRaw({
+     *   filter: { age: { $gt: 25 } } 
+     * })
+    **/
+    findRaw(
+      args?: ProductDetailFindRawArgs
+    ): Prisma.PrismaPromise<JsonObject>
+
+    /**
+     * Perform aggregation operations on a ProductDetail.
+     * @param {ProductDetailAggregateRawArgs} args - Select which aggregations you would like to apply.
+     * @example
+     * const productDetail = await prisma.productDetail.aggregateRaw({
+     *   pipeline: [
+     *     { $match: { status: "registered" } },
+     *     { $group: { _id: "$country", total: { $sum: 1 } } }
+     *   ]
+     * })
+    **/
+    aggregateRaw(
+      args?: ProductDetailAggregateRawArgs
+    ): Prisma.PrismaPromise<JsonObject>
+
+    /**
+     * Count the number of ProductDetails.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailCountArgs} args - Arguments to filter ProductDetails to count.
+     * @example
+     * // Count the number of ProductDetails
+     * const count = await prisma.productDetail.count({
+     *   where: {
+     *     // ... the filter for the ProductDetails we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProductDetailCountArgs>(
+      args?: Subset<T, ProductDetailCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProductDetailCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProductDetail.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProductDetailAggregateArgs>(args: Subset<T, ProductDetailAggregateArgs>): Prisma.PrismaPromise<GetProductDetailAggregateType<T>>
+
+    /**
+     * Group by ProductDetail.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductDetailGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProductDetailGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProductDetailGroupByArgs['orderBy'] }
+        : { orderBy?: ProductDetailGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProductDetailGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductDetailGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProductDetail model
+   */
+  readonly fields: ProductDetailFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProductDetail.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProductDetailClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the ProductDetail model
+   */ 
+  interface ProductDetailFieldRefs {
+    readonly id: FieldRef<"ProductDetail", 'String'>
+    readonly proj_id: FieldRef<"ProductDetail", 'String'>
+    readonly proj_abbr_name: FieldRef<"ProductDetail", 'String'>
+    readonly proj_name_en: FieldRef<"ProductDetail", 'String'>
+    readonly proj_name_th: FieldRef<"ProductDetail", 'String'>
+    readonly unique_id: FieldRef<"ProductDetail", 'String'>
+    readonly risk_spectrum: FieldRef<"ProductDetail", 'String'>
+    readonly companyTH: FieldRef<"ProductDetail", 'String'>
+    readonly companyEN: FieldRef<"ProductDetail", 'String'>
+    readonly fundType: FieldRef<"ProductDetail", 'String[]'>
+    readonly fund_resYTD: FieldRef<"ProductDetail", 'Json'>
+    readonly Allinfo: FieldRef<"ProductDetail", 'Json'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * ProductDetail findUnique
+   */
+  export type ProductDetailFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter, which ProductDetail to fetch.
+     */
+    where: ProductDetailWhereUniqueInput
+  }
+
+
+  /**
+   * ProductDetail findUniqueOrThrow
+   */
+  export type ProductDetailFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter, which ProductDetail to fetch.
+     */
+    where: ProductDetailWhereUniqueInput
+  }
+
+
+  /**
+   * ProductDetail findFirst
+   */
+  export type ProductDetailFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter, which ProductDetail to fetch.
+     */
+    where?: ProductDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductDetails to fetch.
+     */
+    orderBy?: ProductDetailOrderByWithRelationInput | ProductDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProductDetails.
+     */
+    cursor?: ProductDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProductDetails.
+     */
+    distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
+  }
+
+
+  /**
+   * ProductDetail findFirstOrThrow
+   */
+  export type ProductDetailFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter, which ProductDetail to fetch.
+     */
+    where?: ProductDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductDetails to fetch.
+     */
+    orderBy?: ProductDetailOrderByWithRelationInput | ProductDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProductDetails.
+     */
+    cursor?: ProductDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProductDetails.
+     */
+    distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
+  }
+
+
+  /**
+   * ProductDetail findMany
+   */
+  export type ProductDetailFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter, which ProductDetails to fetch.
+     */
+    where?: ProductDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductDetails to fetch.
+     */
+    orderBy?: ProductDetailOrderByWithRelationInput | ProductDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProductDetails.
+     */
+    cursor?: ProductDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductDetails.
+     */
+    skip?: number
+    distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
+  }
+
+
+  /**
+   * ProductDetail create
+   */
+  export type ProductDetailCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * The data needed to create a ProductDetail.
+     */
+    data: XOR<ProductDetailCreateInput, ProductDetailUncheckedCreateInput>
+  }
+
+
+  /**
+   * ProductDetail createMany
+   */
+  export type ProductDetailCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProductDetails.
+     */
+    data: ProductDetailCreateManyInput | ProductDetailCreateManyInput[]
+  }
+
+
+  /**
+   * ProductDetail update
+   */
+  export type ProductDetailUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * The data needed to update a ProductDetail.
+     */
+    data: XOR<ProductDetailUpdateInput, ProductDetailUncheckedUpdateInput>
+    /**
+     * Choose, which ProductDetail to update.
+     */
+    where: ProductDetailWhereUniqueInput
+  }
+
+
+  /**
+   * ProductDetail updateMany
+   */
+  export type ProductDetailUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProductDetails.
+     */
+    data: XOR<ProductDetailUpdateManyMutationInput, ProductDetailUncheckedUpdateManyInput>
+    /**
+     * Filter which ProductDetails to update
+     */
+    where?: ProductDetailWhereInput
+  }
+
+
+  /**
+   * ProductDetail upsert
+   */
+  export type ProductDetailUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * The filter to search for the ProductDetail to update in case it exists.
+     */
+    where: ProductDetailWhereUniqueInput
+    /**
+     * In case the ProductDetail found by the `where` argument doesn't exist, create a new ProductDetail with this data.
+     */
+    create: XOR<ProductDetailCreateInput, ProductDetailUncheckedCreateInput>
+    /**
+     * In case the ProductDetail was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProductDetailUpdateInput, ProductDetailUncheckedUpdateInput>
+  }
+
+
+  /**
+   * ProductDetail delete
+   */
+  export type ProductDetailDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+    /**
+     * Filter which ProductDetail to delete.
+     */
+    where: ProductDetailWhereUniqueInput
+  }
+
+
+  /**
+   * ProductDetail deleteMany
+   */
+  export type ProductDetailDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProductDetails to delete
+     */
+    where?: ProductDetailWhereInput
+  }
+
+
+  /**
+   * ProductDetail findRaw
+   */
+  export type ProductDetailFindRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The query predicate filter. If unspecified, then all documents in the collection will match the predicate. ${@link https://docs.mongodb.com/manual/reference/operator/query MongoDB Docs}.
+     */
+    filter?: InputJsonValue
+    /**
+     * Additional options to pass to the `find` command ${@link https://docs.mongodb.com/manual/reference/command/find/#command-fields MongoDB Docs}.
+     */
+    options?: InputJsonValue
+  }
+
+
+  /**
+   * ProductDetail aggregateRaw
+   */
+  export type ProductDetailAggregateRawArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * An array of aggregation stages to process and transform the document stream via the aggregation pipeline. ${@link https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline MongoDB Docs}.
+     */
+    pipeline?: InputJsonValue[]
+    /**
+     * Additional options to pass to the `aggregate` command ${@link https://docs.mongodb.com/manual/reference/command/aggregate/#command-fields MongoDB Docs}.
+     */
+    options?: InputJsonValue
+  }
+
+
+  /**
+   * ProductDetail without action
+   */
+  export type ProductDetailDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductDetail
+     */
+    select?: ProductDetailSelect<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Enums
+   */
 
   export const ProductScalarFieldEnum: {
     id: 'id',
@@ -10918,7 +11972,11 @@ export namespace Prisma {
     proj_name_en: 'proj_name_en',
     proj_name_th: 'proj_name_th',
     unique_id: 'unique_id',
-    data: 'data'
+    risk_spectrum: 'risk_spectrum',
+    companyTH: 'companyTH',
+    companyEN: 'companyEN',
+    Allinfo: 'Allinfo',
+    feefunds: 'feefunds'
   };
 
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -10988,8 +12046,10 @@ export namespace Prisma {
     id: 'id',
     proj_id: 'proj_id',
     proj_abbr_name: 'proj_abbr_name',
-    datafromsheet: 'datafromsheet',
-    datafromReal: 'datafromReal'
+    data_from_sheet: 'data_from_sheet',
+    data_from_real: 'data_from_real',
+    fund_fact_url: 'fund_fact_url',
+    buyInfo: 'buyInfo'
   };
 
   export type Page4FeeScalarFieldEnum = (typeof Page4FeeScalarFieldEnum)[keyof typeof Page4FeeScalarFieldEnum]
@@ -11003,6 +12063,37 @@ export namespace Prisma {
   };
 
   export type AllProductInfoScalarFieldEnum = (typeof AllProductInfoScalarFieldEnum)[keyof typeof AllProductInfoScalarFieldEnum]
+
+
+  export const SearchTestScalarFieldEnum: {
+    id: 'id',
+    proj_id: 'proj_id',
+    proj_abbr_name: 'proj_abbr_name',
+    proj_name_en: 'proj_name_en',
+    proj_name_th: 'proj_name_th',
+    unique_id: 'unique_id',
+    risk_spectrum: 'risk_spectrum'
+  };
+
+  export type SearchTestScalarFieldEnum = (typeof SearchTestScalarFieldEnum)[keyof typeof SearchTestScalarFieldEnum]
+
+
+  export const ProductDetailScalarFieldEnum: {
+    id: 'id',
+    proj_id: 'proj_id',
+    proj_abbr_name: 'proj_abbr_name',
+    proj_name_en: 'proj_name_en',
+    proj_name_th: 'proj_name_th',
+    unique_id: 'unique_id',
+    risk_spectrum: 'risk_spectrum',
+    companyTH: 'companyTH',
+    companyEN: 'companyEN',
+    fundType: 'fundType',
+    fund_resYTD: 'fund_resYTD',
+    Allinfo: 'Allinfo'
+  };
+
+  export type ProductDetailScalarFieldEnum = (typeof ProductDetailScalarFieldEnum)[keyof typeof ProductDetailScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -11071,98 +12162,6 @@ export namespace Prisma {
    */
 
 
-  export type FundWhereInput = {
-    AND?: FundWhereInput | FundWhereInput[]
-    OR?: FundWhereInput[]
-    NOT?: FundWhereInput | FundWhereInput[]
-    id?: StringFilter<"Fund"> | string
-    proj_id?: StringFilter<"Fund"> | string
-    regis_id?: StringFilter<"Fund"> | string
-    regis_date?: StringFilter<"Fund"> | string
-    cancel_date?: StringFilter<"Fund"> | string
-    proj_name_th?: StringFilter<"Fund"> | string
-    proj_name_en?: StringFilter<"Fund"> | string
-    proj_abbr_name?: StringFilter<"Fund"> | string
-    fund_status?: StringFilter<"Fund"> | string
-    unique_id?: StringFilter<"Fund"> | string
-    permit_us_investment?: StringNullableFilter<"Fund"> | string | null
-    invest_country_flag?: StringFilter<"Fund"> | string
-    last_upd_date?: StringFilter<"Fund"> | string
-  }
-
-  export type FundOrderByWithRelationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    regis_id?: SortOrder
-    regis_date?: SortOrder
-    cancel_date?: SortOrder
-    proj_name_th?: SortOrder
-    proj_name_en?: SortOrder
-    proj_abbr_name?: SortOrder
-    fund_status?: SortOrder
-    unique_id?: SortOrder
-    permit_us_investment?: SortOrder
-    invest_country_flag?: SortOrder
-    last_upd_date?: SortOrder
-  }
-
-  export type FundWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    proj_id?: string
-    AND?: FundWhereInput | FundWhereInput[]
-    OR?: FundWhereInput[]
-    NOT?: FundWhereInput | FundWhereInput[]
-    regis_id?: StringFilter<"Fund"> | string
-    regis_date?: StringFilter<"Fund"> | string
-    cancel_date?: StringFilter<"Fund"> | string
-    proj_name_th?: StringFilter<"Fund"> | string
-    proj_name_en?: StringFilter<"Fund"> | string
-    proj_abbr_name?: StringFilter<"Fund"> | string
-    fund_status?: StringFilter<"Fund"> | string
-    unique_id?: StringFilter<"Fund"> | string
-    permit_us_investment?: StringNullableFilter<"Fund"> | string | null
-    invest_country_flag?: StringFilter<"Fund"> | string
-    last_upd_date?: StringFilter<"Fund"> | string
-  }, "id" | "proj_id">
-
-  export type FundOrderByWithAggregationInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    regis_id?: SortOrder
-    regis_date?: SortOrder
-    cancel_date?: SortOrder
-    proj_name_th?: SortOrder
-    proj_name_en?: SortOrder
-    proj_abbr_name?: SortOrder
-    fund_status?: SortOrder
-    unique_id?: SortOrder
-    permit_us_investment?: SortOrder
-    invest_country_flag?: SortOrder
-    last_upd_date?: SortOrder
-    _count?: FundCountOrderByAggregateInput
-    _max?: FundMaxOrderByAggregateInput
-    _min?: FundMinOrderByAggregateInput
-  }
-
-  export type FundScalarWhereWithAggregatesInput = {
-    AND?: FundScalarWhereWithAggregatesInput | FundScalarWhereWithAggregatesInput[]
-    OR?: FundScalarWhereWithAggregatesInput[]
-    NOT?: FundScalarWhereWithAggregatesInput | FundScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Fund"> | string
-    proj_id?: StringWithAggregatesFilter<"Fund"> | string
-    regis_id?: StringWithAggregatesFilter<"Fund"> | string
-    regis_date?: StringWithAggregatesFilter<"Fund"> | string
-    cancel_date?: StringWithAggregatesFilter<"Fund"> | string
-    proj_name_th?: StringWithAggregatesFilter<"Fund"> | string
-    proj_name_en?: StringWithAggregatesFilter<"Fund"> | string
-    proj_abbr_name?: StringWithAggregatesFilter<"Fund"> | string
-    fund_status?: StringWithAggregatesFilter<"Fund"> | string
-    unique_id?: StringWithAggregatesFilter<"Fund"> | string
-    permit_us_investment?: StringNullableWithAggregatesFilter<"Fund"> | string | null
-    invest_country_flag?: StringWithAggregatesFilter<"Fund"> | string
-    last_upd_date?: StringWithAggregatesFilter<"Fund"> | string
-  }
-
   export type ProductWhereInput = {
     AND?: ProductWhereInput | ProductWhereInput[]
     OR?: ProductWhereInput[]
@@ -11173,7 +12172,11 @@ export namespace Prisma {
     proj_name_en?: StringFilter<"Product"> | string
     proj_name_th?: StringFilter<"Product"> | string
     unique_id?: StringFilter<"Product"> | string
-    data?: JsonFilter<"Product">
+    risk_spectrum?: StringFilter<"Product"> | string
+    companyTH?: StringFilter<"Product"> | string
+    companyEN?: StringFilter<"Product"> | string
+    Allinfo?: JsonFilter<"Product">
+    feefunds?: StringNullableListFilter<"Product">
   }
 
   export type ProductOrderByWithRelationInput = {
@@ -11183,7 +12186,11 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    data?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    Allinfo?: SortOrder
+    feefunds?: SortOrder
   }
 
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
@@ -11196,7 +12203,11 @@ export namespace Prisma {
     proj_name_en?: StringFilter<"Product"> | string
     proj_name_th?: StringFilter<"Product"> | string
     unique_id?: StringFilter<"Product"> | string
-    data?: JsonFilter<"Product">
+    risk_spectrum?: StringFilter<"Product"> | string
+    companyTH?: StringFilter<"Product"> | string
+    companyEN?: StringFilter<"Product"> | string
+    Allinfo?: JsonFilter<"Product">
+    feefunds?: StringNullableListFilter<"Product">
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type ProductOrderByWithAggregationInput = {
@@ -11206,7 +12217,11 @@ export namespace Prisma {
     proj_name_en?: SortOrder
     proj_name_th?: SortOrder
     unique_id?: SortOrder
-    data?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    Allinfo?: SortOrder
+    feefunds?: SortOrder
     _count?: ProductCountOrderByAggregateInput
     _max?: ProductMaxOrderByAggregateInput
     _min?: ProductMinOrderByAggregateInput
@@ -11222,7 +12237,11 @@ export namespace Prisma {
     proj_name_en?: StringWithAggregatesFilter<"Product"> | string
     proj_name_th?: StringWithAggregatesFilter<"Product"> | string
     unique_id?: StringWithAggregatesFilter<"Product"> | string
-    data?: JsonWithAggregatesFilter<"Product">
+    risk_spectrum?: StringWithAggregatesFilter<"Product"> | string
+    companyTH?: StringWithAggregatesFilter<"Product"> | string
+    companyEN?: StringWithAggregatesFilter<"Product"> | string
+    Allinfo?: JsonWithAggregatesFilter<"Product">
+    feefunds?: StringNullableListFilter<"Product">
   }
 
   export type FavoriteWhereInput = {
@@ -11514,16 +12533,20 @@ export namespace Prisma {
     id?: StringFilter<"Page4Fee"> | string
     proj_id?: StringFilter<"Page4Fee"> | string
     proj_abbr_name?: StringFilter<"Page4Fee"> | string
-    datafromsheet?: JsonFilter<"Page4Fee">
-    datafromReal?: JsonFilter<"Page4Fee">
+    data_from_sheet?: JsonFilter<"Page4Fee">
+    data_from_real?: JsonFilter<"Page4Fee">
+    fund_fact_url?: StringFilter<"Page4Fee"> | string
+    buyInfo?: JsonFilter<"Page4Fee">
   }
 
   export type Page4FeeOrderByWithRelationInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    datafromsheet?: SortOrder
-    datafromReal?: SortOrder
+    data_from_sheet?: SortOrder
+    data_from_real?: SortOrder
+    fund_fact_url?: SortOrder
+    buyInfo?: SortOrder
   }
 
   export type Page4FeeWhereUniqueInput = Prisma.AtLeast<{
@@ -11533,16 +12556,20 @@ export namespace Prisma {
     AND?: Page4FeeWhereInput | Page4FeeWhereInput[]
     OR?: Page4FeeWhereInput[]
     NOT?: Page4FeeWhereInput | Page4FeeWhereInput[]
-    datafromsheet?: JsonFilter<"Page4Fee">
-    datafromReal?: JsonFilter<"Page4Fee">
+    data_from_sheet?: JsonFilter<"Page4Fee">
+    data_from_real?: JsonFilter<"Page4Fee">
+    fund_fact_url?: StringFilter<"Page4Fee"> | string
+    buyInfo?: JsonFilter<"Page4Fee">
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type Page4FeeOrderByWithAggregationInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    datafromsheet?: SortOrder
-    datafromReal?: SortOrder
+    data_from_sheet?: SortOrder
+    data_from_real?: SortOrder
+    fund_fact_url?: SortOrder
+    buyInfo?: SortOrder
     _count?: Page4FeeCountOrderByAggregateInput
     _max?: Page4FeeMaxOrderByAggregateInput
     _min?: Page4FeeMinOrderByAggregateInput
@@ -11555,8 +12582,10 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Page4Fee"> | string
     proj_id?: StringWithAggregatesFilter<"Page4Fee"> | string
     proj_abbr_name?: StringWithAggregatesFilter<"Page4Fee"> | string
-    datafromsheet?: JsonWithAggregatesFilter<"Page4Fee">
-    datafromReal?: JsonWithAggregatesFilter<"Page4Fee">
+    data_from_sheet?: JsonWithAggregatesFilter<"Page4Fee">
+    data_from_real?: JsonWithAggregatesFilter<"Page4Fee">
+    fund_fact_url?: StringWithAggregatesFilter<"Page4Fee"> | string
+    buyInfo?: JsonWithAggregatesFilter<"Page4Fee">
   }
 
   export type AllProductInfoWhereInput = {
@@ -11606,112 +12635,153 @@ export namespace Prisma {
     Allinfo?: JsonWithAggregatesFilter<"AllProductInfo">
   }
 
-  export type FundCreateInput = {
+  export type SearchTestWhereInput = {
+    AND?: SearchTestWhereInput | SearchTestWhereInput[]
+    OR?: SearchTestWhereInput[]
+    NOT?: SearchTestWhereInput | SearchTestWhereInput[]
+    id?: StringFilter<"SearchTest"> | string
+    proj_id?: StringFilter<"SearchTest"> | string
+    proj_abbr_name?: StringFilter<"SearchTest"> | string
+    proj_name_en?: StringFilter<"SearchTest"> | string
+    proj_name_th?: StringFilter<"SearchTest"> | string
+    unique_id?: StringFilter<"SearchTest"> | string
+    risk_spectrum?: StringFilter<"SearchTest"> | string
+  }
+
+  export type SearchTestOrderByWithRelationInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+  }
+
+  export type SearchTestWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    proj_id: string
-    regis_id: string
-    regis_date: string
-    cancel_date: string
-    proj_name_th: string
-    proj_name_en: string
-    proj_abbr_name: string
-    fund_status: string
-    unique_id: string
-    permit_us_investment?: string | null
-    invest_country_flag: string
-    last_upd_date: string
+    proj_id?: string
+    proj_abbr_name?: string
+    AND?: SearchTestWhereInput | SearchTestWhereInput[]
+    OR?: SearchTestWhereInput[]
+    NOT?: SearchTestWhereInput | SearchTestWhereInput[]
+    proj_name_en?: StringFilter<"SearchTest"> | string
+    proj_name_th?: StringFilter<"SearchTest"> | string
+    unique_id?: StringFilter<"SearchTest"> | string
+    risk_spectrum?: StringFilter<"SearchTest"> | string
+  }, "id" | "proj_id" | "proj_abbr_name">
+
+  export type SearchTestOrderByWithAggregationInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    _count?: SearchTestCountOrderByAggregateInput
+    _max?: SearchTestMaxOrderByAggregateInput
+    _min?: SearchTestMinOrderByAggregateInput
   }
 
-  export type FundUncheckedCreateInput = {
+  export type SearchTestScalarWhereWithAggregatesInput = {
+    AND?: SearchTestScalarWhereWithAggregatesInput | SearchTestScalarWhereWithAggregatesInput[]
+    OR?: SearchTestScalarWhereWithAggregatesInput[]
+    NOT?: SearchTestScalarWhereWithAggregatesInput | SearchTestScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"SearchTest"> | string
+    proj_id?: StringWithAggregatesFilter<"SearchTest"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"SearchTest"> | string
+    proj_name_en?: StringWithAggregatesFilter<"SearchTest"> | string
+    proj_name_th?: StringWithAggregatesFilter<"SearchTest"> | string
+    unique_id?: StringWithAggregatesFilter<"SearchTest"> | string
+    risk_spectrum?: StringWithAggregatesFilter<"SearchTest"> | string
+  }
+
+  export type ProductDetailWhereInput = {
+    AND?: ProductDetailWhereInput | ProductDetailWhereInput[]
+    OR?: ProductDetailWhereInput[]
+    NOT?: ProductDetailWhereInput | ProductDetailWhereInput[]
+    id?: StringFilter<"ProductDetail"> | string
+    proj_id?: StringFilter<"ProductDetail"> | string
+    proj_abbr_name?: StringFilter<"ProductDetail"> | string
+    proj_name_en?: StringFilter<"ProductDetail"> | string
+    proj_name_th?: StringFilter<"ProductDetail"> | string
+    unique_id?: StringFilter<"ProductDetail"> | string
+    risk_spectrum?: StringFilter<"ProductDetail"> | string
+    companyTH?: StringFilter<"ProductDetail"> | string
+    companyEN?: StringFilter<"ProductDetail"> | string
+    fundType?: StringNullableListFilter<"ProductDetail">
+    fund_resYTD?: JsonFilter<"ProductDetail">
+    Allinfo?: JsonFilter<"ProductDetail">
+  }
+
+  export type ProductDetailOrderByWithRelationInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    fundType?: SortOrder
+    fund_resYTD?: SortOrder
+    Allinfo?: SortOrder
+  }
+
+  export type ProductDetailWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    proj_id: string
-    regis_id: string
-    regis_date: string
-    cancel_date: string
-    proj_name_th: string
-    proj_name_en: string
-    proj_abbr_name: string
-    fund_status: string
-    unique_id: string
-    permit_us_investment?: string | null
-    invest_country_flag: string
-    last_upd_date: string
+    proj_id?: string
+    proj_abbr_name?: string
+    AND?: ProductDetailWhereInput | ProductDetailWhereInput[]
+    OR?: ProductDetailWhereInput[]
+    NOT?: ProductDetailWhereInput | ProductDetailWhereInput[]
+    proj_name_en?: StringFilter<"ProductDetail"> | string
+    proj_name_th?: StringFilter<"ProductDetail"> | string
+    unique_id?: StringFilter<"ProductDetail"> | string
+    risk_spectrum?: StringFilter<"ProductDetail"> | string
+    companyTH?: StringFilter<"ProductDetail"> | string
+    companyEN?: StringFilter<"ProductDetail"> | string
+    fundType?: StringNullableListFilter<"ProductDetail">
+    fund_resYTD?: JsonFilter<"ProductDetail">
+    Allinfo?: JsonFilter<"ProductDetail">
+  }, "id" | "proj_id" | "proj_abbr_name">
+
+  export type ProductDetailOrderByWithAggregationInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    fundType?: SortOrder
+    fund_resYTD?: SortOrder
+    Allinfo?: SortOrder
+    _count?: ProductDetailCountOrderByAggregateInput
+    _max?: ProductDetailMaxOrderByAggregateInput
+    _min?: ProductDetailMinOrderByAggregateInput
   }
 
-  export type FundUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    regis_id?: StringFieldUpdateOperationsInput | string
-    regis_date?: StringFieldUpdateOperationsInput | string
-    cancel_date?: StringFieldUpdateOperationsInput | string
-    proj_name_th?: StringFieldUpdateOperationsInput | string
-    proj_name_en?: StringFieldUpdateOperationsInput | string
-    proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fund_status?: StringFieldUpdateOperationsInput | string
-    unique_id?: StringFieldUpdateOperationsInput | string
-    permit_us_investment?: NullableStringFieldUpdateOperationsInput | string | null
-    invest_country_flag?: StringFieldUpdateOperationsInput | string
-    last_upd_date?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FundUncheckedUpdateInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    regis_id?: StringFieldUpdateOperationsInput | string
-    regis_date?: StringFieldUpdateOperationsInput | string
-    cancel_date?: StringFieldUpdateOperationsInput | string
-    proj_name_th?: StringFieldUpdateOperationsInput | string
-    proj_name_en?: StringFieldUpdateOperationsInput | string
-    proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fund_status?: StringFieldUpdateOperationsInput | string
-    unique_id?: StringFieldUpdateOperationsInput | string
-    permit_us_investment?: NullableStringFieldUpdateOperationsInput | string | null
-    invest_country_flag?: StringFieldUpdateOperationsInput | string
-    last_upd_date?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FundCreateManyInput = {
-    id?: string
-    proj_id: string
-    regis_id: string
-    regis_date: string
-    cancel_date: string
-    proj_name_th: string
-    proj_name_en: string
-    proj_abbr_name: string
-    fund_status: string
-    unique_id: string
-    permit_us_investment?: string | null
-    invest_country_flag: string
-    last_upd_date: string
-  }
-
-  export type FundUpdateManyMutationInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    regis_id?: StringFieldUpdateOperationsInput | string
-    regis_date?: StringFieldUpdateOperationsInput | string
-    cancel_date?: StringFieldUpdateOperationsInput | string
-    proj_name_th?: StringFieldUpdateOperationsInput | string
-    proj_name_en?: StringFieldUpdateOperationsInput | string
-    proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fund_status?: StringFieldUpdateOperationsInput | string
-    unique_id?: StringFieldUpdateOperationsInput | string
-    permit_us_investment?: NullableStringFieldUpdateOperationsInput | string | null
-    invest_country_flag?: StringFieldUpdateOperationsInput | string
-    last_upd_date?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type FundUncheckedUpdateManyInput = {
-    proj_id?: StringFieldUpdateOperationsInput | string
-    regis_id?: StringFieldUpdateOperationsInput | string
-    regis_date?: StringFieldUpdateOperationsInput | string
-    cancel_date?: StringFieldUpdateOperationsInput | string
-    proj_name_th?: StringFieldUpdateOperationsInput | string
-    proj_name_en?: StringFieldUpdateOperationsInput | string
-    proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    fund_status?: StringFieldUpdateOperationsInput | string
-    unique_id?: StringFieldUpdateOperationsInput | string
-    permit_us_investment?: NullableStringFieldUpdateOperationsInput | string | null
-    invest_country_flag?: StringFieldUpdateOperationsInput | string
-    last_upd_date?: StringFieldUpdateOperationsInput | string
+  export type ProductDetailScalarWhereWithAggregatesInput = {
+    AND?: ProductDetailScalarWhereWithAggregatesInput | ProductDetailScalarWhereWithAggregatesInput[]
+    OR?: ProductDetailScalarWhereWithAggregatesInput[]
+    NOT?: ProductDetailScalarWhereWithAggregatesInput | ProductDetailScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ProductDetail"> | string
+    proj_id?: StringWithAggregatesFilter<"ProductDetail"> | string
+    proj_abbr_name?: StringWithAggregatesFilter<"ProductDetail"> | string
+    proj_name_en?: StringWithAggregatesFilter<"ProductDetail"> | string
+    proj_name_th?: StringWithAggregatesFilter<"ProductDetail"> | string
+    unique_id?: StringWithAggregatesFilter<"ProductDetail"> | string
+    risk_spectrum?: StringWithAggregatesFilter<"ProductDetail"> | string
+    companyTH?: StringWithAggregatesFilter<"ProductDetail"> | string
+    companyEN?: StringWithAggregatesFilter<"ProductDetail"> | string
+    fundType?: StringNullableListFilter<"ProductDetail">
+    fund_resYTD?: JsonWithAggregatesFilter<"ProductDetail">
+    Allinfo?: JsonWithAggregatesFilter<"ProductDetail">
   }
 
   export type ProductCreateInput = {
@@ -11721,7 +12791,11 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    data: InputJsonValue
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    Allinfo: InputJsonValue
+    feefunds?: ProductCreatefeefundsInput | string[]
   }
 
   export type ProductUncheckedCreateInput = {
@@ -11731,7 +12805,11 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    data: InputJsonValue
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    Allinfo: InputJsonValue
+    feefunds?: ProductCreatefeefundsInput | string[]
   }
 
   export type ProductUpdateInput = {
@@ -11740,7 +12818,11 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    Allinfo?: InputJsonValue | InputJsonValue
+    feefunds?: ProductUpdatefeefundsInput | string[]
   }
 
   export type ProductUncheckedUpdateInput = {
@@ -11749,7 +12831,11 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    Allinfo?: InputJsonValue | InputJsonValue
+    feefunds?: ProductUpdatefeefundsInput | string[]
   }
 
   export type ProductCreateManyInput = {
@@ -11759,7 +12845,11 @@ export namespace Prisma {
     proj_name_en: string
     proj_name_th: string
     unique_id: string
-    data: InputJsonValue
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    Allinfo: InputJsonValue
+    feefunds?: ProductCreatefeefundsInput | string[]
   }
 
   export type ProductUpdateManyMutationInput = {
@@ -11768,7 +12858,11 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    Allinfo?: InputJsonValue | InputJsonValue
+    feefunds?: ProductUpdatefeefundsInput | string[]
   }
 
   export type ProductUncheckedUpdateManyInput = {
@@ -11777,7 +12871,11 @@ export namespace Prisma {
     proj_name_en?: StringFieldUpdateOperationsInput | string
     proj_name_th?: StringFieldUpdateOperationsInput | string
     unique_id?: StringFieldUpdateOperationsInput | string
-    data?: InputJsonValue | InputJsonValue
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    Allinfo?: InputJsonValue | InputJsonValue
+    feefunds?: ProductUpdatefeefundsInput | string[]
   }
 
   export type FavoriteCreateInput = {
@@ -12054,52 +13152,66 @@ export namespace Prisma {
     id?: string
     proj_id: string
     proj_abbr_name: string
-    datafromsheet: InputJsonValue
-    datafromReal: InputJsonValue
+    data_from_sheet: InputJsonValue
+    data_from_real: InputJsonValue
+    fund_fact_url: string
+    buyInfo: InputJsonValue
   }
 
   export type Page4FeeUncheckedCreateInput = {
     id?: string
     proj_id: string
     proj_abbr_name: string
-    datafromsheet: InputJsonValue
-    datafromReal: InputJsonValue
+    data_from_sheet: InputJsonValue
+    data_from_real: InputJsonValue
+    fund_fact_url: string
+    buyInfo: InputJsonValue
   }
 
   export type Page4FeeUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    datafromsheet?: InputJsonValue | InputJsonValue
-    datafromReal?: InputJsonValue | InputJsonValue
+    data_from_sheet?: InputJsonValue | InputJsonValue
+    data_from_real?: InputJsonValue | InputJsonValue
+    fund_fact_url?: StringFieldUpdateOperationsInput | string
+    buyInfo?: InputJsonValue | InputJsonValue
   }
 
   export type Page4FeeUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    datafromsheet?: InputJsonValue | InputJsonValue
-    datafromReal?: InputJsonValue | InputJsonValue
+    data_from_sheet?: InputJsonValue | InputJsonValue
+    data_from_real?: InputJsonValue | InputJsonValue
+    fund_fact_url?: StringFieldUpdateOperationsInput | string
+    buyInfo?: InputJsonValue | InputJsonValue
   }
 
   export type Page4FeeCreateManyInput = {
     id?: string
     proj_id: string
     proj_abbr_name: string
-    datafromsheet: InputJsonValue
-    datafromReal: InputJsonValue
+    data_from_sheet: InputJsonValue
+    data_from_real: InputJsonValue
+    fund_fact_url: string
+    buyInfo: InputJsonValue
   }
 
   export type Page4FeeUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    datafromsheet?: InputJsonValue | InputJsonValue
-    datafromReal?: InputJsonValue | InputJsonValue
+    data_from_sheet?: InputJsonValue | InputJsonValue
+    data_from_real?: InputJsonValue | InputJsonValue
+    fund_fact_url?: StringFieldUpdateOperationsInput | string
+    buyInfo?: InputJsonValue | InputJsonValue
   }
 
   export type Page4FeeUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
-    datafromsheet?: InputJsonValue | InputJsonValue
-    datafromReal?: InputJsonValue | InputJsonValue
+    data_from_sheet?: InputJsonValue | InputJsonValue
+    data_from_real?: InputJsonValue | InputJsonValue
+    fund_fact_url?: StringFieldUpdateOperationsInput | string
+    buyInfo?: InputJsonValue | InputJsonValue
   }
 
   export type AllProductInfoCreateInput = {
@@ -12147,6 +13259,173 @@ export namespace Prisma {
     Allinfo?: InputJsonValue | InputJsonValue
   }
 
+  export type SearchTestCreateInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+  }
+
+  export type SearchTestUncheckedCreateInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+  }
+
+  export type SearchTestUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type SearchTestUncheckedUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type SearchTestCreateManyInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+  }
+
+  export type SearchTestUpdateManyMutationInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type SearchTestUncheckedUpdateManyInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProductDetailCreateInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    fundType?: ProductDetailCreatefundTypeInput | string[]
+    fund_resYTD: InputJsonValue
+    Allinfo: InputJsonValue
+  }
+
+  export type ProductDetailUncheckedCreateInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    fundType?: ProductDetailCreatefundTypeInput | string[]
+    fund_resYTD: InputJsonValue
+    Allinfo: InputJsonValue
+  }
+
+  export type ProductDetailUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    fundType?: ProductDetailUpdatefundTypeInput | string[]
+    fund_resYTD?: InputJsonValue | InputJsonValue
+    Allinfo?: InputJsonValue | InputJsonValue
+  }
+
+  export type ProductDetailUncheckedUpdateInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    fundType?: ProductDetailUpdatefundTypeInput | string[]
+    fund_resYTD?: InputJsonValue | InputJsonValue
+    Allinfo?: InputJsonValue | InputJsonValue
+  }
+
+  export type ProductDetailCreateManyInput = {
+    id?: string
+    proj_id: string
+    proj_abbr_name: string
+    proj_name_en: string
+    proj_name_th: string
+    unique_id: string
+    risk_spectrum: string
+    companyTH: string
+    companyEN: string
+    fundType?: ProductDetailCreatefundTypeInput | string[]
+    fund_resYTD: InputJsonValue
+    Allinfo: InputJsonValue
+  }
+
+  export type ProductDetailUpdateManyMutationInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    fundType?: ProductDetailUpdatefundTypeInput | string[]
+    fund_resYTD?: InputJsonValue | InputJsonValue
+    Allinfo?: InputJsonValue | InputJsonValue
+  }
+
+  export type ProductDetailUncheckedUpdateManyInput = {
+    proj_id?: StringFieldUpdateOperationsInput | string
+    proj_abbr_name?: StringFieldUpdateOperationsInput | string
+    proj_name_en?: StringFieldUpdateOperationsInput | string
+    proj_name_th?: StringFieldUpdateOperationsInput | string
+    unique_id?: StringFieldUpdateOperationsInput | string
+    risk_spectrum?: StringFieldUpdateOperationsInput | string
+    companyTH?: StringFieldUpdateOperationsInput | string
+    companyEN?: StringFieldUpdateOperationsInput | string
+    fundType?: ProductDetailUpdatefundTypeInput | string[]
+    fund_resYTD?: InputJsonValue | InputJsonValue
+    Allinfo?: InputJsonValue | InputJsonValue
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -12161,69 +13440,62 @@ export namespace Prisma {
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
+  export type JsonFilter<$PrismaModel = never> = 
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
 
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-    isSet?: boolean
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
   }
 
-  export type FundCountOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    regis_id?: SortOrder
-    regis_date?: SortOrder
-    cancel_date?: SortOrder
-    proj_name_th?: SortOrder
-    proj_name_en?: SortOrder
-    proj_abbr_name?: SortOrder
-    fund_status?: SortOrder
-    unique_id?: SortOrder
-    permit_us_investment?: SortOrder
-    invest_country_flag?: SortOrder
-    last_upd_date?: SortOrder
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
   }
 
-  export type FundMaxOrderByAggregateInput = {
+  export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    regis_id?: SortOrder
-    regis_date?: SortOrder
-    cancel_date?: SortOrder
-    proj_name_th?: SortOrder
-    proj_name_en?: SortOrder
     proj_abbr_name?: SortOrder
-    fund_status?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
     unique_id?: SortOrder
-    permit_us_investment?: SortOrder
-    invest_country_flag?: SortOrder
-    last_upd_date?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    Allinfo?: SortOrder
+    feefunds?: SortOrder
   }
 
-  export type FundMinOrderByAggregateInput = {
+  export type ProductMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
-    regis_id?: SortOrder
-    regis_date?: SortOrder
-    cancel_date?: SortOrder
-    proj_name_th?: SortOrder
-    proj_name_en?: SortOrder
     proj_abbr_name?: SortOrder
-    fund_status?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
     unique_id?: SortOrder
-    permit_us_investment?: SortOrder
-    invest_country_flag?: SortOrder
-    last_upd_date?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+  }
+
+  export type ProductMinOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -12243,64 +13515,6 @@ export namespace Prisma {
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
   }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-    isSet?: boolean
-  }
-  export type JsonFilter<$PrismaModel = never> = 
-    | PatchUndefined<
-        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-  }
-
-  export type ProductCountOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    proj_abbr_name?: SortOrder
-    proj_name_en?: SortOrder
-    proj_name_th?: SortOrder
-    unique_id?: SortOrder
-    data?: SortOrder
-  }
-
-  export type ProductMaxOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    proj_abbr_name?: SortOrder
-    proj_name_en?: SortOrder
-    proj_name_th?: SortOrder
-    unique_id?: SortOrder
-  }
-
-  export type ProductMinOrderByAggregateInput = {
-    id?: SortOrder
-    proj_id?: SortOrder
-    proj_abbr_name?: SortOrder
-    proj_name_en?: SortOrder
-    proj_name_th?: SortOrder
-    unique_id?: SortOrder
-  }
   export type JsonWithAggregatesFilter<$PrismaModel = never> = 
     | PatchUndefined<
         Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
@@ -12314,14 +13528,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedJsonFilter<$PrismaModel>
     _max?: NestedJsonFilter<$PrismaModel>
-  }
-
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
   }
   export type JsonNullableListFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -12454,20 +13660,24 @@ export namespace Prisma {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
-    datafromsheet?: SortOrder
-    datafromReal?: SortOrder
+    data_from_sheet?: SortOrder
+    data_from_real?: SortOrder
+    fund_fact_url?: SortOrder
+    buyInfo?: SortOrder
   }
 
   export type Page4FeeMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    fund_fact_url?: SortOrder
   }
 
   export type Page4FeeMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    fund_fact_url?: SortOrder
   }
 
   export type AllProductInfoCountOrderByAggregateInput = {
@@ -12489,13 +13699,86 @@ export namespace Prisma {
     proj_abbr_name?: SortOrder
   }
 
+  export type SearchTestCountOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+  }
+
+  export type SearchTestMaxOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+  }
+
+  export type SearchTestMinOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+  }
+
+  export type ProductDetailCountOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+    fundType?: SortOrder
+    fund_resYTD?: SortOrder
+    Allinfo?: SortOrder
+  }
+
+  export type ProductDetailMaxOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+  }
+
+  export type ProductDetailMinOrderByAggregateInput = {
+    id?: SortOrder
+    proj_id?: SortOrder
+    proj_abbr_name?: SortOrder
+    proj_name_en?: SortOrder
+    proj_name_th?: SortOrder
+    unique_id?: SortOrder
+    risk_spectrum?: SortOrder
+    companyTH?: SortOrder
+    companyEN?: SortOrder
+  }
+
+  export type ProductCreatefeefundsInput = {
+    set: string[]
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-    unset?: boolean
+  export type ProductUpdatefeefundsInput = {
+    set?: string[]
+    push?: string | string[]
   }
 
   export type FavoriteCreateproj_abbr_name_listInput = {
@@ -12516,6 +13799,15 @@ export namespace Prisma {
     push?: InputJsonValue | InputJsonValue[]
   }
 
+  export type ProductDetailCreatefundTypeInput = {
+    set: string[]
+  }
+
+  export type ProductDetailUpdatefundTypeInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -12528,21 +13820,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-    isSet?: boolean
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -12572,36 +13849,6 @@ export namespace Prisma {
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
   }
-
-  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-    isSet?: boolean
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-    isSet?: boolean
-  }
   export type NestedJsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
         Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -12619,10 +13866,6 @@ export namespace Prisma {
   /**
    * Aliases for legacy arg types
    */
-    /**
-     * @deprecated Use FundDefaultArgs instead
-     */
-    export type FundArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = FundDefaultArgs<ExtArgs>
     /**
      * @deprecated Use ProductDefaultArgs instead
      */
@@ -12659,6 +13902,14 @@ export namespace Prisma {
      * @deprecated Use AllProductInfoDefaultArgs instead
      */
     export type AllProductInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = AllProductInfoDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use SearchTestDefaultArgs instead
+     */
+    export type SearchTestArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = SearchTestDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use ProductDetailDefaultArgs instead
+     */
+    export type ProductDetailArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ProductDetailDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

@@ -22,7 +22,9 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
+    "@huggingface/inference": "^2.6.6",
     "@types/cors": "^2.8.17",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "mongodb": "^6.5.0"
   }
 }

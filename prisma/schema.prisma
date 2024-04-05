@@ -17,7 +17,11 @@ model Product {
   proj_name_en    String
   proj_name_th    String
   unique_id       String
+  risk_spectrum   String
+  companyTH       String
+  companyEN       String
   Allinfo         Json
+  feefunds String[]
 }
 
 model Favorite {
@@ -63,8 +67,10 @@ model Page4Fee{
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   proj_id String @unique
   proj_abbr_name  String @unique
-  datafromsheet Json
-  datafromReal Json
+  data_from_sheet Json
+  data_from_real Json
+  fund_fact_url String
+  buyInfo Json
 }
 
 model AllProductInfo{
@@ -72,4 +78,27 @@ model AllProductInfo{
   proj_id String    @unique
   proj_abbr_name String @unique
   Allinfo Json
+}
+model SearchTest{
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id         String    @unique
+  proj_abbr_name  String    @unique
+  proj_name_en    String
+  proj_name_th    String
+  unique_id       String
+  risk_spectrum String
+}
+model ProductDetail {
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id         String    @unique
+  proj_abbr_name  String    @unique
+  proj_name_en    String
+  proj_name_th    String
+  unique_id       String
+  risk_spectrum   String
+  companyTH       String
+  companyEN       String
+  fundType        String[]
+  fund_resYTD     Json
+  Allinfo         Json
 }

@@ -112,22 +112,6 @@ Prisma.NullTypes = {
  * Enums
  */
 
-exports.Prisma.FundScalarFieldEnum = {
-  id: 'id',
-  proj_id: 'proj_id',
-  regis_id: 'regis_id',
-  regis_date: 'regis_date',
-  cancel_date: 'cancel_date',
-  proj_name_th: 'proj_name_th',
-  proj_name_en: 'proj_name_en',
-  proj_abbr_name: 'proj_abbr_name',
-  fund_status: 'fund_status',
-  unique_id: 'unique_id',
-  permit_us_investment: 'permit_us_investment',
-  invest_country_flag: 'invest_country_flag',
-  last_upd_date: 'last_upd_date'
-};
-
 exports.Prisma.ProductScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
@@ -135,7 +119,11 @@ exports.Prisma.ProductScalarFieldEnum = {
   proj_name_en: 'proj_name_en',
   proj_name_th: 'proj_name_th',
   unique_id: 'unique_id',
-  data: 'data'
+  risk_spectrum: 'risk_spectrum',
+  companyTH: 'companyTH',
+  companyEN: 'companyEN',
+  Allinfo: 'Allinfo',
+  feefunds: 'feefunds'
 };
 
 exports.Prisma.FavoriteScalarFieldEnum = {
@@ -184,14 +172,41 @@ exports.Prisma.Page4FeeScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
   proj_abbr_name: 'proj_abbr_name',
-  datafromsheet: 'datafromsheet',
-  datafromReal: 'datafromReal'
+  data_from_sheet: 'data_from_sheet',
+  data_from_real: 'data_from_real',
+  fund_fact_url: 'fund_fact_url',
+  buyInfo: 'buyInfo'
 };
 
 exports.Prisma.AllProductInfoScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
   proj_abbr_name: 'proj_abbr_name',
+  Allinfo: 'Allinfo'
+};
+
+exports.Prisma.SearchTestScalarFieldEnum = {
+  id: 'id',
+  proj_id: 'proj_id',
+  proj_abbr_name: 'proj_abbr_name',
+  proj_name_en: 'proj_name_en',
+  proj_name_th: 'proj_name_th',
+  unique_id: 'unique_id',
+  risk_spectrum: 'risk_spectrum'
+};
+
+exports.Prisma.ProductDetailScalarFieldEnum = {
+  id: 'id',
+  proj_id: 'proj_id',
+  proj_abbr_name: 'proj_abbr_name',
+  proj_name_en: 'proj_name_en',
+  proj_name_th: 'proj_name_th',
+  unique_id: 'unique_id',
+  risk_spectrum: 'risk_spectrum',
+  companyTH: 'companyTH',
+  companyEN: 'companyEN',
+  fundType: 'fundType',
+  fund_resYTD: 'fund_resYTD',
   Allinfo: 'Allinfo'
 };
 
@@ -207,7 +222,6 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  Fund: 'Fund',
   Product: 'Product',
   Favorite: 'Favorite',
   Page1compareinfomation: 'Page1compareinfomation',
@@ -216,7 +230,9 @@ exports.Prisma.ModelName = {
   Page3typeCompareport: 'Page3typeCompareport',
   Page3Investment_proportionCompareport: 'Page3Investment_proportionCompareport',
   Page4Fee: 'Page4Fee',
-  AllProductInfo: 'AllProductInfo'
+  AllProductInfo: 'AllProductInfo',
+  SearchTest: 'SearchTest',
+  ProductDetail: 'ProductDetail'
 };
 
 /**
