@@ -325,8 +325,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.11.0
-   * Query Engine version: efd2449663b3d73d637ea1fd226bafbcf45b3102
+   * Prisma Client JS version: 5.15.0
+   * Query Engine version: 12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
    */
   export type PrismaVersion = {
     client: string
@@ -453,6 +453,11 @@ export namespace Prisma {
     include: any
   }
 
+  type SelectAndOmit = {
+    select: any
+    omit: any
+  }
+
   /**
    * Get the type of the value, that the Promise holds.
    */
@@ -501,7 +506,9 @@ export namespace Prisma {
   } &
     (T extends SelectAndInclude
       ? 'Please either choose `select` or `include`.'
-      : {})
+      : T extends SelectAndOmit
+        ? 'Please either choose `select` or `omit`.'
+        : {})
 
   /**
    * Subset + Intersection
@@ -1675,6 +1682,7 @@ export namespace Prisma {
     | 'findFirstOrThrow'
     | 'create'
     | 'createMany'
+    | 'createManyAndReturn'
     | 'update'
     | 'updateMany'
     | 'upsert'
@@ -1775,6 +1783,7 @@ export namespace Prisma {
     companyEN: number
     Allinfo: number
     feefunds: number
+    fundType: number
     _all: number
   }
 
@@ -1815,6 +1824,7 @@ export namespace Prisma {
     companyEN?: true
     Allinfo?: true
     feefunds?: true
+    fundType?: true
     _all?: true
   }
 
@@ -1902,6 +1912,7 @@ export namespace Prisma {
     companyEN: string
     Allinfo: JsonValue
     feefunds: string[]
+    fundType: string[]
     _count: ProductCountAggregateOutputType | null
     _min: ProductMinAggregateOutputType | null
     _max: ProductMaxAggregateOutputType | null
@@ -1933,7 +1944,9 @@ export namespace Prisma {
     companyEN?: boolean
     Allinfo?: boolean
     feefunds?: boolean
+    fundType?: boolean
   }, ExtArgs["result"]["product"]>
+
 
   export type ProductSelectScalar = {
     id?: boolean
@@ -1947,6 +1960,7 @@ export namespace Prisma {
     companyEN?: boolean
     Allinfo?: boolean
     feefunds?: boolean
+    fundType?: boolean
   }
 
 
@@ -1965,10 +1979,10 @@ export namespace Prisma {
       companyEN: string
       Allinfo: Prisma.JsonValue
       feefunds: string[]
+      fundType: string[]
     }, ExtArgs["result"]["product"]>
     composites: {}
   }
-
 
   type ProductGetPayload<S extends boolean | null | undefined | ProductDefaultArgs> = $Result.GetResult<Prisma.$ProductPayload, S>
 
@@ -1995,8 +2009,8 @@ export namespace Prisma {
     ): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Product that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Product that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {ProductFindUniqueOrThrowArgs} args - Arguments to find a Product
      * @example
      * // Get one Product
@@ -2049,7 +2063,7 @@ export namespace Prisma {
      * Find zero or more Products that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {ProductFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Products
      * const products = await prisma.product.findMany()
@@ -2083,14 +2097,14 @@ export namespace Prisma {
 
     /**
      * Create many Products.
-     *     @param {ProductCreateManyArgs} args - Arguments to create many Products.
-     *     @example
-     *     // Create many Products
-     *     const product = await prisma.product.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {ProductCreateManyArgs} args - Arguments to create many Products.
+     * @example
+     * // Create many Products
+     * const product = await prisma.product.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends ProductCreateManyArgs<ExtArgs>>(
@@ -2397,11 +2411,11 @@ export namespace Prisma {
     readonly companyEN: FieldRef<"Product", 'String'>
     readonly Allinfo: FieldRef<"Product", 'Json'>
     readonly feefunds: FieldRef<"Product", 'String[]'>
+    readonly fundType: FieldRef<"Product", 'String[]'>
   }
     
 
   // Custom InputTypes
-
   /**
    * Product findUnique
    */
@@ -2416,7 +2430,6 @@ export namespace Prisma {
     where: ProductWhereUniqueInput
   }
 
-
   /**
    * Product findUniqueOrThrow
    */
@@ -2430,7 +2443,6 @@ export namespace Prisma {
      */
     where: ProductWhereUniqueInput
   }
-
 
   /**
    * Product findFirst
@@ -2476,7 +2488,6 @@ export namespace Prisma {
     distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
   }
 
-
   /**
    * Product findFirstOrThrow
    */
@@ -2521,7 +2532,6 @@ export namespace Prisma {
     distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
   }
 
-
   /**
    * Product findMany
    */
@@ -2561,7 +2571,6 @@ export namespace Prisma {
     distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
   }
 
-
   /**
    * Product create
    */
@@ -2576,7 +2585,6 @@ export namespace Prisma {
     data: XOR<ProductCreateInput, ProductUncheckedCreateInput>
   }
 
-
   /**
    * Product createMany
    */
@@ -2586,7 +2594,6 @@ export namespace Prisma {
      */
     data: ProductCreateManyInput | ProductCreateManyInput[]
   }
-
 
   /**
    * Product update
@@ -2606,7 +2613,6 @@ export namespace Prisma {
     where: ProductWhereUniqueInput
   }
 
-
   /**
    * Product updateMany
    */
@@ -2620,7 +2626,6 @@ export namespace Prisma {
      */
     where?: ProductWhereInput
   }
-
 
   /**
    * Product upsert
@@ -2644,7 +2649,6 @@ export namespace Prisma {
     update: XOR<ProductUpdateInput, ProductUncheckedUpdateInput>
   }
 
-
   /**
    * Product delete
    */
@@ -2659,7 +2663,6 @@ export namespace Prisma {
     where: ProductWhereUniqueInput
   }
 
-
   /**
    * Product deleteMany
    */
@@ -2669,7 +2672,6 @@ export namespace Prisma {
      */
     where?: ProductWhereInput
   }
-
 
   /**
    * Product findRaw
@@ -2685,7 +2687,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Product aggregateRaw
    */
@@ -2700,7 +2701,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Product without action
    */
@@ -2710,7 +2710,6 @@ export namespace Prisma {
      */
     select?: ProductSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -2863,6 +2862,7 @@ export namespace Prisma {
     product_json_list?: boolean
   }, ExtArgs["result"]["favorite"]>
 
+
   export type FavoriteSelectScalar = {
     id?: boolean
     user?: boolean
@@ -2882,7 +2882,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["favorite"]>
     composites: {}
   }
-
 
   type FavoriteGetPayload<S extends boolean | null | undefined | FavoriteDefaultArgs> = $Result.GetResult<Prisma.$FavoritePayload, S>
 
@@ -2909,8 +2908,8 @@ export namespace Prisma {
     ): Prisma__FavoriteClient<$Result.GetResult<Prisma.$FavoritePayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Favorite that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Favorite that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {FavoriteFindUniqueOrThrowArgs} args - Arguments to find a Favorite
      * @example
      * // Get one Favorite
@@ -2963,7 +2962,7 @@ export namespace Prisma {
      * Find zero or more Favorites that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {FavoriteFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {FavoriteFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Favorites
      * const favorites = await prisma.favorite.findMany()
@@ -2997,14 +2996,14 @@ export namespace Prisma {
 
     /**
      * Create many Favorites.
-     *     @param {FavoriteCreateManyArgs} args - Arguments to create many Favorites.
-     *     @example
-     *     // Create many Favorites
-     *     const favorite = await prisma.favorite.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {FavoriteCreateManyArgs} args - Arguments to create many Favorites.
+     * @example
+     * // Create many Favorites
+     * const favorite = await prisma.favorite.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends FavoriteCreateManyArgs<ExtArgs>>(
@@ -3308,7 +3307,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Favorite findUnique
    */
@@ -3323,7 +3321,6 @@ export namespace Prisma {
     where: FavoriteWhereUniqueInput
   }
 
-
   /**
    * Favorite findUniqueOrThrow
    */
@@ -3337,7 +3334,6 @@ export namespace Prisma {
      */
     where: FavoriteWhereUniqueInput
   }
-
 
   /**
    * Favorite findFirst
@@ -3383,7 +3379,6 @@ export namespace Prisma {
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
-
   /**
    * Favorite findFirstOrThrow
    */
@@ -3428,7 +3423,6 @@ export namespace Prisma {
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
-
   /**
    * Favorite findMany
    */
@@ -3468,7 +3462,6 @@ export namespace Prisma {
     distinct?: FavoriteScalarFieldEnum | FavoriteScalarFieldEnum[]
   }
 
-
   /**
    * Favorite create
    */
@@ -3483,7 +3476,6 @@ export namespace Prisma {
     data: XOR<FavoriteCreateInput, FavoriteUncheckedCreateInput>
   }
 
-
   /**
    * Favorite createMany
    */
@@ -3493,7 +3485,6 @@ export namespace Prisma {
      */
     data: FavoriteCreateManyInput | FavoriteCreateManyInput[]
   }
-
 
   /**
    * Favorite update
@@ -3513,7 +3504,6 @@ export namespace Prisma {
     where: FavoriteWhereUniqueInput
   }
 
-
   /**
    * Favorite updateMany
    */
@@ -3527,7 +3517,6 @@ export namespace Prisma {
      */
     where?: FavoriteWhereInput
   }
-
 
   /**
    * Favorite upsert
@@ -3551,7 +3540,6 @@ export namespace Prisma {
     update: XOR<FavoriteUpdateInput, FavoriteUncheckedUpdateInput>
   }
 
-
   /**
    * Favorite delete
    */
@@ -3566,7 +3554,6 @@ export namespace Prisma {
     where: FavoriteWhereUniqueInput
   }
 
-
   /**
    * Favorite deleteMany
    */
@@ -3576,7 +3563,6 @@ export namespace Prisma {
      */
     where?: FavoriteWhereInput
   }
-
 
   /**
    * Favorite findRaw
@@ -3592,7 +3578,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Favorite aggregateRaw
    */
@@ -3607,7 +3592,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Favorite without action
    */
@@ -3619,27 +3603,44 @@ export namespace Prisma {
   }
 
 
-
   /**
    * Model Page1compareinfomation
    */
 
   export type AggregatePage1compareinfomation = {
     _count: Page1compareinfomationCountAggregateOutputType | null
+    _avg: Page1compareinfomationAvgAggregateOutputType | null
+    _sum: Page1compareinfomationSumAggregateOutputType | null
     _min: Page1compareinfomationMinAggregateOutputType | null
     _max: Page1compareinfomationMaxAggregateOutputType | null
+  }
+
+  export type Page1compareinfomationAvgAggregateOutputType = {
+    dailynet: number | null
+    dailyval: number | null
+  }
+
+  export type Page1compareinfomationSumAggregateOutputType = {
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type Page1compareinfomationMinAggregateOutputType = {
     id: string | null
     proj_id: string | null
     proj_abbr_name: string | null
+    dailydate: string | null
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type Page1compareinfomationMaxAggregateOutputType = {
     id: string | null
     proj_id: string | null
     proj_abbr_name: string | null
+    dailydate: string | null
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type Page1compareinfomationCountAggregateOutputType = {
@@ -3647,20 +3648,39 @@ export namespace Prisma {
     proj_id: number
     proj_abbr_name: number
     compareinfomation: number
+    dailydate: number
+    dailynet: number
+    dailyval: number
     _all: number
   }
 
+
+  export type Page1compareinfomationAvgAggregateInputType = {
+    dailynet?: true
+    dailyval?: true
+  }
+
+  export type Page1compareinfomationSumAggregateInputType = {
+    dailynet?: true
+    dailyval?: true
+  }
 
   export type Page1compareinfomationMinAggregateInputType = {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
   }
 
   export type Page1compareinfomationMaxAggregateInputType = {
     id?: true
     proj_id?: true
     proj_abbr_name?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
   }
 
   export type Page1compareinfomationCountAggregateInputType = {
@@ -3668,6 +3688,9 @@ export namespace Prisma {
     proj_id?: true
     proj_abbr_name?: true
     compareinfomation?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
     _all?: true
   }
 
@@ -3709,6 +3732,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: Page1compareinfomationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Page1compareinfomationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: Page1compareinfomationMinAggregateInputType
@@ -3739,6 +3774,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: Page1compareinfomationCountAggregateInputType | true
+    _avg?: Page1compareinfomationAvgAggregateInputType
+    _sum?: Page1compareinfomationSumAggregateInputType
     _min?: Page1compareinfomationMinAggregateInputType
     _max?: Page1compareinfomationMaxAggregateInputType
   }
@@ -3748,7 +3785,12 @@ export namespace Prisma {
     proj_id: string
     proj_abbr_name: string
     compareinfomation: JsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
     _count: Page1compareinfomationCountAggregateOutputType | null
+    _avg: Page1compareinfomationAvgAggregateOutputType | null
+    _sum: Page1compareinfomationSumAggregateOutputType | null
     _min: Page1compareinfomationMinAggregateOutputType | null
     _max: Page1compareinfomationMaxAggregateOutputType | null
   }
@@ -3772,13 +3814,20 @@ export namespace Prisma {
     proj_id?: boolean
     proj_abbr_name?: boolean
     compareinfomation?: boolean
+    dailydate?: boolean
+    dailynet?: boolean
+    dailyval?: boolean
   }, ExtArgs["result"]["page1compareinfomation"]>
+
 
   export type Page1compareinfomationSelectScalar = {
     id?: boolean
     proj_id?: boolean
     proj_abbr_name?: boolean
     compareinfomation?: boolean
+    dailydate?: boolean
+    dailynet?: boolean
+    dailyval?: boolean
   }
 
 
@@ -3790,10 +3839,12 @@ export namespace Prisma {
       proj_id: string
       proj_abbr_name: string
       compareinfomation: Prisma.JsonValue
+      dailydate: string
+      dailynet: number
+      dailyval: number
     }, ExtArgs["result"]["page1compareinfomation"]>
     composites: {}
   }
-
 
   type Page1compareinfomationGetPayload<S extends boolean | null | undefined | Page1compareinfomationDefaultArgs> = $Result.GetResult<Prisma.$Page1compareinfomationPayload, S>
 
@@ -3820,8 +3871,8 @@ export namespace Prisma {
     ): Prisma__Page1compareinfomationClient<$Result.GetResult<Prisma.$Page1compareinfomationPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page1compareinfomation that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page1compareinfomation that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page1compareinfomationFindUniqueOrThrowArgs} args - Arguments to find a Page1compareinfomation
      * @example
      * // Get one Page1compareinfomation
@@ -3874,7 +3925,7 @@ export namespace Prisma {
      * Find zero or more Page1compareinfomations that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page1compareinfomationFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page1compareinfomationFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page1compareinfomations
      * const page1compareinfomations = await prisma.page1compareinfomation.findMany()
@@ -3908,14 +3959,14 @@ export namespace Prisma {
 
     /**
      * Create many Page1compareinfomations.
-     *     @param {Page1compareinfomationCreateManyArgs} args - Arguments to create many Page1compareinfomations.
-     *     @example
-     *     // Create many Page1compareinfomations
-     *     const page1compareinfomation = await prisma.page1compareinfomation.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page1compareinfomationCreateManyArgs} args - Arguments to create many Page1compareinfomations.
+     * @example
+     * // Create many Page1compareinfomations
+     * const page1compareinfomation = await prisma.page1compareinfomation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page1compareinfomationCreateManyArgs<ExtArgs>>(
@@ -4215,11 +4266,13 @@ export namespace Prisma {
     readonly proj_id: FieldRef<"Page1compareinfomation", 'String'>
     readonly proj_abbr_name: FieldRef<"Page1compareinfomation", 'String'>
     readonly compareinfomation: FieldRef<"Page1compareinfomation", 'Json'>
+    readonly dailydate: FieldRef<"Page1compareinfomation", 'String'>
+    readonly dailynet: FieldRef<"Page1compareinfomation", 'Float'>
+    readonly dailyval: FieldRef<"Page1compareinfomation", 'Float'>
   }
     
 
   // Custom InputTypes
-
   /**
    * Page1compareinfomation findUnique
    */
@@ -4234,7 +4287,6 @@ export namespace Prisma {
     where: Page1compareinfomationWhereUniqueInput
   }
 
-
   /**
    * Page1compareinfomation findUniqueOrThrow
    */
@@ -4248,7 +4300,6 @@ export namespace Prisma {
      */
     where: Page1compareinfomationWhereUniqueInput
   }
-
 
   /**
    * Page1compareinfomation findFirst
@@ -4294,7 +4345,6 @@ export namespace Prisma {
     distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
-
   /**
    * Page1compareinfomation findFirstOrThrow
    */
@@ -4339,7 +4389,6 @@ export namespace Prisma {
     distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
-
   /**
    * Page1compareinfomation findMany
    */
@@ -4379,7 +4428,6 @@ export namespace Prisma {
     distinct?: Page1compareinfomationScalarFieldEnum | Page1compareinfomationScalarFieldEnum[]
   }
 
-
   /**
    * Page1compareinfomation create
    */
@@ -4394,7 +4442,6 @@ export namespace Prisma {
     data: XOR<Page1compareinfomationCreateInput, Page1compareinfomationUncheckedCreateInput>
   }
 
-
   /**
    * Page1compareinfomation createMany
    */
@@ -4404,7 +4451,6 @@ export namespace Prisma {
      */
     data: Page1compareinfomationCreateManyInput | Page1compareinfomationCreateManyInput[]
   }
-
 
   /**
    * Page1compareinfomation update
@@ -4424,7 +4470,6 @@ export namespace Prisma {
     where: Page1compareinfomationWhereUniqueInput
   }
 
-
   /**
    * Page1compareinfomation updateMany
    */
@@ -4438,7 +4483,6 @@ export namespace Prisma {
      */
     where?: Page1compareinfomationWhereInput
   }
-
 
   /**
    * Page1compareinfomation upsert
@@ -4462,7 +4506,6 @@ export namespace Prisma {
     update: XOR<Page1compareinfomationUpdateInput, Page1compareinfomationUncheckedUpdateInput>
   }
 
-
   /**
    * Page1compareinfomation delete
    */
@@ -4477,7 +4520,6 @@ export namespace Prisma {
     where: Page1compareinfomationWhereUniqueInput
   }
 
-
   /**
    * Page1compareinfomation deleteMany
    */
@@ -4487,7 +4529,6 @@ export namespace Prisma {
      */
     where?: Page1compareinfomationWhereInput
   }
-
 
   /**
    * Page1compareinfomation findRaw
@@ -4503,7 +4544,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page1compareinfomation aggregateRaw
    */
@@ -4518,7 +4558,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page1compareinfomation without action
    */
@@ -4528,7 +4567,6 @@ export namespace Prisma {
      */
     select?: Page1compareinfomationSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -4685,6 +4723,7 @@ export namespace Prisma {
     operating_results?: boolean
   }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
 
+
   export type Page2Operating_results_and_dividendsSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -4704,7 +4743,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["page2Operating_results_and_dividends"]>
     composites: {}
   }
-
 
   type Page2Operating_results_and_dividendsGetPayload<S extends boolean | null | undefined | Page2Operating_results_and_dividendsDefaultArgs> = $Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload, S>
 
@@ -4731,8 +4769,8 @@ export namespace Prisma {
     ): Prisma__Page2Operating_results_and_dividendsClient<$Result.GetResult<Prisma.$Page2Operating_results_and_dividendsPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page2Operating_results_and_dividends that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page2Operating_results_and_dividends that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page2Operating_results_and_dividendsFindUniqueOrThrowArgs} args - Arguments to find a Page2Operating_results_and_dividends
      * @example
      * // Get one Page2Operating_results_and_dividends
@@ -4785,7 +4823,7 @@ export namespace Prisma {
      * Find zero or more Page2Operating_results_and_dividends that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page2Operating_results_and_dividendsFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page2Operating_results_and_dividendsFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page2Operating_results_and_dividends
      * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.findMany()
@@ -4819,14 +4857,14 @@ export namespace Prisma {
 
     /**
      * Create many Page2Operating_results_and_dividends.
-     *     @param {Page2Operating_results_and_dividendsCreateManyArgs} args - Arguments to create many Page2Operating_results_and_dividends.
-     *     @example
-     *     // Create many Page2Operating_results_and_dividends
-     *     const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page2Operating_results_and_dividendsCreateManyArgs} args - Arguments to create many Page2Operating_results_and_dividends.
+     * @example
+     * // Create many Page2Operating_results_and_dividends
+     * const page2Operating_results_and_dividends = await prisma.page2Operating_results_and_dividends.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page2Operating_results_and_dividendsCreateManyArgs<ExtArgs>>(
@@ -5130,7 +5168,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Page2Operating_results_and_dividends findUnique
    */
@@ -5145,7 +5182,6 @@ export namespace Prisma {
     where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
-
   /**
    * Page2Operating_results_and_dividends findUniqueOrThrow
    */
@@ -5159,7 +5195,6 @@ export namespace Prisma {
      */
     where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
-
 
   /**
    * Page2Operating_results_and_dividends findFirst
@@ -5205,7 +5240,6 @@ export namespace Prisma {
     distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
-
   /**
    * Page2Operating_results_and_dividends findFirstOrThrow
    */
@@ -5250,7 +5284,6 @@ export namespace Prisma {
     distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
-
   /**
    * Page2Operating_results_and_dividends findMany
    */
@@ -5290,7 +5323,6 @@ export namespace Prisma {
     distinct?: Page2Operating_results_and_dividendsScalarFieldEnum | Page2Operating_results_and_dividendsScalarFieldEnum[]
   }
 
-
   /**
    * Page2Operating_results_and_dividends create
    */
@@ -5305,7 +5337,6 @@ export namespace Prisma {
     data: XOR<Page2Operating_results_and_dividendsCreateInput, Page2Operating_results_and_dividendsUncheckedCreateInput>
   }
 
-
   /**
    * Page2Operating_results_and_dividends createMany
    */
@@ -5315,7 +5346,6 @@ export namespace Prisma {
      */
     data: Page2Operating_results_and_dividendsCreateManyInput | Page2Operating_results_and_dividendsCreateManyInput[]
   }
-
 
   /**
    * Page2Operating_results_and_dividends update
@@ -5335,7 +5365,6 @@ export namespace Prisma {
     where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
-
   /**
    * Page2Operating_results_and_dividends updateMany
    */
@@ -5349,7 +5378,6 @@ export namespace Prisma {
      */
     where?: Page2Operating_results_and_dividendsWhereInput
   }
-
 
   /**
    * Page2Operating_results_and_dividends upsert
@@ -5373,7 +5401,6 @@ export namespace Prisma {
     update: XOR<Page2Operating_results_and_dividendsUpdateInput, Page2Operating_results_and_dividendsUncheckedUpdateInput>
   }
 
-
   /**
    * Page2Operating_results_and_dividends delete
    */
@@ -5388,7 +5415,6 @@ export namespace Prisma {
     where: Page2Operating_results_and_dividendsWhereUniqueInput
   }
 
-
   /**
    * Page2Operating_results_and_dividends deleteMany
    */
@@ -5398,7 +5424,6 @@ export namespace Prisma {
      */
     where?: Page2Operating_results_and_dividendsWhereInput
   }
-
 
   /**
    * Page2Operating_results_and_dividends findRaw
@@ -5414,7 +5439,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page2Operating_results_and_dividends aggregateRaw
    */
@@ -5429,7 +5453,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page2Operating_results_and_dividends without action
    */
@@ -5439,7 +5462,6 @@ export namespace Prisma {
      */
     select?: Page2Operating_results_and_dividendsSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -5596,6 +5618,7 @@ export namespace Prisma {
     top_five_holding?: boolean
   }, ExtArgs["result"]["page3topfiveCompareport"]>
 
+
   export type Page3topfiveCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -5615,7 +5638,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["page3topfiveCompareport"]>
     composites: {}
   }
-
 
   type Page3topfiveCompareportGetPayload<S extends boolean | null | undefined | Page3topfiveCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3topfiveCompareportPayload, S>
 
@@ -5642,8 +5664,8 @@ export namespace Prisma {
     ): Prisma__Page3topfiveCompareportClient<$Result.GetResult<Prisma.$Page3topfiveCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page3topfiveCompareport that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page3topfiveCompareport that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page3topfiveCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3topfiveCompareport
      * @example
      * // Get one Page3topfiveCompareport
@@ -5696,7 +5718,7 @@ export namespace Prisma {
      * Find zero or more Page3topfiveCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page3topfiveCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3topfiveCompareportFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page3topfiveCompareports
      * const page3topfiveCompareports = await prisma.page3topfiveCompareport.findMany()
@@ -5730,14 +5752,14 @@ export namespace Prisma {
 
     /**
      * Create many Page3topfiveCompareports.
-     *     @param {Page3topfiveCompareportCreateManyArgs} args - Arguments to create many Page3topfiveCompareports.
-     *     @example
-     *     // Create many Page3topfiveCompareports
-     *     const page3topfiveCompareport = await prisma.page3topfiveCompareport.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page3topfiveCompareportCreateManyArgs} args - Arguments to create many Page3topfiveCompareports.
+     * @example
+     * // Create many Page3topfiveCompareports
+     * const page3topfiveCompareport = await prisma.page3topfiveCompareport.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page3topfiveCompareportCreateManyArgs<ExtArgs>>(
@@ -6041,7 +6063,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Page3topfiveCompareport findUnique
    */
@@ -6056,7 +6077,6 @@ export namespace Prisma {
     where: Page3topfiveCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3topfiveCompareport findUniqueOrThrow
    */
@@ -6070,7 +6090,6 @@ export namespace Prisma {
      */
     where: Page3topfiveCompareportWhereUniqueInput
   }
-
 
   /**
    * Page3topfiveCompareport findFirst
@@ -6116,7 +6135,6 @@ export namespace Prisma {
     distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3topfiveCompareport findFirstOrThrow
    */
@@ -6161,7 +6179,6 @@ export namespace Prisma {
     distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3topfiveCompareport findMany
    */
@@ -6201,7 +6218,6 @@ export namespace Prisma {
     distinct?: Page3topfiveCompareportScalarFieldEnum | Page3topfiveCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3topfiveCompareport create
    */
@@ -6216,7 +6232,6 @@ export namespace Prisma {
     data: XOR<Page3topfiveCompareportCreateInput, Page3topfiveCompareportUncheckedCreateInput>
   }
 
-
   /**
    * Page3topfiveCompareport createMany
    */
@@ -6226,7 +6241,6 @@ export namespace Prisma {
      */
     data: Page3topfiveCompareportCreateManyInput | Page3topfiveCompareportCreateManyInput[]
   }
-
 
   /**
    * Page3topfiveCompareport update
@@ -6246,7 +6260,6 @@ export namespace Prisma {
     where: Page3topfiveCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3topfiveCompareport updateMany
    */
@@ -6260,7 +6273,6 @@ export namespace Prisma {
      */
     where?: Page3topfiveCompareportWhereInput
   }
-
 
   /**
    * Page3topfiveCompareport upsert
@@ -6284,7 +6296,6 @@ export namespace Prisma {
     update: XOR<Page3topfiveCompareportUpdateInput, Page3topfiveCompareportUncheckedUpdateInput>
   }
 
-
   /**
    * Page3topfiveCompareport delete
    */
@@ -6299,7 +6310,6 @@ export namespace Prisma {
     where: Page3topfiveCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3topfiveCompareport deleteMany
    */
@@ -6309,7 +6319,6 @@ export namespace Prisma {
      */
     where?: Page3topfiveCompareportWhereInput
   }
-
 
   /**
    * Page3topfiveCompareport findRaw
@@ -6325,7 +6334,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3topfiveCompareport aggregateRaw
    */
@@ -6340,7 +6348,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3topfiveCompareport without action
    */
@@ -6350,7 +6357,6 @@ export namespace Prisma {
      */
     select?: Page3topfiveCompareportSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -6507,6 +6513,7 @@ export namespace Prisma {
     type_data?: boolean
   }, ExtArgs["result"]["page3typeCompareport"]>
 
+
   export type Page3typeCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -6526,7 +6533,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["page3typeCompareport"]>
     composites: {}
   }
-
 
   type Page3typeCompareportGetPayload<S extends boolean | null | undefined | Page3typeCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3typeCompareportPayload, S>
 
@@ -6553,8 +6559,8 @@ export namespace Prisma {
     ): Prisma__Page3typeCompareportClient<$Result.GetResult<Prisma.$Page3typeCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page3typeCompareport that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page3typeCompareport that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page3typeCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3typeCompareport
      * @example
      * // Get one Page3typeCompareport
@@ -6607,7 +6613,7 @@ export namespace Prisma {
      * Find zero or more Page3typeCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page3typeCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3typeCompareportFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page3typeCompareports
      * const page3typeCompareports = await prisma.page3typeCompareport.findMany()
@@ -6641,14 +6647,14 @@ export namespace Prisma {
 
     /**
      * Create many Page3typeCompareports.
-     *     @param {Page3typeCompareportCreateManyArgs} args - Arguments to create many Page3typeCompareports.
-     *     @example
-     *     // Create many Page3typeCompareports
-     *     const page3typeCompareport = await prisma.page3typeCompareport.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page3typeCompareportCreateManyArgs} args - Arguments to create many Page3typeCompareports.
+     * @example
+     * // Create many Page3typeCompareports
+     * const page3typeCompareport = await prisma.page3typeCompareport.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page3typeCompareportCreateManyArgs<ExtArgs>>(
@@ -6952,7 +6958,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Page3typeCompareport findUnique
    */
@@ -6967,7 +6972,6 @@ export namespace Prisma {
     where: Page3typeCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3typeCompareport findUniqueOrThrow
    */
@@ -6981,7 +6985,6 @@ export namespace Prisma {
      */
     where: Page3typeCompareportWhereUniqueInput
   }
-
 
   /**
    * Page3typeCompareport findFirst
@@ -7027,7 +7030,6 @@ export namespace Prisma {
     distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3typeCompareport findFirstOrThrow
    */
@@ -7072,7 +7074,6 @@ export namespace Prisma {
     distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3typeCompareport findMany
    */
@@ -7112,7 +7113,6 @@ export namespace Prisma {
     distinct?: Page3typeCompareportScalarFieldEnum | Page3typeCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3typeCompareport create
    */
@@ -7127,7 +7127,6 @@ export namespace Prisma {
     data: XOR<Page3typeCompareportCreateInput, Page3typeCompareportUncheckedCreateInput>
   }
 
-
   /**
    * Page3typeCompareport createMany
    */
@@ -7137,7 +7136,6 @@ export namespace Prisma {
      */
     data: Page3typeCompareportCreateManyInput | Page3typeCompareportCreateManyInput[]
   }
-
 
   /**
    * Page3typeCompareport update
@@ -7157,7 +7155,6 @@ export namespace Prisma {
     where: Page3typeCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3typeCompareport updateMany
    */
@@ -7171,7 +7168,6 @@ export namespace Prisma {
      */
     where?: Page3typeCompareportWhereInput
   }
-
 
   /**
    * Page3typeCompareport upsert
@@ -7195,7 +7191,6 @@ export namespace Prisma {
     update: XOR<Page3typeCompareportUpdateInput, Page3typeCompareportUncheckedUpdateInput>
   }
 
-
   /**
    * Page3typeCompareport delete
    */
@@ -7210,7 +7205,6 @@ export namespace Prisma {
     where: Page3typeCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3typeCompareport deleteMany
    */
@@ -7220,7 +7214,6 @@ export namespace Prisma {
      */
     where?: Page3typeCompareportWhereInput
   }
-
 
   /**
    * Page3typeCompareport findRaw
@@ -7236,7 +7229,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3typeCompareport aggregateRaw
    */
@@ -7251,7 +7243,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3typeCompareport without action
    */
@@ -7261,7 +7252,6 @@ export namespace Prisma {
      */
     select?: Page3typeCompareportSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -7418,6 +7408,7 @@ export namespace Prisma {
     Investment_proportion_data?: boolean
   }, ExtArgs["result"]["page3Investment_proportionCompareport"]>
 
+
   export type Page3Investment_proportionCompareportSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -7437,7 +7428,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["page3Investment_proportionCompareport"]>
     composites: {}
   }
-
 
   type Page3Investment_proportionCompareportGetPayload<S extends boolean | null | undefined | Page3Investment_proportionCompareportDefaultArgs> = $Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload, S>
 
@@ -7464,8 +7454,8 @@ export namespace Prisma {
     ): Prisma__Page3Investment_proportionCompareportClient<$Result.GetResult<Prisma.$Page3Investment_proportionCompareportPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page3Investment_proportionCompareport that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page3Investment_proportionCompareport that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page3Investment_proportionCompareportFindUniqueOrThrowArgs} args - Arguments to find a Page3Investment_proportionCompareport
      * @example
      * // Get one Page3Investment_proportionCompareport
@@ -7518,7 +7508,7 @@ export namespace Prisma {
      * Find zero or more Page3Investment_proportionCompareports that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page3Investment_proportionCompareportFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page3Investment_proportionCompareportFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page3Investment_proportionCompareports
      * const page3Investment_proportionCompareports = await prisma.page3Investment_proportionCompareport.findMany()
@@ -7552,14 +7542,14 @@ export namespace Prisma {
 
     /**
      * Create many Page3Investment_proportionCompareports.
-     *     @param {Page3Investment_proportionCompareportCreateManyArgs} args - Arguments to create many Page3Investment_proportionCompareports.
-     *     @example
-     *     // Create many Page3Investment_proportionCompareports
-     *     const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page3Investment_proportionCompareportCreateManyArgs} args - Arguments to create many Page3Investment_proportionCompareports.
+     * @example
+     * // Create many Page3Investment_proportionCompareports
+     * const page3Investment_proportionCompareport = await prisma.page3Investment_proportionCompareport.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page3Investment_proportionCompareportCreateManyArgs<ExtArgs>>(
@@ -7863,7 +7853,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Page3Investment_proportionCompareport findUnique
    */
@@ -7878,7 +7867,6 @@ export namespace Prisma {
     where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3Investment_proportionCompareport findUniqueOrThrow
    */
@@ -7892,7 +7880,6 @@ export namespace Prisma {
      */
     where: Page3Investment_proportionCompareportWhereUniqueInput
   }
-
 
   /**
    * Page3Investment_proportionCompareport findFirst
@@ -7938,7 +7925,6 @@ export namespace Prisma {
     distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3Investment_proportionCompareport findFirstOrThrow
    */
@@ -7983,7 +7969,6 @@ export namespace Prisma {
     distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3Investment_proportionCompareport findMany
    */
@@ -8023,7 +8008,6 @@ export namespace Prisma {
     distinct?: Page3Investment_proportionCompareportScalarFieldEnum | Page3Investment_proportionCompareportScalarFieldEnum[]
   }
 
-
   /**
    * Page3Investment_proportionCompareport create
    */
@@ -8038,7 +8022,6 @@ export namespace Prisma {
     data: XOR<Page3Investment_proportionCompareportCreateInput, Page3Investment_proportionCompareportUncheckedCreateInput>
   }
 
-
   /**
    * Page3Investment_proportionCompareport createMany
    */
@@ -8048,7 +8031,6 @@ export namespace Prisma {
      */
     data: Page3Investment_proportionCompareportCreateManyInput | Page3Investment_proportionCompareportCreateManyInput[]
   }
-
 
   /**
    * Page3Investment_proportionCompareport update
@@ -8068,7 +8050,6 @@ export namespace Prisma {
     where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3Investment_proportionCompareport updateMany
    */
@@ -8082,7 +8063,6 @@ export namespace Prisma {
      */
     where?: Page3Investment_proportionCompareportWhereInput
   }
-
 
   /**
    * Page3Investment_proportionCompareport upsert
@@ -8106,7 +8086,6 @@ export namespace Prisma {
     update: XOR<Page3Investment_proportionCompareportUpdateInput, Page3Investment_proportionCompareportUncheckedUpdateInput>
   }
 
-
   /**
    * Page3Investment_proportionCompareport delete
    */
@@ -8121,7 +8100,6 @@ export namespace Prisma {
     where: Page3Investment_proportionCompareportWhereUniqueInput
   }
 
-
   /**
    * Page3Investment_proportionCompareport deleteMany
    */
@@ -8131,7 +8109,6 @@ export namespace Prisma {
      */
     where?: Page3Investment_proportionCompareportWhereInput
   }
-
 
   /**
    * Page3Investment_proportionCompareport findRaw
@@ -8147,7 +8124,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3Investment_proportionCompareport aggregateRaw
    */
@@ -8162,7 +8138,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page3Investment_proportionCompareport without action
    */
@@ -8172,7 +8147,6 @@ export namespace Prisma {
      */
     select?: Page3Investment_proportionCompareportSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -8345,6 +8319,7 @@ export namespace Prisma {
     buyInfo?: boolean
   }, ExtArgs["result"]["page4Fee"]>
 
+
   export type Page4FeeSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -8371,7 +8346,6 @@ export namespace Prisma {
     composites: {}
   }
 
-
   type Page4FeeGetPayload<S extends boolean | null | undefined | Page4FeeDefaultArgs> = $Result.GetResult<Prisma.$Page4FeePayload, S>
 
   type Page4FeeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
@@ -8397,8 +8371,8 @@ export namespace Prisma {
     ): Prisma__Page4FeeClient<$Result.GetResult<Prisma.$Page4FeePayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Page4Fee that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Page4Fee that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {Page4FeeFindUniqueOrThrowArgs} args - Arguments to find a Page4Fee
      * @example
      * // Get one Page4Fee
@@ -8451,7 +8425,7 @@ export namespace Prisma {
      * Find zero or more Page4Fees that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {Page4FeeFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {Page4FeeFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Page4Fees
      * const page4Fees = await prisma.page4Fee.findMany()
@@ -8485,14 +8459,14 @@ export namespace Prisma {
 
     /**
      * Create many Page4Fees.
-     *     @param {Page4FeeCreateManyArgs} args - Arguments to create many Page4Fees.
-     *     @example
-     *     // Create many Page4Fees
-     *     const page4Fee = await prisma.page4Fee.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {Page4FeeCreateManyArgs} args - Arguments to create many Page4Fees.
+     * @example
+     * // Create many Page4Fees
+     * const page4Fee = await prisma.page4Fee.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends Page4FeeCreateManyArgs<ExtArgs>>(
@@ -8799,7 +8773,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Page4Fee findUnique
    */
@@ -8814,7 +8787,6 @@ export namespace Prisma {
     where: Page4FeeWhereUniqueInput
   }
 
-
   /**
    * Page4Fee findUniqueOrThrow
    */
@@ -8828,7 +8800,6 @@ export namespace Prisma {
      */
     where: Page4FeeWhereUniqueInput
   }
-
 
   /**
    * Page4Fee findFirst
@@ -8874,7 +8845,6 @@ export namespace Prisma {
     distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
-
   /**
    * Page4Fee findFirstOrThrow
    */
@@ -8919,7 +8889,6 @@ export namespace Prisma {
     distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
-
   /**
    * Page4Fee findMany
    */
@@ -8959,7 +8928,6 @@ export namespace Prisma {
     distinct?: Page4FeeScalarFieldEnum | Page4FeeScalarFieldEnum[]
   }
 
-
   /**
    * Page4Fee create
    */
@@ -8974,7 +8942,6 @@ export namespace Prisma {
     data: XOR<Page4FeeCreateInput, Page4FeeUncheckedCreateInput>
   }
 
-
   /**
    * Page4Fee createMany
    */
@@ -8984,7 +8951,6 @@ export namespace Prisma {
      */
     data: Page4FeeCreateManyInput | Page4FeeCreateManyInput[]
   }
-
 
   /**
    * Page4Fee update
@@ -9004,7 +8970,6 @@ export namespace Prisma {
     where: Page4FeeWhereUniqueInput
   }
 
-
   /**
    * Page4Fee updateMany
    */
@@ -9018,7 +8983,6 @@ export namespace Prisma {
      */
     where?: Page4FeeWhereInput
   }
-
 
   /**
    * Page4Fee upsert
@@ -9042,7 +9006,6 @@ export namespace Prisma {
     update: XOR<Page4FeeUpdateInput, Page4FeeUncheckedUpdateInput>
   }
 
-
   /**
    * Page4Fee delete
    */
@@ -9057,7 +9020,6 @@ export namespace Prisma {
     where: Page4FeeWhereUniqueInput
   }
 
-
   /**
    * Page4Fee deleteMany
    */
@@ -9067,7 +9029,6 @@ export namespace Prisma {
      */
     where?: Page4FeeWhereInput
   }
-
 
   /**
    * Page4Fee findRaw
@@ -9083,7 +9044,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page4Fee aggregateRaw
    */
@@ -9098,7 +9058,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Page4Fee without action
    */
@@ -9108,7 +9067,6 @@ export namespace Prisma {
      */
     select?: Page4FeeSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -9265,6 +9223,7 @@ export namespace Prisma {
     Allinfo?: boolean
   }, ExtArgs["result"]["allProductInfo"]>
 
+
   export type AllProductInfoSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -9284,7 +9243,6 @@ export namespace Prisma {
     }, ExtArgs["result"]["allProductInfo"]>
     composites: {}
   }
-
 
   type AllProductInfoGetPayload<S extends boolean | null | undefined | AllProductInfoDefaultArgs> = $Result.GetResult<Prisma.$AllProductInfoPayload, S>
 
@@ -9311,8 +9269,8 @@ export namespace Prisma {
     ): Prisma__AllProductInfoClient<$Result.GetResult<Prisma.$AllProductInfoPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one AllProductInfo that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one AllProductInfo that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {AllProductInfoFindUniqueOrThrowArgs} args - Arguments to find a AllProductInfo
      * @example
      * // Get one AllProductInfo
@@ -9365,7 +9323,7 @@ export namespace Prisma {
      * Find zero or more AllProductInfos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {AllProductInfoFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {AllProductInfoFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all AllProductInfos
      * const allProductInfos = await prisma.allProductInfo.findMany()
@@ -9399,14 +9357,14 @@ export namespace Prisma {
 
     /**
      * Create many AllProductInfos.
-     *     @param {AllProductInfoCreateManyArgs} args - Arguments to create many AllProductInfos.
-     *     @example
-     *     // Create many AllProductInfos
-     *     const allProductInfo = await prisma.allProductInfo.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {AllProductInfoCreateManyArgs} args - Arguments to create many AllProductInfos.
+     * @example
+     * // Create many AllProductInfos
+     * const allProductInfo = await prisma.allProductInfo.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends AllProductInfoCreateManyArgs<ExtArgs>>(
@@ -9710,7 +9668,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * AllProductInfo findUnique
    */
@@ -9725,7 +9682,6 @@ export namespace Prisma {
     where: AllProductInfoWhereUniqueInput
   }
 
-
   /**
    * AllProductInfo findUniqueOrThrow
    */
@@ -9739,7 +9695,6 @@ export namespace Prisma {
      */
     where: AllProductInfoWhereUniqueInput
   }
-
 
   /**
    * AllProductInfo findFirst
@@ -9785,7 +9740,6 @@ export namespace Prisma {
     distinct?: AllProductInfoScalarFieldEnum | AllProductInfoScalarFieldEnum[]
   }
 
-
   /**
    * AllProductInfo findFirstOrThrow
    */
@@ -9830,7 +9784,6 @@ export namespace Prisma {
     distinct?: AllProductInfoScalarFieldEnum | AllProductInfoScalarFieldEnum[]
   }
 
-
   /**
    * AllProductInfo findMany
    */
@@ -9870,7 +9823,6 @@ export namespace Prisma {
     distinct?: AllProductInfoScalarFieldEnum | AllProductInfoScalarFieldEnum[]
   }
 
-
   /**
    * AllProductInfo create
    */
@@ -9885,7 +9837,6 @@ export namespace Prisma {
     data: XOR<AllProductInfoCreateInput, AllProductInfoUncheckedCreateInput>
   }
 
-
   /**
    * AllProductInfo createMany
    */
@@ -9895,7 +9846,6 @@ export namespace Prisma {
      */
     data: AllProductInfoCreateManyInput | AllProductInfoCreateManyInput[]
   }
-
 
   /**
    * AllProductInfo update
@@ -9915,7 +9865,6 @@ export namespace Prisma {
     where: AllProductInfoWhereUniqueInput
   }
 
-
   /**
    * AllProductInfo updateMany
    */
@@ -9929,7 +9878,6 @@ export namespace Prisma {
      */
     where?: AllProductInfoWhereInput
   }
-
 
   /**
    * AllProductInfo upsert
@@ -9953,7 +9901,6 @@ export namespace Prisma {
     update: XOR<AllProductInfoUpdateInput, AllProductInfoUncheckedUpdateInput>
   }
 
-
   /**
    * AllProductInfo delete
    */
@@ -9968,7 +9915,6 @@ export namespace Prisma {
     where: AllProductInfoWhereUniqueInput
   }
 
-
   /**
    * AllProductInfo deleteMany
    */
@@ -9978,7 +9924,6 @@ export namespace Prisma {
      */
     where?: AllProductInfoWhereInput
   }
-
 
   /**
    * AllProductInfo findRaw
@@ -9994,7 +9939,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * AllProductInfo aggregateRaw
    */
@@ -10009,7 +9953,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * AllProductInfo without action
    */
@@ -10019,7 +9962,6 @@ export namespace Prisma {
      */
     select?: AllProductInfoSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -10204,6 +10146,7 @@ export namespace Prisma {
     risk_spectrum?: boolean
   }, ExtArgs["result"]["searchTest"]>
 
+
   export type SearchTestSelectScalar = {
     id?: boolean
     proj_id?: boolean
@@ -10230,7 +10173,6 @@ export namespace Prisma {
     composites: {}
   }
 
-
   type SearchTestGetPayload<S extends boolean | null | undefined | SearchTestDefaultArgs> = $Result.GetResult<Prisma.$SearchTestPayload, S>
 
   type SearchTestCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
@@ -10256,8 +10198,8 @@ export namespace Prisma {
     ): Prisma__SearchTestClient<$Result.GetResult<Prisma.$SearchTestPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one SearchTest that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one SearchTest that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {SearchTestFindUniqueOrThrowArgs} args - Arguments to find a SearchTest
      * @example
      * // Get one SearchTest
@@ -10310,7 +10252,7 @@ export namespace Prisma {
      * Find zero or more SearchTests that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {SearchTestFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {SearchTestFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all SearchTests
      * const searchTests = await prisma.searchTest.findMany()
@@ -10344,14 +10286,14 @@ export namespace Prisma {
 
     /**
      * Create many SearchTests.
-     *     @param {SearchTestCreateManyArgs} args - Arguments to create many SearchTests.
-     *     @example
-     *     // Create many SearchTests
-     *     const searchTest = await prisma.searchTest.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {SearchTestCreateManyArgs} args - Arguments to create many SearchTests.
+     * @example
+     * // Create many SearchTests
+     * const searchTest = await prisma.searchTest.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends SearchTestCreateManyArgs<ExtArgs>>(
@@ -10658,7 +10600,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * SearchTest findUnique
    */
@@ -10673,7 +10614,6 @@ export namespace Prisma {
     where: SearchTestWhereUniqueInput
   }
 
-
   /**
    * SearchTest findUniqueOrThrow
    */
@@ -10687,7 +10627,6 @@ export namespace Prisma {
      */
     where: SearchTestWhereUniqueInput
   }
-
 
   /**
    * SearchTest findFirst
@@ -10733,7 +10672,6 @@ export namespace Prisma {
     distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
   }
 
-
   /**
    * SearchTest findFirstOrThrow
    */
@@ -10778,7 +10716,6 @@ export namespace Prisma {
     distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
   }
 
-
   /**
    * SearchTest findMany
    */
@@ -10818,7 +10755,6 @@ export namespace Prisma {
     distinct?: SearchTestScalarFieldEnum | SearchTestScalarFieldEnum[]
   }
 
-
   /**
    * SearchTest create
    */
@@ -10833,7 +10769,6 @@ export namespace Prisma {
     data: XOR<SearchTestCreateInput, SearchTestUncheckedCreateInput>
   }
 
-
   /**
    * SearchTest createMany
    */
@@ -10843,7 +10778,6 @@ export namespace Prisma {
      */
     data: SearchTestCreateManyInput | SearchTestCreateManyInput[]
   }
-
 
   /**
    * SearchTest update
@@ -10863,7 +10797,6 @@ export namespace Prisma {
     where: SearchTestWhereUniqueInput
   }
 
-
   /**
    * SearchTest updateMany
    */
@@ -10877,7 +10810,6 @@ export namespace Prisma {
      */
     where?: SearchTestWhereInput
   }
-
 
   /**
    * SearchTest upsert
@@ -10901,7 +10833,6 @@ export namespace Prisma {
     update: XOR<SearchTestUpdateInput, SearchTestUncheckedUpdateInput>
   }
 
-
   /**
    * SearchTest delete
    */
@@ -10916,7 +10847,6 @@ export namespace Prisma {
     where: SearchTestWhereUniqueInput
   }
 
-
   /**
    * SearchTest deleteMany
    */
@@ -10926,7 +10856,6 @@ export namespace Prisma {
      */
     where?: SearchTestWhereInput
   }
-
 
   /**
    * SearchTest findRaw
@@ -10942,7 +10871,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * SearchTest aggregateRaw
    */
@@ -10957,7 +10885,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * SearchTest without action
    */
@@ -10969,15 +10896,26 @@ export namespace Prisma {
   }
 
 
-
   /**
    * Model ProductDetail
    */
 
   export type AggregateProductDetail = {
     _count: ProductDetailCountAggregateOutputType | null
+    _avg: ProductDetailAvgAggregateOutputType | null
+    _sum: ProductDetailSumAggregateOutputType | null
     _min: ProductDetailMinAggregateOutputType | null
     _max: ProductDetailMaxAggregateOutputType | null
+  }
+
+  export type ProductDetailAvgAggregateOutputType = {
+    dailynet: number | null
+    dailyval: number | null
+  }
+
+  export type ProductDetailSumAggregateOutputType = {
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type ProductDetailMinAggregateOutputType = {
@@ -10990,6 +10928,9 @@ export namespace Prisma {
     risk_spectrum: string | null
     companyTH: string | null
     companyEN: string | null
+    dailydate: string | null
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type ProductDetailMaxAggregateOutputType = {
@@ -11002,6 +10943,9 @@ export namespace Prisma {
     risk_spectrum: string | null
     companyTH: string | null
     companyEN: string | null
+    dailydate: string | null
+    dailynet: number | null
+    dailyval: number | null
   }
 
   export type ProductDetailCountAggregateOutputType = {
@@ -11017,9 +10961,22 @@ export namespace Prisma {
     fundType: number
     fund_resYTD: number
     Allinfo: number
+    dailydate: number
+    dailynet: number
+    dailyval: number
     _all: number
   }
 
+
+  export type ProductDetailAvgAggregateInputType = {
+    dailynet?: true
+    dailyval?: true
+  }
+
+  export type ProductDetailSumAggregateInputType = {
+    dailynet?: true
+    dailyval?: true
+  }
 
   export type ProductDetailMinAggregateInputType = {
     id?: true
@@ -11031,6 +10988,9 @@ export namespace Prisma {
     risk_spectrum?: true
     companyTH?: true
     companyEN?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
   }
 
   export type ProductDetailMaxAggregateInputType = {
@@ -11043,6 +11003,9 @@ export namespace Prisma {
     risk_spectrum?: true
     companyTH?: true
     companyEN?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
   }
 
   export type ProductDetailCountAggregateInputType = {
@@ -11058,6 +11021,9 @@ export namespace Prisma {
     fundType?: true
     fund_resYTD?: true
     Allinfo?: true
+    dailydate?: true
+    dailynet?: true
+    dailyval?: true
     _all?: true
   }
 
@@ -11099,6 +11065,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: ProductDetailAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProductDetailSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: ProductDetailMinAggregateInputType
@@ -11129,6 +11107,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ProductDetailCountAggregateInputType | true
+    _avg?: ProductDetailAvgAggregateInputType
+    _sum?: ProductDetailSumAggregateInputType
     _min?: ProductDetailMinAggregateInputType
     _max?: ProductDetailMaxAggregateInputType
   }
@@ -11146,7 +11126,12 @@ export namespace Prisma {
     fundType: string[]
     fund_resYTD: JsonValue
     Allinfo: JsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
     _count: ProductDetailCountAggregateOutputType | null
+    _avg: ProductDetailAvgAggregateOutputType | null
+    _sum: ProductDetailSumAggregateOutputType | null
     _min: ProductDetailMinAggregateOutputType | null
     _max: ProductDetailMaxAggregateOutputType | null
   }
@@ -11178,7 +11163,11 @@ export namespace Prisma {
     fundType?: boolean
     fund_resYTD?: boolean
     Allinfo?: boolean
+    dailydate?: boolean
+    dailynet?: boolean
+    dailyval?: boolean
   }, ExtArgs["result"]["productDetail"]>
+
 
   export type ProductDetailSelectScalar = {
     id?: boolean
@@ -11193,6 +11182,9 @@ export namespace Prisma {
     fundType?: boolean
     fund_resYTD?: boolean
     Allinfo?: boolean
+    dailydate?: boolean
+    dailynet?: boolean
+    dailyval?: boolean
   }
 
 
@@ -11212,10 +11204,12 @@ export namespace Prisma {
       fundType: string[]
       fund_resYTD: Prisma.JsonValue
       Allinfo: Prisma.JsonValue
+      dailydate: string
+      dailynet: number
+      dailyval: number
     }, ExtArgs["result"]["productDetail"]>
     composites: {}
   }
-
 
   type ProductDetailGetPayload<S extends boolean | null | undefined | ProductDetailDefaultArgs> = $Result.GetResult<Prisma.$ProductDetailPayload, S>
 
@@ -11242,8 +11236,8 @@ export namespace Prisma {
     ): Prisma__ProductDetailClient<$Result.GetResult<Prisma.$ProductDetailPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one ProductDetail that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one ProductDetail that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {ProductDetailFindUniqueOrThrowArgs} args - Arguments to find a ProductDetail
      * @example
      * // Get one ProductDetail
@@ -11296,7 +11290,7 @@ export namespace Prisma {
      * Find zero or more ProductDetails that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {ProductDetailFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {ProductDetailFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all ProductDetails
      * const productDetails = await prisma.productDetail.findMany()
@@ -11330,14 +11324,14 @@ export namespace Prisma {
 
     /**
      * Create many ProductDetails.
-     *     @param {ProductDetailCreateManyArgs} args - Arguments to create many ProductDetails.
-     *     @example
-     *     // Create many ProductDetails
-     *     const productDetail = await prisma.productDetail.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {ProductDetailCreateManyArgs} args - Arguments to create many ProductDetails.
+     * @example
+     * // Create many ProductDetails
+     * const productDetail = await prisma.productDetail.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends ProductDetailCreateManyArgs<ExtArgs>>(
@@ -11645,11 +11639,13 @@ export namespace Prisma {
     readonly fundType: FieldRef<"ProductDetail", 'String[]'>
     readonly fund_resYTD: FieldRef<"ProductDetail", 'Json'>
     readonly Allinfo: FieldRef<"ProductDetail", 'Json'>
+    readonly dailydate: FieldRef<"ProductDetail", 'String'>
+    readonly dailynet: FieldRef<"ProductDetail", 'Float'>
+    readonly dailyval: FieldRef<"ProductDetail", 'Float'>
   }
     
 
   // Custom InputTypes
-
   /**
    * ProductDetail findUnique
    */
@@ -11664,7 +11660,6 @@ export namespace Prisma {
     where: ProductDetailWhereUniqueInput
   }
 
-
   /**
    * ProductDetail findUniqueOrThrow
    */
@@ -11678,7 +11673,6 @@ export namespace Prisma {
      */
     where: ProductDetailWhereUniqueInput
   }
-
 
   /**
    * ProductDetail findFirst
@@ -11724,7 +11718,6 @@ export namespace Prisma {
     distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
   }
 
-
   /**
    * ProductDetail findFirstOrThrow
    */
@@ -11769,7 +11762,6 @@ export namespace Prisma {
     distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
   }
 
-
   /**
    * ProductDetail findMany
    */
@@ -11809,7 +11801,6 @@ export namespace Prisma {
     distinct?: ProductDetailScalarFieldEnum | ProductDetailScalarFieldEnum[]
   }
 
-
   /**
    * ProductDetail create
    */
@@ -11824,7 +11815,6 @@ export namespace Prisma {
     data: XOR<ProductDetailCreateInput, ProductDetailUncheckedCreateInput>
   }
 
-
   /**
    * ProductDetail createMany
    */
@@ -11834,7 +11824,6 @@ export namespace Prisma {
      */
     data: ProductDetailCreateManyInput | ProductDetailCreateManyInput[]
   }
-
 
   /**
    * ProductDetail update
@@ -11854,7 +11843,6 @@ export namespace Prisma {
     where: ProductDetailWhereUniqueInput
   }
 
-
   /**
    * ProductDetail updateMany
    */
@@ -11868,7 +11856,6 @@ export namespace Prisma {
      */
     where?: ProductDetailWhereInput
   }
-
 
   /**
    * ProductDetail upsert
@@ -11892,7 +11879,6 @@ export namespace Prisma {
     update: XOR<ProductDetailUpdateInput, ProductDetailUncheckedUpdateInput>
   }
 
-
   /**
    * ProductDetail delete
    */
@@ -11907,7 +11893,6 @@ export namespace Prisma {
     where: ProductDetailWhereUniqueInput
   }
 
-
   /**
    * ProductDetail deleteMany
    */
@@ -11917,7 +11902,6 @@ export namespace Prisma {
      */
     where?: ProductDetailWhereInput
   }
-
 
   /**
    * ProductDetail findRaw
@@ -11933,7 +11917,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * ProductDetail aggregateRaw
    */
@@ -11948,7 +11931,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * ProductDetail without action
    */
@@ -11958,7 +11940,6 @@ export namespace Prisma {
      */
     select?: ProductDetailSelect<ExtArgs> | null
   }
-
 
 
   /**
@@ -11976,7 +11957,8 @@ export namespace Prisma {
     companyTH: 'companyTH',
     companyEN: 'companyEN',
     Allinfo: 'Allinfo',
-    feefunds: 'feefunds'
+    feefunds: 'feefunds',
+    fundType: 'fundType'
   };
 
   export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -11996,7 +11978,10 @@ export namespace Prisma {
     id: 'id',
     proj_id: 'proj_id',
     proj_abbr_name: 'proj_abbr_name',
-    compareinfomation: 'compareinfomation'
+    compareinfomation: 'compareinfomation',
+    dailydate: 'dailydate',
+    dailynet: 'dailynet',
+    dailyval: 'dailyval'
   };
 
   export type Page1compareinfomationScalarFieldEnum = (typeof Page1compareinfomationScalarFieldEnum)[keyof typeof Page1compareinfomationScalarFieldEnum]
@@ -12090,7 +12075,10 @@ export namespace Prisma {
     companyEN: 'companyEN',
     fundType: 'fundType',
     fund_resYTD: 'fund_resYTD',
-    Allinfo: 'Allinfo'
+    Allinfo: 'Allinfo',
+    dailydate: 'dailydate',
+    dailynet: 'dailynet',
+    dailyval: 'dailyval'
   };
 
   export type ProductDetailScalarFieldEnum = (typeof ProductDetailScalarFieldEnum)[keyof typeof ProductDetailScalarFieldEnum]
@@ -12146,6 +12134,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Float'
+   */
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -12177,6 +12179,7 @@ export namespace Prisma {
     companyEN?: StringFilter<"Product"> | string
     Allinfo?: JsonFilter<"Product">
     feefunds?: StringNullableListFilter<"Product">
+    fundType?: StringNullableListFilter<"Product">
   }
 
   export type ProductOrderByWithRelationInput = {
@@ -12191,6 +12194,7 @@ export namespace Prisma {
     companyEN?: SortOrder
     Allinfo?: SortOrder
     feefunds?: SortOrder
+    fundType?: SortOrder
   }
 
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
@@ -12208,6 +12212,7 @@ export namespace Prisma {
     companyEN?: StringFilter<"Product"> | string
     Allinfo?: JsonFilter<"Product">
     feefunds?: StringNullableListFilter<"Product">
+    fundType?: StringNullableListFilter<"Product">
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type ProductOrderByWithAggregationInput = {
@@ -12222,6 +12227,7 @@ export namespace Prisma {
     companyEN?: SortOrder
     Allinfo?: SortOrder
     feefunds?: SortOrder
+    fundType?: SortOrder
     _count?: ProductCountOrderByAggregateInput
     _max?: ProductMaxOrderByAggregateInput
     _min?: ProductMinOrderByAggregateInput
@@ -12242,6 +12248,7 @@ export namespace Prisma {
     companyEN?: StringWithAggregatesFilter<"Product"> | string
     Allinfo?: JsonWithAggregatesFilter<"Product">
     feefunds?: StringNullableListFilter<"Product">
+    fundType?: StringNullableListFilter<"Product">
   }
 
   export type FavoriteWhereInput = {
@@ -12299,6 +12306,9 @@ export namespace Prisma {
     proj_id?: StringFilter<"Page1compareinfomation"> | string
     proj_abbr_name?: StringFilter<"Page1compareinfomation"> | string
     compareinfomation?: JsonFilter<"Page1compareinfomation">
+    dailydate?: StringFilter<"Page1compareinfomation"> | string
+    dailynet?: FloatFilter<"Page1compareinfomation"> | number
+    dailyval?: FloatFilter<"Page1compareinfomation"> | number
   }
 
   export type Page1compareinfomationOrderByWithRelationInput = {
@@ -12306,6 +12316,9 @@ export namespace Prisma {
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
     compareinfomation?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type Page1compareinfomationWhereUniqueInput = Prisma.AtLeast<{
@@ -12316,6 +12329,9 @@ export namespace Prisma {
     OR?: Page1compareinfomationWhereInput[]
     NOT?: Page1compareinfomationWhereInput | Page1compareinfomationWhereInput[]
     compareinfomation?: JsonFilter<"Page1compareinfomation">
+    dailydate?: StringFilter<"Page1compareinfomation"> | string
+    dailynet?: FloatFilter<"Page1compareinfomation"> | number
+    dailyval?: FloatFilter<"Page1compareinfomation"> | number
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type Page1compareinfomationOrderByWithAggregationInput = {
@@ -12323,9 +12339,14 @@ export namespace Prisma {
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
     compareinfomation?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
     _count?: Page1compareinfomationCountOrderByAggregateInput
+    _avg?: Page1compareinfomationAvgOrderByAggregateInput
     _max?: Page1compareinfomationMaxOrderByAggregateInput
     _min?: Page1compareinfomationMinOrderByAggregateInput
+    _sum?: Page1compareinfomationSumOrderByAggregateInput
   }
 
   export type Page1compareinfomationScalarWhereWithAggregatesInput = {
@@ -12336,6 +12357,9 @@ export namespace Prisma {
     proj_id?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
     proj_abbr_name?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
     compareinfomation?: JsonWithAggregatesFilter<"Page1compareinfomation">
+    dailydate?: StringWithAggregatesFilter<"Page1compareinfomation"> | string
+    dailynet?: FloatWithAggregatesFilter<"Page1compareinfomation"> | number
+    dailyval?: FloatWithAggregatesFilter<"Page1compareinfomation"> | number
   }
 
   export type Page2Operating_results_and_dividendsWhereInput = {
@@ -12713,6 +12737,9 @@ export namespace Prisma {
     fundType?: StringNullableListFilter<"ProductDetail">
     fund_resYTD?: JsonFilter<"ProductDetail">
     Allinfo?: JsonFilter<"ProductDetail">
+    dailydate?: StringFilter<"ProductDetail"> | string
+    dailynet?: FloatFilter<"ProductDetail"> | number
+    dailyval?: FloatFilter<"ProductDetail"> | number
   }
 
   export type ProductDetailOrderByWithRelationInput = {
@@ -12728,6 +12755,9 @@ export namespace Prisma {
     fundType?: SortOrder
     fund_resYTD?: SortOrder
     Allinfo?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type ProductDetailWhereUniqueInput = Prisma.AtLeast<{
@@ -12746,6 +12776,9 @@ export namespace Prisma {
     fundType?: StringNullableListFilter<"ProductDetail">
     fund_resYTD?: JsonFilter<"ProductDetail">
     Allinfo?: JsonFilter<"ProductDetail">
+    dailydate?: StringFilter<"ProductDetail"> | string
+    dailynet?: FloatFilter<"ProductDetail"> | number
+    dailyval?: FloatFilter<"ProductDetail"> | number
   }, "id" | "proj_id" | "proj_abbr_name">
 
   export type ProductDetailOrderByWithAggregationInput = {
@@ -12761,9 +12794,14 @@ export namespace Prisma {
     fundType?: SortOrder
     fund_resYTD?: SortOrder
     Allinfo?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
     _count?: ProductDetailCountOrderByAggregateInput
+    _avg?: ProductDetailAvgOrderByAggregateInput
     _max?: ProductDetailMaxOrderByAggregateInput
     _min?: ProductDetailMinOrderByAggregateInput
+    _sum?: ProductDetailSumOrderByAggregateInput
   }
 
   export type ProductDetailScalarWhereWithAggregatesInput = {
@@ -12782,6 +12820,9 @@ export namespace Prisma {
     fundType?: StringNullableListFilter<"ProductDetail">
     fund_resYTD?: JsonWithAggregatesFilter<"ProductDetail">
     Allinfo?: JsonWithAggregatesFilter<"ProductDetail">
+    dailydate?: StringWithAggregatesFilter<"ProductDetail"> | string
+    dailynet?: FloatWithAggregatesFilter<"ProductDetail"> | number
+    dailyval?: FloatWithAggregatesFilter<"ProductDetail"> | number
   }
 
   export type ProductCreateInput = {
@@ -12796,6 +12837,7 @@ export namespace Prisma {
     companyEN: string
     Allinfo: InputJsonValue
     feefunds?: ProductCreatefeefundsInput | string[]
+    fundType?: ProductCreatefundTypeInput | string[]
   }
 
   export type ProductUncheckedCreateInput = {
@@ -12810,6 +12852,7 @@ export namespace Prisma {
     companyEN: string
     Allinfo: InputJsonValue
     feefunds?: ProductCreatefeefundsInput | string[]
+    fundType?: ProductCreatefundTypeInput | string[]
   }
 
   export type ProductUpdateInput = {
@@ -12823,6 +12866,7 @@ export namespace Prisma {
     companyEN?: StringFieldUpdateOperationsInput | string
     Allinfo?: InputJsonValue | InputJsonValue
     feefunds?: ProductUpdatefeefundsInput | string[]
+    fundType?: ProductUpdatefundTypeInput | string[]
   }
 
   export type ProductUncheckedUpdateInput = {
@@ -12836,6 +12880,7 @@ export namespace Prisma {
     companyEN?: StringFieldUpdateOperationsInput | string
     Allinfo?: InputJsonValue | InputJsonValue
     feefunds?: ProductUpdatefeefundsInput | string[]
+    fundType?: ProductUpdatefundTypeInput | string[]
   }
 
   export type ProductCreateManyInput = {
@@ -12850,6 +12895,7 @@ export namespace Prisma {
     companyEN: string
     Allinfo: InputJsonValue
     feefunds?: ProductCreatefeefundsInput | string[]
+    fundType?: ProductCreatefundTypeInput | string[]
   }
 
   export type ProductUpdateManyMutationInput = {
@@ -12863,6 +12909,7 @@ export namespace Prisma {
     companyEN?: StringFieldUpdateOperationsInput | string
     Allinfo?: InputJsonValue | InputJsonValue
     feefunds?: ProductUpdatefeefundsInput | string[]
+    fundType?: ProductUpdatefundTypeInput | string[]
   }
 
   export type ProductUncheckedUpdateManyInput = {
@@ -12876,6 +12923,7 @@ export namespace Prisma {
     companyEN?: StringFieldUpdateOperationsInput | string
     Allinfo?: InputJsonValue | InputJsonValue
     feefunds?: ProductUpdatefeefundsInput | string[]
+    fundType?: ProductUpdatefundTypeInput | string[]
   }
 
   export type FavoriteCreateInput = {
@@ -12928,6 +12976,9 @@ export namespace Prisma {
     proj_id: string
     proj_abbr_name: string
     compareinfomation: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type Page1compareinfomationUncheckedCreateInput = {
@@ -12935,18 +12986,27 @@ export namespace Prisma {
     proj_id: string
     proj_abbr_name: string
     compareinfomation: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type Page1compareinfomationUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
     compareinfomation?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type Page1compareinfomationUncheckedUpdateInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
     compareinfomation?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type Page1compareinfomationCreateManyInput = {
@@ -12954,18 +13014,27 @@ export namespace Prisma {
     proj_id: string
     proj_abbr_name: string
     compareinfomation: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type Page1compareinfomationUpdateManyMutationInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
     compareinfomation?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type Page1compareinfomationUncheckedUpdateManyInput = {
     proj_id?: StringFieldUpdateOperationsInput | string
     proj_abbr_name?: StringFieldUpdateOperationsInput | string
     compareinfomation?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type Page2Operating_results_and_dividendsCreateInput = {
@@ -13338,6 +13407,9 @@ export namespace Prisma {
     fundType?: ProductDetailCreatefundTypeInput | string[]
     fund_resYTD: InputJsonValue
     Allinfo: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type ProductDetailUncheckedCreateInput = {
@@ -13353,6 +13425,9 @@ export namespace Prisma {
     fundType?: ProductDetailCreatefundTypeInput | string[]
     fund_resYTD: InputJsonValue
     Allinfo: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type ProductDetailUpdateInput = {
@@ -13367,6 +13442,9 @@ export namespace Prisma {
     fundType?: ProductDetailUpdatefundTypeInput | string[]
     fund_resYTD?: InputJsonValue | InputJsonValue
     Allinfo?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type ProductDetailUncheckedUpdateInput = {
@@ -13381,6 +13459,9 @@ export namespace Prisma {
     fundType?: ProductDetailUpdatefundTypeInput | string[]
     fund_resYTD?: InputJsonValue | InputJsonValue
     Allinfo?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type ProductDetailCreateManyInput = {
@@ -13396,6 +13477,9 @@ export namespace Prisma {
     fundType?: ProductDetailCreatefundTypeInput | string[]
     fund_resYTD: InputJsonValue
     Allinfo: InputJsonValue
+    dailydate: string
+    dailynet: number
+    dailyval: number
   }
 
   export type ProductDetailUpdateManyMutationInput = {
@@ -13410,6 +13494,9 @@ export namespace Prisma {
     fundType?: ProductDetailUpdatefundTypeInput | string[]
     fund_resYTD?: InputJsonValue | InputJsonValue
     Allinfo?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type ProductDetailUncheckedUpdateManyInput = {
@@ -13424,6 +13511,9 @@ export namespace Prisma {
     fundType?: ProductDetailUpdatefundTypeInput | string[]
     fund_resYTD?: InputJsonValue | InputJsonValue
     Allinfo?: InputJsonValue | InputJsonValue
+    dailydate?: StringFieldUpdateOperationsInput | string
+    dailynet?: FloatFieldUpdateOperationsInput | number
+    dailyval?: FloatFieldUpdateOperationsInput | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -13472,6 +13562,7 @@ export namespace Prisma {
     companyEN?: SortOrder
     Allinfo?: SortOrder
     feefunds?: SortOrder
+    fundType?: SortOrder
   }
 
   export type ProductMaxOrderByAggregateInput = {
@@ -13561,23 +13652,69 @@ export namespace Prisma {
     user?: SortOrder
   }
 
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
   export type Page1compareinfomationCountOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
     compareinfomation?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
+  }
+
+  export type Page1compareinfomationAvgOrderByAggregateInput = {
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type Page1compareinfomationMaxOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type Page1compareinfomationMinOrderByAggregateInput = {
     id?: SortOrder
     proj_id?: SortOrder
     proj_abbr_name?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
+  }
+
+  export type Page1compareinfomationSumOrderByAggregateInput = {
+    dailynet?: SortOrder
+    dailyval?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
   export type Page2Operating_results_and_dividendsCountOrderByAggregateInput = {
@@ -13742,6 +13879,14 @@ export namespace Prisma {
     fundType?: SortOrder
     fund_resYTD?: SortOrder
     Allinfo?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
+  }
+
+  export type ProductDetailAvgOrderByAggregateInput = {
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type ProductDetailMaxOrderByAggregateInput = {
@@ -13754,6 +13899,9 @@ export namespace Prisma {
     risk_spectrum?: SortOrder
     companyTH?: SortOrder
     companyEN?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type ProductDetailMinOrderByAggregateInput = {
@@ -13766,9 +13914,21 @@ export namespace Prisma {
     risk_spectrum?: SortOrder
     companyTH?: SortOrder
     companyEN?: SortOrder
+    dailydate?: SortOrder
+    dailynet?: SortOrder
+    dailyval?: SortOrder
+  }
+
+  export type ProductDetailSumOrderByAggregateInput = {
+    dailynet?: SortOrder
+    dailyval?: SortOrder
   }
 
   export type ProductCreatefeefundsInput = {
+    set: string[]
+  }
+
+  export type ProductCreatefundTypeInput = {
     set: string[]
   }
 
@@ -13777,6 +13937,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdatefeefundsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type ProductUpdatefundTypeInput = {
     set?: string[]
     push?: string | string[]
   }
@@ -13797,6 +13962,14 @@ export namespace Prisma {
   export type FavoriteUpdateproduct_json_listInput = {
     set?: InputJsonValue[]
     push?: InputJsonValue | InputJsonValue[]
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type ProductDetailCreatefundTypeInput = {
@@ -13859,6 +14032,33 @@ export namespace Prisma {
   export type NestedJsonFilterBase<$PrismaModel = never> = {
     equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
   }
 
 

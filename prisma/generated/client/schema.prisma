@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
   output   = "./generated/client"
@@ -9,96 +8,107 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Product {
-  id              String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id         String    @unique
-  proj_abbr_name  String    @unique
-  proj_name_en    String
-  proj_name_th    String
-  unique_id       String
-  risk_spectrum   String
-  companyTH       String
-  companyEN       String
-  Allinfo         Json
-  feefunds String[]
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id        String   @unique
+  proj_abbr_name String   @unique
+  proj_name_en   String
+  proj_name_th   String
+  unique_id      String
+  risk_spectrum  String
+  companyTH      String
+  companyEN      String
+  Allinfo        Json
+  feefunds       String[]
+  fundType       String[]
 }
 
 model Favorite {
-  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
-  user                 String    @unique
-  proj_abbr_name_list  String[]
-  product_json_list Json[]
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  user                String   @unique
+  proj_abbr_name_list String[]
+  product_json_list   Json[]
 }
 
-
-model Page1compareinfomation{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  proj_abbr_name  String@unique
+model Page1compareinfomation {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id           String @unique
+  proj_abbr_name    String @unique
   compareinfomation Json
+  dailydate         String
+  dailynet          Float
+  dailyval          Float
 }
 
-model Page2Operating_results_and_dividends{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  proj_abbr_name  String@unique
+model Page2Operating_results_and_dividends {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id           String @unique
+  proj_abbr_name    String @unique
   operating_results Json
 }
-model Page3topfiveCompareport{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  proj_abbr_name  String @unique
+
+model Page3topfiveCompareport {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id          String @unique
+  proj_abbr_name   String @unique
   top_five_holding Json
 }
-model Page3typeCompareport{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
-  proj_abbr_name  String @unique
-  type_data Json
-}
-model Page3Investment_proportionCompareport{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String @unique
-  proj_abbr_name  String @unique
-  Investment_proportion_data Json
-}
-model Page4Fee{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String @unique
-  proj_abbr_name  String @unique
-  data_from_sheet Json
-  data_from_real Json
-  fund_fact_url String
-  buyInfo Json
+
+model Page3typeCompareport {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id        String @unique
+  proj_abbr_name String @unique
+  type_data      Json
 }
 
-model AllProductInfo{
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id String    @unique
+model Page3Investment_proportionCompareport {
+  id                         String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id                    String @unique
+  proj_abbr_name             String @unique
+  Investment_proportion_data Json
+}
+
+model Page4Fee {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id         String @unique
+  proj_abbr_name  String @unique
+  data_from_sheet Json
+  data_from_real  Json
+  fund_fact_url   String
+  buyInfo         Json
+}
+
+model AllProductInfo {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id        String @unique
   proj_abbr_name String @unique
-  Allinfo Json
+  Allinfo        Json
 }
-model SearchTest{
-  id              String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id         String    @unique
-  proj_abbr_name  String    @unique
-  proj_name_en    String
-  proj_name_th    String
-  unique_id       String
-  risk_spectrum String
+
+model SearchTest {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id        String @unique
+  proj_abbr_name String @unique
+  proj_name_en   String
+  proj_name_th   String
+  unique_id      String
+  risk_spectrum  String
 }
+
 model ProductDetail {
-  id              String    @id @default(auto()) @map("_id") @db.ObjectId
-  proj_id         String    @unique
-  proj_abbr_name  String    @unique
-  proj_name_en    String
-  proj_name_th    String
-  unique_id       String
-  risk_spectrum   String
-  companyTH       String
-  companyEN       String
-  fundType        String[]
-  fund_resYTD     Json
-  Allinfo         Json
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  proj_id        String   @unique
+  proj_abbr_name String   @unique
+  proj_name_en   String
+  proj_name_th   String
+  unique_id      String
+  risk_spectrum  String
+  companyTH      String
+  companyEN      String
+  fundType       String[]
+  fund_resYTD    Json
+  Allinfo        Json
+  dailydate      String
+  dailynet       Float
+  dailyval       Float
 }

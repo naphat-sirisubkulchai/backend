@@ -22,6 +22,7 @@ model Product {
   companyEN       String
   Allinfo         Json
   feefunds String[]
+  fundType String[]
 }
 
 model Favorite {
@@ -37,6 +38,9 @@ model Page1compareinfomation{
   proj_id String    @unique
   proj_abbr_name  String@unique
   compareinfomation Json
+  dailydate String
+  dailynet Float
+  dailyval Float
 }
 
 model Page2Operating_results_and_dividends{
@@ -101,4 +105,7 @@ model ProductDetail {
   fundType        String[]
   fund_resYTD     Json
   Allinfo         Json
+  dailydate String
+  dailynet Float
+  dailyval Float
 }

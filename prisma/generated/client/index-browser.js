@@ -16,12 +16,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.11.0
- * Query Engine version: efd2449663b3d73d637ea1fd226bafbcf45b3102
+ * Prisma Client JS version: 5.15.0
+ * Query Engine version: 12e25d8d06f6ea5a0252864dd9a03b1bb51f3022
  */
 Prisma.prismaVersion = {
-  client: "5.11.0",
-  engine: "efd2449663b3d73d637ea1fd226bafbcf45b3102"
+  client: "5.15.0",
+  engine: "12e25d8d06f6ea5a0252864dd9a03b1bb51f3022"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -123,7 +123,8 @@ exports.Prisma.ProductScalarFieldEnum = {
   companyTH: 'companyTH',
   companyEN: 'companyEN',
   Allinfo: 'Allinfo',
-  feefunds: 'feefunds'
+  feefunds: 'feefunds',
+  fundType: 'fundType'
 };
 
 exports.Prisma.FavoriteScalarFieldEnum = {
@@ -137,7 +138,10 @@ exports.Prisma.Page1compareinfomationScalarFieldEnum = {
   id: 'id',
   proj_id: 'proj_id',
   proj_abbr_name: 'proj_abbr_name',
-  compareinfomation: 'compareinfomation'
+  compareinfomation: 'compareinfomation',
+  dailydate: 'dailydate',
+  dailynet: 'dailynet',
+  dailyval: 'dailyval'
 };
 
 exports.Prisma.Page2Operating_results_and_dividendsScalarFieldEnum = {
@@ -207,7 +211,10 @@ exports.Prisma.ProductDetailScalarFieldEnum = {
   companyEN: 'companyEN',
   fundType: 'fundType',
   fund_resYTD: 'fund_resYTD',
-  Allinfo: 'Allinfo'
+  Allinfo: 'Allinfo',
+  dailydate: 'dailydate',
+  dailynet: 'dailynet',
+  dailyval: 'dailyval'
 };
 
 exports.Prisma.SortOrder = {
