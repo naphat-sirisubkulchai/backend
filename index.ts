@@ -5,7 +5,7 @@ import cors from 'cors';
 const prisma = new PrismaClient()
 // Allow requests from specific origins
 const corsOptions = {
-  origin: ['http://localhost:5173','https://high-tech-eepy.vercel.app'],
+  origin: ['http://localhost:5173','https://high-tech-eepy.vercel.app','https://high-tech-eepy.vercel.app'],
   credentials: true // Enable CORS credentials
 };
 
@@ -17,13 +17,13 @@ app.use(express.json())
 
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
-//เอาทุกอัน
+//à¹à¸­à¸²à¸à¸¸à¸à¸­à¸±à¸
 // app.get('/fund', async (req, res) => {
 //   const funds = await prisma.fund.findMany()
 //   res.json(funds)
 // })
 
-// //เอาอันที่ไอดีตรง
+// //à¹à¸­à¸²à¸­à¸±à¸à¸à¸µà¹à¹à¸­à¸à¸µà¸à¸£à¸
 // app.get('/fund/:unique_id', async (req, res) => {
 //   try {
 //     const { unique_id } = req.params;
@@ -72,7 +72,7 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 // })
 
 ///////////////////////////////// product /////////////////////////////////////////
-//เอาทุกอัน
+//à¹à¸­à¸²à¸à¸¸à¸à¸­à¸±à¸
 app.get('/product', async (req, res) => {
   const products = await prisma.product.findMany()
   res.json(products)
@@ -82,7 +82,7 @@ app.get('/product/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const allpro = await prisma.product.findMany({
+    const allpro = await prisma.product.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -98,19 +98,24 @@ app.get('/product/:proj_abbr_name', async (req, res) => {
 });
 // /filter?searchString={searchString}&take={take}&skip={skip}&orderBy={orderBy}
 app.get('/filter/product', async (req, res) => {
-  const { searchString, skip, take, orderBy } = req.query
+  const { searchString, take, skip, orderBy } = req.query;
 
   const or: Prisma.ProductWhereInput = searchString
     ? {
-      OR: [
-        { proj_name_th: { contains: searchString as string } },
-        { proj_name_en: { contains: searchString as string } },
-        { proj_abbr_name: { contains: searchString as string }},
-        { companyTH: { contains: searchString as string }},
-        { companyEN: { contains: searchString as string }},
-      ],
+        OR: [
+          { proj_name_th: { contains: searchString.toString(), mode: 'insensitive' } },
+          { proj_name_en: { contains: searchString.toString(), mode: 'insensitive' } },
+          { proj_abbr_name: { contains: searchString.toString(), mode: 'insensitive' } },
+          { risk_spectrum: { contains: searchString.toString(), mode: 'insensitive' } },
+          { companyTH: { contains: searchString.toString(), mode: 'insensitive' } },
+          { companyEN: { contains: searchString.toString(), mode: 'insensitive' } },
+          { fundType: { has: searchString.toString() } }
+        ],
       }
-    : {}
+    : {};
+
+
+
   const products = await prisma.product.findMany({
     where: {
       ...or,
@@ -118,12 +123,12 @@ app.get('/filter/product', async (req, res) => {
     take: Number(take) || undefined,
     skip: Number(skip) || undefined,
     orderBy: {
-      proj_name_en: orderBy as Prisma.SortOrder,
+      proj_abbr_name: orderBy as Prisma.SortOrder,
     },
-  })
+  });
 
-  res.json(products)
-})
+  res.json(products);
+});
 
 app.put('/product/put/:proj_abbr_name', async (req, res) => {
   try {
@@ -146,10 +151,30 @@ app.delete('/product/delete/:proj_abbr_name', async (req, res) => {
   try {
     const { proj_abbr_name } = req.params;
 
-    const deletedProduct = await prisma.allProductInfo.delete({
+    const deletedProduct = await prisma.product.delete({
       where: { proj_abbr_name },
     });
-
+    const deletedDetail = await prisma.productDetail.delete({
+      where: { proj_abbr_name },
+    });
+    const deletedpage1 = await prisma.page1compareinfomation.delete({
+      where: { proj_abbr_name },
+    });
+    const deletepage2 = await prisma.page2Operating_results_and_dividends.delete({
+      where: { proj_abbr_name },
+    });
+    const deletepage3 = await prisma.page3Investment_proportionCompareport.delete({
+      where: { proj_abbr_name },
+    });
+    const deletepage3_2 = await prisma.page3topfiveCompareport.delete({
+      where: { proj_abbr_name },
+    });
+    const deletepage3_3 = await prisma.page3typeCompareport.delete({
+      where: { proj_abbr_name },
+    });
+    const delete4 = await prisma.page4Fee.delete({
+      where: { proj_abbr_name },
+    });
     res.json(deletedProduct);
   } catch (error) {
     console.error('Error:', error);
@@ -158,7 +183,7 @@ app.delete('/product/delete/:proj_abbr_name', async (req, res) => {
 });
   ///////////////////////////////// fav /////////////////////////////////////////
 
-//เอาทุกอัน
+//à¹à¸­à¸²à¸à¸¸à¸à¸­à¸±à¸
 app.get('/fav', async (req, res) => {
   const favorites = await prisma.favorite.findMany()
   res.json(favorites)
@@ -170,7 +195,7 @@ app.get('/fav/:user', async (req, res) => {
     const { user } = req.params;
 
     // Use Prisma to query the database
-    const fav = await prisma.favorite.findMany({
+    const fav = await prisma.favorite.findUnique({
       where: { user},
     }); 
 
@@ -278,7 +303,7 @@ app.get('/fav/:user', async (req, res) => {
 //   }
 // });
 
-//อันที่work
+//à¸­à¸±à¸à¸à¸µà¹work
 // app.post(`/fav/add/:user`, async (req, res) => {
 //   try {
 //     const { user } = req.params;
@@ -359,7 +384,7 @@ app.get('/fav/:user', async (req, res) => {
 //     res.status(500).json({ error: error.message });
 //   }
 // });
-// อันที่work
+// à¸­à¸±à¸à¸à¸µà¹work
 // app.delete(`/fav/delete/:user/:proj_abbr_name`, async (req, res) => {
 //   try {
 //     const { user, proj_abbr_name } = req.params;
@@ -579,7 +604,7 @@ app.get('/page1/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page1 = await prisma.page1compareinfomation.findMany({
+    const page1 = await prisma.page1compareinfomation.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -600,7 +625,7 @@ app.get('/page2/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page2 = await prisma.page2Operating_results_and_dividends.findMany({
+    const page2 = await prisma.page2Operating_results_and_dividends.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -620,7 +645,7 @@ app.get('/page3/investment/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page3 = await prisma.page3Investment_proportionCompareport.findMany({
+    const page3 = await prisma.page3Investment_proportionCompareport.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -640,7 +665,7 @@ app.get('/page3/topfive/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page3 = await prisma.page3topfiveCompareport.findMany({
+    const page3 = await prisma.page3topfiveCompareport.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -660,7 +685,7 @@ app.get('/page3/type/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page3 = await prisma.page3typeCompareport.findMany({
+    const page3 = await prisma.page3typeCompareport.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -680,7 +705,7 @@ app.get('/page4/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const page4 = await prisma.page4Fee.findMany({
+    const page4 = await prisma.page4Fee.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -729,7 +754,7 @@ app.get('/detail/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const allpro = await prisma.productDetail.findMany({
+    const allpro = await prisma.productDetail.findUnique({
       where: { proj_abbr_name},
     }); 
 
@@ -798,7 +823,7 @@ app.get('/allpro/:proj_abbr_name', async (req, res) => {
     const { proj_abbr_name } = req.params;
 
     // Use Prisma to query the database
-    const allpro = await prisma.allProductInfo.findMany({
+    const allpro = await prisma.allProductInfo.findUnique({
       where: { proj_abbr_name},
     }); 
 
